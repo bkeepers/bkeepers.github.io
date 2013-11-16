@@ -4,7 +4,7 @@ title: "acts_as_audited"
 id: 4cf5b681dabe9d2c610006b3
 updated: 2012-06-05T10:31:20-04:00
 date: 2006-07-21T04:00:00-04:00
-categories: 
+categories:
 - acts_as_audited
 - plugin
 - popular
@@ -21,7 +21,7 @@ h3. Auditing in Rails
 
 If you're using acts_as_audited within Rails, you can simply declare which models should be audited.  acts_as_audited can also automatically record the user that made the change if your controller has a <code>current_user</code> method.
 
-<source:ruby>
+{% highlight ruby %}
 class ApplicationController < ActionController::Base
   audit User, List, Item
 protected
@@ -29,49 +29,38 @@ protected
     @user ||= User.find(session[:user])
   end
 end
-</source>
-
-h3. Caveats
-
-<del>Auditing with user support depends on Rails' caching mechanisms, therefore auditing isn't enabled during development mode. To test that auditing is working, start up your app in production mode, or change the following options in config/environments/development.rb:
-
-<source:ruby>
-config.cache_classes = true
-config.action_controller.perform_caching = true
-</source>
-</del>
-<ins>"This has been fixed.":http://opensoul.org/2008/10/13/acts_as_audited-in-development</ins>
+{% endhighlight %}
 
 h3. Customizing
 
 To get auditing outside of Rails, or to customize which fields are audited within Rails, you can explicitly declare <code>acts_as_audited</code> on your models. The <code>:except</code> option allows you to specify one or more attributes that you don't want to be saved in the audit log.
 
-<source:ruby>
+{% highlight ruby %}
 class User < ActiveRecord::Base
   acts_as_audited :except => [:password, :credit_card_number]
 end
-</source>
+{% endhighlight %}
 
 h3. Installation
 
 You can grab the plugin by running:
 
-<filter:jscode>
+<pre>
 script/plugin install git://github.com/collectiveidea/acts_as_audited.git
-</source>
+</pre>
 
 Run the migration generator and migrate to add the audits table.
 
-<filter:jscode>
+<pre>
 script/generate audited_migration add_audits_table
 rake db:migrate
-</source>
+</pre>
 
 h3. Upgrading
 
 Those upgrading from version 0.2 need to add 2 fields the audits table:
 
-<filter:jscode>
+{% highlight ruby %}
 add_column :audits, :user_type, :string
 add_column :audits, :username, :string
-</source>
+{% endhighlight %}

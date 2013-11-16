@@ -4,7 +4,7 @@ title: "Getting Started with Sublime Text 2"
 id: 4f076418dabe9d11e6003b67
 updated: 2013-02-12T11:20:14-05:00
 date: 2012-01-12T07:00:00-05:00
-categories: 
+categories:
 - editor
 - popular
 excerpt: "I recently switched to "Sublime Text 2":http://www.sublimetext.com/. As it goes with many of the finer things in life, Sublime is an acquired taste. Here are a few tips that made it easier for me to get into it."
@@ -46,21 +46,21 @@ h2. Opening a project
 
 Sublime has support for project files, but I do not use them. I prefer to just open projects from the command line. Sublime comes with a command line interface, but you need to add it to your path.
 
-<source:bash>
+{% highlight bash %}
 sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/bin/subl
-</source>
+{% endhighlight %}
 
 Now you can open a file or directory from the command line.
 
-<source:bash>
+{% highlight bash %}
 subl -n ~/blog
-</source>
+{% endhighlight %}
 
 I almost always edit from the current directory, so I set up a bash alias.
 
-<source:bash>
+{% highlight bash %}
 alias e="subl -n ."
-</source>
+{% endhighlight %}
 
 Ok, now we have Sublime looking pretty and our project open.
 
@@ -74,7 +74,7 @@ On OS X, go to "Sublime Text 2 » Preferences".
 
 For each type of setting, Sublime has at least two files: defaults and custom user settings. You edit the *User* versions to specify the things you are overriding.
 
-* *File Settings* affect the file that you are currently editing. This includes things like your color scheme, fonts…basically, anything related to editing files. 
+* *File Settings* affect the file that you are currently editing. This includes things like your color scheme, fonts…basically, anything related to editing files.
 * *Global Settings* affect how Sublime itself behaves, including the UI theme, files to ignore, and window behavior.
 * *Key bindings* are…well, key bindings. 614 lines of glorious shortcut keys.
 

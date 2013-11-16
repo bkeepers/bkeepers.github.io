@@ -4,7 +4,7 @@ title: "The quest for the Holy object serialization format"
 id: 4cf5b652dabe9d2c61000010
 updated: 2010-12-01T01:22:06-05:00
 date: 2010-05-03T18:13:00-04:00
-categories: 
+categories:
 - delayed_job
 - ruby
 - yaml
@@ -22,10 +22,10 @@ YAML had 2 major problems in the context of how delayed_job was using it:
 # It would serialize the attributes of the ActiveRecord class and reload them in the same state that they were in when the job was created. In most instances, I want to load the class in its current state from the database.
 # You can't call @#to_yaml@ on a class, which delayed_job required to delay execution of class methods
 
-<source:ruby>
+{% highlight ruby %}
 String.to_yaml
 # TypeError: can't dump anonymous class Class
-</source>
+{% endhighlight %}
 
 h3. Scene 2: who needs documentation?
 
@@ -33,7 +33,7 @@ It turns out that YAML has an undocumented feature (and YAML was originally writ
 
 Here is how it works for ActiveRecord:
 
-<source:ruby>
+{% highlight ruby %}
 class ActiveRecord::Base
   yaml_as "tag:ruby.yaml.org,2002:ActiveRecord"
 
@@ -45,7 +45,7 @@ class ActiveRecord::Base
     ['@attributes']
   end
 end
-</source>
+{% endhighlight %}
 
 *Problem 1: solved.*
 
@@ -55,7 +55,7 @@ As luck would have it, someone submitted a "patch to YAML back in 2006 to add @#
 
 Here's the monkey patch in all its glory:
 
-<source:ruby>
+{% highlight ruby %}
 class Module
   yaml_as "tag:ruby.yaml.org,2002:module"
 
@@ -91,7 +91,7 @@ class Class
     }
   end
 end
-</source>
+{% endhighlight %}
 
 *Problem 2: Solved*
 

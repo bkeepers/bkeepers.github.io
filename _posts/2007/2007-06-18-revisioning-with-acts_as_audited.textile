@@ -4,7 +4,7 @@ title: "Revisioning with acts_as_audited"
 id: 4cf5b66fdabe9d2c61000395
 updated: 2010-11-30T21:43:59-05:00
 date: 2007-06-18T14:21:00-04:00
-categories: 
+categories:
 - acts_as_audited
 - plugin
 - rails
@@ -16,26 +16,26 @@ When I first created "acts_as_audited":/2006/7/21/acts_as_audited over a year ag
 
 You can get all the revisions of a model:
 
-<source:ruby>
+{% highlight ruby %}
 article.revisions.each |revision|
   puts revision.class   #=> Article
   puts revision.version #=> 7, 6, 5, 4...
 end
-</source>
+{% endhighlight %}
 
 or a specific revision:
 
-<source:ruby>
+{% highlight ruby %}
 revision = article.revision(5)
 puts revision.title     #=> "Old Title"
-</source>
+{% endhighlight %}
 
 or the previous revision.  Reverting is as simple as saving a revision:
 
-<source:ruby>
+{% highlight ruby %}
 previous = article.revision(:previous)
 previous.save           # revert to previous revision
-</source>
+{% endhighlight %}
 
 See the "original post":/2006/7/21/acts_as_audited for more details about installing and using the plugin.
 
@@ -49,9 +49,9 @@ h3. Upgrading
 
 To use the versioning support, you must add a version field in the audits table:
 
-<source:ruby>
+{% highlight ruby %}
 add_column :audits, :version, :integer, :default => 0
-</source>
+{% endhighlight %}
 
 Note: if you already have audit records, the version field will have to be initialized.
 

@@ -4,7 +4,7 @@ title: "ETags with memcached"
 id: 4d254397dabe9d797900002e
 updated: 2011-01-29T23:58:46-05:00
 date: 2011-01-29T23:15:00-05:00
-categories: 
+categories:
 - http
 - performance
 - ruby
@@ -16,7 +16,7 @@ I love ETags, but there's something that annoys me: most implementations revolve
 
 For example, here is the standard way to implement ETags in Rails:
 
-<source:ruby>
+{% highlight ruby %}
 def show
   @article = Article.find(params[:id])
 
@@ -24,7 +24,7 @@ def show
     render :json => @article
   end
 end
-</source>
+{% endhighlight %}
 
 The problem with this approach is that request has already gone through most of your application stack–parsing params, authentication, authorization, a few database lookups–so ETags are only saving you render time and some bandwidth.
 
@@ -36,7 +36,7 @@ Since the application is a fairly RESTful web service, it was easy to make the d
 
 I included this module into all of the models:
 
-<source:ruby>
+{% highlight ruby %}
 module Etag
   def self.included(base)
     base.after_update :etag!
@@ -57,7 +57,7 @@ module Etag
     Digest::SHA1.hexdigest("#{self.class.name}-#{id}")
   end
 end
-</source>
+{% endhighlight %}
 
 This gives us an @#etag@ method, which stores a random string in a memcache key that is a digest of the class name and id, and returns the key and value.  Every time the @#etag@ method is called, it will return the same key and the value from memcached.
 
@@ -67,19 +67,19 @@ h2. Responding with the ETag
 
 Now in the Sinatra application I just return the ETag for the model that is being rendered.
 
-<source:ruby>
+{% highlight ruby %}
 get '/games/:id' do
   game = current_user.games.find(params[:id])
   etag game.etag
   game.to_json
 end
-</source>
+{% endhighlight %}
 
 h2. Checking the ETag
 
 Subsequent requests will contain the ETag, so now it just needs verified using a rack middleware:
 
-<source:ruby>
+{% highlight ruby %}
 class EtagMiddleware < Rack::Auth::AbstractHandler
   class Request < Rack::Auth::AbstractRequest
     def cachable?
@@ -106,7 +106,7 @@ class EtagMiddleware < Rack::Auth::AbstractHandler
     end
   end
 end
-</source>
+{% endhighlight %}
 
 I'm being tricky with the ETag and setting it to a key/value pair.  So the middleware just has to look up the key in memcached and see if the value matches.  If it does, we know the resource hasn't changed and can render a 304. If the value doesn't match, then the resource has been updated and we process the request as normal.
 

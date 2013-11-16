@@ -4,7 +4,7 @@ title: "Adding DOM methods with Prototype"
 id: 4cf5b66edabe9d2c6100032c
 updated: 2010-11-30T21:43:58-05:00
 date: 2007-07-11T16:24:00-04:00
-categories: 
+categories:
 - javascript
 - prototype
 excerpt: ""
@@ -12,7 +12,7 @@ excerpt: ""
 
 I just discovered that "prototype":http;//prototypejs.org has a really cool way to add methods to all instances of any tag.  Simply call @Element.addMethods(tagname, methods)@.  For example, here's how I added a @request@ method to anchors, which will just make an ajax call for the anchor's @href@:
 
-<source:javascript>
+{% highlight javascript %}
 if (!window.Anchor) { var Anchor = new Object(); }
 
 Anchor.Methods = {
@@ -23,15 +23,15 @@ Anchor.Methods = {
   }
 }
 Element.addMethods('a', Anchor.Methods);
-</source>
+{% endhighlight %}
 
 So now I can go through and hijack links with a specific tag name and just call @request()@ on them:
 
-<source:javascript>
+{% highlight javascript %}
 $$('a.jax').each(function (link) {
   link.observe('click', function(event) {
     link.request({evalScripts: true});
     Event.stop(event);
   });
 })
-</source>
+{% endhighlight %}

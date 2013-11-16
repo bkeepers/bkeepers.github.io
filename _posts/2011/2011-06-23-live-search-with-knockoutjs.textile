@@ -4,7 +4,7 @@ title: "Live search with knockout.js"
 id: 4e02c2fcdabe9d25ea000643
 updated: 2011-06-23T10:44:28-04:00
 date: 2011-06-23T10:26:00-04:00
-categories: 
+categories:
 - framework
 - javascript
 excerpt: "A simple implementation of live search in knockout.js."
@@ -20,26 +20,26 @@ h2. How to build it
 
 To start with, we just want to display our list of beers. Once we get that done, then we can start implementing the search. I used a hard-coded list for this example, but this could easily be the result of an API request.
 
-<source:javascript>
+{% highlight javascript %}
 var beers = [
   {name:"…", brewery:"…", style:"…"},
   // …
 ];
-</source>
+{% endhighlight %}
 
 We need to tell knockout about these beers so we can bind them to the view.
 
-<source:javascript>
+{% highlight javascript %}
 var viewModel = {
   beers: ko.observableArray(beers)
 };
 
 ko.applyBindings(viewModel);
-</source>
+{% endhighlight %}
 
 Displaying this list of beers is simple. We create our markup for the list, and use knockout's template binding.
 
-<source:html>
+{% highlight html %}
 <ul data-bind="template: {name:'beer', foreach:beers}"></ul>
 
 
@@ -50,27 +50,27 @@ Displaying this list of beers is simple. We create our markup for the list, and 
     <span data-bind="text: style"></span>
   </li>
 </script>
-</source>
+{% endhighlight %}
 
 Now we should be able see our list of beers. Next let's implement the search functionality, starting with an input field to search with.
 
-<source:html>
+{% highlight html %}
 <input placeholder="Search…" type="search" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
-</source>
+{% endhighlight %}
 
 The data-bind attribute tells Knockout that we want to bind the value of this input field to a variable called _query_, and we want to update that value on keyup. We need to set up _query_ as an observable attribute.
 
-<source:javascript>
+{% highlight javascript %}
 var viewModel = {
   // …
 
   query: ko.observable('')
 }
-</source>
+{% endhighlight %}
 
 Whenever the query attribute is changed, we want to perform our search and update our list of beers, so we subscribe to updates on @query@ and call a search function.
 
-<source:javascript>
+{% highlight javascript %}
 var viewModel = {
   // …
 
@@ -87,10 +87,10 @@ var viewModel = {
 };
 
 viewModel.query.subscribe(viewModel.search);
-</source>
+{% endhighlight %}
 
 Our search function begins by removing all the beers from the array observed by knockout, then loops through our list of beers and does a simple search, adding each beer back to the knockout array if it matches, which in turn updates it in the view.
 
-View the "source on the demo":http://opensoul.org/assets/4e02cba0dabe9d1c29005690/knockout.html to see all of the code in context. 
+View the "source on the demo":http://opensoul.org/assets/4e02cba0dabe9d1c29005690/knockout.html to see all of the code in context.
 
 

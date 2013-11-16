@@ -4,7 +4,7 @@ title: "Announcing Graticule geocoding API"
 id: 4cf5b67fdabe9d2c61000568
 updated: 2010-11-30T21:44:15-05:00
 date: 2006-10-31T10:36:00-05:00
-categories: 
+categories:
 - geocoding
 - graticule
 - ruby
@@ -21,12 +21,12 @@ h3. Usage
 
 You can grab the "gem":http://rubyforge.org/frs/?group_id=2643&release_id=8463 or check out the code from "Subversion":http://github.com/collectiveidea.com/graticule.  The "Rdoc is also available":http://graticule.rubyforge.org/.
 
-<source:ruby>
+{% highlight ruby %}
 require 'rubygems'
 require 'graticule'
 geocoder = Graticule.service(:google).new "api_key"
 location = geocoder.locate "1600 Amphitheatre Parkway, Mountain View, CA"
-</source>
+{% endhighlight %}
 
 h3. Feedback
 

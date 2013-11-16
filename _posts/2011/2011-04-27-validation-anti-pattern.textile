@@ -4,7 +4,7 @@ title: "Validation Anti-Pattern"
 id: 4db8db0fdabe9d3eee000001
 updated: 2011-12-09T10:28:10-05:00
 date: 2011-04-27T23:00:00-04:00
-categories: 
+categories:
 - popular
 - rails
 - validations
@@ -17,7 +17,7 @@ I often see people using validations to check generated attributes or an attribu
 
 For example, take this "MongoMapper":http://mongomapper.com model:
 
-<source:ruby>
+{% highlight ruby %}
 class ChatMessage
   include MongoMapper::Document
 
@@ -28,11 +28,11 @@ class ChatMessage
 
   validates_presence_of :text, :game_id
 end
-</source>
+{% endhighlight %}
 
 This model is created in an action that looks something like this:
 
-<source:ruby>
+{% highlight ruby %}
 def create
   @game = current_user.games.find(params[:game_id])
   @chat_message = @game.chat_messages.build(params[:chat_message])
@@ -42,7 +42,7 @@ def create
     render :edit
   end
 end
-</source>
+{% endhighlight %}
 
 The model is validating the presence of @text@, a value supplied by the user, and @game_id@. The only way that @game_id@ can be blank is if there is something wrong the your controller logic. In that unlikely case, your user will be presented with the completely unhelpful error: *Game cannot be blank*. @game_id@ should not be a validation that is shown to your user.
 
@@ -50,13 +50,13 @@ h2. But I don't want to save invalid data!
 
 That's fine. You can still use the validation callback as an opportunity to verify the data. Add an assertion that the attribute is set. Just don't add validation errors that get displayed to your user, because no matter what they do, they won't be able to fix the error that they are seeing. It is more helpful to raise an exception, which will show your user the standard 500 error, and notify you that you've got a problem with your application logic.
 
-<source:ruby>
+{% highlight ruby %}
 validate :validate_game_id
 
 def validate_game_id
   raise "game_id must be present" unless self.game_id?
 end
-</source>
+{% endhighlight %}
 
 h2. But what about people hacking?
 

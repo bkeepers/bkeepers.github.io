@@ -4,16 +4,16 @@ title: "Convert a GitHub Issue Into a Pull Request"
 id: 509b2d59dabe9d6553001dd8
 updated: 2012-11-09T11:26:36-05:00
 date: 2012-11-09T09:00:00-05:00
-categories: 
+categories:
 - github
 excerpt: "A little-known-feature of the GitHub API is the ability to attach changes to an issue, converting it into a pull request. The "hub":http://defunkt.io/hub/ command, a wrapper around @git@ that makes it more GitHub aware, allows you to easily do this."
 ---
 
 A little-known-feature of the GitHub API is the ability to attach changes to an issue, converting it into a pull request. The "hub":http://defunkt.io/hub/ command, a wrapper around @git@ that makes it more GitHub aware, allows you to easily do this.
 
-<source>
+{% highlight bash %}
 hub pull-request -i 384 -b bkeepers:master -h bkeepers:branch-name
-</source>
+{% endhighlight %}
 
 * @-i@ is the GitHub issue number
 * @-b@ is the base, or where you want to send the pull request, with @bkeepers@ being the owner of the repository.

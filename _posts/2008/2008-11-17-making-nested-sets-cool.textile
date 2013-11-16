@@ -4,7 +4,7 @@ title: "awesome_nested_set: making nested sets cool"
 id: 4cf5b659dabe9d2c610000ff
 updated: 2010-12-01T02:38:06-05:00
 date: 2008-11-17T01:32:00-05:00
-categories: 
+categories:
 - awesome_nested_set
 - plugin
 - popular
@@ -28,12 +28,12 @@ h3. What makes this so awesome?
 
 There's a lot of things that makes this awesome, but my personal favorite is that awesome_nested_set makes use of Rails 2.1's named_scope features^"1":#named_scope_backport^, so most of the nested set methods return a scope that works as a finder. You can call find methods on it or access other named scopes.
 
-<source:ruby>
+{% highlight ruby %}
 class Department < ActiveRecord::Base
   acts_as_nested_set
-  named_scope :in_need_of_review, :lambda => {{
-    :conditions => {:reviewed_at > 1.year.ago
-  }}
+  named_scope :in_need_of_review, :lambda => {
+    {:conditions => {:reviewed_at > 1.year.ago}
+  }
 end
 
 chancellor = Department.create(:name => 'Chancellor')
@@ -44,7 +44,7 @@ Department.create(:name => 'Student Services',
 
 chancellor.descendants.in_need_of_review
 rogue = chancellor.descendants.all(:conditions => 'manager_id IS NULL')
-</source>
+{% endhighlight %}
 
 There's lots more info in the "README on GitHub":http://github.com/collectiveidea/awesome_nested_set, so check it out.  Let us know if you have any suggestions or feedback.
 

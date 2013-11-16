@@ -4,7 +4,7 @@ title: "The importance of var in JavaScript"
 id: 4cf5b65cdabe9d2c6100014e
 updated: 2010-11-30T21:43:40-05:00
 date: 2008-09-03T20:37:00-04:00
-categories: 
+categories:
 - javascript
 excerpt: ""
 ---
@@ -17,7 +17,7 @@ For the unenlightened like myself, JavaScript basically has two scopes for varia
 
 Here's a bit of code that demonstrates this:
 
-<source:javascript>
+{% highlight javascript %}
 function fail() {
   date = new Date();
   console.log('Before: ' + Number(date));
@@ -28,7 +28,7 @@ function fail() {
 
 fail();
 fail();
-</source>
+{% endhighlight %}
 
 The code defines a function that sets a variable, logs the variable, then defines a callback that logs the variable again on second later. If you call the function twice in a row, you can see the effect:
 

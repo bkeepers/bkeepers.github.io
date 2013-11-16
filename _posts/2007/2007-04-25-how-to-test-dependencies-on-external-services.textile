@@ -4,7 +4,7 @@ title: "How to test dependencies on external services?"
 id: 4cf5b672dabe9d2c610003cd
 updated: 2010-11-30T21:44:02-05:00
 date: 2007-04-25T15:35:00-04:00
-categories: 
+categories:
 - ruby
 - testing
 excerpt: ""
@@ -20,13 +20,13 @@ The problem with Tinder is that it is really hard to isolate the tests.  By defa
 
 For example, here would be the test for deleting a room:
 
-<source:ruby>
+{% highlight ruby %}
 c = Tinder::Campfire.new 'mycampfire'
 c.login('email', 'pass')
 room = c.create_room 'My Test Room'
 assert room.destroy
 assert !c.find_room_by_name('My Test Room')
-</source>
+{% endhighlight %}
 
 How do I know that it is working?  All I'm testing is that @#destroy@ returns true and that Tinder thinks that it is gone.  Is that good enough?  To make matters worse, every other test will depend on at least login with whatever other setup code is required.
 

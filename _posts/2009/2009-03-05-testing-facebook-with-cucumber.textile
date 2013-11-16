@@ -4,7 +4,7 @@ title: "Testing Facebook with Cucumber"
 id: 4cf5b656dabe9d2c610000ab
 updated: 2010-11-30T21:43:34-05:00
 date: 2009-03-05T21:57:00-05:00
-categories: 
+categories:
 - cucumber
 - facebook
 - rails
@@ -18,10 +18,10 @@ When we started working on a Facebook application a few months ago, we couldn't 
 
 First, in @features/support/env.rb@, replace the default Rails world with the one in Facebooker:
 
-<source:ruby>
+{% highlight ruby %}
 # require 'cucumber/rails/world'
 require 'facebooker/rails/cucumber'
-</source>
+{% endhighlight %}
 
 h3. Given I am logged in as a Facebook user
 
@@ -36,7 +36,7 @@ Scenario: Uploading a video
 
 And here is our implementation for that step:
 
-<source:ruby>
+{% highlight ruby %}
 Given "I am logged in as a Facebook user" do
   @current_user = User.create! :facebook_id => 1
   @current_user.facebook_user.friends = [
@@ -48,7 +48,7 @@ Given "I am logged in as a Facebook user" do
     :fb_sig_friends => @current_user.facebook_user.friends.map(&:id).join(',')
   )
 end
-</source>
+{% endhighlight %}
 
 Our application has a @User@ model with a @facebook_id@ attribute and a @#facebook_user@ method which returned an instance of @Facebooker::User@. Due to how the Facebook session is being mocked, it is important that we set our fake user's id to 1 for now (I'll try to figure out a way around this). We also manually add some friends for our application to use.  Lastly, we merge in our user's id and friend ids into the default request params so that any requests we make include those parameters.
 
@@ -56,7 +56,7 @@ h3. Drop your…canvas
 
 There were some places in our app where requests don't go through the canvas. For example, we have a few multipart forms, which have to submit directly to your application. To mimic this, wrap webrat calls in @#without_canvas@:
 
-<source:ruby>
+{% highlight ruby %}
 When "I upload a video" do
   visit root_path
 
@@ -68,7 +68,7 @@ When "I upload a video" do
   end
   follow_redirect!
 end
-</source>
+{% endhighlight %}
 
 Note that if your action redirects to a URL with @:canvas => true@, webrat will see that as an "external" redirect and won't follow it. Just call @#follow_redirect!@ and it'll go on it's merry way.
 

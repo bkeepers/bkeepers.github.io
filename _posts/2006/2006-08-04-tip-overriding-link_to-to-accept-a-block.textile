@@ -4,7 +4,7 @@ title: "Tip: Overriding link_to to accept a block"
 id: 4cf5b681dabe9d2c610005ed
 updated: 2010-11-30T21:44:17-05:00
 date: 2006-08-04T12:10:00-04:00
-categories: 
+categories:
 - rails
 - ruby
 excerpt: ""
@@ -12,7 +12,8 @@ excerpt: ""
 
 <p>You'd think I would get tired of saying this: Ruby is amazing! On numerous occasions in recent weeks, I've needed some complex logic or multiple lines worth of code to determine the title for my <code>link_to</code> calls. For example:
 </p>
-<source:erb>
+
+{% highlight erb %}
 &lt;%= link_to(course.full? ?
     "&lt;span class="full"&gt;#{course.name}&lt;/span&gt;" :
     course.name + course.almost_full? ?
@@ -23,25 +24,25 @@ excerpt: ""
     :action =&gt; 'show', :id =&gt; course)
 
 %&gt;
-</source>
+{% endhighlight %}
 
 <p>The output of this would be something like:</p>
 
-<source:html>
+{% highlight html %}
 &lt;a href="/courses/show/1"&gt;&lt;span class="full"&gt;Cognitive Ergonomics&lt;/span&gt;&lt;/a&gt;
-</source>
+{% endhighlight %}
 
 <p>or</p>
 
-<source:html>
+{% highlight html %}
 &lt;a href="/courses/show/1"&gt;Cognitive Ergonomics &lt;span class="enrolled"&gt;(3 students enrolled&lt;/span&gt;)&lt;/a&gt;
-</source>
+{% endhighlight %}
 
 <p>or</p>
 
-<source:html>
+{% highlight html %}
 &lt;a href="/courses/show/1"&gt;Cognitive Ergonomics &lt;span class="available"&gt;(3 spots available&lt;/span&gt;)&lt;/a&gt;
-</source>
+{% endhighlight %}
 
 <p>...depending on the conditions.</p>
 
@@ -49,7 +50,7 @@ excerpt: ""
 
 <p>The solution I came up with today involves adding the following to one of your view helpers, like <code>ApplicationHelper</code>:
 </p>
-<source:ruby>
+{% highlight ruby %}
 def link_to(*args, &amp;block)
   if block_given?
     concat super(capture(&amp;block), *args), block.binding
@@ -57,12 +58,12 @@ def link_to(*args, &amp;block)
     super(*args)
   end
 end
-</source>
+{% endhighlight %}
 
 <p>As <a href="http://codefluency.com/">Bruce Williams</a> pointed out to me, due to the way modules are mixed in, calling <code>super</code> on an overridden method will end up calling the original class method.  So, if a block is passed, it will capture the result of the block and pass it on as the first argument along with the other arguments to the original link_to method.  If no block is given, it will simply pass on all the arguments to the original link_to method</p>
 <p>The result is that now I can continue to use <code>link_to</code> in the traditional fashion, or for those tricky situations, just pass a block to it, like:</p>
 
-<source:erb>
+{% highlight erb %}
 &lt;% link_to(:action =&gt; 'show', :id =&gt; course) do %&gt;
     &lt;% if course.full? -%&gt;
         &lt;span class="full"&gt;&lt;%= course.name %&gt;&lt;/span&gt;
@@ -79,7 +80,7 @@ end
         &lt;% end %&gt;
     &lt;% end -%&gt;
 &lt;% end %&gt;
-</source>
+{% endhighlight %}
 
 <p>Now I can do all the branching that I want with if/else statements, and I only have to declare my link_to parameters once</p>
 

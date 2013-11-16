@@ -4,7 +4,7 @@ title: "Safari bug with DLs and floats"
 id: 4cf5b65fdabe9d2c61000183
 updated: 2010-11-30T21:43:43-05:00
 date: 2008-07-25T10:35:00-04:00
-categories: 
+categories:
 - browser
 - bug
 - css
@@ -17,7 +17,7 @@ excerpt: ""
 
 I came across a weird Safari bug today and couldn't find any other mention of it on the interwebs.  Here's the CSS and HTML to reproduce it:
 
-<source:css>
+{% highlight css %}
 dt {
   width: 200px;
   float: left;
@@ -28,9 +28,9 @@ dd {
 dd p {
   float: left;
 }
-</source>
+{% endhighlight %}
 
-<source:html>
+{% highlight html %}
 <dl>
   <dt>term</dt>
   <dd>
@@ -39,7 +39,7 @@ dd p {
       <p>p3</p>
   </dd>
 </dl>
-</source>
+{% endhighlight %}
 
 !/assets/2008/7/25/with_float_1.jpg (With Float)!
 

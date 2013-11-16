@@ -4,7 +4,7 @@ title: "Cucumber scenarios that depend on Sphinx"
 id: 4cf5b654dabe9d2c61000074
 updated: 2010-11-30T21:43:32-05:00
 date: 2009-06-01T09:18:00-04:00
-categories: 
+categories:
 - bdd
 - cucumber
 - rails
@@ -17,7 +17,7 @@ I love writing apps that make heavy use of search indexes, but testing them can 
 
 Here is the relevant part of what I put in @features/support/env.rb@:
 
-<source:ruby>
+{% highlight ruby %}
 # Cucumber::Rails.use_transactional_fixtures
 
 # http://github.com/bmabey/database_cleaner
@@ -43,7 +43,7 @@ ThinkingSphinx.suppress_delta_output = true
 Before do
   ts.controller.index
 end
-</source>
+{% endhighlight %}
 
 h3. What's going on here?
 
@@ -51,13 +51,13 @@ Start by commenting out the line about using transactional fixtures in @env.rb@.
 
 Once we've disabled transactional fixtures, our test database will start to fill up, likely causing some problems. So we need to add a @Before@ block that clears out the database before each scenario. I'm using "database_cleaner":http://github.com/bmabey/database_cleaner/tree/master, which gives you some different strategies for cleaning the database. Alternatively, the brute-force solution is just to reload the schema before each scenario, but this is slower than truncating the data.
 
-<source:ruby>
+{% highlight ruby %}
 Before do
   ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations['test'])
   ActiveRecord::Schema.verbose = false
   load "#{RAILS_ROOT}/db/schema.rb"
 end
-</source>
+{% endhighlight %}
 
 Next, we start Sphinx when @env.rb@ is loaded, and shut it down when the Ruby process exists.  We also enable deltas and updates, which are disabled by default in test mode.  Finally, we define a @Before@ block that updates the index before each scenario so we don't end up with a stale index.
 
@@ -76,18 +76,18 @@ Scenario: Posting a new listing
 
 Which is just implemented as:
 
-<source:ruby>
+{% highlight ruby %}
 When 'the system processes jobs' do
   Delayed::Job.work_off
 end
-</source>
+{% endhighlight %}
 
 If you're just using the default deltas, and not delayed deltas, then you can update the index like this:
 
-<source:ruby>
+{% highlight ruby %}
 When /^the system updates the index$/ do
   MyModel.sphinx_indexes.first.delta_object.index(MyModel)
 end
-</source>
+{% endhighlight %}
 
 I hope that helps.  Post your suggestions in the comments for improving this.

@@ -4,7 +4,7 @@ title: "acts_as_ferret will_paginate"
 id: 4cf5b669dabe9d2c610002cb
 updated: 2010-11-30T21:43:53-05:00
 date: 2007-08-17T00:21:00-04:00
-categories: 
+categories:
 - ferret
 - pagination
 - plugin
@@ -18,7 +18,7 @@ excerpt: ""
 
 Here's a little nugget to add to "acts_as_ferret":http://projects.jkraemer.net/acts_as_ferret/wiki to make your searches paginate with "will_paginate":http://errtheblog.com/post/4791.
 
-<source:ruby>
+{% highlight ruby %}
 module ActsAsFerret
   module ClassMethods
     def paginate_search(query, options = {})
@@ -32,12 +32,12 @@ module ActsAsFerret
     end
   end
 end
-</source>
+{% endhighlight %}
 
 <em>Updated from Behrang's comment based on changes to will_paginate.</em>
 
 There was a slight challenge in that will_paginate expects that you do one query to get the count, create a new collection object based on that count, and then perform the actual search.  But acts_as_ferret does it all in one method call, so I have to create a temporary collection object to get the offset, then do the search and create the collection object.  It's a little messier than it needs to be, but it works.
 
-<source:ruby>
+{% highlight ruby %}
 Product.paginate_search params[:q], :page => params[:page]
-</source>
+{% endhighlight %}

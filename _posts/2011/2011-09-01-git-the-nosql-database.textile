@@ -4,7 +4,7 @@ title: "Git: the NoSQL database"
 id: 4e5d7350dabe9d09d0003809
 updated: 2012-06-23T06:33:56-04:00
 date: 2011-09-01T09:00:00-04:00
-categories: 
+categories:
 - git
 - nosql
 - popular
@@ -13,7 +13,7 @@ categories:
 excerpt: "Use toystore and adapter-git to work with the hottest new NoSQL database."
 ---
 
-We all know that Git is pretty amazing. It's fast, reliable, flexible, and it keeps our project history safely nuzzled in it's cozy object database while we sleep soundly at night. But I'm curious to see if it can be used for *more than code*. I've had a few apps in the back of my mind for a while now that would be really interesting if the data was stored in Git. 
+We all know that Git is pretty amazing. It's fast, reliable, flexible, and it keeps our project history safely nuzzled in it's cozy object database while we sleep soundly at night. But I'm curious to see if it can be used for *more than code*. I've had a few apps in the back of my mind for a while now that would be really interesting if the data was stored in Git.
 
 If only there was an easy way to read and write a Git repo from Ruby…
 
@@ -25,7 +25,7 @@ Well, *Git is a key-value store*; it supports set, get and delete on keys (a.k.a
 
 Now I can create pretty models that are stored in Git.
 
-<source:ruby>
+{% highlight ruby %}
 class Item
   include Toy::Store
 
@@ -37,20 +37,20 @@ class Item
   attribute :description, String
   attribute :created_at   Time, :default => lambda { Time.now }
 end
-</source>
+{% endhighlight %}
 
 Toystore uses conventions that will be familiar to anyone that has used Active Record or MongoMapper.
 
-<source:ruby>
+{% highlight ruby %}
 item = Item.create!(:title => 'Git: the NoSQL database')
 item.update_attributes(:description => "OMG this is awesome!")
-</source>
+{% endhighlight %}
 
 The biggest difference is that you can't "find" records. The data stored in a key-value store is opaque, so all you can do is *get* it by key.
 
-<source:ruby>
+{% highlight ruby %}
 item = Item.get!('3FB053FA-0A3B-4903-9CE0-2A8A964E0F37')
-</source>
+{% endhighlight %}
 
 h2. Caveats
 

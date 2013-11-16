@@ -4,7 +4,7 @@ title: "Testing views in RSpec with namespaced elements"
 id: 4cf5b659dabe9d2c610000f7
 updated: 2010-11-30T21:43:37-05:00
 date: 2008-12-04T18:33:00-05:00
-categories: 
+categories:
 - facebook
 - rails
 - rspec
@@ -21,26 +21,26 @@ h3. Usage
 
 It's pretty straight forward.  Install the "rspec_hpricot_matchers":http://github.com/collectiveidea/rspec_hpricot_matchers plugin, and include the module in the RSpec config in @spec_helper.rb@.
 
-<source:ruby>
+{% highlight ruby %}
 Spec::Runner.configure do |config|
   config.include RspecHpricotMatchers
 end
-</source>
+{% endhighlight %}
 
 Our view had something similar to:
 
-<source:erb>
+{% highlight erb %}
 <fb:multi-friend-input prefill_ids="<%= @friends.join(', ') %>" />
-</source>
+{% endhighlight %}
 
 And in the view spec, we use #match_element with an XPath expression.
 
-<source:ruby>
+{% highlight ruby %}
 describe "things/edit.fbml.erb" do
   it "should prefill selected friends" do
     render "things/edit.fbml.erb"
     response.should match_element("//fb:multi-friend-input[@prefill_ids='333,444,555']")
   end
 end
-</source>
+{% endhighlight %}
 

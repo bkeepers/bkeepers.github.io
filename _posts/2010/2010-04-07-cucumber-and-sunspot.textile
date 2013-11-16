@@ -4,7 +4,7 @@ title: "Cucumber and Sunspot"
 id: 4cf5b652dabe9d2c61000017
 updated: 2010-12-01T01:22:42-05:00
 date: 2010-04-07T09:53:00-04:00
-categories: 
+categories:
 - cucumber
 - sunspot
 excerpt: "Recipe for using sunspot in your cucumber suite."
@@ -16,7 +16,7 @@ But for today, here's how I got Sunspot working with Cucumber.
 
 First, add a configuration for the cucumber environment in @config/sunspot.yml@. I usually just use the same settings as test.
 
-<source:yaml>
+{% highlight yaml %}
 test: &TEST
   solr:
     hostname: localhost
@@ -26,11 +26,11 @@ test: &TEST
 cucumber:
   <<: *TEST
 
-</source>
+{% endhighlight %}
 
 Then, throw this bit of nastiness in the bottom of your env.rb file.
 
-<source:ruby>
+{% highlight ruby %}
 $original_sunspot_session = Sunspot.session
 
 Before("~@search") do
@@ -54,6 +54,6 @@ Before("@search") do
 
   MyModel.remove_all_from_index!
 end
-</source>
+{% endhighlight %}
 
 This will start up Sunspot for scenarios tagged with <code>@search</code>, and mock out the sunspot connection for ones that aren't.

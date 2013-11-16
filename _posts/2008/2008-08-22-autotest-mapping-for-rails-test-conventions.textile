@@ -4,7 +4,7 @@ title: "Autotest mapping for Rails test conventions"
 id: 4cf5b65cdabe9d2c61000154
 updated: 2010-11-30T21:43:40-05:00
 date: 2008-08-22T07:00:00-04:00
-categories: 
+categories:
 - autotest
 - gem
 - ruby
@@ -18,7 +18,7 @@ I finally took time to look into the issue, and realized it's because I always u
 
 That's easily solvable.  Here's an Autotest configuration, tested with ZenTest 3.10.0, that should make it work for either naming convention.  You can throw this in your @~/.autotest@ file, or in a @.autotest@ file inside your project.
 
-<source:ruby>
+{% highlight ruby %}
 Autotest.add_hook :initialize do |at|
   at.clear_mappings
 
@@ -29,6 +29,6 @@ Autotest.add_hook :initialize do |at|
 
   at.add_mapping(%r%^test/.*\.rb$%) {|filename, _| filename }
 end
-</source>
+{% endhighlight %}
 
 Happy autotesting.

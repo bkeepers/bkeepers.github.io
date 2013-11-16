@@ -4,7 +4,7 @@ title: "Hack for partial matches in Ferret"
 id: 4cf5b667dabe9d2c6100024d
 updated: 2010-11-30T21:43:51-05:00
 date: 2007-12-12T13:02:00-05:00
-categories: 
+categories:
 - ferret
 - ruby
 - search
@@ -23,9 +23,9 @@ So, we can do this manually in code by appending an asterisk to anything users e
 
 So, here's my hack.
 
-<source:ruby>
+{% highlight ruby %}
 Book.find_by_contents "(#{term})^2 OR (#{term.split.map {|t| t + "*" }.join(' ')})"
-</source>
+{% endhighlight %}
 
 This ugly little thing will match exactly what the user entered (making use of stemming and all the magic that comes from it) and give it a little boost in the ranking, or match any part of any of the words entered, giving me partial matches.
 

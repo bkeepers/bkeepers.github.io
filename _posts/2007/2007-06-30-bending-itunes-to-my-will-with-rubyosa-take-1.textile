@@ -4,7 +4,7 @@ title: "Bending iTunes to my will with RubyOSA: take 1"
 id: 4cf5b66edabe9d2c61000353
 updated: 2010-11-30T21:43:59-05:00
 date: 2007-06-30T07:15:00-04:00
-categories: 
+categories:
 - applescript
 - id3
 - itunes
@@ -23,7 +23,7 @@ So, I've turned to Ruby.  Though a little introspection and experimentation with
 
 So, with "RubyOSA":http://rubyosa.rubyforge.org, I've written a little script that will loop through the selected tracks in iTunes and clear the @CTO@ ID3 tag.
 
-<source:ruby>
+{% highlight ruby %}
 require 'rubygems'
 require 'rbosa'
 require 'ID3lib'
@@ -37,7 +37,7 @@ itunes.selection.get.each do |track|
     tag.update!
   end
 end
-</source>
+{% endhighlight %}
 
 There are a few remaining problems that I would like to tackle:
 

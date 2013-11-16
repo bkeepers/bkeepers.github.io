@@ -4,7 +4,7 @@ title: "Merging Active Record models"
 id: 4cf5b65cdabe9d2c6100015a
 updated: 2010-11-30T21:43:40-05:00
 date: 2008-08-21T05:00:00-04:00
-categories: 
+categories:
 - active_record
 - data
 - merge
@@ -21,9 +21,9 @@ We've been working on a project that involves importing a massive amount of data
 
 To alleviate that pain, I introduce you to "merger":http://github.com/collectiveidea/merger, a Rails plugin for merging Active Record models.
 
-<source:ruby>
+{% highlight ruby %}
 @person.merge!(Person.find_all_by_email(@person.email))
-</source>
+{% endhighlight %}
 
 The plugin is pretty simple right now. All it does is:
 

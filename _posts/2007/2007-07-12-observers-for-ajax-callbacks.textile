@@ -4,7 +4,7 @@ title: "Observers for Ajax callbacks"
 id: 4cf5b66ddabe9d2c61000326
 updated: 2010-11-30T21:43:57-05:00
 date: 2007-07-12T17:21:00-04:00
-categories: 
+categories:
 - ajax
 - events
 - javascript
@@ -14,7 +14,7 @@ excerpt: ""
 
 In my Javascript-fu adventures over the past week or so, I've consistently run into the same problem.  I want to do slight variations of an Ajax request on an individual basis. Here is a common method from my code: (Note: these examples use @Event.addBehavior@ from "Dan Webb's excellent lowpro library":http://www.danwebb.net/2006/9/3/low-pro-unobtrusive-scripting-for-prototype for registering events.)
 
-<source:javascript>
+{% highlight javascript %}
 Event.addBehavior({
   // hijack any forms with the class "new" and submit them using Ajax
   'form.new:submit': function(event) {
@@ -25,11 +25,11 @@ Event.addBehavior({
     Event.stop(event);
   }
 });
-</source>
+{% endhighlight %}
 
 But occasionally, I want a certain form to do something slightly different. For example, I have some forms that are hidden by default and I want to hide them again after they are submitted:
 
-<source:javascript>
+{% highlight javascript %}
 Event.addBehavior({
   'form.new.hidden:submit': function(event) {
     this.request({evalScripts: true,
@@ -40,13 +40,13 @@ Event.addBehavior({
     Event.stop(event);
   },
 })
-</source>
+{% endhighlight %}
 
 The problems with this are, 1) there is a lot of duplication, and 2) if this form has the "new" class name, it's going to end up with 2 event handlers registered, both making an Ajax request.
 
 So what I want is event observers on @Form.request@ and "@Anchor.request@":/2007/7/11/adding-dom-methods-with-prototype for the Ajax request lifecycle, so I can call @form.request.observe('loading', function() { … })@, and that will be invoked any time an Ajax request is made for that form:
 
-<source:javascript>
+{% highlight javascript %}
 Event.addBehavior({
   // submit form requests using ajax
   'form.new:submit': function(event) {
@@ -69,7 +69,7 @@ Event.addBehavior({
     }.bind(this));
   }
 })
-</source>
+{% endhighlight %}
 
 And this is where I need your help.
 
@@ -77,7 +77,7 @@ The first problem is that we need some type of event notification framework. I h
 
 Next, I've made a modified version of "Anchor.reqeust method from my post yesterday":/2007/7/11/adding-dom-methods-with-prototype, which calls @notify@ on each of the Ajax callbacks, and extends the request methods with the event notification methods:
 
-<source:javascript>
+{% highlight javascript %}
 if (!window.Anchor) var Anchor = new Object();
 
 Anchor.Methods = {
@@ -97,7 +97,7 @@ Anchor.Methods = {
 }
 Object.Event.extend(Anchor.Methods.request);
 Element.addMethods('a', Anchor.Methods);
-</source>
+{% endhighlight %}
 
 This is where the second problem comes in.  While the event notification methods are added to @Anchor.Methods.request@, they don't get added to the anchor objects when the @request@ method does. They're getting lost in Prototype's @Element.extend@ method that adds the extensions to each element.
 

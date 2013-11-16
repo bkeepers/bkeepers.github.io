@@ -4,7 +4,7 @@ title: "Sinatra and SSL"
 id: 4ea72077dabe9d3cb8003e0b
 updated: 2011-11-17T16:23:27-05:00
 date: 2011-11-16T22:00:00-05:00
-categories: 
+categories:
 - sinatra
 - ssl
 excerpt: "I recently rolled out SSL support on "Gaug.es":http://get.gaug.es/. Gaug.es is a fairly simple Sinatra application. Most of the app requires authentication, but there are a few public URLs that are unauthenticated. Here's how I implemented it.
@@ -22,7 +22,7 @@ I evaluated a couple options, but quickly settled on "Josh Peek's simple rack-ss
 
 I wanted to create a clear separation between the parts of Gaug.es that require authentication and those that don't to avoid accidentally leaking cookies (yeah, that's a technical term), so I moved all the non-authenticated routes to a separate Sinatra application and insert it into the main app. Here's essentially what I ended up with:
 
-<source:ruby>
+{% highlight ruby %}
 class Application < Sinatra::Base
   set :ssl, lambda { !development? }
 
@@ -40,5 +40,5 @@ class PublicApplication < Sinatra::Base
     'Hello world'
   end
 end
-</source>
+{% endhighlight %}
 

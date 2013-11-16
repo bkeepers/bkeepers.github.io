@@ -4,7 +4,7 @@ title: "Force Absolute URLs"
 id: 4cf5b657dabe9d2c610000bf
 updated: 2010-11-30T21:43:35-05:00
 date: 2009-02-21T00:03:00-05:00
-categories: 
+categories:
 - facebook
 - rails
 - routing
@@ -37,7 +37,7 @@ h3. Solution
 
 It turns out, Rails passes all URL generation through a method on your controller called @#rewrite_options@. So we just overrode that method to force @:only_path@ to false on our one action.  Here's the code we used:
 
-<source:ruby>
+{% highlight ruby %}
 class ContentController < ApplicationController
   # …
 
@@ -51,6 +51,6 @@ private
     super(action_name == 'profile' ? options.merge(:only_path => false) : options)
   end
 end
-</source>
+{% endhighlight %}
 
 It's slightly evil, but it worked beautifully.

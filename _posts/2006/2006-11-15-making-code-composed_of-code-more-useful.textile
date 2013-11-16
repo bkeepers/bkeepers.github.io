@@ -4,7 +4,7 @@ title: "Making #composed_of more useful"
 id: 4cf5b67edabe9d2c61000548
 updated: 2010-11-30T21:44:14-05:00
 date: 2006-11-15T19:54:00-05:00
-categories: 
+categories:
 - plugin
 - rails
 excerpt: ""
@@ -22,44 +22,44 @@ So, I've written a plugin that overrides the Active Record implementation of <co
 
 Personally, this has been most helpful when using the "Money gem":http://rubyforge.org/projects/money/:
 
-<source:ruby>
+{% highlight ruby %}
 class Account < ActiveRecord::Base
   composed_of :balance, :class_name => "Money", :mapping => %w(cents cents) do |amount|
 	  amount.to_money
   end
 end
-</source>
+{% endhighlight %}
 
 If <code>#balance=</code> receives anything besides a <code>Money</code> object, it will call the block to try to convert the parameter to a <code>Money</code> object.
 
-<source:ruby>
+{% highlight ruby %}
 >> account = Account.new :balance => 100
 >> account.balance
 => #&lt;Money:0x2612770 @cents=10000, @currency="USD"&gt;
-</source>
+{% endhighlight %}
 
 And now it can transparently be used in forms:
 
-<source:irb>
+{% highlight irb %}
   <%= text_field :account, :balance %>
-</source>
+{% endhighlight %}
 
 This can even be used for more advanced aggregations:
 
-<source:ruby>
+{% highlight ruby %}
 class User < ActiveRecord::Base
   composed_of :address, :class_name => "Address"
 		:mapping => [%w(street street), %w(city city), %w(state state), %w(zip zip)] do |addr|
 	Address.new(addr[:street], addr[:city], addr[:state], addr[:zip])
   end
 end
-</source>
+{% endhighlight %}
 
 A user can now be created from a hash:
 
-<source:ruby>
+{% highlight ruby %}
   User.new(:address => {:street => "123 A Street", :city => "Somewhere", :state => "NO", :zip => 12345})
-</source>
+{% endhighlight %}
 
 I didn't quite realize all the implications of this extension until I was writing up the docs for this plugin.  Active Record magically does type casting for a limited set of types, namely dates and numbers.  But this essentially allows you to have a form of type casting for any attribute. Interesting...
 

@@ -4,7 +4,7 @@ title: "Plugging Rack into Rails"
 id: 4cf5b657dabe9d2c610000b9
 updated: 2010-11-30T21:43:35-05:00
 date: 2009-03-03T08:33:00-05:00
-categories: 
+categories:
 - rack
 - rails
 - ruby
@@ -17,22 +17,22 @@ Rails 2.3 has Rack baked in. It uses Rack for things like sessions and parameter
 
 It's really easy! In the @init.rb@ of a plugin, or just in a Rails initializer:
 
-<source:ruby>
+{% highlight ruby %}
 ActionController::Dispatcher.middleware.use MyMiddleware
-</source>
+{% endhighlight %}
 
 This will append your middleware to the end of the "stack", so it will be executed after all of Rails' middleware, but before anything else in the Rails framework.
 
 But what if you need to massage request parameters before Rails parses them? All you need to do is insert your middleware in the stack before Rails parses the params. You can find the current list of middleware by inspecting @ActionController::Dispatcher.middleware@.  In there you'll find @ActionController::ParamsParser@, which is what we want to insert our middleware before. Unfortunately, there's not an @insert_before@ method (yet), so we'll need to use @insert_after@, giving it a middleware earlier in the stack:
 
-<source:ruby>
+{% highlight ruby %}
 ActionController::Dispatcher.middleware.insert_after 'ActionController::Failsafe', MyMiddleware
-</source>
+{% endhighlight %}
 
 If you don't like the way that one of the existing pieces of middleware handles things, you can swap it out for your own version:
 
-<source:ruby>
+{% highlight ruby %}
 ActionController::Dispatcher.middleware.swap 'Rails::Rack::Metal', HeavyMetal
-</source>
+{% endhighlight %}
 
 So there you have it. Eat, drink, and go write middleware.

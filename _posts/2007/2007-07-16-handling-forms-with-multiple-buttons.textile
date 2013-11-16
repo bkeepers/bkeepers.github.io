@@ -4,7 +4,7 @@ title: "Handling forms with multiple buttons"
 id: 4cf5b66cdabe9d2c6100030f
 updated: 2010-11-30T21:43:56-05:00
 date: 2007-07-16T06:32:00-04:00
-categories: 
+categories:
 - collectiveidea
 - html
 - plugin
@@ -20,7 +20,7 @@ So, instead of littering my code with all kinds of @if/else@ statements, I decid
 
 "@with_action@":http://github.com/collectiveidea/with_action is a @respond_to@ style helper for executing different blocks based on presence of certain request parameters.
 
-<source:ruby>
+{% highlight ruby %}
 def create
   with_action do |a|
     a.cancel { redirect_to articles_path }
@@ -39,16 +39,16 @@ def create
     end
   end
 end
-</source>
+{% endhighlight %}
 
 A block is invoked if a parameter with the same name exists and is not blank.  Here is an example of the form that submits to this action:
 
-<source:erb>
+{% highlight erb %}
 <%= submit_tag 'Save', :name => 'save' %>
 <%= submit_tag 'Save & Continue Editing', :name => 'edit' %>
 <%= submit_tag 'Save & Approve', :name => 'approve' %>
 <%= submit_tag 'Cancel', :name => 'cancel' %>
-</source>
+{% endhighlight %}
 
 If an @any@ block is present and no parameter that matches one of the other blocks, it is called by default, otherwise the first block will be called. The @any@ block is the only one that can have nesting and be called multiple times.
 

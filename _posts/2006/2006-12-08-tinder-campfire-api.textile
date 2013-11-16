@@ -4,7 +4,7 @@ title: "Tinder: Campfire API"
 id: 4cf5b67cdabe9d2c6100051b
 updated: 2010-12-01T02:34:31-05:00
 date: 2006-12-08T01:02:00-05:00
-categories: 
+categories:
 - api
 - campfire
 - popular
@@ -23,7 +23,7 @@ For a project that I'm currently working, the client wants to be able provide li
 
 So, introducing Tinder, an API for interfacing with Campfire:
 
-<source:ruby>
+{% highlight ruby %}
 require 'rubygems'
 require 'tinder'
 campfire = Tinder::Campfire.new 'mysubdomain'
@@ -32,7 +32,7 @@ room = campfire.create_room 'New Room', 'My new campfire room to test tinder'
 room.speak 'Hello world!'
 room.paste File.read("path/to/your/file.txt")
 room.destroy
-</source>
+{% endhighlight %}
 
 h3. Install
 

@@ -4,7 +4,7 @@ title: "Using a singleton resource for an admin section"
 id: 4cf5b67adabe9d2c610004d9
 updated: 2010-11-30T21:44:10-05:00
 date: 2007-02-04T22:55:00-05:00
-categories: 
+categories:
 - edge
 - pattern
 - rails
@@ -18,11 +18,11 @@ Singleton resources are like regular resources in Rails 1.2, except that they do
 
 The routes definition looks like this:
 
-<source:ruby>
+{% highlight ruby %}
 map.resource :admin do |admin|
   admin.resources :users
 end
-</source>
+{% endhighlight %}
 
 bq. *Update:* The key here is <code>map.resource</code> (singular).
 

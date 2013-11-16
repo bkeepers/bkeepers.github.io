@@ -4,7 +4,7 @@ title: "Add helper methods to your Rails console"
 id: 509bbfffdabe9d0829004369
 updated: 2012-11-09T09:27:04-05:00
 date: 2012-11-08T09:00:00-05:00
-categories: 
+categories:
 - rails
 - speakerdeck
 excerpt: "If you use the console on your production application with any regularity, then having helpers for your application is a must!"
@@ -14,7 +14,7 @@ If you use the console on your production application with any regularity, then 
 
 Adding helpers to the Rails 3 console is easy. Define your helper methods in a module in your @lib@ directory.
 
-<source:ruby>
+{% highlight ruby %}
 module SpeakerDeck
   # These methods are included into the Rails console
   module Console
@@ -30,11 +30,11 @@ module SpeakerDeck
     end
   end
 end
-</source>
+{% endhighlight %}
 
 Then, in your @application.rb@ file, pass a block to @#console@ that includes your module into @Rails::ConsoleMethods@.
 
-<source:ruby>
+{% highlight ruby %}
 module SpeakerDeck
   class Application < Rails::Application
     # …
@@ -45,14 +45,14 @@ module SpeakerDeck
     end
   end
 end
-</source>
+{% endhighlight %}
 
 Now, when you run @rails console@, your methods are available.
 
-<source>
+<pre>
 >> user = u 'bkeepers'
 => #<User id:…>
 >> talk = t 'sachag/side-projects'
 => #<Talk id:…>
-</source>
+</pre>
 

@@ -4,7 +4,7 @@ title: "Paypal IPN in Rails with Active Merchant"
 id: 4cf5b680dabe9d2c610005c1
 updated: 2010-12-01T02:33:26-05:00
 date: 2006-09-16T16:49:00-04:00
-categories: 
+categories:
 - active_merchant
 - paypal
 - popular
@@ -32,7 +32,7 @@ excerpt: ""
 
 <h3>Create a form that submits to Paypal</h3>
 <p>Include <code>ActiveMerchant::Billing::Integrations</code> in a controller to add Active Merchant's helpers.</p>
-<source:ruby>
+{% highlight ruby %}
 class PaymentsController < ApplicationController
   include ActiveMerchant::Billing::Integrations
 
@@ -40,11 +40,11 @@ class PaymentsController < ApplicationController
     @enrollment = current_user.enrollments.find(params[:id])
   end
 end
-</source>
+{% endhighlight %}
 
 <p>In the view, use <code>payment_service_for</code> to create a form that submits to Paypal to process the payment.</p>
 
-<source:erb>
+{% highlight erb %}
 <% payment_service_for @enrollment.id, PAYPAL_ACCOUNT,
         :amount => @enrollment.course.deposit, :currency => 'USD',
         :service => :paypal do |service|
@@ -72,21 +72,21 @@ end
 
     <%= submit_tag 'Make Payment' %>
 <% end %>
-</source>
+{% endhighlight %}
 
 <p>The code above refers to the constant <code>PAYPAL_ACCOUNT</code>, which I define in <code>environment.rb</code>.  I also set Active Merchant to use test mode, which directs it to use Paypal's sandbox:</p>
-<source:ruby>
+{% highlight ruby %}
 unless RAILS_ENV == 'production'
   PAYPAL_ACCOUNT = 'sandboxaccount@example.com'
   ActiveMerchant::Billing::Base.mode = :test
 else
   PAYPAL_ACCOUNT = 'paypalaccount@example.com'
 end
-</source>
+{% endhighlight %}
 
 <h3>Create an action that processes the IPN</h3>
 <p>After the above form submits to Paypal and the user makes a payment, Paypal will post data about the transaction to your server.  Set up an action to receive the post:</p>
-<source:ruby>
+{% highlight ruby %}
   def notify
     notify = Paypal::Notification.new(request.raw_post)
     enrollment = Enrollment.find(notify.item_id)
@@ -112,7 +112,7 @@ end
     end
     render :nothing => true
   end
-</source>
+{% endhighlight %}
 <p>Depending on the model for your application, this action will obviously look different. The important part is that you pass the raw post data from the request to <code>Paypal::Notification.new</code>, and call <code>notify.acknowledge</code> to connect back to Paypal to verify the data.</p>
 
 <h3>Enable IPN</h3>

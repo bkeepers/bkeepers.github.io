@@ -4,7 +4,7 @@ title: "Daily WTF: NilClass#method_missing"
 id: 4cf5b662dabe9d2c610001f5
 updated: 2010-11-30T21:43:46-05:00
 date: 2008-04-18T03:14:00-04:00
-categories: 
+categories:
 - code
 - nil
 - ruby
@@ -18,7 +18,7 @@ I've been leading Ruby and Rails training over the last couple weeks for a compa
 
 I was helping one of the companies walk through some code they inherited from an acquisition and came across something similar to this wonderful snippet of code:
 
-<source:ruby>
+{% highlight ruby %}
   class NilClass
     def method_missing(method, *args)
       raise(NoMethodError, "undefined method '#{method}' for nil")
@@ -27,16 +27,16 @@ I was helping one of the companies walk through some code they inherited from an
       nil
     end
   end
-</source>
+{% endhighlight %}
 
 WTF? They're overriding @#method_missing@ on @nil@ to raise an exception, they then proceed to rescue it, log the error, and return @nil@!
 
 I'm guessing they had some buggy code that was calling a method on @nil@, causing a @NoMethodError@ to be raised.  And instead of fixing the code, they just decided to change it so that you could call methods on @nil@ and it would just silently fail.
 
-<source:ruby>
+{% highlight ruby %}
 >> nil.foo.bar.baz
 => nil
-</source>
+{% endhighlight %}
 
 It took me a while to figure out why they were raising an error and then rescuing it, but I'm guessing it's so they have access to a stack trace in the logger.
 

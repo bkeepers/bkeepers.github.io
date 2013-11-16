@@ -4,7 +4,7 @@ title: "Releasing multiple gems from one repository"
 id: 4fc642b0dabe9d295c000e1c
 updated: 2012-05-30T14:41:13-04:00
 date: 2012-05-30T11:00:00-04:00
-categories: 
+categories:
 - gem
 - ruby
 excerpt: "When I released "qu":https://github.com/bkeepers/qu, I wanted to split the various backends and exception handlers into multiple gems so each gem had the proper dependencies without enforcing all of the dependencies on everyone all the time. Several people have asked how I did it. Here's my secret formula.
@@ -23,22 +23,22 @@ For each gem we want to release, we need a gemspec. For example, check out "@qu-
 
 Since we'll be releasing multiple gems out of this directory, we need to make sure we get the right files for this gem. You can use whatever criteria makes sense for your project, but for @qu-redis@ it worked out to just grab any file that has "redis" in the name.
 
-<source:ruby>
+{% highlight ruby %}
 s.files = `git ls-files -- lib | grep redis`.split("\n")
-</source>
+{% endhighlight %}
 
 We need to make sure that this plugin then depends on a compatible version of the main library. For Qu, I lock each plugin to the exact version. When I release a bugfix, I release a new version of each gem, whether it is changed or not.
 
-<source:ruby>
+{% highlight ruby %}
 s.add_dependency 'qu', Qu::VERSION
-</source>
+{% endhighlight %}
 
 Each plugin can and should declare any other dependencies.
 
-<source:ruby>
+{% highlight ruby %}
 s.add_dependency 'redis-namespace'
 s.add_dependency 'simple_uuid'
-</source>
+{% endhighlight %}
 
 Now we have a gem for our plugin, with its own files and dependencies.
 
@@ -46,23 +46,23 @@ h2. Main gemspec
 
 The gemspec for our "core" library will look a little different. Check out "@qu.gemspec@":https://github.com/bkeepers/qu/blob/master/qu.gemspec for the full version. We want to avoid including files from other gems in our project, so first we get a list of those files.
 
-<source:ruby>
+{% highlight ruby %}
 plugin_files = Dir['qu-*.gemspec'].map { |gemspec|
   eval(File.read(gemspec)).files
 }.flatten.uniq
-</source>
+{% endhighlight %}
 
 We get a list of the files for the gem, and then exclude files from our other gems.
 
-<source:ruby>
+{% highlight ruby %}
 s.files = `git ls-files`.split("\n") - plugin_files
-</source>
+{% endhighlight %}
 
 h2. Gemfile
 
 If you're using bundler for your development dependencies (which you should be), then you probably want to lock the dependencies from your gemspecs without having to redeclare them. We can easily tell bundler about all of our gemspecs.
 
-<source:ruby>
+{% highlight ruby %}
 source :rubygems
 
 gemspec :name => 'qu'
@@ -71,13 +71,13 @@ Dir['qu-*.gemspec'].each do |gemspec|
   plugin = gemspec.scan(/qu-(.*)\.gemspec/).flatten.first
   gemspec(:name => "qu-#{plugin}", :development_group => plugin)
 end
-</source>
+{% endhighlight %}
 
 h2. Rakefile
 
 Lastly, we want to automate the build process by adding @build@ and @release@ rake tasks.
 
-<source:ruby>
+{% highlight ruby %}
 desc 'Build gem into the pkg directory'
 task :build do
   FileUtils.rm_rf('pkg')
@@ -95,7 +95,7 @@ task :release => :build do
   sh "git push origin v#{Qu::VERSION}"
   sh "ls pkg/*.gem | xargs -n 1 gem push"
 end
-</source>
+{% endhighlight %}
 
 h2. Profit
 

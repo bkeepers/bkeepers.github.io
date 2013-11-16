@@ -4,7 +4,7 @@ title: "Money with precision"
 id: 4cf5b65adabe9d2c61000137
 updated: 2010-11-30T21:43:39-05:00
 date: 2008-10-18T16:26:00-04:00
-categories: 
+categories:
 - fork
 - gem
 - github
@@ -17,23 +17,23 @@ I've been working on a project that needs to store mileage reimbursement rates t
 
 But without too much suffering, I "modified the money gem":http://github.com/collectiveidea/money to take a precision (in powers of 10), which defaults to 2. It can now store amounts in any precision.
 
-<source:ruby>
+{% highlight ruby %}
 >> amount = 20.to_money + 0.505.to_money
 => #<Money @precision=3, @currency="USD", @cents=20505>
 >> amount.to_s
 => "20.505"
 >> amount.format
 => "$20.51"
-</source>
+{% endhighlight %}
 
 You can also store amounts in negative precisions, like millions:
 
-<source:ruby>
+{% highlight ruby %}
 >> amount = Money.new(50, 'USD', -6)
 >> amount.to_s
 => "50"
 >> amount.format
 => "$50000000.00"
-</source>
+{% endhighlight %}
 
 Check out our "fork of the money gem on github":http://github.com/collectiveidea/money. There are lots of other goodies in there.

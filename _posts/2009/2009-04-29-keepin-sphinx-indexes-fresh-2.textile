@@ -4,7 +4,7 @@ title: "Keepin' Sphinx Indexes Fresh"
 id: 4cf5b655dabe9d2c61000089
 updated: 2010-11-30T21:43:33-05:00
 date: 2009-04-29T21:33:00-04:00
-categories: 
+categories:
 - rails
 - search
 - sphinx
@@ -21,7 +21,7 @@ From what I can tell, delayed delta indexing makes everything Just Work(TM), and
 
 After you've setup "ThinkingSphinx"::http://ts.freelancing-gods.com/, set the @:delayed@ property to @:delta@ in your index:
 
-<source:ruby>
+{% highlight ruby %}
 class Listing < ActiveRecord::Base
   define_index do
     indexes title
@@ -31,13 +31,13 @@ class Listing < ActiveRecord::Base
     set_property :delta => :delayed
   end
 end
-</source>
+{% endhighlight %}
 
 The delayed delta support depends on delayed_job, but if you're using the gem version, it's already bundled in. I'm using delayed job for some other things in my project, so I still have it installed separately and that seems to be working just fine.
 
 delayed_job uses a table to keep track of the jobs that need run, so create a migration containing:
 
-<source:ruby>
+{% highlight ruby %}
 create_table :delayed_jobs, :force => true do |table|
    table.integer  :priority, :default => 0
    table.integer  :attempts, :default => 0
@@ -49,7 +49,7 @@ create_table :delayed_jobs, :force => true do |table|
    table.string   :locked_by
    table.timestamps
 end
-</source>
+{% endhighlight %}
 
 And lastly, all you need to do is fire up the worker process:
 

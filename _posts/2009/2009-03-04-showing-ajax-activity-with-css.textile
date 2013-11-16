@@ -4,7 +4,7 @@ title: "Showing Ajax activity with CSS"
 id: 4cf5b656dabe9d2c610000b1
 updated: 2010-11-30T21:43:34-05:00
 date: 2009-03-04T07:00:00-05:00
-categories: 
+categories:
 - ajax
 - css
 - CSS
@@ -60,7 +60,7 @@ This technique is very simple. It adds a class on the form with Javascript while
 
 First, with Javascript, add a class to the form while the Ajax request is loading. It would look something like this in Prototype:
 
-<source:javascript>
+{% highlight javascript %}
 $('my_form').observe('submit', function(event) {
   event.stop();
   this.request({
@@ -69,19 +69,19 @@ $('my_form').observe('submit', function(event) {
     onComplete: function() { this.removeClassName('loading'); }.bind(this)
   });
 });
-</source>
+{% endhighlight %}
 
 Next, wrap an element around your buttons or whatever you want to hide.
 
-<source:html>
+{% highlight html %}
 <form>
   <div class="buttons">…</div>
 </form>
-</source>
+{% endhighlight %}
 
 Lastly, there's just a little CSS to hide buttons and any elements inside them, and set the background image:
 
-<source:css>
+{% highlight css %}
 form .buttons { text-align: center; }
 form.loading .buttons {
   text-indent: -2000px;
@@ -89,6 +89,6 @@ form.loading .buttons {
   background: url(../images/loading.gif) no-repeat center center;
 }
 form.loading .buttons * { visibility: hidden; }
-</source>
+{% endhighlight %}
 
 There you have it.  It's really simple, but it's worked well.

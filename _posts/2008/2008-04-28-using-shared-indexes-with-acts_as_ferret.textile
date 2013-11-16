@@ -4,7 +4,7 @@ title: "Using shared indexes with acts_as_ferret"
 id: 4cf5b661dabe9d2c610001d8
 updated: 2010-11-30T21:43:45-05:00
 date: 2008-04-28T20:00:00-04:00
-categories: 
+categories:
 - ferret
 - rails
 - search
@@ -25,7 +25,7 @@ Ok, I'm getting to it. Grab the latest version of acts as ferret from trunk:
 
 Now, instead of defining @acts_as_ferret@ in our models, we define them all in @config/aaf.rb@
 
-<source:ruby>
+{% highlight ruby %}
 ActsAsFerret::define_index('shared',
  :models => {
    Person  => {:fields => [:first_name, :last_name, :phone, :bio]},
@@ -36,25 +36,25 @@ ActsAsFerret::define_index('shared',
    :default_fields => [:first_name, :last_name, :phone, :bio, :name, :description, :title, :body]
  }
 )
-</source>
+{% endhighlight %}
 
 This defines a new index, called "shared", and then defines the @acts_as_ferret@ configuration for each model.
 
 Now for the fun part: searching our shiny new index.
 
-<source:ruby>
+{% highlight ruby %}
 def search
   @results = ActsAsFerret.find(params[:q], 'shared')
 end
-</source>
+{% endhighlight %}
 
 This will give us one array with any models that matched the search query, ordered by rank. And for those times when we only want to search one model, we can still do that.
 
-<source:ruby>
+{% highlight ruby %}
 def search
   @people = Person.find_with_ferret(params[:q])
 end
-</source>
+{% endhighlight %}
 
 h3. How do we display the results?
 
@@ -62,11 +62,11 @@ h3. How do we display the results?
 
 To display our search results, we just render a partial for each model in the result:
 
-<source:erb>
+{% highlight erb %}
 <% @results.each do |result| %>
   <%= render :partial => "search/#{dom_class(result)}" %>
 <% end %>
-</source>
+{% endhighlight %}
 
 This will just look for a partial for each model (like @search/_person.html.erb@).
 

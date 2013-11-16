@@ -4,7 +4,7 @@ title: "Raise the roof, yo!"
 id: 4cfafdacdabe9d4a1d0000b7
 updated: 2010-12-05T23:05:09-05:00
 date: 2010-12-05T23:02:00-05:00
-categories: 
+categories:
 - ruby
 - tidbit
 excerpt: "Raise the roof with this awesome abuse of Ruby syntax."
@@ -12,7 +12,7 @@ excerpt: "Raise the roof with this awesome abuse of Ruby syntax."
 
 Check out this awesome abuse of Ruby syntax from "Don Petersen":https://gist.github.com/322146:
 
-<source:ruby>
+{% highlight ruby %}
 module Kernel
   def the(a, b)
     a.new(b)
@@ -26,7 +26,7 @@ module Kernel
     "Get your hands in the air, wave them like..."
   end
 end
- 
+
 raise the roof, yo!
 # Exception: Get your hands in the air, wave them like...
-</source>
+{% endhighlight %}

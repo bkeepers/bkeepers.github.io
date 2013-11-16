@@ -4,7 +4,7 @@ title: "Ranges include? or overlap? with Ranges"
 id: 4cf5b677dabe9d2c61000480
 updated: 2010-11-30T21:44:07-05:00
 date: 2007-02-13T18:01:00-05:00
-categories: 
+categories:
 - range
 - ruby
 excerpt: ""
@@ -14,20 +14,20 @@ excerpt: ""
 
 The past several days I've found myself repeatedly writing the following lines to check if two events are conflicting:
 
-<source:ruby>
+{% highlight ruby %}
 window = course.begin_at...course.end_at
 window.include?(event.begin_at) || window.include?(event.end_at?)
-</source>
+{% endhighlight %}
 
 It finally donned on me that all I'm really doing is checking if two ranges overlap.  What I really wanted to be doing is:
 
-<source:ruby>
+{% highlight ruby %}
   (course.begin_at...course.end_at).overlap?(event.begin_at...event.end_at)
-</source>
+{% endhighlight %}
 
 While I was at it, I decided that it only made sense that <code>Range#include?</code> should be able to take a range:
 
-<source:ruby>
+{% highlight ruby %}
 class Range
 
   def overlap?(range)
@@ -45,17 +45,17 @@ class Range
   alias_method_chain :include?, :range
 
 end
-</source>
+{% endhighlight %}
 
 *update*: thanks to Daniel Schierbeck for the better implementation of <code>overlap?</code>
 
 So now, I can do things like:
 
-<source:ruby>
+{% highlight ruby %}
 (1..5).include?(2..3)    #=> true
 (1..5).include?(4..8)    #=> false
 (1..5).overlap?(4..8)    #=> true
 (1...5).overlap?(5..10)  #=> false
-</source>
+{% endhighlight %}
 
 I love this language!

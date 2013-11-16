@@ -4,7 +4,7 @@ title: "Pusher notifications with EventMachine"
 id: 4e258a01dabe9d7285017e6b
 updated: 2011-08-30T19:31:24-04:00
 date: 2011-08-30T18:55:00-04:00
-categories: 
+categories:
 - em
 - gauges
 - pusher
@@ -30,19 +30,19 @@ It turns out our theory was wrong (we were actually hitting a "crazy bug with th
 
 h2. Redis and EventMachine to the rescue
 
-With help from "Chris Gaffney":http://twitter.com/gaffneyc, I came up with a different approach that pushes hits on a Redis list and uses a separate EventMachine process to send them to Pusher. 
+With help from "Chris Gaffney":http://twitter.com/gaffneyc, I came up with a different approach that pushes hits on a Redis list and uses a separate EventMachine process to send them to Pusher.
 
 In our Sinatra application, we just push JSON from the notification onto a list.
 
-<source:ruby>
+{% highlight ruby %}
 Gauges.redis.rpush('notifications', notification.to_json)
-</source>
+{% endhighlight %}
 
 Redis list operations are fast, even with a decent-sized blob of text. Now our app doesn't have to worry about the overhead of sending the notifications.
 
 Next we needed background process to process the Redis list and communicate with Pusher. EventMachine is well-suited for all of this IO, so we wrote this simple script:
 
-<source:ruby>
+{% highlight ruby %}
 module Gauges
   module Pusher
     def self.redis
@@ -63,7 +63,7 @@ end
 EM.run do
   Gauges::Pusher.next
 end
-</source>
+{% endhighlight %}
 
 It uses em-hiredis to connect to Redis and run a blocking left pop, which will wait until there is an item on the list and then send the notification to Pusher with @trigger_async@. It then re-schedules itself to run on the next tick, causing it to continuously loop.
 

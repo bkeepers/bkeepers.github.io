@@ -4,7 +4,7 @@ title: "How to Gemify your Rails Plugins"
 id: 4cf5b653dabe9d2c61000057
 updated: 2010-12-01T02:06:48-05:00
 date: 2009-10-05T13:33:00-04:00
-categories: 
+categories:
 excerpt: "Guide for converting your Rails plugin to a gem."
 ---
 
@@ -20,15 +20,15 @@ h3. 2. Move rake tasks to @lib/@
 
 Rails will load @tasks/*.rake@ defined in any plugins. Unfortunately, these don't get loaded from Gems.  To make your rake tasks work from a plugin, you will need to move them into the lib directory, and explicitly require them from your app's @Rakefile@:
 
-<source:ruby>
+{% highlight ruby %}
 require 'mygem/tasks'
-</source>
+{% endhighlight %}
 
 If you want your tasks to still be available when your code is installed as a plugin, you can just explicitly require the task from @task/mygem.rake@:
 
-<source:ruby>
+{% highlight ruby %}
 require File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib', 'mygem', 'tasks'))
-</source>
+{% endhighlight %}
 
 h3. 3. Move Capistrano tasks to @lib/@
 
@@ -36,23 +36,23 @@ Capistrano recipes defined at @recipes/*.rb@ in your plugin are also automatical
 
 When moving the recipes to the lib directory, we have to jump through a hoop to get Capistrano to load it properly.
 
-<source:ruby>
+{% highlight ruby %}
 Capistrano::Configuration.instance.load do
   # put cap recipes here
 end
-</source>
+{% endhighlight %}
 
 And in your @config/deploy.rb@:
 
-<source:ruby>
+{% highlight ruby %}
 require 'mygem/recipes'
-</source>
+{% endhighlight %}
 
 As with Rake tasks, if you want your recipes to still work when installed as a plugin, add the following to a file in the @recipes/@ directory of your plugin:
 
-<source:ruby>
+{% highlight ruby %}
 require File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib', 'mygem', 'recipes'))
-</source>
+{% endhighlight %}
 
 h3. 4. Generators
 

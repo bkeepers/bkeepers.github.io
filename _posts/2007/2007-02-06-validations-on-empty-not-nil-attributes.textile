@@ -4,7 +4,7 @@ title: "Validations on empty (not nil) attributes"
 id: 4cf5b679dabe9d2c610004c8
 updated: 2010-11-30T21:44:09-05:00
 date: 2007-02-06T22:57:00-05:00
-categories: 
+categories:
 - plugin
 - rails
 - validations
@@ -15,12 +15,12 @@ One of the first problems that I ran into when I started using Rails was trying 
 
 For example, here's a Person model with a validation on <code>:social_security_number</code>, an optional attribute:
 
-<source:ruby>
+{% highlight ruby %}
 class Person < ActiveRecord::Base
   validates_format_of :social_security_number,
     :with => /\d{3}[-]?\d{2}[-]?\d{4}/, :allow_nil => true
 end
-</source>
+{% endhighlight %}
 
 When this model is used in a form, validation will fail if the social security number field is left blank, even though <code>:allow_nil</code> is set to true.
 
@@ -28,7 +28,7 @@ h3. The solution
 
 It turns out that the solution is really simple: a <code>before_validation</code> callback that just goes through and sets all the empty attributes to nil.
 
-<source:ruby>
+{% highlight ruby %}
 class ActiveRecord::Base
   before_validation :clear_empty_attrs
 protected
@@ -38,7 +38,7 @@ protected
     end
   end
 end
-</source>
+{% endhighlight %}
 
 I've packaged this little nugget into a plugin.  Install it and go on your merry validating way.
 

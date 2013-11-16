@@ -4,7 +4,7 @@ title: "Varying validations"
 id: 4cf5b671dabe9d2c610003aa
 updated: 2010-11-30T21:44:01-05:00
 date: 2007-05-10T00:03:00-04:00
-categories: 
+categories:
 - rails
 - validations
 excerpt: ""
@@ -20,7 +20,7 @@ h3. Fatter model
 
 My first thought is to just add it to the model by declaring "sets" of validations:
 
-<source:ruby>
+{% highlight ruby %}
 class User < ActiveRecord::Base
   validations :terms do
     validates_acceptance_of :terms, :privacy_policy
@@ -29,21 +29,21 @@ class User < ActiveRecord::Base
     validates_confirmation_of :password
   end
 end
-</source>
+{% endhighlight %}
 
 And then when you save a model, you can specify what sets to use.
 
-<source:ruby>
+{% highlight ruby %}
 user = User.new(params[:user])
 user.valid?(:terms, :confirmation)
 user.save(:terms, :conditions)
 # or all, possibly the default
 user.save(:all)
-</source>
+{% endhighlight %}
 
 I could also see this being used for a wizard like interface.
 
-<source:ruby>
+{% highlight ruby %}
 class Foo < ActiveRecord::Base
   validations :step1 do
     validates_presence_of :name, :stuff, :thing
@@ -56,13 +56,13 @@ class Foo < ActiveRecord::Base
     validates_confirmation_of :password
   end
 end
-</source>
+{% endhighlight %}
 
 h3. But that shouldn't really be part of the model
 
 You're right, these problems really don't concern the model. The model shouldn't care were it is being created from, or if it's being created in one step or five.  So what about going to the opposite end of the spectrum, and completely removing validations from the model and declaring them in observer-like classes.
 
-<source:ruby>
+{% highlight ruby %}
 class TermsValidation < ActiveRecord::Validations
   validate :user, :supplier
 
@@ -74,11 +74,11 @@ class Step1Validation < ActiveRecord::Validations
 
   validates_presence_of :name, :stuff, :thing
 end
-</source>
+{% endhighlight %}
 
 And then in the controller:
 
-<source:ruby>
+{% highlight ruby %}
 class UsersController < ActionController::Base
   validate :terms
 
@@ -91,11 +91,11 @@ class UsersController < ActionController::Base
     end
   end
 end
-</source>
+{% endhighlight %}
 
 If we had an action that required different validations than the rest of the controller, we could also use  similar approach to what we talked about earlier and declare what validations to use:
 
-<source:ruby>
+{% highlight ruby %}
 class UsersController < ActionController::Base
   validate :terms
 
@@ -104,7 +104,7 @@ class UsersController < ActionController::Base
     user.update_attributes(params[:user], :step2)
   end
 end
-</source>
+{% endhighlight %}
 
 I like this better, because choosing what set of validations to use does seem more like a controller decision, and not model one, but it is the model's responsibility to make sure that the data is "valid", so how do we reconcile this?
 

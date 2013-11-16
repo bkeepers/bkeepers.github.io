@@ -4,7 +4,7 @@ title: "Active Resource in practice"
 id: 4cf5b653dabe9d2c61000034
 updated: 2010-12-01T01:50:46-05:00
 date: 2010-02-16T09:36:00-05:00
-categories: 
+categories:
 - activeresource
 - rails
 excerpt: "Active Resource in theory is great. Active Resource in practice is…lacking."
@@ -22,7 +22,7 @@ Pivotal Tracker uses a token for authentication and looks for it in a header cal
 
 So the trick is to define a base class for all of your models to inherit from, and in that override how Active Resource treats headers.
 
-<source:ruby>
+{% highlight ruby %}
 module PivotalTracker
   class Resource < ActiveResource::Base
     Resource.site = "https://www.pivotaltracker.com/services/v3"
@@ -45,14 +45,14 @@ module PivotalTracker
   end
 end
 
-</source>
+{% endhighlight %}
 
 Now we can set our token once and subclasses will inherit it:
 
-<source:ruby>
+{% highlight ruby %}
 PivotalTracker::Resource.headers['X-TrackerToken'] = "mytoken"
 projects = PivotalTracker::Project.find(:all)
-</source>
+{% endhighlight %}
 
 h3. Challenge 2: "Associations"
 
@@ -60,7 +60,7 @@ I find it strange that Active Resource doesn't support associations. Rails has a
 
 So for APIs that have nested resources like Pivotal Tracker's, Active Resource forces you to hard code the parent resource id.  If you want to get the iterations for a project, then you have to set the project_id on the Iteration resource.
 
-<source:ruby>
+{% highlight ruby %}
 PROJECT_ID = 1738
 
 module PivotalTracker
@@ -68,13 +68,13 @@ module PivotalTracker
     self.prefix = "/services/v3/projects/#{PROJECT_ID}"
   end
 end
-</source>
+{% endhighlight %}
 
 This is just not a scalable solution.  I'm going to need to be able to access multiple projects in the app that I'm working on. So the Harvest gem had a really clever (and evil) solution, which I've modified a bit here.
 
 It basically involves creating an anonymous subclass of our resource, and setting the prefix just for that subclass.
 
-<source:ruby>
+{% highlight ruby %}
 module PivotalTracker
   class Project < Resource
     def iterations
@@ -84,13 +84,13 @@ module PivotalTracker
     end
   end
 end
-</source>
+{% endhighlight %}
 
 Now we can access iterations for any project.
 
-<source:ruby>
+{% highlight ruby %}
 iterations = Project.find(x).iterations.find(:all)
-</source>
+{% endhighlight %}
 
 The @#build_subclass@ method is "defined on the base resource":http://github.com/collectiveidea/pivotal_tracker/blob/master/lib/pivotal_tracker/resource.rb#L18 and just creates an anonymous subclass and copies some settings that don't inherit.
 
