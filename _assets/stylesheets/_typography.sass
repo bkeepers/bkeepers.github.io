@@ -101,16 +101,16 @@ a
     color: #000
 
     &:hover
-      color: $blue
+      color: lighten($link-color, 10%)
 
 p a, p a:visited
   line-height: inherit
 
 ins
   text-decoration: none
-  color: #000
-  border-bottom: 1px dotted #ccc
+  color: darken($text-color, 10%)
+  border-bottom: 1px dotted #ddd
 
 del
-  color: #999
+  color: lighten($text-color, 10%)
   text-shadow: none
