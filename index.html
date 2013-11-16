@@ -3,11 +3,22 @@ layout: default
 title: Your New Jekyll Site
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
+{% for post in site.posts %}
+  <article class="summary">
+    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    <div class="excerpt">
+      {{ post.excerpt }}
+    </div>
+    <div class="meta">
+      <span class="tags">
+        {% for category in post.categories %}
+          {{ category }}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      </span>
+      <span class="date">{{ post.date | date: '%B %e, %Y' }}</span>
+    </div>
+  </article>
+
+{% endfor %}
+
+<p class="buttons"><a href="/blog/archives" class="button">View Archives »</a></p>
