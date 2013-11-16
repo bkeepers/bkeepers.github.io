@@ -1,4 +1,5 @@
 name: opensoul.org
+url: http://opensoul.org
 markdown: redcarpet
 pygments: true
 copyright: 2006 - 2013
