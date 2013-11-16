@@ -1,0 +1,59 @@
+---
+layout: post
+title: "delayed_job 2.0"
+id: 4cf5b652dabe9d2c6100001f
+updated: 2010-12-01T02:23:14-05:00
+date: 2010-04-03T19:28:00-04:00
+categories: 
+- delayed_job
+- gem
+- popular
+- ruby
+excerpt: "Everyone's favorite background queue, now with more sparkle."
+---
+
+I've pushed out the "delayed_job 2.0 gem":http://rubygems.org/gems/delayed_job from the "Collective Idea":http://github.com/collectiveidea fork on GitHub. See the "changelog":http://wiki.github.com/collectiveidea/delayed_job/changelog for a summary of changes, or "see the full list changes":http://github.com/collectiveidea/delayed_job/compare/v1.8.5...v2.0.0.
+
+h3. Multiple Backends
+
+One of the most significant changes was adding support for multiple backends.  You can now use Active Record, MongoMapper, or DataMapper as backends for your job queue. See the "README":http://github.com/collectiveidea/delayed_job/blob/master/README.textile for more info.
+
+h3. Benchmarks
+
+The Active Record backend in delayed_job 2.0 is much faster (6x in the benchmarks I ran), primarily due to "reversing the priority column and adding an index":http://github.com/collectiveidea/delayed_job/commit/c743446a31fe5683544b78e9bf86dec371923b38. Here are benchmarks for running 10,000 simple jobs on my laptop:
+
+<pre>
+                      user     system      total        real
+delayed_job 1.8.5 195.670000  14.020000  209.690000 (230.887172)
+delayed_job 2.0    36.200000   0.940000  37.140000  ( 39.959233)
+</pre>
+
+While we're looking at benchmarks, here is how the current backends compare:
+
+<pre>
+                     user     system      total        real
+active_record      36.200000   0.940000  37.140000 ( 39.959233)
+mongo_mapper       69.270000   3.220000  72.490000 ( 90.783220)
+data_mapper       255.620000   2.880000 258.500000 (275.550383)
+</pre>
+
+I have not done anything to optimize the mongo_mapper or data_mapper backend, so performance patches would be appreciated.
+
+h3. Upgrading
+
+To take full advantage of the Active Record performance improvements, you'll want to add an index:
+
+<source:ruby>
+add_index :delayed_jobs, [:priority, :run_at], :name => 'delayed_jobs_priority'
+</source>
+
+The only other issue that most people will run into is that all of the configuration options have been moved to @Delayed::Worker@. Here's how to change the options now:
+
+<source:ruby>
+Delayed::Worker.destroy_failed_jobs = false   # Delayed::Job.destroy_failed_jobs = false
+Delayed::Worker.max_attempts = 3              # Delayed::Job.const_set("MAX_ATTEMPTS", 3)
+Delayed::Worker.max_run_time = 5.minutes      # Delayed::Job.const_set("MAX_RUN_TIME", 5.minutes)
+Delayed::Worker.sleep_delay = 60              # Delayed::Worker.const_set("SLEEP", 60)
+</source>
+
+Feel free to post any comments or questions "on the mailing list":http://groups.google.com/group/delayed_job.

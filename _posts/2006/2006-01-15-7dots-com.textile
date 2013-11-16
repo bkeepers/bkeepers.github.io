@@ -1,0 +1,19 @@
+---
+layout: post
+title: "7dots.com"
+id: 4cf5b684dabe9d2c6100072c
+updated: 2010-12-06T18:39:25-05:00
+date: 2006-01-15T22:26:00-05:00
+categories: 
+excerpt: ""
+---
+
+In December, <a href="http://theparagon.com">Aaron</a> and <a href="http://ifstatement.blogspot.com">Dan</a> asked me to help with <a href="http://www.7dots.com">7dots.com</a>. It will be a web-based password manager. Specifically, they want me to help with security and administration. I jumped at the offer for several reasons.
+
+This is a great opportunity to work with talented people. Whether the project is successful or not, it will be great learning opportunity, and I firmly believe that there is no one better to learn from than your peers.
+
+I'm fascinated by Ruby and I'm very curious to follow the development lifecycle of a rails application. I don't care if all the talk about it being 10 times faster is actually true. I do care if it allows the developer to focus on the business problem and not the language or framework limitations. If it makes web development enjoyable—while being productive—then it has accomplished what few other languages and frameworks have.
+
+7dots also presented numerous technical challanges. For example, we want to give each user their own subdomain when the sign up for an account (e.g. brandon.7dots.com). By itself, this isn't a huge challange, but it is in combination with SSL. In our initial conversation I told Aaron and Dan that it is impossible to do name-based virtual hosting inside of SSL (without the user getting certificate warnings). Well, a little searching revealed that it is actually possible with wildcard SSL certificates.
+
+We're planning on launching in March, so we have a lot of work to do.  We have a <a href="http://blog.7dots.com/">blog</a> set up where we'll be detailing our experiences.

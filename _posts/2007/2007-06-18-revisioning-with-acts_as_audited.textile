@@ -1,0 +1,64 @@
+---
+layout: post
+title: "Revisioning with acts_as_audited"
+id: 4cf5b66fdabe9d2c61000395
+updated: 2010-11-30T21:43:59-05:00
+date: 2007-06-18T14:21:00-04:00
+categories: 
+- acts_as_audited
+- plugin
+- rails
+- ruby
+excerpt: ""
+---
+
+When I first created "acts_as_audited":/2006/7/21/acts_as_audited over a year ago, I intended to add versioning/revisioning capabilities, but found I never really had a need.  Well, it just so happened that I finally had a need on an app that we are working on.  So, acts_as_audited now allows you to revert back to previous revisions.
+
+You can get all the revisions of a model:
+
+<source:ruby>
+article.revisions.each |revision|
+  puts revision.class   #=> Article
+  puts revision.version #=> 7, 6, 5, 4...
+end
+</source>
+
+or a specific revision:
+
+<source:ruby>
+revision = article.revision(5)
+puts revision.title     #=> "Old Title"
+</source>
+
+or the previous revision.  Reverting is as simple as saving a revision:
+
+<source:ruby>
+previous = article.revision(:previous)
+previous.save           # revert to previous revision
+</source>
+
+See the "original post":/2006/7/21/acts_as_audited for more details about installing and using the plugin.
+
+h3. How is this different from acts_as_versioned?
+
+I've never used acts_as_versioned<sup><a href="#acts_as_versioned">1</a></sup> (because I've never had a need to do versioning), but I do know that it has a few annoying limitations: 1) it requires a separate table (and model) for each model that you want to version, and 2) it saves every attribute, even if it's not changed.
+
+acts_as_audited already stories all the changes (and only the changes) in one table, so adding versioning was rather trivial.  Revisions are created by walking backward through the audits, collecting the changes, and returning an instance of the model.
+
+h3. Upgrading
+
+To use the versioning support, you must add a version field in the audits table:
+
+<source:ruby>
+add_column :audits, :version, :integer, :default => 0
+</source>
+
+Note: if you already have audit records, the version field will have to be initialized.
+
+h3. Feedback
+
+This code is fairly specific to what I needed, so if you're using it, I would love to hear how it is working for you. Suggestions and patches welcome.
+
+<ol class="footnotes">
+  <li id="acts_as_versioned">acts_as_audited was actually one of the first plugins that I wrote, so I looked at the best code I could find as an example for writing a plugin, which happened to be acts_as_versioned.  Kudos to technoweenie.</li>
+</ol>

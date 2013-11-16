@@ -1,0 +1,39 @@
+---
+layout: post
+title: "Round floats to the nearest X"
+id: 4cf5b66cdabe9d2c610002f5
+updated: 2010-11-30T21:43:56-05:00
+date: 2007-07-18T11:37:00-04:00
+categories: 
+- core_ext
+- float
+- ruby
+excerpt: ""
+---
+
+For those pesky times when whole numbers just won't cut it, but you only want some precision.
+
+<source:ruby>
+7.7.round(0.5)   #=> 7.5
+7.95.round(0.5)  #=> 8
+8.2.round(1.5)   #=> 7.5
+8.3.round(1.5)   #=> 9
+</source>
+
+The magic, courtesy of "Daniel Morrison":http://daniel.collectiveidea.com/blog:
+
+<source:ruby>
+class Float
+  def round(round_to = 1.0)
+    mod = self % round_to
+    rounded = self - mod + (mod >= round_to/2.0 ? round_to : 0)
+    rounded % 1 == 0 ? rounded.to_i : rounded
+  end
+end
+</source>
+
+Note that do to some quirks with Ruby's handling of floats, you won't get what you expect in some situations:
+
+<source:ruby>
+3.5.round(0.2)   #=> 3.4, instead of 3.6
+</source>

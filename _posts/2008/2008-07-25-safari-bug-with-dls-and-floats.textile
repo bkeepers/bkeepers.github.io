@@ -1,0 +1,52 @@
+---
+layout: post
+title: "Safari bug with DLs and floats"
+id: 4cf5b65fdabe9d2c61000183
+updated: 2010-11-30T21:43:43-05:00
+date: 2008-07-25T10:35:00-04:00
+categories: 
+- browser
+- bug
+- css
+- CSS
+- html
+- markup
+- safari
+excerpt: ""
+---
+
+I came across a weird Safari bug today and couldn't find any other mention of it on the interwebs.  Here's the CSS and HTML to reproduce it:
+
+<source:css>
+dt {
+  width: 200px;
+  float: left;
+}
+dd {
+  margin: 0 0 0 200px;
+}
+dd p {
+  float: left;
+}
+</source>
+
+<source:html>
+<dl>
+  <dt>term</dt>
+  <dd>
+      <p>p1</p>
+      <p>p2</p>
+      <p>p3</p>
+  </dd>
+</dl>
+</source>
+
+!/assets/2008/7/25/with_float_1.jpg (With Float)!
+
+What's happening is that safari is adding a right margin to the @dd@, even though it is explicitly set to 0. Removing either the @float: left@ from the @dt@, or @position: overflow@ from the @dd@ (which is used to clear the floats) makes the right margin go away. Very odd.
+
+!/assets/2008/7/25/without_float.jpg (Without Float)!
+
+My ultimate solution was just to add a @div@ inside the @dd@ that set @overflow:hidden@ to clear the floats.
+
+!/assets/2008/7/25/solution_1.jpg (Solution)!
