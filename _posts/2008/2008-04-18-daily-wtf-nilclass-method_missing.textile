@@ -9,6 +9,7 @@ categories:
 - nil
 - ruby
 - wtf
+alias: /blog/archives/2008/04/18/daily-wtf-nilclass-method_missing
 ---
 
 bq. With great power comes great responsibility.

@@ -8,6 +8,7 @@ categories:
 - collectiveidea
 - css
 - design
+alias: /blog/archives/2007/04/16/collective-idea-gets-a-face-lift
 ---
 
 After months of good intentions^"1":#good-intentions^, we finally launched our "new website":http://collectiveidea.com today.

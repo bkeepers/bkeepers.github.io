@@ -6,6 +6,7 @@ updated: 2010-11-30T21:43:45-05:00
 date: 2008-05-19T17:09:00-04:00
 categories:
 - collectiveidea
+alias: /blog/archives/2008/05/19/collective-idea-welcomes-brian-ryckbost
 ---
 
 "Collective Idea":http://collectiveidea.com would like to welcome "Brian Ryckbost":http://www.ryckbost.com/. Brian started as our first intern 9 months ago, and, even after putting up with crap from "Daniel":http://daniel.collectiveidea.com/blog and me, joins us today as a full-time employee. Congratulations, Brian, on graduating from intern to employee; you were the best intern we ever had!

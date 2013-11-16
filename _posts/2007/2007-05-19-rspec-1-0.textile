@@ -7,6 +7,7 @@ date: 2007-05-19T02:09:00-04:00
 categories:
 - rspec
 - ruby
+alias: /blog/archives/2007/05/19/rspec-1-0
 ---
 
 I am hanging out in the lobby of our hotel at RailsConf as David Chelimsky and Aslak Hellesøy are releasing "RSpec 1.0":http://rspec.rubyforge.org.  Congrats to them and everyone else involved with the project!

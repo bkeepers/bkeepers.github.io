@@ -9,6 +9,7 @@ categories:
 - gauges
 - pusher
 - redis
+alias: /blog/archives/2011/08/30/pusher-notifications-with-eventmachine
 ---
 
 "Gaug.es":http://gaug.es has been a fun exercise in building an app to scale from the start.  "John Nunemaker previously posted about our quest":http://railstips.org/blog/archives/2011/05/04/eventmachine-and-passenger/ to send live updates to the browser without slowing down the request cycle.

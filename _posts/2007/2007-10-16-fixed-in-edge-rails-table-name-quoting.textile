@@ -9,6 +9,7 @@ categories:
 - edge
 - rails
 - sql
+alias: /blog/archives/2007/10/16/fixed-in-edge-rails-table-name-quoting
 ---
 
 One of more "annoying ActiveRecord bugs":http://dev.rubyonrails.org/ticket/4593 has finally been "fixed in edge rails":http://dev.rubyonrails.org/changeset/7932 after 2 years.  Table names in SQL queries are now properly escaped.

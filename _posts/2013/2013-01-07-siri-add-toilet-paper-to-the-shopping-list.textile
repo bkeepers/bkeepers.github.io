@@ -7,6 +7,7 @@ date: 2013-01-07T09:00:00-05:00
 categories:
 - app
 - mac
+alias: /blog/archives/2013/01/07/siri-add-toilet-paper-to-the-shopping-list
 ---
 
 The Reminders app on iOS and Mac has quickly become one of my favorite apps, mostly due to its integration with Siri and the ability to share lists with my wife.

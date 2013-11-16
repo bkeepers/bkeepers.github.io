@@ -8,6 +8,7 @@ categories:
 - core_ext
 - float
 - ruby
+alias: /blog/archives/2007/07/18/round-floats-to-the-nearest-x
 ---
 
 For those pesky times when whole numbers just won't cut it, but you only want some precision.

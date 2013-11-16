@@ -11,6 +11,7 @@ categories:
 - israel
 - observation
 - sharing
+alias: /blog/archives/2007/08/09/sharing-is-backing-up
 ---
 
 In my usual fashion, I put iTunes on shuffle after checking my email and headed for the shower. I had just finished brushing my teeth when the music quit mid-track.  "Weird, it hasn't done that since before I upgraded to 2GB of RAM", I murmured.  I went to inspect and found that my Mac was frozen solid. "Even more strange…not even the spinning beach-ball of death." After a hard reset, I was left with a blank gray screen. I knew it couldn't be good.

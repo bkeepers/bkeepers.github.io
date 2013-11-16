@@ -8,6 +8,7 @@ categories:
 - acts_as_geocodable
 - geocoding
 - graticule
+alias: /blog/archives/2007/09/12/graticule-can-failover
 ---
 
 "Graticule":http://graticule.rubyforge.org/ has a new geocoder that simply calls other geocoders in succession until it gets a result.

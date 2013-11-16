@@ -7,6 +7,7 @@ date: 2008-03-26T23:00:00-04:00
 categories:
 - links
 - social
+alias: /blog/archives/2008/03/26/social-sites-you-should-check-out
 ---
 
 I'm not a fan of social networking sites in general, but there are two that I have found really useful.

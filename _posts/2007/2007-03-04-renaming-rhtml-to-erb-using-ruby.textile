@@ -8,6 +8,7 @@ categories:
 - rails
 - ruby
 - subversion
+alias: /blog/archives/2007/03/04/renaming-rhtml-to-erb-using-ruby
 ---
 
 Even though Rails isn't "dropping support for <code>.rhtml</code> in favor of <code>.erb</code>":http://dev.rubyonrails.org/changeset/6178 for a while, it doesn't hurt to switch now (if you're using edge Rails).

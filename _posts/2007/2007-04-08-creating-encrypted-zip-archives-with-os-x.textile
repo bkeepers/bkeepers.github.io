@@ -10,6 +10,7 @@ categories:
 - popular
 - security
 - zip
+alias: /blog/archives/2007/04/08/creating-encrypted-zip-archives-with-os-x
 ---
 
 Sadly, OS X +Tiger+ doesn't come with a way to create or open encrypted Zip archives, even from the command line (-hopefully this will change with Leopard- +if you have Leopard then you can skip the MacPorts part and just use the command at the end+).  The man pages for zip say that it supports it, but when you pass the <code>-e</code> or <code>-P</code> option, it complains:

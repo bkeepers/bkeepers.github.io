@@ -8,6 +8,7 @@ categories:
 - rails
 - tidbit
 - windows
+alias: /blog/archives/2010/02/08/passenger-and-browser-testing-in-virtual-machines
 ---
 
 If you're running Passenger in development, here is how to make Windows running in a virtual machine connect to your app in Passenger.

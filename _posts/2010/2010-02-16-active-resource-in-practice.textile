@@ -7,6 +7,7 @@ date: 2010-02-16T09:36:00-05:00
 categories:
 - activeresource
 - rails
+alias: /blog/archives/2010/02/16/active-resource-in-practice
 ---
 
 I'm working on app to integrate "Pivotal Tracker":http://pivotaltracker.com and "Harvest":http://getharvest.com. There's a great "ruby wrapper around Harvest's API":http://github.com/aiaio/harvest, but there isn't a decent Ruby wrapper for "Tracker's v3 API":http://www.pivotaltracker.com/help/api?version=v3, so I thought I would just build one as I needed it.

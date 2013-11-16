@@ -6,6 +6,7 @@ updated: 2012-07-25T13:02:31-04:00
 date: 2012-05-16T08:00:00-04:00
 categories:
 - talk
+alias: /blog/archives/2012/05/16/the-plight-of-pinocchio
 ---
 
 JavaScript is no longer a toy language. Many of our applications can't function without it. If we are going to use JavaScript to do real things, we need to treat it like a real language, adopting the same practices we use with real languages.

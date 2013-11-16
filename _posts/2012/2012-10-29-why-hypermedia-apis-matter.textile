@@ -6,6 +6,7 @@ updated: 2012-10-29T09:36:16-04:00
 date: 2012-10-29T09:00:00-04:00
 categories:
 - api
+alias: /blog/archives/2012/10/29/why-hypermedia-apis-matter
 ---
 
 You have probably heard recent ramblings about _Hypermedia APIs_, or "HATEOAS":http://en.wikipedia.org/wiki/HATEOAS, and you completely ignored it because it doesn't seem to matter. Well, I am here to tell you why it matters. _Hypermedia APIs_ are all about building APIs that allow clients to adapt to changes.

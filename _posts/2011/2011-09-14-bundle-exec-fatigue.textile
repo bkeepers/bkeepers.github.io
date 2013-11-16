@@ -7,6 +7,7 @@ date: 2011-09-14T13:54:00-04:00
 categories:
 - bundler
 - git
+alias: /blog/archives/2011/09/14/bundle-exec-fatigue
 ---
 
 Tired of typing @bundle exec rake@? Me too. I even aliased it to @bx@, but that still breaks autocomplete and annoys me in subtle ways. So this week I finally remedied that situation, and thought I would share my setup since I haven't seen anyone else with as nice of a setup.

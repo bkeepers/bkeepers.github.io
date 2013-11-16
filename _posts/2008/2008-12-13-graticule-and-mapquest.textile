@@ -9,6 +9,7 @@ categories:
 - graticule
 - mapquest
 - ruby
+alias: /blog/archives/2008/12/13/graticule-and-mapquest
 ---
 
 MapQuest has sent out several emails about their current geocoding API being discontinued. Here is the latest:

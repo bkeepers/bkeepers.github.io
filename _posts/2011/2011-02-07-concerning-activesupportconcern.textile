@@ -8,6 +8,7 @@ categories:
 - activesupport
 - popular
 - rails
+alias: /blog/archives/2011/02/07/concerning-activesupportconcern
 ---
 
 I "pushed some changes to MongoMapper":https://github.com/jnunemaker/mongomapper/commit/00bba859b1f68e4c112e485a2d348995699ca79c that replace the custom plugin system with "@ActiveSupport::Concern@":https://github.com/rails/rails/blob/master/activesupport/lib/active_support/concern.rb. @ActiveSupport::Concern@ has been around for a while, but it's capabilities are not widely known.

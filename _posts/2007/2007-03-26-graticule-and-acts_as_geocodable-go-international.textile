@@ -10,6 +10,7 @@ categories:
 - collectiveidea
 - geocoding
 - graticule
+alias: /blog/archives/2007/03/26/graticule-and-acts_as_geocodable-go-international
 ---
 
 The single biggest request that I've gotten for "Graticule":http://opensoul.org/2006/10/31/announcing-graticule-geocoding-api and "acts_as_geocodable":http://opensoul.org/2007/2/13/geocoding-as-easy-as-1-2 has been for international support. So, for those outside the US (50% that read this blog according to google analytics), I have a present for you.

@@ -8,6 +8,7 @@ categories:
 - observation
 - popular
 - talk
+alias: /blog/archives/2011/02/28/the-world-runs-on-bad-software
 ---
 
 The world runs on bad software. There are billions of lines of poorly structured, overly verbose, untested code.  But, *a lot of people are doing amazing things and making insane amounts of money from bad software*.

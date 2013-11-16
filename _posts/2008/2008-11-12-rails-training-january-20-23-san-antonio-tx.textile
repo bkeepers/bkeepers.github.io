@@ -8,6 +8,7 @@ categories:
 - collectiveidea
 - rails
 - training
+alias: /blog/archives/2008/11/12/rails-training-january-20-23-san-antonio-tx
 ---
 
 <div class="figure"><img src="http://opensoul.org/assets/2008/11/12/venue_san_antonio.jpg" alt="San Antonio, Texas" style="width:100%" /></div>

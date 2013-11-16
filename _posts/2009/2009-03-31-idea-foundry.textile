@@ -9,6 +9,7 @@ categories:
 - jquery
 - rails
 - training
+alias: /blog/archives/2009/03/31/idea-foundry
 ---
 
 Last week we launched "Idea Foundry":http://ideafoundry.info, the latest edition of our awesome training.  We announced several great classes, including "Advanced Rails":http://ideafoundry.info/advanced-rails and "jQuery":http://ideafoundry.info/jquery.

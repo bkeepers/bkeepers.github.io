@@ -8,6 +8,7 @@ categories:
 - collectiveidea
 - rails
 - training
+alias: /blog/archives/2007/11/15/ruby-on-rails-2-0-training-in-san-francisco-nov-26-29
 ---
 
 I will be leading "another":/2007/7/18/ruby-on-rails-training 4 day Ruby on Rails course in San Francisco on November 26-29. Since "Rails 2.0 is almost out":http://blog.rubyonrails.org/2007/11/9/rails-2-0-release-candidate-1 (and may be by the end of the month), the training will be based on Rails 2.0, including the wonderful world of resources.

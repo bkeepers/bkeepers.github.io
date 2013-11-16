@@ -5,6 +5,7 @@ id: 4cf5b685dabe9d2c6100073e
 updated: 2010-11-30T21:44:21-05:00
 date: 2005-10-22T20:37:00-04:00
 categories:
+alias: /blog/archives/2005/10/22/requirements-for-a-website-platform
 ---
 
 <p>I've struggled for a long time to find a blogging and wiki package that fits my needs. It seems that there are plenty of packages out there that are intended for small, single user blogs, and several packages aimed at large community websites.  The problem is finding one that fits a smaller website that is more than a blog, but not a community portal.  For the time being, I've settled on <a href="http://www.wordpress.org">WordPress</a>.  It's nowhere near ideal, but it will work for now.</p>

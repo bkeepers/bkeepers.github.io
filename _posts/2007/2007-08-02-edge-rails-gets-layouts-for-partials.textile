@@ -9,6 +9,7 @@ categories:
 - layouts
 - partials
 - rails
+alias: /blog/archives/2007/08/02/edge-rails-gets-layouts-for-partials
 ---
 
 Edge Rails picked up a new feature today we've often longed for at Collective Idea. "Partials can have a layout":http://dev.rubyonrails.org/changeset/7261:

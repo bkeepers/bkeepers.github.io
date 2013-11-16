@@ -8,6 +8,7 @@ categories:
 - github
 - ruby
 - talk
+alias: /blog/archives/2013/04/29/ruby-at-github
 ---
 
 Here's the video and slides for my recent talk "Ruby at GitHub" at "MountainWest RubyConf":http://mtnwestrubyconf.org/.

@@ -8,6 +8,7 @@ categories:
 - rspec
 - ruby
 - testing
+alias: /blog/archives/2007/04/18/rspec-model-should-be_valid
 ---
 
 One of the things I always check when spec'ing is that the model that I just created is valid.

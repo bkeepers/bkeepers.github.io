@@ -10,6 +10,7 @@ categories:
 - github
 - money
 - ruby
+alias: /blog/archives/2008/10/18/money-with-precision
 ---
 
 I've been working on a project that needs to store mileage reimbursement rates to the nearest tenth of a cent. We were using the @money@ gem, which stores money amounts in cents, so it looked like it was going to be a pain.

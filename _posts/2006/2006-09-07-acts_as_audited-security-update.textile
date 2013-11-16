@@ -10,6 +10,7 @@ categories:
 - rails
 - ruby
 - security
+alias: /blog/archives/2006/09/07/acts_as_audited-security-update
 ---
 
 <p>Thanks to Michael Schuerig for pointing out that malicious users could unassociate your audit records due to the use of <code>has_many</code> in <a href="http://opensoul.org/2006/07/21/acts_as_audited/">acts_as_audited</a>. <code>has_many :audits</code> creates an attribute accessor called <code>audit_ids</code> on the model objects that you declare acts_as_audited, which could allow users to pass an array of ids that would overwrite the actual audit records.</p>

@@ -8,6 +8,7 @@ categories:
 - ferret
 - rails
 - search
+alias: /blog/archives/2008/04/28/using-shared-indexes-with-acts_as_ferret
 ---
 
 So by now we all know how to do wicked-cool search with "acts_as_ferret":http://projects.jkraemer.net/acts_as_ferret/. (If not, the "RailsEnvy guys can lend a hand":http://www.railsenvy.com/2007/2/19/acts-as-ferret-tutorial, but the tutorial is a little outdated for the latest trunk version of acts_as_ferret. Just replace @#find_by_contents@ with @#find_with_ferret@ and you should be good.)

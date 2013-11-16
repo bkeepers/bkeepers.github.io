@@ -9,6 +9,7 @@ categories:
 - local
 - plagiarism
 - yahoo
+alias: /blog/archives/2006/12/16/plagiarism-friday
 ---
 
 Plagiarism isn't a topic that comes up very often (or ever), but yesterday I ran across it several times in unrelated circumstances.

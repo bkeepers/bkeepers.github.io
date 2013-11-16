@@ -9,6 +9,7 @@ categories:
 - html
 - opinion
 - popular
+alias: /blog/archives/2011/11/30/haml-the-unforgivable-sin
 ---
 
 "I posted this on twitter":http://twitter.com/#!/bkeepers/status/139360663851106305: "there are many mistakes I'm willing to forgive, but using haml is not one of them". Many people replied asking me to explain why I don't like it, so here it goes…

@@ -7,6 +7,7 @@ date: 2012-05-30T11:00:00-04:00
 categories:
 - gem
 - ruby
+alias: /blog/archives/2012/05/30/releasing-multiple-gems-from-one-repository
 ---
 
 When I released "qu":https://github.com/bkeepers/qu, I wanted to split the various backends and exception handlers into multiple gems so each gem had the proper dependencies without enforcing all of the dependencies on everyone all the time.

@@ -7,6 +7,7 @@ date: 2009-01-08T08:38:00-05:00
 categories:
 - community
 - open source
+alias: /blog/archives/2009/01/08/acknowledge-contributions
 ---
 
 If you have ever released useful code into the open source wilderness, then you know that at some point, you get patches or contributions that are well-intentioned but don't quite meet your standards. Either the quality is not what it should be or they use a different style than the one you prefer. Often people make contributions that you just don't want to incorporate, but If the contribution is valuable, there are two ways of going about resolving this.

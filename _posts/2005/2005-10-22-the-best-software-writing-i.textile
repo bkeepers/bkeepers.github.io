@@ -6,6 +6,7 @@ updated: 2010-11-30T21:44:21-05:00
 date: 2005-10-22T20:56:00-04:00
 categories:
 - bookreview
+alias: /blog/archives/2005/10/22/the-best-software-writing-i
 ---
 
 Rating: <code>****</code>

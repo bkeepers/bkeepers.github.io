@@ -8,6 +8,7 @@ categories:
 - error
 - ruby
 - rubygems
+alias: /blog/archives/2008/06/22/obscure-rubygems-error
 ---
 
 A week or so ago my @gem@ command magically stopped working. Honestly, it was magic! There is no other logical explanation. The fetcher's socket marshaled all over, spewing this error:

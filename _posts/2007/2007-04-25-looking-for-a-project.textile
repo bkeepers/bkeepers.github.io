@@ -8,6 +8,7 @@ categories:
 - collectiveidea
 - hire
 - rails
+alias: /blog/archives/2007/04/25/looking-for-a-project
 ---
 
 A larger project that "we":http://collectiveidea.com were planning to be working on for the next couple months got put on hold due to funding, so we have some time available.  Shoot me an email if you have a cool project and you need proven Rails developers. Otherwise, we're just going to have to take the week off and you don't want to be responsible for the result of that.

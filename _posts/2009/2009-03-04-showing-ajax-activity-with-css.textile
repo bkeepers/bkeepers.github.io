@@ -9,6 +9,7 @@ categories:
 - css
 - CSS
 - javascript
+alias: /blog/archives/2009/03/04/showing-ajax-activity-with-css
 ---
 
 You know when you have a form that submits with Ajax, and you want to show some type of activity on the form?  There's several ways to do this, like including a hidden image that you show and hide while there is activity, or inserting and removing an image with javascript.  These all just feel too dirty to me.  I don't want to have to change the markup just because the form is submitting via Ajax.

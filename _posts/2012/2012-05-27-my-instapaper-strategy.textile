@@ -6,6 +6,7 @@ updated: 2012-05-27T12:33:36-04:00
 date: 2012-05-27T12:25:00-04:00
 categories:
 - tips
+alias: /blog/archives/2012/05/27/my-instapaper-strategy
 ---
 
 *tl;dr*: I have found a strategy that leads to Instapaper bliss: sort articles by oldest-first.

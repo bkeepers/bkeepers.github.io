@@ -6,6 +6,7 @@ updated: 2011-07-23T10:55:09-04:00
 date: 2011-07-20T23:05:00-04:00
 categories:
 - rails
+alias: /blog/archives/2011/07/20/rails-31-hackfest
 ---
 
 Rails 3.1 is just around the corner, and this weekend Rubyists will be convening in real and virtual worlds for the "Rails 3.1 hackfest":http://weblog.rubyonrails.org/2011/7/14/rails-3-1-hackfest.

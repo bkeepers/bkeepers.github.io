@@ -7,6 +7,7 @@ date: 2006-07-13T18:59:00-04:00
 categories:
 - plugin
 - rails
+alias: /blog/archives/2006/07/13/acts_as_billable-plugin-through-rails
 ---
 
 <p>At <a href="http://collectiveidea.com">Collective Idea</a>, we're developing <a href="http://eventable.com">several</a> <a href="http://7dots.com">apps</a> that take credit card payments. (We've previously <a href="http://blog.7dots.com/articles/2006/05/24/credit-card-hell-merchant-accounts-payment-gateways-and-apis" title="Credit Card Hell: Merchant Accounts, Payment Gateways and APIs">blogged</a> <a href="http://blog.7dots.com/articles/2006/07/01/choosing-a-merchant-provider" title="Chosing a Merchant Provider">about</a> sorting through this whole mine-field of credit card processing.) One of the ideas we came up with early on was using the magic of Ruby and Rails plugins to extract the billing and credit card processing logic into something that is reusable.</p>

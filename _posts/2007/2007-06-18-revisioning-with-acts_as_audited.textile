@@ -9,6 +9,7 @@ categories:
 - plugin
 - rails
 - ruby
+alias: /blog/archives/2007/06/18/revisioning-with-acts_as_audited
 ---
 
 When I first created "acts_as_audited":/2006/7/21/acts_as_audited over a year ago, I intended to add versioning/revisioning capabilities, but found I never really had a need.  Well, it just so happened that I finally had a need on an app that we are working on.  So, acts_as_audited now allows you to revert back to previous revisions.

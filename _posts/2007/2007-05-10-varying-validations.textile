@@ -7,6 +7,7 @@ date: 2007-05-10T00:03:00-04:00
 categories:
 - rails
 - validations
+alias: /blog/archives/2007/05/10/varying-validations
 ---
 
 As great as Rails validations are, they've left much to be desired for me. I find that I often want to only do partial validations, or use a different set of validations on my model based on who is creating it (admins should be trusted more than visitors) or where it is being created (creating a user on the command line or automated process shouldn't require acceptance of terms or confirmation of a password).

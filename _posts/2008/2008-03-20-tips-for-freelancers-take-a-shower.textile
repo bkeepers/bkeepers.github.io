@@ -10,6 +10,7 @@ categories:
 - hygiene
 - productivity
 - tips
+alias: /blog/archives/2008/03/20/tips-for-freelancers-take-a-shower
 ---
 
 _While we're not exactly freelancers at "Collective Idea":http://collectiveidea.com, we operate very much like freelancers; we are contractors that work mostly out of our homes on client projects. We share many of the benefits that freelancers enjoy, and experience many of the same challenges. In the coming days and maybe weeks, I will try to post some of the things I've found helpful from personal experience._

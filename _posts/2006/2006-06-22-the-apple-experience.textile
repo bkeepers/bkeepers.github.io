@@ -6,6 +6,7 @@ updated: 2010-11-30T21:44:19-05:00
 date: 2006-06-22T02:13:00-04:00
 categories:
 - mac
+alias: /blog/archives/2006/06/22/the-apple-experience
 ---
 
 <p>At the end of March, I paid $2499 plus tax to became one of Apple's beta-testers. In exchange, I got a first-generation MacBook Pro.</p>

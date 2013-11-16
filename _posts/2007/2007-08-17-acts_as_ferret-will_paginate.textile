@@ -11,6 +11,7 @@ categories:
 - rails
 - ruby
 - search
+alias: /blog/archives/2007/08/17/acts_as_ferret-will_paginate
 ---
 
 +*Update:* This is not needed with recent versions of acts_as_ferret.+

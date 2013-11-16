@@ -7,6 +7,7 @@ date: 2011-06-02T23:01:00-04:00
 categories:
 - book
 - hwfip
+alias: /blog/archives/2011/06/02/give-honest-sincere-appreciation
 ---
 
 p(note). This post is part of "my weekly study of _How To Win Friends and Influence People_":/blog/archives/2011/05/27/how-to-win-friends/.

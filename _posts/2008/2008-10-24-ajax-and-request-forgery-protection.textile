@@ -8,6 +8,7 @@ categories:
 - csrf
 - javascript
 - rails
+alias: /blog/archives/2008/10/24/ajax-and-request-forgery-protection
 ---
 
 Rails 2.1 added protection for "cross-site request forgery":http://en.wikipedia.org/wiki/Cross-site_request_forgery by embedding a session-based token in generated forms. Rails will not process a POSTed request without the token. For the most part, this protection is transparent. But occasionally, an Ajax request request gets left out in the cold without a token.

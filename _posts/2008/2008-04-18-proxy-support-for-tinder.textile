@@ -9,6 +9,7 @@ categories:
 - proxy
 - ruby
 - tinder
+alias: /blog/archives/2008/04/18/proxy-support-for-tinder
 ---
 
 I got to feel the pain of being stuck behind an HTTP proxy this week while working at Xerox's office in El Segundo, CA. It sucked. You don't realize how much you use the internet until you can't get to half of the sites that you use every day.

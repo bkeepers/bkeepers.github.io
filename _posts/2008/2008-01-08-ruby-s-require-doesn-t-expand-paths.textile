@@ -8,6 +8,7 @@ categories:
 - popular
 - rspec
 - ruby
+alias: /blog/archives/2008/01/08/ruby-s-require-doesn-t-expand-paths
 ---
 
 I ran across this issue "several weeks ago":http://rubyforge.org/pipermail/rspec-devel/2007-November/004235.html, but it came up at the latest "Grand Rapids Ruby Group":http://gr-ruby.org/ meeting, so I thought I would share it.

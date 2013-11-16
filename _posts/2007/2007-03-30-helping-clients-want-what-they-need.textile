@@ -7,6 +7,7 @@ date: 2007-03-30T00:35:00-04:00
 categories:
 - clients
 - consulting
+alias: /blog/archives/2007/03/30/helping-clients-want-what-they-need
 ---
 
 In his keynote at RailsConf 2006, Martin Fowler said something to the effect of, "Clients will tell you what they want, it's your job to figure out what they need." I've been thinking a lot about this lately, and I decided that there is more to it than that.

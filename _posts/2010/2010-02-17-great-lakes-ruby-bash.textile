@@ -8,6 +8,7 @@ categories:
 - conference
 - local
 - ruby
+alias: /blog/archives/2010/02/17/great-lakes-ruby-bash
 ---
 
 The "Great Lakes Ruby Bash":http://greatlakesrubybash.com/ is now accepting talk proposals.  The conference will be held on Michigan State University's campus in East Lansing, Michigan on Saturday, April 17th.

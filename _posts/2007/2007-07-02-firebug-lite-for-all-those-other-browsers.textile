@@ -9,6 +9,7 @@ categories:
 - javascript
 - plugin
 - rails
+alias: /blog/archives/2007/07/02/firebug-lite-for-all-those-other-browsers
 ---
 
 If for some reason you use one of those other browsers, then you don't have the pleasure of using "Firebug":http://www.getfirebug.com/ for debugging (Safari nuts, I know you secretly debug your javascript and stylesheets with Firebug in Firefox, despite it "not looking like a Mac app").

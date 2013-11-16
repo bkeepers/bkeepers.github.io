@@ -6,6 +6,7 @@ updated: 2010-11-30T21:44:19-05:00
 date: 2006-06-26T08:07:00-04:00
 categories:
 - development
+alias: /blog/archives/2006/06/26/user-interface-first
 ---
 
 <p>This morning I listened to the <a href="http://www.web20show.com/">Web 2.0 Show</a> podcast with <a href="http://www.web20show.com/articles/2006/01/16/web-2-0-show-episode-9-jason-fried">Jason Fried</a> from January 16, 2006.  I've heard Jason Fried talk before and I think he has some great things to say. One interesting point that Jason makes is that 37signals always designs the user interface of applications first. This is a problem that we have struggled with at <a href="http://collectiveidea.com">Collective Idea</a>.</p>

@@ -7,6 +7,7 @@ date: 2007-02-13T18:01:00-05:00
 categories:
 - range
 - ruby
+alias: /blog/archives/2007/02/13/ranges-include-or-overlap-with-ranges
 ---
 
 *Update*: This has been "added to Rails' active_support":http://dev.rubyonrails.org/changeset/7800.

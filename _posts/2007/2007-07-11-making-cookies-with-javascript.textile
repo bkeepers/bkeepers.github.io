@@ -9,6 +9,7 @@ categories:
 - cookies
 - javascript
 - prototype
+alias: /blog/archives/2007/07/11/making-cookies-with-javascript
 ---
 
 {% highlight javascript %}

@@ -8,6 +8,7 @@ categories:
 - array
 - core_ext
 - ruby
+alias: /blog/archives/2008/06/19/splitting-hairs-and-arrays
 ---
 
 Am I just dumb, or is it really a lot harder than it should be to break an array up into a set number of chunks?

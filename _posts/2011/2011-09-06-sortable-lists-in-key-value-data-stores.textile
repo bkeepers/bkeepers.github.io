@@ -8,6 +8,7 @@ categories:
 - database
 - git
 - toystore
+alias: /blog/archives/2011/09/06/sortable-lists-in-key-value-data-stores
 ---
 
 p(feedreader). Note: This post contains illustrations that may not appear properly in your feed reader. You may want to view the original post in your browser
