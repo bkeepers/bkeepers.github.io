@@ -10,7 +10,7 @@
 
 body
   padding-top: 3em
-  background: $background-color url(images/noise.png) fixed
+  background: $background-color asset-url("noise.png") fixed
   -webkit-font-smoothing: antialiased
 
   font: 14px/21px Helvetica, Arial, sans-serif
@@ -91,7 +91,7 @@ article
         content: ""
         width: 16px
         height: 16px
-        background: url(images/icons.png) no-repeat -80px 0
+        background: asset-url("icons.png") no-repeat -80px 0
 
       &:hover:before
         background-position: -80px -16px
@@ -108,7 +108,7 @@ article
         content: ""
         width: 16px
         height: 16px
-        background: url(images/icons.png) no-repeat -96px 0
+        background: asset-url("icons.png") no-repeat -96px 0
 
 .summary
 
@@ -126,7 +126,7 @@ article
       width: 16px
       height: 16px
       margin: 3px 0 -3px 8px
-      background: url(images/icons.png) no-repeat
+      background: asset-url("icons.png") no-repeat
 
     &.twitter
       &:after
