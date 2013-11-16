@@ -1,0 +1,263 @@
+@import compass
+
+/* === #Basic Styles === */
+
+.inset
+  @include border-radius(5px)
+  @include box-shadow(inset -1px -1px 0px rgba(255,255,255,0.8), inset 1px 1px 0px rgba(200,200,200,0.3))
+  background: #eee
+  background: rgba(200,200,200,0.2)
+
+body
+  padding-top: 3em
+  background: $background-color url(images/noise.png) fixed
+  -webkit-font-smoothing: antialiased
+
+  font: 14px/21px Helvetica, Arial, sans-serif
+  color: $text-color
+  -webkit-font-smoothing: antialiased /* Fix for webkit rendering */
+  -webkit-text-size-adjust: 100%
+
+  &:before
+    content: "opensoul.org"
+    display: block
+    position: fixed
+    top: 40%
+    left: 0
+    right: 0
+    text-align: center
+    font-family: Lobster, Georgia, serif
+    font-size: 220px
+    color: #f1f1f1
+    color: rgba(200,200,200,0)
+    @include text-shadow(1px 1px 0px rgba(255,255,255,0.2), -1px -1px 0px rgba(100,100,100,0.03))
+    @include transform(rotate(-6deg))
+
+header
+  margin-bottom: 1em
+
+  h1
+
+    a
+      font-family: Lobster, Georgia, serif
+      font-size: 36px
+
+article
+
+  img
+    padding: 10px
+    @extend .inset
+    max-width: 100%
+    display: inline-block
+    margin-right: 10px
+
+  img+img
+    margin-right: 0
+
+  h1
+    font-size: 40px
+
+    a, a:hover, a:visited
+      color: $text-color
+
+  .meta
+    padding: 0.5em 2em
+    font-size: 0.7em
+    margin-bottom: 3em
+    @extend .inset
+    position: relative
+    font-weight: bold
+    text-transform: uppercase
+    text-shadow: 0px 1px $background-color
+    color: darken(desaturate($blue, 95%), 10%)
+
+    a
+      @extend a.dimmed
+
+    .date
+      display: block
+      text-align: center
+
+    .comments
+      position: absolute
+      right: 10px
+      display: inline-block
+      width: 45px
+
+      &:before
+        display: block
+        float: left
+        margin-right: 8px
+        content: ""
+        width: 16px
+        height: 16px
+        background: url(images/icons.png) no-repeat -80px 0
+
+      &:hover:before
+        background-position: -80px -16px
+
+    .tags
+      @extend .nomobile
+      position: absolute
+      left: 10px
+
+      &:before
+        display: block
+        float: left
+        margin-right: 8px
+        content: ""
+        width: 16px
+        height: 16px
+        background: url(images/icons.png) no-repeat -96px 0
+
+.summary
+
+  h1
+    font-weight: bold !important
+    font-size: 36px
+    line-height: 34px
+    margin-bottom: 8px
+
+#links
+  a
+    &:after
+      content: " "
+      display: inline-block
+      width: 16px
+      height: 16px
+      margin: 3px 0 -3px 8px
+      background: url(images/icons.png) no-repeat
+
+    &.twitter
+      &:after
+        background-position: 0 0
+      &:hover:after
+        background-position: 0 -16px
+
+    &.github
+      &:after
+        background-position: -16px 0
+      &:hover:after
+        background-position: -16px -16px
+
+    &.bookmarks
+      &:after
+        background-position: -32px 0
+      &:hover:after
+        background-position: -32px -16px
+
+    &.photos
+      &:after
+        background-position: -48px 0
+      &:hover:after
+        background-position: -48px -16px
+
+    &.subscribe
+      &:after
+        background-position: -64px 0
+      &:hover:after
+        background-position: -64px -16px
+
+
+#about
+  font-size: 0.9em
+
+  p
+    padding-left: 3em
+
+  li
+    a
+      @extend a.dimmed
+
+  section
+    margin-bottom: 3em
+
+  h1
+    font-size: 24px
+
+
+#copyright
+  text-align: center
+  font-size: 0.85em
+  color: darken(desaturate($blue, 95%), 30%)
+  margin-bottom: 2em
+
+/* === #Images === */
+
+img.scale-with-grid
+  max-width: 100%
+  height: auto
+
+/* === #Buttons === */
+
+a.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"]
+  background: #eee /* Old browsers */
+  background: #eee -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%) /* FF3.6+ */
+  background: #eee -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))) /* Chrome,Safari4+ */
+  background: #eee -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%) /* Chrome10+,Safari5.1+ */
+  background: #eee -o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%) /* Opera11.10+ */
+  background: #eee -ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%) /* IE10+ */
+  background: #eee linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%) /* W3C */
+  border: 1px solid #aaa
+  border-top: 1px solid #ccc
+  border-left: 1px solid #ccc
+  padding: 4px 12px
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  border-radius: 3px
+  color: #444
+  display: inline-block
+  font-size: 11px
+  font-weight: bold
+  text-decoration: none
+  text-shadow: 0 1px rgba(255, 255, 255, .75)
+  cursor: pointer
+  margin-bottom: 20px
+  line-height: 21px
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif
+
+a.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover
+  color: #222
+  background: #ddd /* Old browsers */
+  background: #ddd -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%) /* FF3.6+ */
+  background: #ddd -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.3)), color-stop(100%,rgba(0,0,0,.3))) /* Chrome,Safari4+ */
+  background: #ddd -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%) /* Chrome10+,Safari5.1+ */
+  background: #ddd -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%) /* Opera11.10+ */
+  background: #ddd -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%) /* IE10+ */
+  background: #ddd linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%) /* W3C */
+  border: 1px solid #888
+  border-top: 1px solid #aaa
+  border-left: 1px solid #aaa
+
+a.button:active,
+button:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active
+  border: 1px solid #666
+  background: #ccc /* Old browsers */
+  background: #ccc -moz-linear-gradient(top, rgba(255,255,255,.35) 0%, rgba(10,10,10,.4) 100%) /* FF3.6+ */
+  background: #ccc -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.35)), color-stop(100%,rgba(10,10,10,.4))) /* Chrome,Safari4+ */
+  background: #ccc -webkit-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%) /* Chrome10+,Safari5.1+ */
+  background: #ccc -o-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%) /* Opera11.10+ */
+  background: #ccc -ms-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%) /* IE10+ */
+  background: #ccc linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%) /* W3C */
+
+.button.full-width,
+button.full-width,
+input[type="submit"].full-width,
+input[type="reset"].full-width,
+input[type="button"].full-width
+  width: 100%
+  padding-left: 0 !important
+  padding-right: 0 !important
+  text-align: center
+

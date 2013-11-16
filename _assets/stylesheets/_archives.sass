@@ -1,0 +1,33 @@
+#years
+  text-align: center
+
+  li
+    display: inline-block
+
+    a
+      @extend .button
+
+.archives
+
+  a
+    white-space: nowrap
+    display: block
+    text-overflow: ellipsis
+    overflow: hidden
+    line-height: 2
+    margin-right: 150px
+
+  li
+    margin-bottom: 0
+    line-height: 2
+    padding: 0 1em
+    position: relative
+
+
+    &:nth-child(2n)
+      background-color: rgba(100,100,100,0.1)
+
+  .date
+    position: absolute
+    right: 1em
+    top: 0

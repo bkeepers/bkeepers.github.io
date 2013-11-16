@@ -1,44 +1,89 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200,700|Lobster' rel='stylesheet' type='text/css'>
+  {% stylesheet site %}
 
-    </head>
-    <body>
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
 
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
-          </div>
+  <!-- FIXME: {{ item.data.head }} -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">{{ site.name }}</a></h1>
+  </header>
 
-          {{ content }}
+  <div id="content">
+    {{ content }}
+  </div>
 
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Your Name<br />
-                What You Are<br />
-                you@example.com
-              </p>
-            </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/yourusername">github.com/yourusername</a><br />
-                <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
-              </p>
-            </div>
-          </div>
-        </div>
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
 
-    </body>
+      <ul id="links">
+        <li><a class="twitter" href="http://twitter.com/bkeepers">Follow me on Twitter</a></li>
+        <li><a class="github" href="http://github.com/bkeepers">Follow me on GitHub</a></li>
+        <li><a class="subscribe" href="http://feeds.feedburner.com/opensoul">Subscribe to the Feed</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>Popular Posts</h1>
+      <ul>
+      {% for post in site.label['popular'].5 %}
+        <li>{{ post | link_to_item }}</li>
+      {% endfor %}
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<footer id="copyright">
+  Copyright © {{ site.copyright }} Brandon Keepers
+</footer>
+
+<!--
+FIXME:
+{{ 'jquery.1.5' | google_javascript }}
+{{ 'jquery.form,textile,comments' | javascripts }}
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+-->
+</body>
 </html>
