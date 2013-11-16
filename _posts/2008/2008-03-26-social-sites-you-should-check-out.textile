@@ -15,7 +15,7 @@ h3. Shelfari
 
 It's not the first of it's kind, but "Shelfari":http://www.shelfari.com/ is a great site for exploring and sharing books with friends. It seems like people don't talk enough about good books that they've read (or maybe I just don't spend enough time at the bar), so Shelfari seems like a good way to follow what your friends are reading.
 
-!{width:100%}http://www.shelfari.com/img/v2/shelf2.jpg!
+<!-- Image not found: {width:100%}http://www.shelfari.com/img/v2/shelf2.jpg -->
 
 h3. Dopplr
 

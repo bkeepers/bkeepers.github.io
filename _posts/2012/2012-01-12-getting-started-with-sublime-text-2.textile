@@ -23,7 +23,7 @@ If you feel like something is missing from Sublime, then there is probably a plu
 
 To use package control, press ⌘⇧P to bring up the command palette, begin to type "install", and select "*Package Control: Install Package*". This will bring up a new palette to search for packages.  Find your packages and hit enter to install it. You can see in the status bar at the bottom that it is installing. Most packages will just work, but occasionally you might have to restart Sublime for the package to work.
 
-!/assets/4f0e0559dabe9d2e33005837/content/screen_shot_20120111_at_4.55.08_pm.png!
+{% image screen_shot_20120111_at_4.55.08_pm.png %}
 
 h2. Beat the ugly out of it
 
@@ -39,7 +39,7 @@ The syntax highlighting theme that comes with Sublime is alright, but everyone h
 
 Ok, now we can stand to look at it.
 
-!/assets/4f0df732dabe9d0233009fe8/content/screen_shot_20120111_at_3.50.09_pm.png!
+{% image screen_shot_20120111_at_3.50.09_pm.png %}
 
 h2. Opening a project
 
@@ -69,7 +69,7 @@ Sublime is extremely configurable, but the configuration is in a few different J
 
 On OS X, go to "Sublime Text 2 » Preferences".
 
-!/assets/4f0de004dabe9d6e8f000ce3/content/screen_shot_20120111_at_2.15.34_pm.png!
+{% image screen_shot_20120111_at_2.15.34_pm.png %}
 
 For each type of setting, Sublime has at least two files: defaults and custom user settings. You edit the *User* versions to specify the things you are overriding.
 
@@ -83,7 +83,7 @@ h2. ⌘p is the new ⌘t
 
 ⌘p (which is also mapped to ⌘t) brings up the Go To File palette. In addition to giving you quick access to your files, it has several features to allow you quickly jump *into* your files. After typing the file name, use *@* in the palette to jump directly to a specific method. You can also use ⌘r to bring up the palette prefaced with *@* to jump to a method in your current file.
 
-!/assets/4f0eda58dabe9d1cbb008bdd/content/screen_shot_20120112_at_8.03.54_am.png!
+{% image screen_shot_20120112_at_8.03.54_am.png %}
 
 You can also use *:* (colon) in the palette to go to a specific line number, and ^g will open the paletted prefaced with colon to jump to a line in the current file.
 

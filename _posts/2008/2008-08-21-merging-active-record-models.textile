@@ -13,7 +13,7 @@ categories:
 ---
 
 <div class="banner">
-!/assets/2008/8/21/merge.jpg (Merge)!
+<!-- Image not found: /assets/2008/8/21/merge.jpg -->
 </div>
 
 We've been working on a project that involves importing a massive amount of data from multiple sources. The data is somewhat complicated, so we occasionally end up with duplicate records that need merged together. The data is highly normalized, so there are a bunch of associations that also need merged. If you've ever done this by hand, you know how painful it can be.

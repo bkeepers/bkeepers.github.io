@@ -9,7 +9,7 @@ categories:
 - popular
 ---
 
-!/assets/4f0743bedabe9d60180023e1/content/img_5073.jpg!
+{% image img_5073.jpg %}
 
 I spent weeks searching for the ideal standup desk. I shopped around online, visited every furniture store within 10 miles no fewer than 3 times, and almost ordered a "Geek Desk":http://www.geekdesk.com/. I could not find something that was exactly what I wanted and I could not justify paying $800 or more for a desk that I did not love.
 
@@ -19,7 +19,7 @@ It turns out, the cheap option is pretty awesome.
 
 h2. Parts
 
-p(right). !/assets/4f0743bcdabe9d60180023cd/medium/img_5072.jpg!
+p(right). {% image img_5072.jpg %}
 
 * *Heavy-duty 19" shelf brackets* - These should cost $8-$10 each at the local hardware store. A set of 2 brackets claims to be able to hold 1000 pounds if properly secured, so it should be more than enough, even for extra-curricular activities (good luck).
 * *Desktop surface* - I found a local furniture outlet that sells assorted desktop surfaces for $3-$4 per foot. I picked up a 4' desktop for $16.
@@ -63,4 +63,4 @@ h2. Happy ending
 
 I am thrilled with how the desk turned out. It is extremely stable and takes up considerably less space than "my previous desk":http://cl.ly/1g3V320P2p12162G3c2V.
 
-!/assets/4f0746dddabe9d682f002115/content/img_5070.jpg!
+{% image img_5070.jpg %}

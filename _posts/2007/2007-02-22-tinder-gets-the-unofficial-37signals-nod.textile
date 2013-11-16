@@ -17,6 +17,6 @@ categories:
 
 From the "Campfire":http://www.campfirenow.com/ site:
 
-!/assets/2007/2/22/tinder_on_campfirenowcom.png (Tinder on campfirenow.com)!
+<!-- Image not found: /assets/2007/2/22/tinder_on_campfirenowcom.png -->
 
 That's pretty exciting.  I'll blog in a couple days with more details on the project that I wrote Tinder for.

@@ -27,7 +27,7 @@ To ease the pain of debugging Javascript in those other browsers, I've thrown to
 
 Just hit F12 (Ctrl+F12 on Mac) to open Firebug Lite on any page, or jump the focus directly to the command line with Ctrl+Shift+L (or ⌘+Shift+L on Mac).
 
-!/assets/2007/7/2/firebug_in_safari.png!
+<!-- Image not found: /assets/2007/7/2/firebug_in_safari.png -->
 
 <pre>
 http://source.collectiveidea.com/public/rails/plugins/firebug

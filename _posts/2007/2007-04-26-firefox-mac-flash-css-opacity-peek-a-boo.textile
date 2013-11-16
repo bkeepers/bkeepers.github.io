@@ -19,11 +19,11 @@ I had a popup menu that used CSS @opacity@ to make the menu semi-transparent.  I
 
 Here are some screenshots that demonstrate the bug.  The first is how it looks in Safari, the second demonstrates the bug in Firefox, and the third shows Firefox if I remove the @opacity@ attribute from CSS.
 
-p=. !/assets/2007/4/26/menu_safari.jpg (Menu in Safari)!
+p=. <!-- Image not found: /assets/2007/4/26/menu_safari.jpg -->
 
-p=. !/assets/2007/4/26/menu_firefix_bug.jpg (Menu in Firefox showing bug)!
+p=. <!-- Image not found: /assets/2007/4/26/menu_firefix_bug.jpg -->
 
-p=. !/assets/2007/4/26/menu_firefox.jpg (Menu in Firfox)!
+p=. <!-- Image not found: /assets/2007/4/26/menu_firefox.jpg -->
 
 The solution: for now, I'll just have to live without semi-transparent menus (but they looked so good).
 

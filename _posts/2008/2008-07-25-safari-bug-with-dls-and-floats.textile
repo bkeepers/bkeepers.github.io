@@ -40,12 +40,12 @@ dd p {
 </dl>
 {% endhighlight %}
 
-!/assets/2008/7/25/with_float_1.jpg (With Float)!
+<!-- Image not found: /assets/2008/7/25/with_float_1.jpg -->
 
 What's happening is that safari is adding a right margin to the @dd@, even though it is explicitly set to 0. Removing either the @float: left@ from the @dt@, or @position: overflow@ from the @dd@ (which is used to clear the floats) makes the right margin go away. Very odd.
 
-!/assets/2008/7/25/without_float.jpg (Without Float)!
+<!-- Image not found: /assets/2008/7/25/without_float.jpg -->
 
 My ultimate solution was just to add a @div@ inside the @dd@ that set @overflow:hidden@ to clear the floats.
 
-!/assets/2008/7/25/solution_1.jpg (Solution)!
+<!-- Image not found: /assets/2008/7/25/solution_1.jpg -->

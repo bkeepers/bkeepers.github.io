@@ -18,7 +18,7 @@ It's not what you think...
 
 A couple months ago, I stumbled upon "Democracy Player":http://www.getdemocracy.com/, which calls itself "the free and open source internet TV platform".  It's an unique video player that puts a bit of a spin on the traditional podcast/"vlog":http://en.wikipedia.org/wiki/Vlog application.
 
-!http://www.getdemocracy.com/images/mac-front-page-screenshots/00.jpg!
+<!-- Image not found: http://www.getdemocracy.com/images/mac-front-page-screenshots/00.jpg -->
 
 In addition to being able to subscribe to any podcast feed that includes video, Democracy features a channel guide that is somewhat iTunes-esque, allowing you to browse and search video "channels".
 

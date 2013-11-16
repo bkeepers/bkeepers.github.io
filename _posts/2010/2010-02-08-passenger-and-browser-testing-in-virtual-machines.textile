@@ -13,7 +13,7 @@ categories:
 If you're running Passenger in development, here is how to make Windows running in a virtual machine connect to your app in Passenger.
 
 # Boot up the VM and open up the Windows command prompt (go to "Start->Run…", enter "cmd" and press enter)
-# Type @ipconfig@ to see the network configuration.  Take note of the "Default Gateway" address. !http://opensoul.org/assets/2010/2/9/ipconfig.png!
+# Type @ipconfig@ to see the network configuration.  Take note of the "Default Gateway" address. <!-- Image not found: http://opensoul.org/assets/2010/2/9/ipconfig.png -->
 # Navigate to C:\WINDOWS\system32\drivers\etc and edit the @hosts@ file.  Add a line with the gateway address pointing to your app's domain (you can even list multiple on the same line).
   <pre>172.16.248.2    awesomeapp.local otherawesomeapp.local</pre>
 # Open up a browser in the VM and type in the address.

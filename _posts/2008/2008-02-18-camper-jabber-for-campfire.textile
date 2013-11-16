@@ -13,6 +13,6 @@ categories:
 ---
 
 Jared Kuolt has put together a cool little app that "lets you use Jabber with campfire":http://superjared.com/entry/new-projects/#campfire_to_jabber.  The app simply uses "Tinder":http://tinder.rubyforge.org to listen in on a campfire room, forwarding messages on to a Jabber account, and posting any messages it receives from Jabber.  Very cool.
-!/assets/2008/2/16/adium_1.png (Adium chat window)!
+<!-- Image not found: /assets/2008/2/16/adium_1.png -->
 
-!/assets/2008/2/16/campfire_1.png (Campfire chat window)!
+<!-- Image not found: /assets/2008/2/16/campfire_1.png -->
