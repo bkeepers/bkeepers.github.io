@@ -9,7 +9,6 @@ categories:
 - cookies
 - javascript
 - prototype
-excerpt: ""
 ---
 
 {% highlight javascript %}

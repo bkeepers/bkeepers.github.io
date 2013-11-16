@@ -11,7 +11,6 @@ categories:
 - rails
 - respond_to
 - with_action
-excerpt: ""
 ---
 
 With an app that I'm working on, the client wants to have several buttons for doing different actions on every form: "Save", "Save & Continue Editing", "Save & Add Another", and "Cancel". HTML only allows you to have one action defined per form (instead of per button), and Rails pretty much assumes that if you submit a request to a specific action, you expect to execute it.

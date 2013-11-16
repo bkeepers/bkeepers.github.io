@@ -10,7 +10,6 @@ categories:
 - popular
 - ruby
 - tinder
-excerpt: ""
 ---
 
 *update*: "Tinder can listen":/2007/1/27/tinder-listening-is-just-as-important-as-speaking

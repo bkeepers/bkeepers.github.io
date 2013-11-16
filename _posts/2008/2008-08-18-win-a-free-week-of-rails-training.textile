@@ -4,14 +4,13 @@ title: "Win a free week of Rails training"
 id: 4cf5b65ddabe9d2c61000174
 updated: 2010-11-30T21:43:41-05:00
 date: 2008-08-18T09:00:00-04:00
-categories: 
+categories:
 - collectiveidea
 - free
 - rails
 - sessions
 - survey
 - training
-excerpt: ""
 ---
 
 Want to learn Rails but can't scrounge up the cash for training? You can win a free spot at either our "Rails session starting next Monday, August 25":http://sessions.collectiveidea.com/ruby-on-rails, or to an advanced Rails session whenever it's announced.

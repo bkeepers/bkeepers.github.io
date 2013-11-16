@@ -8,7 +8,6 @@ categories:
 - rspec
 - ruby
 - testing
-excerpt: ""
 ---
 
 One of the things I always check when spec'ing is that the model that I just created is valid.

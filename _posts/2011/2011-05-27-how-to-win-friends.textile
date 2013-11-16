@@ -4,11 +4,9 @@ title: "How to Win Friends&#x2026;"
 id: 4dd71c65dabe9d554d0023dd
 updated: 2011-06-10T13:47:56-04:00
 date: 2011-05-27T00:31:00-04:00
-categories: 
+categories:
 - books
 - hwfip
-excerpt: "I finally read the classic "_How to Win Friends and Influence People_":http://www.amazon.com/gp/product/1439167346/ref=as_li_qf_sp_asin_tl?ie=UTF8&tag=opensoulorg0d-20&linkCode=as2&camp=217145&creative=399353&creativeASIN=1439167346 over vacation a few weeks ago and thoroughly enjoyed it.
-"
 ---
 
 I finally read the classic "_How to Win Friends and Influence People_":http://www.amazon.com/gp/product/1439167346/ref=as_li_qf_sp_asin_tl?ie=UTF8&tag=opensoulorg0d-20&linkCode=as2&camp=217145&creative=399353&creativeASIN=1439167346 over vacation a few weeks ago. Despite numerous recommendations, I've avoided it for many years because it sounded manipulative and sleazy.

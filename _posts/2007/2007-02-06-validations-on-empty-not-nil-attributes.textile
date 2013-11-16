@@ -8,7 +8,6 @@ categories:
 - plugin
 - rails
 - validations
-excerpt: ""
 ---
 
 One of the first problems that I ran into when I started using Rails was trying to validate the format of attributes that aren't required.  Most of the validations have an <code>:allow_nil</code> option, but the problem is that when a form is submitted with empty form fields, those fields are empty strings instead of nil values. So the validation fails because the attribute is not nil.

@@ -4,10 +4,9 @@ title: "Why I Hate Microformats"
 id: 4cf5b682dabe9d2c610006ea
 updated: 2012-06-05T10:33:40-04:00
 date: 2006-07-12T18:30:00-04:00
-categories: 
+categories:
 - microformats
 - xhtml
-excerpt: ""
 ---
 
 <blockquote><a title="Why I Hate Microformats" href="http://www.oreillynet.com/onjava/blog/2006/07/why_i_hate_microformats.html">Robert Cooper</a>: They are a hack to get around a problem that is going away VERY shortly.</blockquote>

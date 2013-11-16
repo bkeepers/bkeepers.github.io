@@ -4,10 +4,9 @@ title: "What's wrong with Cucumber"
 id: 4eaffa7bdabe9d2be6010f76
 updated: 2012-05-28T11:17:09-04:00
 date: 2012-05-28T09:00:00-04:00
-categories: 
+categories:
 - cucumber
 - opinion
-excerpt: "What's wrong with cucumber? YOU; you don't understand _why_ to use it, _when_ to use it or _how_ to use it. Don't worry, though, it's not entirely your fault. Many people are responsible for encouraging you to use it in asinine ways and advertising it as a magical medical formula that will cure all your woes."
 ---
 
 _This post has sat as a draft on my computer for well over a year now. I always intended to finish it, but am beyond caring.  So I'm just going to publish it in its current form in hopes that it sparks some interesting conversation and avoids beating a dead horse._

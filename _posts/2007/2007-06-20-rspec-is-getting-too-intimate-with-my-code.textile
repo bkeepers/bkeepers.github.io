@@ -9,7 +9,6 @@ categories:
 - rspec
 - ruby
 - testing
-excerpt: ""
 ---
 
 The theory is that tests are supposed to be agnostic of the implementation. This leads to less brittle tests and actually tests the outcome (or behavior).

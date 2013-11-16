@@ -4,10 +4,9 @@ title: "Using GPG on OS X"
 id: 4cf5b682dabe9d2c610006c7
 updated: 2010-11-30T21:44:18-05:00
 date: 2006-07-17T20:52:00-04:00
-categories: 
+categories:
 - gpg
 - mac
-excerpt: ""
 ---
 
 <p><em>I've been posting a lot about GPG and public key encryption lately, so I thought I should at least give some pointers for how to set it up on the Mac.  This post is based off of directions written up by <a href="http://daniel.collectiveidea.com/">Daniel Morrison</a> and <a href="http://integernoun.com/">Matt Slack</a>, so kudos to them. </em></p>

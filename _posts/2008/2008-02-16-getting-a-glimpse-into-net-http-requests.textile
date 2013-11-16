@@ -9,7 +9,6 @@ categories:
 - http
 - ruby
 - stdlib
-excerpt: ""
 ---
 
 While trying to debug some HTTP code, I wanted to be able to see what the actual HTTP request looked before it was sent.  So, I added a @#to_s@ method:

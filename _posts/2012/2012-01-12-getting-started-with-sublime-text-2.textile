@@ -7,7 +7,6 @@ date: 2012-01-12T07:00:00-05:00
 categories:
 - editor
 - popular
-excerpt: "I recently switched to "Sublime Text 2":http://www.sublimetext.com/. As it goes with many of the finer things in life, Sublime is an acquired taste. Here are a few tips that made it easier for me to get into it."
 ---
 
 I recently switched to "Sublime Text 2":http://www.sublimetext.com/ from TextMate. I did not love it at first. As it goes with many of the finer things in life, Sublime is an acquired taste. It was not until I paired with "a coworker":http://twitter.com/jnunemaker for a few days that I really started to see its power. I have been using it since and have not looked back.

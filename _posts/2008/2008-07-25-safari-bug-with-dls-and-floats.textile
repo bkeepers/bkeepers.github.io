@@ -12,7 +12,6 @@ categories:
 - html
 - markup
 - safari
-excerpt: ""
 ---
 
 I came across a weird Safari bug today and couldn't find any other mention of it on the interwebs.  Here's the CSS and HTML to reproduce it:

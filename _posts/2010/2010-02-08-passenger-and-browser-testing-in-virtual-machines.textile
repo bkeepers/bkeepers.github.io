@@ -4,11 +4,10 @@ title: "Passenger and browser testing in virtual machines"
 id: 4cf5b653dabe9d2c61000038
 updated: 2010-12-01T01:54:21-05:00
 date: 2010-02-08T23:33:00-05:00
-categories: 
+categories:
 - rails
 - tidbit
 - windows
-excerpt: "Connect to your local application from a virtual machine."
 ---
 
 If you're running Passenger in development, here is how to make Windows running in a virtual machine connect to your app in Passenger.

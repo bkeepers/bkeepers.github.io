@@ -8,7 +8,6 @@ categories:
 - ferret
 - ruby
 - search
-excerpt: ""
 ---
 
 I love "ferret":http://ferret.davebalmain.com/trac/ (the ruby port of Lucene, not the fuzzy little creatures, you sicko). But something I fight on every project is that ferret turns into a bear when you try to get it to do partial matches, like @"ferr"@ matching @"ferret"@ and @"ferrari"@.

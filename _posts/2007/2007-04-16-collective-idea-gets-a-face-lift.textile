@@ -4,11 +4,10 @@ title: "Collective Idea gets a face lift"
 id: 4cf5b673dabe9d2c61000414
 updated: 2010-11-30T21:44:03-05:00
 date: 2007-04-16T08:24:00-04:00
-categories: 
+categories:
 - collectiveidea
 - css
 - design
-excerpt: ""
 ---
 
 After months of good intentions^"1":#good-intentions^, we finally launched our "new website":http://collectiveidea.com today.

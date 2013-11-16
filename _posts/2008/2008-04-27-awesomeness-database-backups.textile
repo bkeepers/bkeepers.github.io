@@ -4,14 +4,13 @@ title: "Awesomeness: database backups"
 id: 4cf5b661dabe9d2c610001e0
 updated: 2010-11-30T21:43:45-05:00
 date: 2008-04-27T18:09:00-04:00
-categories: 
+categories:
 - backup
 - capistrano
 - collectiveidea
 - database
 - migration
 - rails
-excerpt: ""
 ---
 
 At "Collective Idea":http://collectiveidea.com, we have a plugin called "awesomeness":http://github.com/collectiveidea/awesomeness that is…well, awesome. It's a collection of things that we use in almost every project that aren't generic enough to go into individual plugins (although some things may have evolved enough to be worthy of plugin status).

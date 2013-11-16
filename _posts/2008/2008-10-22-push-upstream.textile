@@ -4,11 +4,10 @@ title: "Push Upstream"
 id: 4cf5b65adabe9d2c61000130
 updated: 2010-11-30T21:43:38-05:00
 date: 2008-10-22T00:18:00-04:00
-categories: 
+categories:
 - community
 - patch
 - ruby
-excerpt: ""
 ---
 
 Scenario 1: You're half way through a really productive day on a wicked new feature for an app and everything is going smoothly. Then, from out of nowhere…SMACK! A nasty bug in a library you depend on splatters right in your face. "Seriously, nobody has come across this before?" you mumble.

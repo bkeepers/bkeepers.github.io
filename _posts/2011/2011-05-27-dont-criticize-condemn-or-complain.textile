@@ -4,10 +4,9 @@ title: "Don't criticize, condemn or complain"
 id: 4dd71d46dabe9d580300052a
 updated: 2011-06-10T13:48:52-04:00
 date: 2011-05-27T00:41:00-04:00
-categories: 
+categories:
 - book
 - hwfip
-excerpt: "It doesn't solve the problem and only makes the people you're criticizing have to justify themselves."
 ---
 
 p(note). This post is part of "my weekly study of _How To Win Friends and Influence People_":/blog/archives/2011/05/27/how-to-win-friends/.

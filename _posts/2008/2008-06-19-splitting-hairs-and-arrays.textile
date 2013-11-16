@@ -8,7 +8,6 @@ categories:
 - array
 - core_ext
 - ruby
-excerpt: ""
 ---
 
 Am I just dumb, or is it really a lot harder than it should be to break an array up into a set number of chunks?

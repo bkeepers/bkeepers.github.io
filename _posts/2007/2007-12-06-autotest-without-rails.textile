@@ -9,7 +9,6 @@ categories:
 - gem
 - ruby
 - testing
-excerpt: ""
 ---
 
 Autotest is a gem (well, technically ZenTest is a gem that includes autotest). But seriously, autotest is a gem! I can't write code without it anymore. It has become my coding security blanket.

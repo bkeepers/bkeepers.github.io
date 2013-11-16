@@ -4,9 +4,8 @@ title: "abbr vs. acronym"
 id: 4cf5b680dabe9d2c610005cd
 updated: 2010-11-30T21:44:16-05:00
 date: 2006-09-12T13:52:00-04:00
-categories: 
+categories:
 - xhtml
-excerpt: ""
 ---
 
 <p>Thanks to <a href="http://daniel.collectiveidea.com/">Daniel</a> for clearing this up for me:</p>

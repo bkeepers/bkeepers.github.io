@@ -4,11 +4,9 @@ title: "The $40 Standup Desk"
 id: 4f04b311dabe9d6b760016a2
 updated: 2012-03-02T17:35:31-05:00
 date: 2012-01-09T10:00:00-05:00
-categories: 
+categories:
 - dyi
 - popular
-excerpt: "I searched for weeks for the ideal standup desk. I could not find something that was either exactly what I wanted or reasonably priced, and I could not justify paying $800 or more for a desk that I did not love. So I built my own.
-"
 ---
 
 !/assets/4f0743bedabe9d60180023e1/content/img_5073.jpg!
@@ -44,7 +42,7 @@ h3. Finding the studs
 Finding the studs was my biggest challenge. My house has this crazy cement board instead of typical drywall that is in most houses, so a stud finder does not work. Which means I had to guess. Studs are typically placed 16" apart (or 24" in some houses) on the center, meaning it is 16" from the center of one stud to the center of the other.
 
 Outlets are attached to studs when the house is built. Find an outlet on the wall and on either side of it is likely a stud. The first stud will _likely_ be in one of the corners. Measure from the corner of the wall to the outlet, and the distance between the corner to one side of the outlet should be about 3/4" off of a multiple of 16. If that is not the case, then try measuring from the other corner. If neither of them are, then just try drilling a hole with the smallest drillbit you can find on either side of the outlet to see if you can find the stud. Once you find one stud, it is pretty easy to find the rest.
- 
+
 From there, measure 16" and try drilling another small hole. If you hit another stud, then your studs are 16" apart. If not, then try 24". I ended up with about 6 tiny holes in my wall just trying to find the studs. They are easily filled and painted over.
 
 h3. Getting the height right

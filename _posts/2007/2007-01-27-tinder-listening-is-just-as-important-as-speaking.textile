@@ -11,7 +11,6 @@ categories:
 - gem
 - ruby
 - tinder
-excerpt: ""
 ---
 
 I just released an update to "Tinder":http://opensoul.org/2006/12/8/tinder-campfire-api, the "really unofficial":http://www.37signals.com/svn/archives2/marshmallow_the_unofficial_campfire_api_is_hot.php Campfire API, that allows listening in on a room:

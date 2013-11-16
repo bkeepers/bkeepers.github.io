@@ -7,7 +7,6 @@ date: 2007-07-11T16:24:00-04:00
 categories:
 - javascript
 - prototype
-excerpt: ""
 ---
 
 I just discovered that "prototype":http;//prototypejs.org has a really cool way to add methods to all instances of any tag.  Simply call @Element.addMethods(tagname, methods)@.  For example, here's how I added a @request@ method to anchors, which will just make an ajax call for the anchor's @href@:

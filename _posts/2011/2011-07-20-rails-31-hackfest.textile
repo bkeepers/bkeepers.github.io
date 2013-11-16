@@ -4,9 +4,8 @@ title: "Rails 3.1 Hackfest"
 id: 4e279778dabe9d6a5b004804
 updated: 2011-07-23T10:55:09-04:00
 date: 2011-07-20T23:05:00-04:00
-categories: 
+categories:
 - rails
-excerpt: "I invite anyone in the greater West Michigan area to meet up for the Rails 3.1 hackfest on July 23."
 ---
 
 Rails 3.1 is just around the corner, and this weekend Rubyists will be convening in real and virtual worlds for the "Rails 3.1 hackfest":http://weblog.rubyonrails.org/2011/7/14/rails-3-1-hackfest.

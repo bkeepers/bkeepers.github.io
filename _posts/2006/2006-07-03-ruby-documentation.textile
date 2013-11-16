@@ -4,9 +4,8 @@ title: "Ruby Documentation"
 id: 4cf5b683dabe9d2c61000700
 updated: 2010-11-30T21:44:19-05:00
 date: 2006-07-03T06:48:00-04:00
-categories: 
+categories:
 - ruby
-excerpt: ""
 ---
 
 <p>One of my (few) frustrations transitioning from Java to Ruby has been accessibility of library documentation. The only thing I miss about Java and a statically typed language is that almost all the documentation you need is available through the IDE. There is almost no uncertainty about what methods are available, what a method returns or what parameters it takes. There are other means to get to this information in Ruby, but I haven't been able to find a central, easily accessible source for documentation.</p>

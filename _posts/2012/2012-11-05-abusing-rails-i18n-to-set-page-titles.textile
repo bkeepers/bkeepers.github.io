@@ -7,7 +7,6 @@ date: 2012-11-05T09:55:00-05:00
 categories:
 - rails
 - speakerdeck
-excerpt: "I got tired of @@page_title@ variables being sprinkled around in controllers and views on "Speaker Deck":https://speakerdeck.com, so I made good use of "Rails' I18n API":http://guides.rubyonrails.org/i18n.html to define them all in one spot. Here's how I did it…"
 ---
 
 I got tired of @@page_title@ variables being sprinkled around in controllers and views on "Speaker Deck":https://speakerdeck.com, so I made good use of "Rails' I18n API":http://guides.rubyonrails.org/i18n.html to define them all in one spot.

@@ -7,7 +7,6 @@ date: 2006-11-15T19:54:00-05:00
 categories:
 - plugin
 - rails
-excerpt: ""
 ---
 
 *Update:* my patch "finally got added to edge rails":http://dev.rubyonrails.org/changeset/8003.

@@ -4,10 +4,9 @@ title: "Web app idea of the day: estimate and manage home-improvement projects"
 id: 4cf5b668dabe9d2c61000284
 updated: 2010-11-30T21:43:52-05:00
 date: 2007-09-30T11:10:00-04:00
-categories: 
+categories:
 - home improvement
 - ideas
-excerpt: ""
 ---
 
 _"Seth Godin":http://sethgodin.typepad.com/seths_blog/2007/09/big-ideas.html and "Ze Frank":http://www.zefrank.com/theshow/archives/2006/07/071106.html both tell of the importance of getting your ideas out, either by executing them, or simply telling others about them.  The more you do it, the better you will be at it. Very few of the ideas we come up with will ever get executed, so I decided I might as well just get the ideas out and see where they go._

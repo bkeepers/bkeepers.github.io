@@ -4,10 +4,9 @@ title: "An Introduction to HTML5"
 id: 4d486a8ddabe9d478e000001
 updated: 2011-02-01T16:44:20-05:00
 date: 2011-02-01T15:18:00-05:00
-categories: 
+categories:
 - html
 - presentation
-excerpt: "Slides from my Introduction to HTML5 presentation."
 ---
 
 Last night I gave a brief, 10 minute introduction to HTML5 at the "Grand Rapids Web Development Group":http://www.meetup.com/grwebdev/events/15961856/. Here are the slides from my presentation:

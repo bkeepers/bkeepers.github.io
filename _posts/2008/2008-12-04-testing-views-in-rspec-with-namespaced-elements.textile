@@ -8,7 +8,6 @@ categories:
 - facebook
 - rails
 - rspec
-excerpt: ""
 ---
 
 We've been working on a Facebook app (yeah, I know, I'm sorry) and have had all kinds of fun challenges. We wanted to test <a href="http://wiki.developers.facebook.com/index.php/FBML"><acronym title="Facebook Markup Language">FBML</acronym> tags</a> in the view, but the problem is that FBML uses namespaced elements.

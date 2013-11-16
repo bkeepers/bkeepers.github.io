@@ -8,7 +8,6 @@ categories:
 - facebook
 - rails
 - routing
-excerpt: ""
 ---
 
 Need to force all URLs in a controller or action to be absolute URLs, but don't want to use the @*_url@ named routes or, even worse, @:only_path => false@ everywhere?

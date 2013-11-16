@@ -4,11 +4,10 @@ title: "Sortable lists in key-value data stores"
 id: 4e66386edabe9d3ad000017b
 updated: 2011-09-06T12:43:45-04:00
 date: 2011-09-06T11:13:00-04:00
-categories: 
+categories:
 - database
 - git
 - toystore
-excerpt: "Using floats between 0 and 1 to specify manual sort order in a key-value data store."
 ---
 
 p(feedreader). Note: This post contains illustrations that may not appear properly in your feed reader. You may want to view the original post in your browser
@@ -17,7 +16,7 @@ Last week I "blogged about using Git as a key-value database":http://opensoul.or
 
 One of the first challenges I encountered is not unique to Git, but to key-value stores in general; allowing users to *manually sort* a list of items without the niceties of atomic operations.
 
-The most common way to allow users to manually sort a list is simply to store a *position* along with each record. When the user reorders the records, then you update the position on each record. This works well as long as the data set is small and there are guards in place to prevent two users from sorting at the same time. 
+The most common way to allow users to manually sort a list is simply to store a *position* along with each record. When the user reorders the records, then you update the position on each record. This works well as long as the data set is small and there are guards in place to prevent two users from sorting at the same time.
 
 However, with large amounts of data or a data store that doesn't support atomic operations on multiple records, this *doesn't scale well*. And specific to Git, updating every single record pretty much guarantees a merge conflict when the Git repos are pushed to a common origin.
 

@@ -4,7 +4,7 @@ title: "It's a search party!"
 id: 4cf5b65adabe9d2c6100011f
 updated: 2010-11-30T21:43:38-05:00
 date: 2008-11-08T15:03:00-05:00
-categories: 
+categories:
 - javascript
 - jquery
 - json
@@ -12,7 +12,6 @@ categories:
 - ruby
 - search
 - sinatra
-excerpt: ""
 ---
 
 While chatting with Dr. "John Nunemaker":http://railstips.org at "RubyConf":http://rubyconf.org, I realized that I have several problems. Ignoring the many character flaws that are beyond the scope of this post, my problems are:

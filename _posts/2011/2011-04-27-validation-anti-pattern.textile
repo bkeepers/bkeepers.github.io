@@ -8,7 +8,6 @@ categories:
 - popular
 - rails
 - validations
-excerpt: "Only add validation errors on fields that you give your user the opportunity to correct."
 ---
 
 Validations in ActiveRecord and other mapping frameworks are used to ensure that the data being saved to the database meets the requirements of the app. More importantly, validations are used to communicate to the end user what they need to change about the data they entered.

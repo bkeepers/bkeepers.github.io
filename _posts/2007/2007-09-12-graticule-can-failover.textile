@@ -8,7 +8,6 @@ categories:
 - acts_as_geocodable
 - geocoding
 - graticule
-excerpt: ""
 ---
 
 "Graticule":http://graticule.rubyforge.org/ has a new geocoder that simply calls other geocoders in succession until it gets a result.

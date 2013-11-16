@@ -4,10 +4,9 @@ title: "Don't should on yourself"
 id: 4d0ba344dabe9d34200002e6
 updated: 2011-03-02T09:13:28-05:00
 date: 2010-12-17T12:52:00-05:00
-categories: 
+categories:
 - popular
 - rant
-excerpt: "_Should_ is a dangerous word. Don't use it."
 ---
 
 I have developed the terrible habit of shoulding on myself: I _should_ do that; I _should_ blog more; I _should_ return his phone call; I _should_ finish that project; I _should_ clean the office.

@@ -11,7 +11,6 @@ categories:
 - ruby
 - ssl
 - tinder
-excerpt: ""
 ---
 
 Thanks Tero Parviainen, "Tinder":/2006/12/8/tinder-campfire-api now has SSL support.

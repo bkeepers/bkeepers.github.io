@@ -9,7 +9,6 @@ categories:
 - pattern
 - rails
 - ruby
-excerpt: ""
 ---
 
 Applications with an admin section often have a URL like http://myapp.com/admin, with that URL being a summary page, and all the other admin pages be under that URL (like, http://myapp.com/admin/users to edit users.).  Without defining a lot of routes, this hasn't been very easy with Rails...until now.  "Singleton resources":http://dev.rubyonrails.org/changeset/6107 have been merged into the 1.2 branch from edge-rails, so I thought I would share a little pattern that I've been using in several of my apps to accomplish this.

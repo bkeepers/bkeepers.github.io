@@ -4,10 +4,9 @@ title: "An extra GB makes all the difference"
 id: 4cf5b676dabe9d2c61000465
 updated: 2010-11-30T21:44:06-05:00
 date: 2007-02-24T23:38:00-05:00
-categories: 
+categories:
 - hardware
 - mac
-excerpt: ""
 ---
 
 When I bought my MacBook Pro back in March (wow, I've been a Mac user for almost a year now), I was cheap and just went with 1GB of RAM.  I've never really had any issues with performance until lately, when I've been needing to do more intensive tasks like working in Photoshop, using Aperture, and testing in IE (via Parallels).  Running any one of those apps required closing pretty much everything else.

@@ -4,10 +4,9 @@ title: "Startup Fatigue"
 id: 4ec49650dabe9d20f60013a9
 updated: 2011-11-21T21:50:29-05:00
 date: 2011-11-21T13:00:00-05:00
-categories: 
+categories:
 - michigan
 - startups
-excerpt: "If you want to fund the next great software company, then take an idea—any idea because it doesn't really matter—and partner with someone that can execute."
 ---
 
 People in West Michigan are doing startups completely wrong. I'm sure this is relevant elsewhere, but I can only speak for the context in which I live.

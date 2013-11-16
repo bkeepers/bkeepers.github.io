@@ -11,7 +11,6 @@ categories:
 - rails
 - ruby
 - search
-excerpt: ""
 ---
 
 +*Update:* This is not needed with recent versions of acts_as_ferret.+

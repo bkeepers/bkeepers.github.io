@@ -7,7 +7,6 @@ date: 2006-12-11T23:33:00-05:00
 categories:
 - range
 - ruby
-excerpt: ""
 ---
 
 *update:* "problem solved!":/2007/2/13/fixing-range-step

@@ -8,7 +8,6 @@ categories:
 - geocoding
 - graticule
 - ruby
-excerpt: ""
 ---
 
 *update*: Graticule is now "hosted on Rubyforge":http://graticule.rubyforge.org/.

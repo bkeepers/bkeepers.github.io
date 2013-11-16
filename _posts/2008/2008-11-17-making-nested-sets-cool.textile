@@ -9,7 +9,6 @@ categories:
 - plugin
 - popular
 - rails
-excerpt: ""
 ---
 
 Yes, I'm making the assertion that preordered "tree traversal":http://en.wikipedia.org/wiki/Tree_traversal is now cool. And I don't mean just "pocket protector" cool, because it's always been that, but now it's "show your friends" cool.

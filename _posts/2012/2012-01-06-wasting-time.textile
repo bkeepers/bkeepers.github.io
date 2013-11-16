@@ -4,9 +4,8 @@ title: "Wasting Time"
 id: 4f0771aadabe9d371200338f
 updated: 2012-01-06T17:30:19-05:00
 date: 2012-01-06T17:00:00-05:00
-categories: 
+categories:
 - rant
-excerpt: "From now on, when I waste time, I'm ging to try to do it by learning something new, even if it's something I won't ever use."
 ---
 
 I remember the day I bought "TextMate":http://macromates.com/. Like everyone, I loved TextMate. I loved it so much that I procrastinated learning anything else while I waited for TextMate Forever to be released. The new release that fixed everything was going to be out any day, so why should I waste time learning something new?

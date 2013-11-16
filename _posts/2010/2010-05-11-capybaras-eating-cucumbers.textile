@@ -8,7 +8,6 @@ categories:
 - cucumber
 - selenium
 - testing
-excerpt: "Using capybara and cucumber to test static HTML and Javascript applications."
 ---
 
 h3. (or, testing static sites with Cucumber and Capybara)

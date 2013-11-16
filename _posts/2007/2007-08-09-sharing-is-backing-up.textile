@@ -4,14 +4,13 @@ title: "Sharing is backing up"
 id: 4cf5b66adabe9d2c610002d1
 updated: 2010-12-04T21:58:53-05:00
 date: 2007-08-09T00:21:00-04:00
-categories: 
+categories:
 - backup
 - delicious
 - flickr
 - israel
 - observation
 - sharing
-excerpt: ""
 ---
 
 In my usual fashion, I put iTunes on shuffle after checking my email and headed for the shower. I had just finished brushing my teeth when the music quit mid-track.  "Weird, it hasn't done that since before I upgraded to 2GB of RAM", I murmured.  I went to inspect and found that my Mac was frozen solid. "Even more strange…not even the spinning beach-ball of death." After a hard reset, I was left with a blank gray screen. I knew it couldn't be good.

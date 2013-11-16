@@ -8,7 +8,6 @@ categories:
 - rack
 - rails
 - ruby
-excerpt: ""
 ---
 
 The interwebs are all a'buzz about "Rack":http://rack.rubyforge.org/. For those that haven't been following along, Rack is a _specification_ and a _library_ for connecting web servers to Ruby libraries (a.k.a. "Middleware"). It's basically the Web 2.0 version of CGI, except that it doesn't suck and it's just for Ruby.

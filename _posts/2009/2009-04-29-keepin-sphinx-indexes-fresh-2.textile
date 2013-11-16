@@ -8,7 +8,6 @@ categories:
 - rails
 - search
 - sphinx
-excerpt: ""
 ---
 
 &lt;infomercial-voice&gt;Stale indexes got you down? Embarrassed that your users' searches are coming up empty? Act now and you can avoid stale indexes with NEW and IMPROVED delayed delta indexing!!&lt;/infomercial-voice&gt;

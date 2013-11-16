@@ -4,9 +4,8 @@ title: "RubyConf*MI open for registration"
 id: 4cf5b681dabe9d2c61000609
 updated: 2010-11-30T21:44:17-05:00
 date: 2006-07-29T10:05:00-04:00
-categories: 
+categories:
 - ruby
-excerpt: ""
 ---
 
 Registration opened for <a title="Michigan Ruby Conference" href="http://rubyconfmi.org">RubyConf*MI</a> this morning.  The cost is only $20, which is insanely inexpensive for the caliber of speakers that are going to be there, plus it includes free lunch. You can't go wrong with that!

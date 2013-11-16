@@ -4,9 +4,8 @@ title: "GitHub Acquires Ordered List"
 id: 4edc3d06dabe9d211500f3ae
 updated: 2011-12-05T13:02:46-05:00
 date: 2011-12-05T13:00:00-05:00
-categories: 
+categories:
 - work
-excerpt: "I am thrilled to announce that I am now a GitHubber."
 ---
 
 I am thrilled to announce that I am now a GitHubber. Check out the official announcements on both the "GitHub":https://github.com/blog/993-ordered-list-is-a-githubber and "Ordered List":http://orderedlist.com/blog/articles/ordered-list-acquired-by-github/ blogs.

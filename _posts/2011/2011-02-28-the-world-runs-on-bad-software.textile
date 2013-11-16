@@ -4,11 +4,10 @@ title: "The world runs on bad software"
 id: 4d6c279ddabe9d336a0000e7
 updated: 2012-05-31T14:31:58-04:00
 date: 2011-02-28T18:00:00-05:00
-categories: 
+categories:
 - observation
 - popular
 - talk
-excerpt: "A lot of people are doing amazing things and making insane amounts of money from bad software."
 ---
 
 The world runs on bad software. There are billions of lines of poorly structured, overly verbose, untested code.  But, *a lot of people are doing amazing things and making insane amounts of money from bad software*.

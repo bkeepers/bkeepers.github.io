@@ -9,7 +9,6 @@ categories:
 - gauges
 - pusher
 - redis
-excerpt: "We used Redis to queue up notifications to send to Pusher and an EventMachine process to send them in near real-time on "Gaug.es":http://get.gaug.es."
 ---
 
 "Gaug.es":http://gaug.es has been a fun exercise in building an app to scale from the start.  "John Nunemaker previously posted about our quest":http://railstips.org/blog/archives/2011/05/04/eventmachine-and-passenger/ to send live updates to the browser without slowing down the request cycle.

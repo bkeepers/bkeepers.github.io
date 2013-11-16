@@ -4,9 +4,8 @@ title: "Happy anniversary to me"
 id: 4cf5b671dabe9d2c610003b2
 updated: 2010-11-30T21:44:01-05:00
 date: 2007-05-03T01:16:00-04:00
-categories: 
+categories:
 - collectiveidea
-excerpt: ""
 ---
 
 With all the chaos lately (trying to close on a house and traveling for a funeral), I forgot that Monday was an important milestone.  It has been one year since I joined "Collective Idea":http://collectiveidea.com.

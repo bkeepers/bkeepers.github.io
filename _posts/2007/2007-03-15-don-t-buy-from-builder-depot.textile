@@ -4,8 +4,7 @@ title: "Don't buy from Builder Depot"
 id: 4cf5b675dabe9d2c61000446
 updated: 2010-11-30T21:44:05-05:00
 date: 2007-03-15T22:23:00-04:00
-categories: 
-excerpt: ""
+categories:
 ---
 
 Short Story: I still haven't gotten a refund or replacement for the item that I ordered over 4 months ago that arrived damaged.

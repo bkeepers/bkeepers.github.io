@@ -4,12 +4,11 @@ title: "How Rails has made me a better programmer"
 id: 4cf5b67adabe9d2c610004de
 updated: 2010-11-30T21:44:10-05:00
 date: 2007-02-03T13:57:00-05:00
-categories: 
+categories:
 - contest
 - programming
 - rails
 - ruby
-excerpt: ""
 ---
 
 A common Rails mantra is that *"Rails makes it easy to do the right thing, and difficult to do the wrong thing."* While "some might not completely agree":http://tech.rufy.com/2006/11/fatal-flaw-in-opinionated-software.html with this opinionated software philosophy, it is this very aspect of Rails that allows developers to write better code in less time.

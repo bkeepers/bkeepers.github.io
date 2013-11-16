@@ -4,13 +4,12 @@ title: "Moving Podcast tracks into your iTunes library"
 id: 4cf5b673dabe9d2c6100040d
 updated: 2010-12-01T02:31:25-05:00
 date: 2007-04-17T09:33:00-04:00
-categories: 
+categories:
 - indie
 - itunes
 - music
 - podcast
 - popular
-excerpt: ""
 ---
 
 A while back, "Daniel posted about building an instant indie music collection":http://ifstatement.blogspot.com/2006/06/howto-build-and-instant-indie-music.html by subscribing to KEXP's "Song of the day":http://kexp.org/podcasting/podcasting.asp#song podcast. I did that, and it's been great.  Now I have all this great indie music, but the problem is that it's locked up in an iTunes podcast.  I can't continually listen to it because iTunes plays podcasts one track at a time.

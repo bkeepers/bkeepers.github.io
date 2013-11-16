@@ -7,7 +7,6 @@ date: 2007-02-13T18:20:00-05:00
 categories:
 - range
 - ruby
-excerpt: ""
 ---
 
 *Update*: This has been "added to Rails' active_support":http://dev.rubyonrails.org/changeset/7800.

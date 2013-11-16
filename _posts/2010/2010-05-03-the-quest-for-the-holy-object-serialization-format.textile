@@ -8,7 +8,6 @@ categories:
 - delayed_job
 - ruby
 - yaml
-excerpt: "The search for a proper serialization format for delayed_job led deep into the bowels of YAML."
 ---
 
 One of my favorite features of "delayed_job":http://github.com/collectiveidea/delayed_job is that you can delay execution of any method on any object.  In order to get this to work, you have to be able to serialize the object into a database field, and then load it in a separate process.

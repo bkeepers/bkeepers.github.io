@@ -4,10 +4,9 @@ title: "How to eliminate the best candidates"
 id: 4cf5b66edabe9d2c6100033d
 updated: 2010-11-30T21:43:58-05:00
 date: 2007-07-08T10:29:00-04:00
-categories: 
+categories:
 - collectiveidea
 - jobs
-excerpt: ""
 ---
 
 From a "recent, very poorly written job posting":http://rubyrockstars.com/jobs/show/525:

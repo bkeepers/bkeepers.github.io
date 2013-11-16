@@ -10,7 +10,6 @@ categories:
 - popular
 - rails
 - ruby
-excerpt: ""
 ---
 
 +*NOTE:* This article is out of date. Visit the "project on Github":http://github.com/collectiveidea/acts_as_audited or the "mailing list":http://groups.google.com/group/acts_as_audited for up-to-date information.+

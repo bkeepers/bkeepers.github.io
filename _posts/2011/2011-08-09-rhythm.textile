@@ -4,9 +4,8 @@ title: "Rhythm"
 id: 4e41eb59dabe9d05410024d6
 updated: 2011-08-09T22:22:17-04:00
 date: 2011-08-09T21:52:00-04:00
-categories: 
+categories:
 - life
-excerpt: "My struggle with rhythm distracts me from pursing the things that I can master."
 ---
 
 I've always struggled with rhythm.

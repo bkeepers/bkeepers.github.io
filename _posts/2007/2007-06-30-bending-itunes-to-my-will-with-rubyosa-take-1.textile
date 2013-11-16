@@ -12,7 +12,6 @@ categories:
 - osa
 - podcast
 - ruby
-excerpt: ""
 ---
 
 A couple months ago I "expressed my frustration about iTunes not letting me move podcast files into my library":/2007/4/17/moving-podcast-tracks-into-your-itunes-library.  Several people commented with suggestions, such as converting the ID3 tag to an older version, re-importing the track, and then converting the ID3 tag back to 2.4.  This is definitely better than the solution I had found, but still a pain.

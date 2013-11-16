@@ -11,7 +11,6 @@ categories:
 - ruby
 - stubbing
 - testing
-excerpt: ""
 ---
 
 All the cool kids tell me that fixtures just aren't the "in" thing anymore. Speaking of which, when did fanny-packs stop being cool? I wish someone would have said something…

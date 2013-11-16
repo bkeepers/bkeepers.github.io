@@ -9,7 +9,6 @@ categories:
 - gem
 - popular
 - ruby
-excerpt: "Everyone's favorite background queue, now with more sparkle."
 ---
 
 I've pushed out the "delayed_job 2.0 gem":http://rubygems.org/gems/delayed_job from the "Collective Idea":http://github.com/collectiveidea fork on GitHub. See the "changelog":http://wiki.github.com/collectiveidea/delayed_job/changelog for a summary of changes, or "see the full list changes":http://github.com/collectiveidea/delayed_job/compare/v1.8.5...v2.0.0.

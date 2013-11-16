@@ -9,7 +9,6 @@ categories:
 - campfire
 - ruby
 - tinder
-excerpt: ""
 ---
 
 I've committed a first pass at transcript support for "Tinder":/2006/12/8/tinder-campfire-api.  I don't really have an immediate need for it, so I'd love to get some feedback on how useful it is, and if there's other transcript features that are missing.

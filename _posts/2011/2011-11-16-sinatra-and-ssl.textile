@@ -7,8 +7,6 @@ date: 2011-11-16T22:00:00-05:00
 categories:
 - sinatra
 - ssl
-excerpt: "I recently rolled out SSL support on "Gaug.es":http://get.gaug.es/. Gaug.es is a fairly simple Sinatra application. Most of the app requires authentication, but there are a few public URLs that are unauthenticated. Here's how I implemented it.
-"
 ---
 
 I recently rolled out SSL support on "Gaug.es":http://get.gaug.es/. Gaug.es is a fairly simple Sinatra application. Most of the app requires authentication, but there are a few public URLs that are unauthenticated.

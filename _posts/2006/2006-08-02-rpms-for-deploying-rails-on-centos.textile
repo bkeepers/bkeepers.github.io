@@ -4,11 +4,10 @@ title: "RPMs for Deploying Rails on CentOS"
 id: 4cf5b681dabe9d2c61000605
 updated: 2010-11-30T21:44:17-05:00
 date: 2006-08-02T19:43:00-04:00
-categories: 
+categories:
 - linux
 - rails
 - rpm
-excerpt: ""
 ---
 
 <p>Thanks to <a href="http://mongrel.rubyforge.org/">mongrel</a>, Ruby on Rails deployment is finally decent.  Several weeks back I switched all of our servers over to using Apache 2.2 with mod_proxy_balancer, mongrel and mongrel_cluster, and I haven't had any problems.</p>

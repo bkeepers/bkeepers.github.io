@@ -12,7 +12,6 @@ categories:
 - plugin
 - rails
 - ruby
-excerpt: ""
 ---
 
 3?, nope there is no 3.  Geocoding as easy as 1-2!

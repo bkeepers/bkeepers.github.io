@@ -4,12 +4,11 @@ title: "HAML: the unforgivable sin"
 id: 4ecf14a9dabe9d0f2a02a1ec
 updated: 2013-06-28T10:05:27-04:00
 date: 2011-11-30T08:00:00-05:00
-categories: 
+categories:
 - haml
 - html
 - opinion
 - popular
-excerpt: "I have used "HAML":http://haml-lang.com/ on several client projects, and every time it drives me nuts. While there are certainly some things that are nice about it, overall it is a net loss."
 ---
 
 "I posted this on twitter":http://twitter.com/#!/bkeepers/status/139360663851106305: "there are many mistakes I'm willing to forgive, but using haml is not one of them". Many people replied asking me to explain why I don't like it, so here it goes…

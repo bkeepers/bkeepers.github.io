@@ -4,10 +4,9 @@ title: "Inevitable Design"
 id: 4d6e5715dabe9d617600011c
 updated: 2011-03-02T15:59:33-05:00
 date: 2011-03-02T13:11:00-05:00
-categories: 
+categories:
 - design
 - observation
-excerpt: "Good creative works have a way of convincing me that they are inevitable."
 ---
 
 Good creative works have a way of convincing me that they are inevitable. Like a really good song, where the tempo is just right, the melody flows effortlessly, and every harmony perfectly in tune. It persuades me to believe that if I sat down to write a song like that, I would end up with that exact song.  There's not a phrase or melody I would change.

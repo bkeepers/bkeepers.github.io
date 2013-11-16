@@ -9,7 +9,6 @@ categories:
 - nil
 - ruby
 - wtf
-excerpt: ""
 ---
 
 bq. With great power comes great responsibility.

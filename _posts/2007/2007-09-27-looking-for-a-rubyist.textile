@@ -4,11 +4,10 @@ title: "Looking for a Rubyist"
 id: 4cf5b669dabe9d2c6100028b
 updated: 2010-11-30T21:43:53-05:00
 date: 2007-09-27T13:01:00-04:00
-categories: 
+categories:
 - collectiveidea
 - job
 - rails
-excerpt: ""
 ---
 
 "ecounseling.com":http://ecounseling.com, a project that we worked on at "Collective Idea":http://collectiveidea.com, is looking for a Rails programmer to implement some new features and continue to expand their site.

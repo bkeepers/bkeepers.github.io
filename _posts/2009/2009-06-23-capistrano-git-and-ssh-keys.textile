@@ -10,7 +10,6 @@ categories:
 - git
 - rails
 - ssh
-excerpt: ""
 ---
 
 This trick has been around for a while, but I've talked with several people that didn't know about it.

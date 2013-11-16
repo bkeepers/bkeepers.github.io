@@ -10,7 +10,6 @@ categories:
 - merge
 - plugin
 - rails
-excerpt: ""
 ---
 
 <div class="banner">

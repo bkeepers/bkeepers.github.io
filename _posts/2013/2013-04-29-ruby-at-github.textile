@@ -8,7 +8,6 @@ categories:
 - github
 - ruby
 - talk
-excerpt: "Here is the video and slides for my recent talk \"Ruby at GitHub\"."
 ---
 
 Here's the video and slides for my recent talk "Ruby at GitHub" at "MountainWest RubyConf":http://mtnwestrubyconf.org/.

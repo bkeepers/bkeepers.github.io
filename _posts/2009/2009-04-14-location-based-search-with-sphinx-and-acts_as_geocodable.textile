@@ -11,7 +11,6 @@ categories:
 - ruby
 - search
 - sphinx
-excerpt: ""
 ---
 
 "Sphinx":http://www.sphinxsearch.com/, everybody's favorite search engine, has support for location-based search, giving you geo-aware, full-text searching. So now you can find all of the garage sales on Saturday within 20 miles that have LPs and a reel mower.

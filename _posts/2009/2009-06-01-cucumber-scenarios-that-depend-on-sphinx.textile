@@ -10,7 +10,6 @@ categories:
 - rails
 - search
 - sphinx
-excerpt: ""
 ---
 
 I love writing apps that make heavy use of search indexes, but testing them can be a bit of a pain.  Here is how I got "ThinkingSphinx":http://freelancing-god.github.com/ts/en/ to play nice with "Cucumber":http://cukes.info.

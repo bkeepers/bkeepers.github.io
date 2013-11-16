@@ -4,12 +4,11 @@ title: "Fixed in edge rails: table name quoting"
 id: 4cf5b667dabe9d2c61000273
 updated: 2010-11-30T21:43:51-05:00
 date: 2007-10-16T10:00:00-04:00
-categories: 
+categories:
 - database
 - edge
 - rails
 - sql
-excerpt: ""
 ---
 
 One of more "annoying ActiveRecord bugs":http://dev.rubyonrails.org/ticket/4593 has finally been "fixed in edge rails":http://dev.rubyonrails.org/changeset/7932 after 2 years.  Table names in SQL queries are now properly escaped.

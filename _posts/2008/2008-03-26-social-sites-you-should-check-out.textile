@@ -4,10 +4,9 @@ title: "Social Sites you should check out"
 id: 4cf5b662dabe9d2c610001fa
 updated: 2010-11-30T21:43:46-05:00
 date: 2008-03-26T23:00:00-04:00
-categories: 
+categories:
 - links
 - social
-excerpt: ""
 ---
 
 I'm not a fan of social networking sites in general, but there are two that I have found really useful.
