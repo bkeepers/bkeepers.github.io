@@ -13,7 +13,6 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200,700|Lobster' rel='stylesheet' type='text/css'>
   {% stylesheet site %}
 
   <link rel="openid.server" href="http://www.myopenid.com/server">
@@ -43,7 +42,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="popular">
       <h1>Popular Posts</h1>
       <ul>
       {% for post in site.categories.popular limit: 5 %}

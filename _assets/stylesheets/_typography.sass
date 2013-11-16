@@ -1,14 +1,27 @@
-/* === #Typography === */
+body
+  font: 14px/21px Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  -webkit-text-size-adjust: 100%
+  color: $text-color
+
 h1, h2, h3, h4, h5, h6
-  font-family: "Yanone Kaffeesatz", Helvetica, Tahoma, sans-serif
-  font-weight: bold
+  font-family: "Apple Garamond", Georgia, serif
+  font-weight: normal
+  color: $heading-color
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
   font-weight: inherit
+  color: inherit
+
 h1
   font-size: 40px
   line-height: 50px
   margin-bottom: 14px
+
+h1.small
+  font-size: 36px
+  line-height: 46px
+  margin-bottom: 12px
 
 h2
   font-size: 30px
@@ -35,7 +48,6 @@ h6
 
 p
   margin: 0 0 20px 0
-  text-shadow: 0px 1px 1px #fff
 
   img
     margin: 0
@@ -54,14 +66,6 @@ strong
 
 small
   font-size: 80%
-
-pre
-  margin: 1.5em 0
-  white-space: pre
-
-pre, code, tt
-  font: 0.9em/1.5 'andale mono', 'lucida console', monospace
-  -webkit-font-smoothing: subpixel-antialiased
 
 /*  Blockquotes  */
 blockquote, blockquote p
@@ -86,20 +90,18 @@ blockquote cite a, blockquote cite a:visited, blockquote cite a:visited
 
 /* === #Links === */
 a
-  color: $blue
+  color: $link-color
   text-decoration: none
   outline: 0
 
   &:hover, &:focus
-    color: lighten($blue, 10%)
+    color: lighten($link-color, 10%)
 
   &.dimmed
-    color: darken(desaturate($blue, 95%), 10%)
+    color: #000
 
     &:hover
-      color: lighten($blue, 10%)
-      text-shadow: 0px 0px 5px transparentize(lighten($blue, 30%), 0.05)
-      text-shadow: 0px 0px 5px transparentize(lighten($blue, 30%), 0.05)
+      color: $blue
 
 p a, p a:visited
   line-height: inherit

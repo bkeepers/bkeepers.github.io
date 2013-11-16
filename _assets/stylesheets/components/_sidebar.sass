@@ -1,0 +1,55 @@
+#about
+  font-size: 0.9em
+
+  p
+    padding-left: 3em
+
+  li a
+    @extend a.dimmed
+
+  section
+    margin-bottom: 3em
+
+  h1
+    font-size: 24px
+
+#links
+  a
+    &:after
+      content: " "
+      display: inline-block
+      width: 16px
+      height: 16px
+      margin: 3px 0 -3px 8px
+      background: asset-url("icons.png") no-repeat
+
+    &.twitter
+      &:after
+        background-position: 0 0
+      &:hover:after
+        background-position: 0 -16px
+
+    &.github
+      &:after
+        background-position: -16px 0
+      &:hover:after
+        background-position: -16px -16px
+
+    &.bookmarks
+      &:after
+        background-position: -32px 0
+      &:hover:after
+        background-position: -32px -16px
+
+    &.photos
+      &:after
+        background-position: -48px 0
+      &:hover:after
+        background-position: -48px -16px
+
+    &.subscribe
+      &:after
+        background-position: -64px 0
+      &:hover:after
+        background-position: -64px -16px
+

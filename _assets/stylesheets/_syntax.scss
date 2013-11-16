@@ -1,11 +1,19 @@
-.highlight pre {
+pre, code, tt {
+  font: 13px/1.5 Monaco, 'andale mono', 'lucida console', monospace;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+pre {
   @include border-radius(3px);
   padding: 18px;
   overflow: auto;
-
+  margin: 1.5em 0;
+  white-space: pre;
   background: #1d1f21;
   color: #c5c8c6;
+}
 
+.highlight {
   .hll { background-color: #373b41 }
   .c { color: #969896 } /* Comment */
   .err { color: #cc6666 } /* Error */
