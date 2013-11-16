@@ -4,3 +4,5 @@ markdown: redcarpet
 pygments: true
 copyright: 2006 - 2013
 permalink: /:year/:month/:day/:title/
+assets:
+  cache: true
