@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Using shared indexes with acts_as_ferret</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-da54950d773cc0a6579fb8526c53ef93.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Using shared indexes with acts_as_ferret</h1>
+  <p class="meta">
+    <span class="date">April 29, 2008</span>
+    <span class="tags">
+      
+        ferret,
+      
+        rails,
+      
+        search
+      
+    </span>
+  </p>
+  <div class="body"><p>So by now we all know how to do wicked-cool search with <a href="http://projects.jkraemer.net/acts_as_ferret/">acts_as_ferret</a>. (If not, the <a href="http://www.railsenvy.com/2007/2/19/acts-as-ferret-tutorial">RailsEnvy guys can lend a hand</a>, but the tutorial is a little outdated for the latest trunk version of acts_as_ferret. Just replace <code>#find_by_contents</code> with <code>#find_with_ferret</code> and you should be good.)</p>
+<p>But searching a single model is <em>so</em> last year. All the cool kids are getting promiscuous with their searches and involving multiple models. Fortunately for us, recent revisions of <code>acts_as_ferret</code> makes this easy-peasy.</p>
+<p>The key to making this happen is a shared index: we want all of our models indexed in one place so ferret only has to do one search. We can do it without a shared index, but then we have to do a ferret search and thus a <span class="caps">SQL</span> select for each model. Plus, if we want your search results interspersed and sorted by rank, we have to have a shared index.</p>
+<h3>Enough chit-chat, show us how!</h3>
+<p>Ok, I&#8217;m getting to it. Grab the latest version of acts as ferret from trunk:</p>
+script/plugin install svn://projects.jkraemer.net/acts_as_ferret/trunk/plugin/acts_as_ferret
+<p>Now, instead of defining <code>acts_as_ferret</code> in our models, we define them all in <code>config/aaf.rb</code></p>
+<div class="highlight"><pre><code class="ruby"><span class="no">ActsAsFerret</span><span class="o">::</span><span class="n">define_index</span><span class="p">(</span><span class="s1">&#39;shared&#39;</span><span class="p">,</span>
+ <span class="ss">:models</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="no">Person</span>  <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:fields</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:first_name</span><span class="p">,</span> <span class="ss">:last_name</span><span class="p">,</span> <span class="ss">:phone</span><span class="p">,</span> <span class="ss">:bio</span><span class="o">]</span><span class="p">},</span>
+   <span class="no">Company</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:fields</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:description</span><span class="o">]</span><span class="p">},</span>
+   <span class="no">Post</span>    <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:fields</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:title</span><span class="p">,</span> <span class="ss">:body</span><span class="o">]</span><span class="p">}</span>
+ <span class="p">},</span>
+ <span class="ss">:ferret</span>   <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="ss">:default_fields</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:first_name</span><span class="p">,</span> <span class="ss">:last_name</span><span class="p">,</span> <span class="ss">:phone</span><span class="p">,</span> <span class="ss">:bio</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:description</span><span class="p">,</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">:body</span><span class="o">]</span>
+ <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div><p>This defines a new index, called &#8220;shared&#8221;, and then defines the <code>acts_as_ferret</code> configuration for each model.</p>
+<p>Now for the fun part: searching our shiny new index.</p>
+<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">search</span>
+  <span class="vi">@results</span> <span class="o">=</span> <span class="no">ActsAsFerret</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:q</span><span class="o">]</span><span class="p">,</span> <span class="s1">&#39;shared&#39;</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div><p>This will give us one array with any models that matched the search query, ordered by rank. And for those times when we only want to search one model, we can still do that.</p>
+<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">search</span>
+  <span class="vi">@people</span> <span class="o">=</span> <span class="no">Person</span><span class="o">.</span><span class="n">find_with_ferret</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:q</span><span class="o">]</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div><h3>How do we display the results?</h3>
+<p><strong>Update</strong>: Sorry, originally I had an example using resources, but that doesn&#8217;t work as-is;  I was doing something a little different in the app that this example came from.</p>
+<p>To display our search results, we just render a partial for each model in the result:</p>
+<div class="highlight"><pre><code class="erb"><span class="cp">&lt;%</span> <span class="vi">@results</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">result</span><span class="o">|</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">  </span><span class="cp">&lt;%=</span> <span class="n">render</span> <span class="ss">:partial</span> <span class="o">=&gt;</span> <span class="s2">&quot;search/</span><span class="si">#{</span><span class="n">dom_class</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span><span class="x"></span>
+</code></pre></div><p>This will just look for a partial for each model (like <code>search/_person.html.erb</code>).</p>
+<p>So there you have it. Now you too can have promiscuous searching.</p>
+<p><strong>Update</strong>: I&#8217;ve put together an <a href="http://opensoul.org/assets/2008/5/12/ferret-example_1.zip">example rails app</a> that uses the shared index. It uses sqlite and has some date pre-populated. Start up <code>script/server</code> and do a search for &#8220;John&#8221;.</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li><a class="twitter" href="http://twitter.com/bkeepers">Follow me on Twitter</a></li>
+        <li><a class="github" href="http://github.com/bkeepers">Follow me on GitHub</a></li>
+        <li><a class="subscribe" href="http://feeds.feedburner.com/opensoul">Subscribe to the Feed</a></li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<footer id="copyright">
+  Copyright © 2006 - 2013 Brandon Keepers
+</footer>
+
+<!--
+FIXME:
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+-->
+</body>
+</html>

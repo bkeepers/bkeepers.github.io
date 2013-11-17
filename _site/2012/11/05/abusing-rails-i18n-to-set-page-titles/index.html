@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Abusing Rails I18N to Set Page Titles</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-da54950d773cc0a6579fb8526c53ef93.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Abusing Rails I18N to Set Page Titles</h1>
+  <p class="meta">
+    <span class="date">November  5, 2012</span>
+    <span class="tags">
+      
+        rails,
+      
+        speakerdeck
+      
+    </span>
+  </p>
+  <div class="body"><p>I got tired of <code>@page_title</code> variables being sprinkled around in controllers and views on <a href="https://speakerdeck.com">Speaker Deck</a>, so I made good use of <a href="http://guides.rubyonrails.org/i18n.html">Rails&#8217; I18n <span class="caps">API</span></a> to define them all in one spot.</p>
+<p>My <code>config/locales/en.yml</code> now looks something like this:</p>
+<div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">en</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">default</span><span class="p-Indicator">:</span> <span class="s">&quot;Speaker</span><span class="nv"> </span><span class="s">Deck</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Share</span><span class="nv"> </span><span class="s">Presentations</span><span class="nv"> </span><span class="s">without</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Mess&quot;</span>
+    <span class="l-Scalar-Plain">account</span><span class="p-Indicator">:</span>
+      <span class="l-Scalar-Plain">new</span><span class="p-Indicator">:</span> <span class="s">&quot;Sign</span><span class="nv"> </span><span class="s">Up&quot;</span>
+      <span class="l-Scalar-Plain">show</span><span class="p-Indicator">:</span> <span class="s">&quot;My</span><span class="nv"> </span><span class="s">Account&quot;</span>
+    <span class="l-Scalar-Plain">categories</span><span class="p-Indicator">:</span>
+      <span class="l-Scalar-Plain">show</span><span class="p-Indicator">:</span> <span class="s">&quot;%{category}&quot;</span>
+    <span class="l-Scalar-Plain">likes</span><span class="p-Indicator">:</span>
+      <span class="l-Scalar-Plain">index</span><span class="p-Indicator">:</span> <span class="s">&quot;Presentations</span><span class="nv"> </span><span class="s">Liked</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">%{user}&quot;</span>
+    <span class="l-Scalar-Plain">passwords</span><span class="p-Indicator">:</span>
+      <span class="l-Scalar-Plain">index</span><span class="p-Indicator">:</span> <span class="s">&quot;Password</span><span class="nv"> </span><span class="s">Reset&quot;</span>
+    <span class="l-Scalar-Plain">talks</span><span class="p-Indicator">:</span>
+      <span class="l-Scalar-Plain">index</span><span class="p-Indicator">:</span> <span class="s">&quot;All</span><span class="nv"> </span><span class="s">Presentations&quot;</span>
+      <span class="l-Scalar-Plain">edit</span><span class="p-Indicator">:</span> <span class="s">&quot;Edit</span><span class="nv"> </span><span class="s">%{talk}&quot;</span>
+      <span class="l-Scalar-Plain">new</span><span class="p-Indicator">:</span> <span class="s">&quot;New</span><span class="nv"> </span><span class="s">Presentation&quot;</span>
+      <span class="l-Scalar-Plain">show</span><span class="p-Indicator">:</span> <span class="s">&quot;%{talk}&quot;</span>
+    <span class="l-Scalar-Plain">users</span><span class="p-Indicator">:</span>
+      <span class="l-Scalar-Plain">show</span><span class="p-Indicator">:</span> <span class="s">&quot;Talks</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">%{user}&quot;</span>
+</code></pre></div><p>To make this work, add a <code>#page_title</code> helper method, which looks up the page title translation using the controller and action name.</p>
+<div class="highlight"><pre><code class="ruby"><span class="k">module</span> <span class="nn">TitleHelper</span>
+  <span class="k">def</span> <span class="nf">page_title</span>
+    <span class="n">t</span> <span class="n">page_title_translation_key</span><span class="p">,</span>
+      <span class="n">page_title_context</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="ss">:default</span> <span class="o">=&gt;</span> <span class="ss">:&quot;title.default&quot;</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">page_title_translation_key</span>
+    <span class="ss">:&quot;title.</span><span class="si">#{</span><span class="n">controller_name</span><span class="si">}</span><span class="ss">.</span><span class="si">#{</span><span class="n">action_name</span><span class="si">}</span><span class="ss">&quot;</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">page_title_context</span>
+    <span class="n">controller</span><span class="o">.</span><span class="n">view_assigns</span><span class="o">.</span><span class="n">symbolize_keys</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div><p>The helper also passes all of the instance variables assigned in the controller, so you can use any of those variables in your page title. The only caveat is that we have to define <code>#to_s</code> in order for our model objects to show up properly in the title:</p>
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="n">username</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div><p>Now in our layout, we can use our new helper:</p>
+<div class="highlight"><pre><code class="erb"><span class="x">&lt;title&gt;</span><span class="cp">&lt;%=</span> <span class="n">page_title</span> <span class="cp">%&gt;</span><span class="x">&lt;/title&gt;</span>
+</code></pre></div><p>I&#8217;m really happy with how this little hack worked out. This almost seems like something that should be in Rails core. Maybe I&#8217;ll have to submit a pull request…</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li><a class="twitter" href="http://twitter.com/bkeepers">Follow me on Twitter</a></li>
+        <li><a class="github" href="http://github.com/bkeepers">Follow me on GitHub</a></li>
+        <li><a class="subscribe" href="http://feeds.feedburner.com/opensoul">Subscribe to the Feed</a></li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<footer id="copyright">
+  Copyright © 2006 - 2013 Brandon Keepers
+</footer>
+
+<!--
+FIXME:
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+-->
+</body>
+</html>

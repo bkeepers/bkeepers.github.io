@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sinatra serenades Rails 2</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-da54950d773cc0a6579fb8526c53ef93.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Sinatra serenades Rails 2</h1>
+  <p class="meta">
+    <span class="date">December 10, 2010</span>
+    <span class="tags">
+      
+        rails,
+      
+        sinatra
+      
+    </span>
+  </p>
+  <div class="body"><p>It turns out it&#8217;s really easy to mount a Sinatra application into your Rails 2 app (yes, there are still a few Rails 2 apps out there).  Here&#8217;s how.</p>
+<p>First, declare Sinatra as a gem dependency in <code>config/environment.rb</code>:</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">config</span><span class="o">.</span><span class="n">gem</span> <span class="s1">&#39;sinatra&#39;</span><span class="p">,</span> <span class="ss">:lib</span> <span class="o">=&gt;</span> <span class="s1">&#39;sinatra/base&#39;</span>
+</code></pre></div><aside>
+<p>The <code>:lib</code> option is somewhat important.  Without it, <a href="https://github.com/sinatra/sinatra/blob/master/lib/sinatra/main.rb#L28">Sinatra will pollute the <code>Object</code> namespace</a>, and you&#8217;ll spend 3 hours trying to figure out why calling <code>#set</code> on your memcached client returns an instance of <code>Sinatra::Application</code>. Not that I&#8217;m bitter or anything…</p>
+</aside>
+<p>Next, create a directory to put Sinatra apps in and add them to the Rails load path:</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">config</span><span class="o">.</span><span class="n">autoload_paths</span> <span class="o">&lt;&lt;</span> <span class="no">Rails</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;app/sinatra&quot;</span><span class="p">)</span>
+</code></pre></div><aside>
+<p>If you&#8217;re using any version of Rails before 2.3.10, the config option will be <code>load_paths</code> instead of <code>autoload_paths</code>.</p>
+</aside>
+<p>Then, define a Sinatra app in a file in <code>app/sinatra</code>:</p>
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">TheJsonApi</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">before</span> <span class="p">{</span> <span class="n">content_type</span><span class="p">(</span><span class="ss">:json</span><span class="p">)</span> <span class="p">}</span>
+
+  <span class="n">get</span> <span class="s1">&#39;/v2/foo&#39;</span> <span class="k">do</span>
+    <span class="p">{</span><span class="ss">:foo</span> <span class="o">=&gt;</span> <span class="s1">&#39;bar&#39;</span><span class="p">}</span><span class="o">.</span><span class="n">to_json</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div><p>And finally, insert your Sinatra app as middleware:</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">config</span><span class="o">.</span><span class="n">after_initialize</span> <span class="k">do</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">middleware</span><span class="o">.</span><span class="n">insert_before</span><span class="p">(</span><span class="s2">&quot;ActionController::Failsafe&quot;</span><span class="p">,</span> <span class="s2">&quot;TheJsonApi&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div><p>Sinatra, being the classy framework that it is, is smart enough to act as a Rack middleware OR an endpoint (<a href="http://intridea.com/2010/4/20/rack-middleware-and-applications-whats-the-difference?blog=company">what&#8217;s the difference?</a>). If you use it as a middleware, it will serve any routes that it knows about and pass on any that it doesn&#8217;t.</p>
+<h2>Why would you use Rails and Sinatra?</h2>
+<p>I&#8217;m working on large Rails application that consists mostly of an <span class="caps">XML</span> <span class="caps">API</span>. We&#8217;re working on a new version of the <span class="caps">API</span> with some significant changes. Since the new <span class="caps">API</span> will only have 7-10 endpoints, and only return <span class="caps">JSON</span>, we are thinking it will just be cleaner to build it as a Sinatra app. It will be easier to document and easier to maintain. And we are embedding it in the Rails app so it can make use of our existing models.</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li><a class="twitter" href="http://twitter.com/bkeepers">Follow me on Twitter</a></li>
+        <li><a class="github" href="http://github.com/bkeepers">Follow me on GitHub</a></li>
+        <li><a class="subscribe" href="http://feeds.feedburner.com/opensoul">Subscribe to the Feed</a></li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<footer id="copyright">
+  Copyright © 2006 - 2013 Brandon Keepers
+</footer>
+
+<!--
+FIXME:
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+-->
+</body>
+</html>

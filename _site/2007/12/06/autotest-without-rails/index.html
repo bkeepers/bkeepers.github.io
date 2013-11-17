@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Autotest without Rails</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-da54950d773cc0a6579fb8526c53ef93.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Autotest without Rails</h1>
+  <p class="meta">
+    <span class="date">December  6, 2007</span>
+    <span class="tags">
+      
+        autotest,
+      
+        gem,
+      
+        ruby,
+      
+        testing
+      
+    </span>
+  </p>
+  <div class="body"><p>Autotest is a gem (well, technically ZenTest is a gem that includes autotest). But seriously, autotest is a gem! I can&#8217;t write code without it anymore. It has become my coding security blanket.</p>
+<p>I started going through withdrawal last night while I was working on a Ruby library because autotest doesn&#8217;t work out of the box with plain ol&#8217; Ruby projects.  It assumes you&#8217;re using one of the Ruby web frameworks.</p>
+<p>Here&#8217;s how to remedy that.</p>
+<p><a href="http://rails.aizatto.com/2007/11/19/autotest-ing-your-rails-plugin/">Aizatto shows us</a> how to use autotest with your Rails plugins and RSpec.  That&#8217;s a great start, but unfortunately, not all of my projects use RSpec (yet), and not all of them are Rails plugins.</p>
+<p>To make autotest work with <code>Test::Unit</code>, we need to tell it how to map files to their tests.  Here is a simple mapping that maps each ruby file in <code>lib/</code> to the a corresponding test <code>test/*_test.rb</code>. For example, <code>lib/foo/bar.rb</code> would map to to a test in <code>test/foo/bar_test.rb</code>.</p>
+<div class="highlight"><pre><code class="ruby"><span class="c1"># autotest/testunit.rb</span>
+<span class="nb">require</span> <span class="s1">&#39;autotest&#39;</span>
+
+<span class="k">class</span> <span class="nc">Autotest</span><span class="o">::</span><span class="no">Testunit</span> <span class="o">&lt;</span> <span class="no">Autotest</span>
+  <span class="k">def</span> <span class="nf">initialize</span> <span class="c1"># :nodoc:</span>
+    <span class="k">super</span>
+    <span class="vi">@exceptions</span> <span class="o">=</span> <span class="sr">/^\.\/(?:config|doc|log|tmp|website)/</span>
+
+    <span class="vi">@test_mappings</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="sr">%r%^test/.*\.rb$%</span> <span class="o">=&gt;</span> <span class="nb">proc</span> <span class="p">{</span> <span class="o">|</span><span class="n">filename</span><span class="p">,</span> <span class="n">_</span><span class="o">|</span>
+        <span class="n">filename</span>
+      <span class="p">},</span>
+      <span class="sr">%r%^lib/(.*)\.rb$%</span> <span class="o">=&gt;</span> <span class="nb">proc</span> <span class="p">{</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">m</span><span class="o">|</span>
+        <span class="o">[</span><span class="s2">&quot;test/</span><span class="si">#{</span><span class="n">m</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="si">}</span><span class="s2">_test.rb&quot;</span><span class="o">]</span>
+      <span class="p">},</span>
+      <span class="sr">%r%^test/test_helper.rb$%</span> <span class="o">=&gt;</span> <span class="nb">proc</span> <span class="p">{</span>
+        <span class="n">files_matching</span> <span class="sr">%r%^test/.*_test\.rb$%</span>
+      <span class="p">},</span>
+    <span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Given the string filename as the path, determine</span>
+  <span class="c1"># the corresponding tests for it, in an array.</span>
+  <span class="k">def</span> <span class="nf">tests_for_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="k">super</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="vi">@files</span><span class="o">.</span><span class="n">has_key?</span> <span class="n">f</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div><p>We have the mapping, now all we need to do is tell autotest about it.</p>
+<div class="highlight"><pre><code class="ruby"><span class="c1"># autotest/discover.rb</span>
+<span class="nb">require</span> <span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/testunit&#39;</span>
+
+<span class="no">Autotest</span><span class="o">.</span><span class="n">add_discovery</span> <span class="p">{</span> <span class="s2">&quot;testunit&quot;</span> <span class="p">}</span>
+</code></pre></div><p>Throw both of those files into a <code>autotest/</code> directory in your plain ol&#8217; Ruby project and autotest should just work for you.</p>
+<p>Extra credit: Make it work with RSpec on plain ol&#8217; Ruby projects.</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li><a class="twitter" href="http://twitter.com/bkeepers">Follow me on Twitter</a></li>
+        <li><a class="github" href="http://github.com/bkeepers">Follow me on GitHub</a></li>
+        <li><a class="subscribe" href="http://feeds.feedburner.com/opensoul">Subscribe to the Feed</a></li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<footer id="copyright">
+  Copyright © 2006 - 2013 Brandon Keepers
+</footer>
+
+<!--
+FIXME:
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+-->
+</body>
+</html>

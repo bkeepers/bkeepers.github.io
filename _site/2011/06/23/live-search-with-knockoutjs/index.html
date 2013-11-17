@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live search with knockout.js</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-da54950d773cc0a6579fb8526c53ef93.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Live search with knockout.js</h1>
+  <p class="meta">
+    <span class="date">June 23, 2011</span>
+    <span class="tags">
+      
+        framework,
+      
+        javascript
+      
+    </span>
+  </p>
+  <div class="body"><p><a href="http://knockoutjs.com/">Knockout.js</a> is an interesting take on building rich web applications. While I was initially turned off by the <acronym title="Model-View-View-Model"><span class="caps">MVVM</span></acronym> approach of embedding bindings in the view, it has grown on me after playing around with it for a few days. I look forward to experimenting with it on a larger application.</p>
+<p>My first experimentation with knockout is to implement live search. Here is a demo of searching for beers by name:</p>
+<div class="demo"><iframe src="/assets/4e02cba0dabe9d1c29005690/knockout.html"></iframe></div>
+<h2>How to build it</h2>
+<p>To start with, we just want to display our list of beers. Once we get that done, then we can start implementing the search. I used a hard-coded list for this example, but this could easily be the result of an <span class="caps">API</span> request.</p>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">beers</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="s2">&quot;…&quot;</span><span class="p">,</span> <span class="nx">brewery</span><span class="o">:</span><span class="s2">&quot;…&quot;</span><span class="p">,</span> <span class="nx">style</span><span class="o">:</span><span class="s2">&quot;…&quot;</span><span class="p">},</span>
+  <span class="c1">// …</span>
+<span class="p">];</span>
+</code></pre></div><p>We need to tell knockout about these beers so we can bind them to the view.</p>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">viewModel</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">beers</span><span class="o">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observableArray</span><span class="p">(</span><span class="nx">beers</span><span class="p">)</span>
+<span class="p">};</span>
+
+<span class="nx">ko</span><span class="p">.</span><span class="nx">applyBindings</span><span class="p">(</span><span class="nx">viewModel</span><span class="p">);</span>
+</code></pre></div><p>Displaying this list of beers is simple. We create our markup for the list, and use knockout&#8217;s template binding.</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">data-bind=</span><span class="s">&quot;template: {name:&#39;beer&#39;, foreach:beers}&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/html&quot;</span> <span class="na">id=</span><span class="s">&quot;beer&quot;</span><span class="nt">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">strong</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">&quot;text: name&quot;</span><span class="o">&gt;&lt;</span><span class="err">/strong&gt; –</span>
+    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">&quot;text: brewery&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt; –</span>
+    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">&quot;text: style&quot;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+  <span class="o">&lt;</span><span class="err">/li&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div><p>Now we should be able see our list of beers. Next let&#8217;s implement the search functionality, starting with an input field to search with.</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;input</span> <span class="na">placeholder=</span><span class="s">&quot;Search…&quot;</span> <span class="na">type=</span><span class="s">&quot;search&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;value: query, valueUpdate: &#39;keyup&#39;&quot;</span> <span class="na">autocomplete=</span><span class="s">&quot;off&quot;</span><span class="nt">&gt;</span>
+</code></pre></div><p>The data-bind attribute tells Knockout that we want to bind the value of this input field to a variable called <em>query</em>, and we want to update that value on keyup. We need to set up <em>query</em> as an observable attribute.</p>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">viewModel</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// …</span>
+
+  <span class="nx">query</span><span class="o">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div><p>Whenever the query attribute is changed, we want to perform our search and update our list of beers, so we subscribe to updates on <code>query</code> and call a search function.</p>
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">viewModel</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// …</span>
+
+  <span class="nx">search</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// remove all the current beers, which removes them from the view</span>
+    <span class="nx">viewModel</span><span class="p">.</span><span class="nx">beers</span><span class="p">.</span><span class="nx">removeAll</span><span class="p">();</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">x</span> <span class="k">in</span> <span class="nx">beers</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">beers</span><span class="p">[</span><span class="nx">x</span><span class="p">].</span><span class="nx">name</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">())</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">viewModel</span><span class="p">.</span><span class="nx">beers</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">beers</span><span class="p">[</span><span class="nx">x</span><span class="p">]);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">viewModel</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">viewModel</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
+</code></pre></div><p>Our search function begins by removing all the beers from the array observed by knockout, then loops through our list of beers and does a simple search, adding each beer back to the knockout array if it matches, which in turn updates it in the view.</p>
+<p>View the <a href="http://opensoul.org/assets/4e02cba0dabe9d1c29005690/knockout.html">source on the demo</a> to see all of the code in context.</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li><a class="twitter" href="http://twitter.com/bkeepers">Follow me on Twitter</a></li>
+        <li><a class="github" href="http://github.com/bkeepers">Follow me on GitHub</a></li>
+        <li><a class="subscribe" href="http://feeds.feedburner.com/opensoul">Subscribe to the Feed</a></li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<footer id="copyright">
+  Copyright © 2006 - 2013 Brandon Keepers
+</footer>
+
+<!--
+FIXME:
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+-->
+</body>
+</html>

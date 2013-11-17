@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Observers for Ajax callbacks</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-da54950d773cc0a6579fb8526c53ef93.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Observers for Ajax callbacks</h1>
+  <p class="meta">
+    <span class="date">July 12, 2007</span>
+    <span class="tags">
+      
+        ajax,
+      
+        events,
+      
+        javascript,
+      
+        prototype
+      
+    </span>
+  </p>
+  <div class="body"><p>In my Javascript-fu adventures over the past week or so, I&#8217;ve consistently run into the same problem.  I want to do slight variations of an Ajax request on an individual basis. Here is a common method from my code: (Note: these examples use <code>Event.addBehavior</code> from <a href="http://www.danwebb.net/2006/9/3/low-pro-unobtrusive-scripting-for-prototype">Dan Webb&#8217;s excellent lowpro library</a> for registering events.)</p>
+<div class="highlight"><pre><code class="javascript"><span class="nx">Event</span><span class="p">.</span><span class="nx">addBehavior</span><span class="p">({</span>
+  <span class="c1">// hijack any forms with the class &quot;new&quot; and submit them using Ajax</span>
+  <span class="s1">&#39;form.new:submit&#39;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span><span class="nx">evalScripts</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">onLoading</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">disable</span><span class="p">();</span> <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+      <span class="nx">onComlete</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">enable</span><span class="p">();</span> <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+    <span class="p">});</span>
+    <span class="nx">Event</span><span class="p">.</span><span class="nx">stop</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div><p>But occasionally, I want a certain form to do something slightly different. For example, I have some forms that are hidden by default and I want to hide them again after they are submitted:</p>
+<div class="highlight"><pre><code class="javascript"><span class="nx">Event</span><span class="p">.</span><span class="nx">addBehavior</span><span class="p">({</span>
+  <span class="s1">&#39;form.new.hidden:submit&#39;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span><span class="nx">evalScripts</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">onLoading</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">disable</span><span class="p">();</span> <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+      <span class="nx">onComlete</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">enable</span><span class="p">();</span> <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+      <span class="nx">onSuccess</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">new</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">BlindUp</span><span class="p">(</span><span class="k">this</span><span class="p">);</span> <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+    <span class="p">});</span>
+    <span class="nx">Event</span><span class="p">.</span><span class="nx">stop</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">})</span>
+</code></pre></div><p>The problems with this are, 1) there is a lot of duplication, and 2) if this form has the &#8220;new&#8221; class name, it&#8217;s going to end up with 2 event handlers registered, both making an Ajax request.</p>
+<p>So what I want is event observers on <code>Form.request</code> and <a href="/2007/7/11/adding-dom-methods-with-prototype"><code>Anchor.request</code></a> for the Ajax request lifecycle, so I can call <code>form.request.observe('loading', function() { … })</code>, and that will be invoked any time an Ajax request is made for that form:</p>
+<div class="highlight"><pre><code class="javascript"><span class="nx">Event</span><span class="p">.</span><span class="nx">addBehavior</span><span class="p">({</span>
+  <span class="c1">// submit form requests using ajax</span>
+  <span class="s1">&#39;form.new:submit&#39;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span><span class="nx">evalScripts</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+    <span class="nx">Event</span><span class="p">.</span><span class="nx">stop</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+  <span class="p">},</span>
+
+  <span class="c1">// register observers to disable and enable the form</span>
+  <span class="s1">&#39;form.new&#39;</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">observe</span><span class="p">({</span>
+      <span class="s1">&#39;loading&#39;</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">disable</span><span class="p">();</span> <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+      <span class="s1">&#39;complete&#39;</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">enable</span><span class="p">();</span> <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+    <span class="p">});</span>
+  <span class="p">},</span>
+
+  <span class="c1">// register an observer to hide the form on success</span>
+  <span class="s1">&#39;form.new.hidden&#39;</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">new</span> <span class="nx">Effect</span><span class="p">.</span><span class="nx">BlindUp</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div><p>And this is where I need your help.</p>
+<p>The first problem is that we need some type of event notification framework. I have that part solved by using a <a href="http://source.collectiveidea.com/public/rails/javascripts/object.event.js">slightly modified version</a> of <a href="http://livepipe.net/projects/object_event/">Ryan Johnson&#8217;s Object.Event library</a>, which basically allows you to add event observers to any object, and then call them by calling <code>notify('eventname')</code> within the object.</p>
+<p>Next, I&#8217;ve made a modified version of <a href="/2007/7/11/adding-dom-methods-with-prototype">Anchor.reqeust method from my post yesterday</a>, which calls <code>notify</code> on each of the Ajax callbacks, and extends the request methods with the event notification methods:</p>
+<div class="highlight"><pre><code class="javascript"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">window</span><span class="p">.</span><span class="nx">Anchor</span><span class="p">)</span> <span class="kd">var</span> <span class="nx">Anchor</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+
+<span class="nx">Anchor</span><span class="p">.</span><span class="nx">Methods</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">request</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">anchor</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">anchor</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">anchor</span><span class="p">)</span>
+    <span class="nx">callbacks</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="nx">$A</span><span class="p">([</span><span class="s1">&#39;loading&#39;</span><span class="p">,</span> <span class="s1">&#39;complete&#39;</span><span class="p">,</span> <span class="s1">&#39;exception&#39;</span><span class="p">,</span> <span class="s1">&#39;failure&#39;</span><span class="p">,</span> <span class="s1">&#39;success&#39;</span><span class="p">]).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">callbacks</span><span class="p">[</span><span class="s1">&#39;on&#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">capitalize</span><span class="p">()]</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">anchor</span><span class="p">.</span><span class="nx">notify</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">anchor</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">event</span><span class="p">));</span>
+      <span class="p">};</span>
+    <span class="p">});</span>
+    <span class="nx">options</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+      <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;get&#39;</span>
+    <span class="p">},</span> <span class="nx">callbacks</span><span class="p">),</span> <span class="nx">options</span> <span class="o">||</span> <span class="p">{});</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Ajax</span><span class="p">.</span><span class="nx">Request</span><span class="p">(</span><span class="nx">anchor</span><span class="p">.</span><span class="nx">readAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">),</span> <span class="nx">options</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Anchor</span><span class="p">.</span><span class="nx">Methods</span><span class="p">.</span><span class="nx">request</span><span class="p">);</span>
+<span class="nx">Element</span><span class="p">.</span><span class="nx">addMethods</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="nx">Anchor</span><span class="p">.</span><span class="nx">Methods</span><span class="p">);</span>
+</code></pre></div><p>This is where the second problem comes in.  While the event notification methods are added to <code>Anchor.Methods.request</code>, they don&#8217;t get added to the anchor objects when the <code>request</code> method does. They&#8217;re getting lost in Prototype&#8217;s <code>Element.extend</code> method that adds the extensions to each element.</p>
+<p>And as soon as I get that problem solved, I&#8217;m going to have another one: one instance of <code>Anchor.request</code> will be shared amongst all the anchor objects, so registering an observer on one will register it for every Ajax request.  What I need then is for the event observer to keep track of the registered observers in each object, even though the methods are on the shared <code>register</code> function.</p>
+<p>I could move the event registration methods to the anchor instead of on the <code>request</code> method, but that has problems of it&#8217;s own. Namely, each element already has an <code>observe</code> method for the browser&#8217;s events, and I can&#8217;t come up with a better name than <code>observe</code>.  Besides, I think the methods belong on the request object; they are specific to the Ajax request.</p>
+<p>So, does anyone have any good ideas?  Is this a lame/unnecessary feature?</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li><a class="twitter" href="http://twitter.com/bkeepers">Follow me on Twitter</a></li>
+        <li><a class="github" href="http://github.com/bkeepers">Follow me on GitHub</a></li>
+        <li><a class="subscribe" href="http://feeds.feedburner.com/opensoul">Subscribe to the Feed</a></li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<footer id="copyright">
+  Copyright © 2006 - 2013 Brandon Keepers
+</footer>
+
+<!--
+FIXME:
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+-->
+</body>
+</html>

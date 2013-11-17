@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cucumber and Sunspot</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-da54950d773cc0a6579fb8526c53ef93.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Cucumber and Sunspot</h1>
+  <p class="meta">
+    <span class="date">April  7, 2010</span>
+    <span class="tags">
+      
+        cucumber,
+      
+        sunspot
+      
+    </span>
+  </p>
+  <div class="body"><p>If you haven&#8217;t checked out <a href="http://outoftime.github.com">Sunspot</a> yet, you should. I have tried every solution for doing real full-text searching in a Rails app. Sunspot, backed by solr, is the only one that I haven&#8217;t had issues with in production. Hopefully I&#8217;ll get around to posting more about my experience with it.</p>
+<p>But for today, here&#8217;s how I got Sunspot working with Cucumber.</p>
+<p>First, add a configuration for the cucumber environment in <code>config/sunspot.yml</code>. I usually just use the same settings as test.</p>
+<div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">test</span><span class="p-Indicator">:</span> <span class="nl">&amp;TEST</span>
+  <span class="l-Scalar-Plain">solr</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">hostname</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">localhost</span>
+    <span class="l-Scalar-Plain">port</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">8981</span>
+    <span class="l-Scalar-Plain">log_level</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">WARNING</span>
+
+<span class="l-Scalar-Plain">cucumber</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">&lt;&lt;</span><span class="p-Indicator">:</span> <span class="nv">*TEST</span>
+</code></pre></div><p>Then, throw this bit of nastiness in the bottom of your env.rb file.</p>
+<div class="highlight"><pre><code class="ruby"><span class="vg">$original_sunspot_session</span> <span class="o">=</span> <span class="no">Sunspot</span><span class="o">.</span><span class="n">session</span>
+
+<span class="no">Before</span><span class="p">(</span><span class="s2">&quot;~@search&quot;</span><span class="p">)</span> <span class="k">do</span>
+  <span class="no">Sunspot</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="no">Sunspot</span><span class="o">::</span><span class="no">Rails</span><span class="o">::</span><span class="no">StubSessionProxy</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="vg">$original_sunspot_session</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="no">Before</span><span class="p">(</span><span class="s2">&quot;@search&quot;</span><span class="p">)</span> <span class="k">do</span>
+  <span class="k">unless</span> <span class="vg">$sunspot</span>
+    <span class="vg">$sunspot</span> <span class="o">=</span> <span class="no">Sunspot</span><span class="o">::</span><span class="no">Rails</span><span class="o">::</span><span class="no">Server</span><span class="o">.</span><span class="n">new</span>
+    <span class="n">pid</span> <span class="o">=</span> <span class="nb">fork</span> <span class="k">do</span>
+      <span class="no">STDERR</span><span class="o">.</span><span class="n">reopen</span><span class="p">(</span><span class="s1">&#39;/dev/null&#39;</span><span class="p">)</span>
+      <span class="no">STDOUT</span><span class="o">.</span><span class="n">reopen</span><span class="p">(</span><span class="s1">&#39;/dev/null&#39;</span><span class="p">)</span>
+      <span class="vg">$sunspot</span><span class="o">.</span><span class="n">run</span>
+    <span class="k">end</span>
+    <span class="c1"># shut down the Solr server</span>
+    <span class="nb">at_exit</span> <span class="p">{</span> <span class="no">Process</span><span class="o">.</span><span class="n">kill</span><span class="p">(</span><span class="s1">&#39;TERM&#39;</span><span class="p">,</span> <span class="n">pid</span><span class="p">)</span> <span class="p">}</span>
+    <span class="c1"># wait for solr to start</span>
+    <span class="nb">sleep</span> <span class="mi">5</span>
+  <span class="k">end</span>
+  <span class="no">Sunspot</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="vg">$original_sunspot_session</span>
+
+  <span class="no">MyModel</span><span class="o">.</span><span class="n">remove_all_from_index!</span>
+<span class="k">end</span>
+</code></pre></div><p>This will start up Sunspot for scenarios tagged with <code>@search</code>, and mock out the sunspot connection for ones that aren&#8217;t.</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li><a class="twitter" href="http://twitter.com/bkeepers">Follow me on Twitter</a></li>
+        <li><a class="github" href="http://github.com/bkeepers">Follow me on GitHub</a></li>
+        <li><a class="subscribe" href="http://feeds.feedburner.com/opensoul">Subscribe to the Feed</a></li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<footer id="copyright">
+  Copyright © 2006 - 2013 Brandon Keepers
+</footer>
+
+<!--
+FIXME:
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+-->
+</body>
+</html>

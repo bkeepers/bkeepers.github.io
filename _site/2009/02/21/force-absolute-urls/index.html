@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Force Absolute URLs</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-da54950d773cc0a6579fb8526c53ef93.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Force Absolute URLs</h1>
+  <p class="meta">
+    <span class="date">February 21, 2009</span>
+    <span class="tags">
+      
+        facebook,
+      
+        rails,
+      
+        routing
+      
+    </span>
+  </p>
+  <div class="body"><p>Need to force all URLs in a controller or action to be absolute URLs, but don&#8217;t want to use the <code>*_url</code> named routes or, even worse, <code>:only_path =&gt; false</code> everywhere?</p>
+<h3>Background</h3>
+<p>As we were putting the finishing touches on an awesome Facebook app today (yes I said &#8220;awesome&#8221; in the same sentence as &#8220;facebook app&#8221;…you&#8217;ll see), we needed to make it so that users can add the app as a tab in their profile. Facebook makes this very easy, but there&#8217;s an interesting <del>quirk</del> <ins>feature</ins>. From the <a href="http://wiki.developers.facebook.com/index.php/New_Design_Tabbed_Profile">developer&#8217;s wiki</a>:</p>
+<blockquote>
+<ul>
+<li>Absolute URLs on a tab take the user to your application&#8217;s canvas page.</li>
+<li>Relative URLs are treated as if they are relative to your home canvas page and <span class="caps">AJAX</span>-loads in the tab.</li>
+</ul>
+</blockquote>
+<p>We needed all of the URLs on the page to be absolute so that they would take the user out of the tab and into our application. So we were faced with two options:</p>
+<ol>
+	<li>Change all of our named routes from <code>*_path</code> to <code>*_url</code> and use explicit paths instead of polymorphic urls (you know, that thing that lets you do <code>form_for @model</code>, or <code>link_to h(@model.name), @model</code>)</li>
+	<li>Figure out some quick hack that forced Rails to generate absolute URLs on this one page and go on about our lives</li>
+</ol>
+<p>The page reused a lot of components from all over the site, so we weren&#8217;t excited about option 1. And, like all good developers, we were just adverse to that much work.</p>
+<p>So we started looking for a good fit for option 2. We needed to force <code>:only_path</code> to be false on any <span class="caps">URL</span> generation.  There&#8217;s a way to specify <code>default_url_options</code>, but as the name implies, those are only defaults.  Using the <code>*_path</code> named routes forces <code>:only_path</code> to true.</p>
+<h3>Solution</h3>
+<p>It turns out, Rails passes all <span class="caps">URL</span> generation through a method on your controller called <code>#rewrite_options</code>. So we just overrode that method to force <code>:only_path</code> to false on our one action.  Here&#8217;s the code we used:</p>
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">ContentController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+  <span class="c1"># …</span>
+
+  <span class="k">def</span> <span class="nf">profile</span>
+    <span class="c1"># profile action</span>
+  <span class="k">end</span>
+
+<span class="kp">private</span>
+  <span class="c1"># Force absolute URLs on the profile tab.</span>
+  <span class="k">def</span> <span class="nf">rewrite_options</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="k">super</span><span class="p">(</span><span class="n">action_name</span> <span class="o">==</span> <span class="s1">&#39;profile&#39;</span> <span class="p">?</span> <span class="n">options</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="ss">:only_path</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">)</span> <span class="p">:</span> <span class="n">options</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div><p>It&#8217;s slightly evil, but it worked beautifully.</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li><a class="twitter" href="http://twitter.com/bkeepers">Follow me on Twitter</a></li>
+        <li><a class="github" href="http://github.com/bkeepers">Follow me on GitHub</a></li>
+        <li><a class="subscribe" href="http://feeds.feedburner.com/opensoul">Subscribe to the Feed</a></li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<footer id="copyright">
+  Copyright © 2006 - 2013 Brandon Keepers
+</footer>
+
+<!--
+FIXME:
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+-->
+</body>
+</html>

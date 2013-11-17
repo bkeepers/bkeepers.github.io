@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Using GPG on OS X</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-da54950d773cc0a6579fb8526c53ef93.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Using GPG on OS X</h1>
+  <p class="meta">
+    <span class="date">July 18, 2006</span>
+    <span class="tags">
+      
+        gpg,
+      
+        mac
+      
+    </span>
+  </p>
+  <div class="body"><p><em>I&#8217;ve been posting a lot about <span class="caps">GPG</span> and public key encryption lately, so I thought I should at least give some pointers for how to set it up on the Mac.  This post is based off of directions written up by <a href="http://daniel.collectiveidea.com/">Daniel Morrison</a> and <a href="http://integernoun.com/">Matt Slack</a>, so kudos to them. </em></p>
+<hr />
+<p>Getting up and running with <span class="caps">GPG</span> on the Mac is quick and very easy. Everything you need is available from the <a href="http://macgpg.sourceforge.net/">Mac <span class="caps">GPG</span> project</a> on sourceforge:</p>
+<ul>
+	<li><a href="http://prdownloads.sourceforge.net/macgpg/GnuPG1.4.1.dmg?download"><span class="caps">GNU</span> Privacy Guard</a> (currently version 1.4.1) installs the command-line tools.</li>
+	<li><a href="http://prdownloads.sourceforge.net/macgpg/GPG_Keychain_Access.0.7.0.1.zip?download"><span class="caps">GPG</span> Keychain Access</a> is a simple <span class="caps"><span class="caps">GUI</span></span> for managing and creating keys.</li>
+	<li><a href="http://prdownloads.sourceforge.net/macgpg/GPGPreferences-1.2.dmg?download">GPGPreferences</a> is a System Preferences panel for managing <span class="caps"><span class="caps">GPG</span></span> from the <span class="caps"><span class="caps">GUI</span></span>.</li>
+	<li>Optional tools such as <span class="caps"><span class="caps">GPG</span></span>FileTool (encrypt/decrypt files) and <span class="caps"><span class="caps">GPG</span></span>DropThing (drop text to encrypt/decript) are available at the <a href="http://macgpg.sourceforge.net/">project page</a></li>
+</ul>
+<p>After you have those installed, you need to generate a key pair.  Open <strong><span class="caps">GPG</span> Keychain Access</strong> and select &#8220;Key&#8594;Generate…&#8221;. Of all the options you are presented with, the only one you should need to think about is the key size. While 1024 is secure, 2048 or 4096 are obviously better. Larger sizes can slow you down if plan to encrypt large files, but are unnoticable for email. <em>Note: the larger the key, the longer it will take to generate (one-time process only), so go grab a cup of coffee if you do 4096, unless you have a shiney new MacBook.</em></p>
+<h2>Install plugin for Mail Clients</h2>
+<p>Plugins for your mail clients will allow you to encrypt, decrypt, and sign messages in Mail. Since email is (probalby) the reason we want <span class="caps"><span class="caps">GPG</span></span>, it makes a lot of sense to install them.</p>
+<ul>
+	<li><strong>Apple Mail:</strong> Grab the <a href="http://www.sente.ch/pub/software/GPGMail/GPGMail-10.4.dmg">plugin installer</a> from the <a href="http://www.sente.ch/software/GPGMail/English.lproj/GPGMail.html">GPGMail site</a> It actually is more functional than the commercial <span class="caps"><span class="caps">PGP</span></span> plugin.</li>
+	<li><strong>Mozilla Thunderbird:</strong> <a href="http://enigmail.mozdev.org/download.html">Download</a> the latest version of <a href="http://enigmail.mozdev.org/">Enigmail</a> from mozdev.</li>
+</ul>
+<blockquote><em><strong>If you have commercial <span class="caps"><span class="caps">PGP</span></span> installed</strong> it is best to uninstall before installing an email plugin. Apple Mail, for example, will not work with both. You can uninstall just the <span class="caps"><span class="caps">PGP</span></span> email plugin by deleting it from your /Library/mail/bundles directory.</em></blockquote>
+<h2>Use It!</h2>
+<p>What&#8217;s the point in having it if you aren&#8217;t going to use it? Upload your public key to one of <a href="http://subkeys.pgp.net/">the</a> <a title="MIT Key Server" href="http://pgp.mit.edu">key</a> <a title="PGP Global Directory" href="https://keyserver.pgp.com/">servers</a>. Get your friends and coworkers to generate public keys and start sending eachother secure mail (if you don&#8217;t have any friends or coworkers, feel free to download <a href="http://pgp.mit.edu:11371/pks/lookup?op=get&search=0xC0E3268C">my public key</a> and send me an encrypted email).</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li><a class="twitter" href="http://twitter.com/bkeepers">Follow me on Twitter</a></li>
+        <li><a class="github" href="http://github.com/bkeepers">Follow me on GitHub</a></li>
+        <li><a class="subscribe" href="http://feeds.feedburner.com/opensoul">Subscribe to the Feed</a></li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<footer id="copyright">
+  Copyright © 2006 - 2013 Brandon Keepers
+</footer>
+
+<!--
+FIXME:
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+-->
+</body>
+</html>

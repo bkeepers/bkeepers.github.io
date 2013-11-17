@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Splitting Hairs and Arrays</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-da54950d773cc0a6579fb8526c53ef93.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Splitting Hairs and Arrays</h1>
+  <p class="meta">
+    <span class="date">June 19, 2008</span>
+    <span class="tags">
+      
+        array,
+      
+        core_ext,
+      
+        ruby
+      
+    </span>
+  </p>
+  <div class="body"><p>Am I just dumb, or is it really a lot harder than it should be to break an array up into a set number of chunks?</p>
+<p>For example, I have a list of 8 items that I want to break into 3 arrays, each displayed in their own unordered list, like this:</p>
+<div style="overflow:hidden;">
+<ul style="float: left; margin-left: 3em">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+<ul style="float: left; margin-left: 3em">
+    <li>Item 4</li>
+    <li>Item 5</li>
+    <li>Item 6</li>
+</ul>
+<ul style="float: left; margin-left: 3em">
+    <li>Item 7</li>
+    <li>Item 8</li>
+</ul>
+</div>
+<p><a href="http://ryckbost.com">Brian</a> and I spent a ridiculous amount of time (20 minutes, at least) trying to come up with a clean solution to this seemingly simple problem.  The closest thing there is to a solution is <a href="http://ruby-doc.org/core/classes/Enumerable.html#M001129">Enumerable#each_slice</a> in Ruby core or <a href="http://api.rubyonrails.org/classes/ActiveSupport/CoreExtensions/Array/Grouping.html#M000275">Array#in_groups_of</a> in Active Support.</p>
+<div class="highlight"><pre><code class="erb"><span class="cp">&lt;%</span> <span class="n">my_array</span><span class="o">.</span><span class="n">each_slice</span><span class="p">((</span><span class="n">my_array</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">to_f</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">ceil</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">list</span><span class="o">|</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">  &lt;ul&gt;</span>
+<span class="x">    </span><span class="cp">&lt;%</span> <span class="n">list</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">item</span><span class="o">|</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">      &lt;li&gt;</span><span class="cp">&lt;%=</span> <span class="n">item</span> <span class="cp">%&gt;</span><span class="x">&lt;/li&gt;</span>
+<span class="x">    </span><span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">  &lt;/ul&gt;</span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span><span class="x"></span>
+</code></pre></div><p>or</p>
+<div class="highlight"><pre><code class="erb"><span class="cp">&lt;%</span> <span class="n">my_array</span><span class="o">.</span><span class="n">in_groups_of</span><span class="p">((</span><span class="n">my_array</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">to_f</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">ceil</span><span class="p">,</span> <span class="kp">false</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">list</span><span class="o">|</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">  &lt;ul&gt;</span>
+<span class="x">    </span><span class="cp">&lt;%</span> <span class="n">list</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">item</span><span class="o">|</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">      &lt;li&gt;</span><span class="cp">&lt;%=</span> <span class="n">item</span> <span class="cp">%&gt;</span><span class="x">&lt;/li&gt;</span>
+<span class="x">    </span><span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">  &lt;/ul&gt;</span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span><span class="x"></span>
+</code></pre></div><p>There&#8217;s not really a difference between either solution.  Both requires that we calculate how many items we want in each list. (We convert the size to a float, divide by the number of columns, then round up. This gives us the same number of items in each column, with the last column having fewer.)</p>
+<h3>Our solution</h3>
+<p>We didn&#8217;t like having that much logic in the view, so we added a method to enumerable; we thought the division (<code>/</code>) method seemed appropriate since we&#8217;re dividing the array into equal parts.</p>
+<div class="highlight"><pre><code class="ruby"><span class="k">module</span> <span class="nn">Enumerable</span>
+  <span class="c1"># Divide into groups</span>
+  <span class="k">def</span> <span class="nf">/</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="n">returning</span> <span class="o">[]</span> <span class="k">do</span> <span class="o">|</span><span class="n">result</span><span class="o">|</span>
+      <span class="n">each_slice</span><span class="p">((</span><span class="n">size</span><span class="o">.</span><span class="n">to_f</span> <span class="o">/</span> <span class="n">num</span><span class="p">)</span><span class="o">.</span><span class="n">ceil</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="p">}</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div><blockquote>
+<p>Note: this method is now in our <a href="http://github.com/collectiveidea/awesomeness">awesomeness</a> plugin.</p>
+</blockquote>
+<p>So now we can just divide our array into chunks in the view.</p>
+<div class="highlight"><pre><code class="erb"><span class="cp">&lt;%</span> <span class="p">(</span><span class="n">my_array</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">list</span><span class="o">|</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">  &lt;ul&gt;</span>
+<span class="x">    </span><span class="cp">&lt;%</span> <span class="n">list</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">item</span><span class="o">|</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">      &lt;li&gt;</span><span class="cp">&lt;%=</span> <span class="n">item</span> <span class="cp">%&gt;</span><span class="x">&lt;/li&gt;</span>
+<span class="x">    </span><span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">  &lt;/ul&gt;</span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span><span class="x"></span>
+</code></pre></div><p>Are we dumb? Is there already a way to do this that wasn&#8217;t obvious to us and we just wasted our time (and I wasted even more time blogging about it)?</p>
+<p><ins>Update: Thanks to Aaron Pfeifer for pointing out the <a href="http://blog.jayfields.com/2007/09/ruby-arraychunk.html">discussion on Jay Field&#8217;s blog</a> about something similar.  I&#8217;ve refactored this code in <a href="http://github.com/collectiveidea/awesomeness/tree/master/lib/awesomeness/core_ext/enumerable.rb">awesomeness</a> to be more &quot;robust&#8217; (read: convoluted).</ins></p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li><a class="twitter" href="http://twitter.com/bkeepers">Follow me on Twitter</a></li>
+        <li><a class="github" href="http://github.com/bkeepers">Follow me on GitHub</a></li>
+        <li><a class="subscribe" href="http://feeds.feedburner.com/opensoul">Subscribe to the Feed</a></li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<footer id="copyright">
+  Copyright © 2006 - 2013 Brandon Keepers
+</footer>
+
+<!--
+FIXME:
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+-->
+</body>
+</html>

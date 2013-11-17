@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ruby Documentation Redux</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-da54950d773cc0a6579fb8526c53ef93.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Ruby Documentation Redux</h1>
+  <p class="meta">
+    <span class="date">July  4, 2006</span>
+    <span class="tags">
+      
+        ruby
+      
+    </span>
+  </p>
+  <div class="body"><p>Apparently, in my attempt to help eliminate comment spam, I managed to disable comments from users that are not logged in (which, doesn&#8217;t work too well when I have registration disabled).  I received a few responses to my <a href="/2006/07/03/ruby-documentation/" title="Ruby Documentation">previous post</a> via email, so I thought I would mention them and expand upon my frustrations with Ruby documentation.</p>
+<p>Aníbal Rojas emailed me to point out <a href="http://www.rubymanual.org">rubymanual.org</a>.  This looks like a pretty good site, but seems to still suffer from the shortcoming of only having the core Ruby documentation and not the extensions from Rails or any other gems.</p>
+<p>David Felstead emailed me to point out the <a href="http://widgets.precisionis.com.au/">Ruby RDoc Dashboard widget</a>. This is a handy little widget, but still isn&#8217;t a solution that I like.  One shortcoming I think it has (correct me if I&#8217;m wrong) is that it appears to use the RDoc from the internet, and not the local machine.  I&#8217;ll explain more of why this is a problem for me in a minute.</p>
+<p>For a while I was using <code>ri</code> from the command line, and one thing I liked about that is that I could easily import documentation by running <code>rdoc --ri /path/to/src/lib</code>.  So I ran that on most of the gems I used frequently, including Rails.  What I didn&#8217;t like about <code>ri</code> is that I couldn&#8217;t easily jump around the documentation.  I could look up <code>ri ClassName</code> to find the method in the class that I was looking for, but then to get more info about that method, I had to exit, and type <code>ri ClassName#method</code>.  The other problem is that it would occasionally generate exceptions, especially in cases where a library or class would redefine a method. I never took the time to debug it, but usually deleting the <code>.rdoc</code> directory in my home directory, and re-running <code>rdoc --ri</code> fixed it (yes, the Windows equivalent of a reboot).</p>
+<p>Before I switched to TextMate, I used the <a href="http://rubyeclipse.sourceforge.net/">Ruby Development Tools</a> plugin for Eclipse, and one thing I really liked about that was the built in RI browser.  I could search through all the RI docs and easily find the methods I was looking for.  This is what I wished the Dashboard widget allowed me to do. The down side is that using <code>ri</code> on the back-end causes the problem with exceptions that I described above, and it was really slow on the Mac (didn&#8217;t seem to have that problem when I was running Linux though).</p>
+<p>So, here&#8217;s my wish-list for a documentation system in Ruby, in order of importance:</p>
+<ul>
+    <li>merge core Ruby docs with installed gems and other libraries&mdash;including redefined or added methods, which would probably require some type of environment awareness (not a problem for Rails apps)</li>
+    <li>linked cross-references</li>
+    <li>searchable</li>
+    <li>fast</li>
+</ul></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li><a class="twitter" href="http://twitter.com/bkeepers">Follow me on Twitter</a></li>
+        <li><a class="github" href="http://github.com/bkeepers">Follow me on GitHub</a></li>
+        <li><a class="subscribe" href="http://feeds.feedburner.com/opensoul">Subscribe to the Feed</a></li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<footer id="copyright">
+  Copyright © 2006 - 2013 Brandon Keepers
+</footer>
+
+<!--
+FIXME:
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+-->
+</body>
+</html>

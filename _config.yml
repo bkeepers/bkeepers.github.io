@@ -6,3 +6,8 @@ copyright: 2006 - 2013
 permalink: /:year/:month/:day/:title/
 assets:
   cache: true
+exclude:
+- script
+- Gemfile
+- Gemfile.lock
+- scratch.md

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Testing views in RSpec with namespaced elements</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-da54950d773cc0a6579fb8526c53ef93.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Testing views in RSpec with namespaced elements</h1>
+  <p class="meta">
+    <span class="date">December  4, 2008</span>
+    <span class="tags">
+      
+        facebook,
+      
+        rails,
+      
+        rspec
+      
+    </span>
+  </p>
+  <div class="body"><p>We&#8217;ve been working on a Facebook app (yeah, I know, I&#8217;m sorry) and have had all kinds of fun challenges. We wanted to test <a href="http://wiki.developers.facebook.com/index.php/FBML"><acronym title="Facebook Markup Language"><span class="caps">FBML</span></acronym> tags</a> in the view, but the problem is that <span class="caps">FBML</span> uses namespaced elements.</p>
+<p>It turns out, <span class="caps">CSS</span> selectors don&#8217;t work with namespaced elements.  There is a <a href="http://www.w3.org/TR/css3-namespace/">CSS3 namespace module</a>, but Rails&#8217; <a href="http://api.rubyonrails.org/classes/ActionController/Assertions/SelectorAssertions.html#M000397">#assert_select</a> and RSpec&#8217;s <a href="http://rspec.rubyforge.org/rspec-rails/1.1.11/classes/Spec/Rails/Matchers.html#M000069">#have_tag</a> (built on <code>#assert_select</code>) don&#8217;t support them. We were going to have to turn to XPath, but <code>#have_tag</code> only supports <span class="caps">CSS</span> selectors.</p>
+<p>But <a href="http://code.whytheluckystiff.net/hpricot/">Hpricot</a> supports XPath.  A little searching revealed the <a href="http://github.com/pd/rspec_hpricot_matchers">rspec_hpricot_matchers plugin</a>, which replaces have_tag with an Hpricot-backed version.  The only problem is that the new version isn&#8217;t backwards compatible.  So we <a href="http://github.com/collectiveidea/rspec_hpricot_matchers">forked it</a> and renamed <code>#have_tag</code> to <code>#match_element</code>.</p>
+<h3>Usage</h3>
+<p>It&#8217;s pretty straight forward.  Install the <a href="http://github.com/collectiveidea/rspec_hpricot_matchers">rspec_hpricot_matchers</a> plugin, and include the module in the RSpec config in <code>spec_helper.rb</code>.</p>
+<div class="highlight"><pre><code class="ruby"><span class="no">Spec</span><span class="o">::</span><span class="no">Runner</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">include</span> <span class="no">RspecHpricotMatchers</span>
+<span class="k">end</span>
+</code></pre></div><p>Our view had something similar to:</p>
+<div class="highlight"><pre><code class="erb"><span class="x">&lt;fb:multi-friend-input prefill_ids=&quot;</span><span class="cp">&lt;%=</span> <span class="vi">@friends</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="x">&quot; /&gt;</span>
+</code></pre></div><p>And in the view spec, we use #match_element with an XPath expression.</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">describe</span> <span class="s2">&quot;things/edit.fbml.erb&quot;</span> <span class="k">do</span>
+  <span class="n">it</span> <span class="s2">&quot;should prefill selected friends&quot;</span> <span class="k">do</span>
+    <span class="n">render</span> <span class="s2">&quot;things/edit.fbml.erb&quot;</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">should</span> <span class="n">match_element</span><span class="p">(</span><span class="s2">&quot;//fb:multi-friend-input[@prefill_ids=&#39;333,444,555&#39;]&quot;</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li><a class="twitter" href="http://twitter.com/bkeepers">Follow me on Twitter</a></li>
+        <li><a class="github" href="http://github.com/bkeepers">Follow me on GitHub</a></li>
+        <li><a class="subscribe" href="http://feeds.feedburner.com/opensoul">Subscribe to the Feed</a></li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<footer id="copyright">
+  Copyright © 2006 - 2013 Brandon Keepers
+</footer>
+
+<!--
+FIXME:
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+-->
+</body>
+</html>

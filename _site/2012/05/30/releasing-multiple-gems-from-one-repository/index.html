@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Releasing multiple gems from one repository</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-da54950d773cc0a6579fb8526c53ef93.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Releasing multiple gems from one repository</h1>
+  <p class="meta">
+    <span class="date">May 30, 2012</span>
+    <span class="tags">
+      
+        gem,
+      
+        ruby
+      
+    </span>
+  </p>
+  <div class="body"><p>When I released <a href="https://github.com/bkeepers/qu">qu</a>, I wanted to split the various backends and exception handlers into multiple gems so each gem had the proper dependencies without enforcing all of the dependencies on everyone all the time.</p>
+<p>I had to decide between maintaining multiple repositories for each plugin, or releasing them all from the same repository.  There are advantages and disadvantages to both, but I decided I would rather start with them in one repository and split them out later if it became a problem.</p>
+<p>Several people have asked how I did it. Here&#8217;s my secret formula.</p>
+<h2>Plugin gemspec</h2>
+<p>For each gem we want to release, we need a gemspec. For example, check out <a href="https://github.com/bkeepers/qu/blob/master/qu-redis.gemspec"><code>qu-redis.gemspec</code></a>. Most of the gemspec is standard, but there are a few things I want to draw to your attention.</p>
+<p>Since we&#8217;ll be releasing multiple gems out of this directory, we need to make sure we get the right files for this gem. You can use whatever criteria makes sense for your project, but for <code>qu-redis</code> it worked out to just grab any file that has &#8220;redis&#8221; in the name.</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">s</span><span class="o">.</span><span class="n">files</span> <span class="o">=</span> <span class="sb">`git ls-files -- lib | grep redis`</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div><p>We need to make sure that this plugin then depends on a compatible version of the main library. For Qu, I lock each plugin to the exact version. When I release a bugfix, I release a new version of each gem, whether it is changed or not.</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">s</span><span class="o">.</span><span class="n">add_dependency</span> <span class="s1">&#39;qu&#39;</span><span class="p">,</span> <span class="no">Qu</span><span class="o">::</span><span class="no">VERSION</span>
+</code></pre></div><p>Each plugin can and should declare any other dependencies.</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">s</span><span class="o">.</span><span class="n">add_dependency</span> <span class="s1">&#39;redis-namespace&#39;</span>
+<span class="n">s</span><span class="o">.</span><span class="n">add_dependency</span> <span class="s1">&#39;simple_uuid&#39;</span>
+</code></pre></div><p>Now we have a gem for our plugin, with its own files and dependencies.</p>
+<h2>Main gemspec</h2>
+<p>The gemspec for our &#8220;core&#8221; library will look a little different. Check out <a href="https://github.com/bkeepers/qu/blob/master/qu.gemspec"><code>qu.gemspec</code></a> for the full version. We want to avoid including files from other gems in our project, so first we get a list of those files.</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">plugin_files</span> <span class="o">=</span> <span class="no">Dir</span><span class="o">[</span><span class="s1">&#39;qu-*.gemspec&#39;</span><span class="o">].</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">gemspec</span><span class="o">|</span>
+  <span class="nb">eval</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">gemspec</span><span class="p">))</span><span class="o">.</span><span class="n">files</span>
+<span class="p">}</span><span class="o">.</span><span class="n">flatten</span><span class="o">.</span><span class="n">uniq</span>
+</code></pre></div><p>We get a list of the files for the gem, and then exclude files from our other gems.</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">s</span><span class="o">.</span><span class="n">files</span> <span class="o">=</span> <span class="sb">`git ls-files`</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">plugin_files</span>
+</code></pre></div><h2>Gemfile</h2>
+<p>If you&#8217;re using bundler for your development dependencies (which you should be), then you probably want to lock the dependencies from your gemspecs without having to redeclare them. We can easily tell bundler about all of our gemspecs.</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">source</span> <span class="ss">:rubygems</span>
+
+<span class="n">gemspec</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;qu&#39;</span>
+
+<span class="no">Dir</span><span class="o">[</span><span class="s1">&#39;qu-*.gemspec&#39;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">gemspec</span><span class="o">|</span>
+  <span class="n">plugin</span> <span class="o">=</span> <span class="n">gemspec</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="sr">/qu-(.*)\.gemspec/</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="o">.</span><span class="n">first</span>
+  <span class="n">gemspec</span><span class="p">(</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">&quot;qu-</span><span class="si">#{</span><span class="n">plugin</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="ss">:development_group</span> <span class="o">=&gt;</span> <span class="n">plugin</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div><h2>Rakefile</h2>
+<p>Lastly, we want to automate the build process by adding <code>build</code> and <code>release</code> rake tasks.</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">desc</span> <span class="s1">&#39;Build gem into the pkg directory&#39;</span>
+<span class="n">task</span> <span class="ss">:build</span> <span class="k">do</span>
+  <span class="no">FileUtils</span><span class="o">.</span><span class="n">rm_rf</span><span class="p">(</span><span class="s1">&#39;pkg&#39;</span><span class="p">)</span>
+  <span class="no">Dir</span><span class="o">[</span><span class="s1">&#39;*.gemspec&#39;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">gemspec</span><span class="o">|</span>
+    <span class="nb">system</span> <span class="s2">&quot;gem build </span><span class="si">#{</span><span class="n">gemspec</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="k">end</span>
+  <span class="no">FileUtils</span><span class="o">.</span><span class="n">mkdir_p</span><span class="p">(</span><span class="s1">&#39;pkg&#39;</span><span class="p">)</span>
+  <span class="no">FileUtils</span><span class="o">.</span><span class="n">mv</span><span class="p">(</span><span class="no">Dir</span><span class="o">[</span><span class="s1">&#39;*.gem&#39;</span><span class="o">]</span><span class="p">,</span> <span class="s1">&#39;pkg&#39;</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">desc</span> <span class="s1">&#39;Tags version, pushes to remote, and pushes gem&#39;</span>
+<span class="n">task</span> <span class="ss">:release</span> <span class="o">=&gt;</span> <span class="ss">:build</span> <span class="k">do</span>
+  <span class="n">sh</span> <span class="s1">&#39;git&#39;</span><span class="p">,</span> <span class="s1">&#39;tag&#39;</span><span class="p">,</span> <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="n">changelog</span><span class="p">,</span> <span class="s2">&quot;v</span><span class="si">#{</span><span class="no">Qu</span><span class="o">::</span><span class="no">VERSION</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="n">sh</span> <span class="s2">&quot;git push origin master&quot;</span>
+  <span class="n">sh</span> <span class="s2">&quot;git push origin v</span><span class="si">#{</span><span class="no">Qu</span><span class="o">::</span><span class="no">VERSION</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="n">sh</span> <span class="s2">&quot;ls pkg/*.gem | xargs -n 1 gem push&quot;</span>
+<span class="k">end</span>
+</code></pre></div><h2>Profit</h2>
+<p>This has worked out really well so far. All the activity for the project is in one repo, and pushing out a new release is really easy. Win, win!</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li><a class="twitter" href="http://twitter.com/bkeepers">Follow me on Twitter</a></li>
+        <li><a class="github" href="http://github.com/bkeepers">Follow me on GitHub</a></li>
+        <li><a class="subscribe" href="http://feeds.feedburner.com/opensoul">Subscribe to the Feed</a></li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+<footer id="copyright">
+  Copyright © 2006 - 2013 Brandon Keepers
+</footer>
+
+<!--
+FIXME:
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+-->
+</body>
+</html>
