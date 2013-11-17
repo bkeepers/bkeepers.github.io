@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+git rm -qfr _site
+jekyll build
+git add _site
+git diff --cached --exit-code _site || git commit -m "Publish `date -u`" _site
+git push --force origin `git subtree split --prefix _site`:master
