@@ -23,10 +23,16 @@ header
 #about
   @extend .four
   @extend .columns
+  text-align: right
 
-  @media only screen and (min-width: 768px)
-    text-align: right
+  .icon
+    float: right
 
+  @media only screen and (max-width: 767px)
+    text-align: left
+
+    .icon
+      float: none
 
 @media only screen and (min-width: 960px)
   header

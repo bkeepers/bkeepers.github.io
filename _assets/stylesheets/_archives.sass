@@ -8,26 +8,20 @@
       @extend .button
 
 .archives
+  li
+    line-height: 2
+    margin-bottom: 0
+    position: relative
+    border-bottom: 1px #eee dotted
 
   a
     white-space: nowrap
     display: block
     text-overflow: ellipsis
     overflow: hidden
-    line-height: 2
     margin-right: 150px
-
-  li
-    margin-bottom: 0
-    line-height: 2
-    padding: 0 1em
-    position: relative
-
-
-    &:nth-child(2n)
-      background-color: rgba(100,100,100,0.1)
 
   .date
     position: absolute
-    right: 1em
+    right: 0
     top: 0
