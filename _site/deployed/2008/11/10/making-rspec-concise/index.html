@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Making RSpec concise</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-94e1fc1109c1b76ae4fbab0891861760.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Making RSpec concise</h1>
+  <p class="meta">
+    <span class="date">November 10, 2008</span>
+    <span class="tags">
+      
+        rspec,
+      
+        ruby
+      
+    </span>
+  </p>
+  <div class="body"><p>A common criticism of <a href="http://rspec.info">RSpec</a> is that it is very verbose. I don&#8217;t necessarily agree (or care), but I thought it would be fun to see how concise I could make my specs.</p>
+<p>Here are some simple specs from a client project:</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">describe</span> <span class="no">Company</span> <span class="k">do</span>
+  <span class="n">before</span> <span class="k">do</span>
+    <span class="vi">@company</span> <span class="o">=</span> <span class="no">Company</span><span class="o">.</span><span class="n">new</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s2">&quot;should have many classifications&quot;</span> <span class="k">do</span>
+    <span class="vi">@company</span><span class="o">.</span><span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:classifications</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s2">&quot;should have many industries through companies&quot;</span> <span class="k">do</span>
+    <span class="vi">@company</span><span class="o">.</span><span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:industries</span><span class="p">,</span> <span class="ss">:through</span> <span class="o">=&gt;</span> <span class="ss">:classifications</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s2">&quot;should have many locations&quot;</span> <span class="k">do</span>
+    <span class="vi">@company</span><span class="o">.</span><span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:locations</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s2">&quot;should have many leads&quot;</span> <span class="k">do</span>
+    <span class="vi">@company</span><span class="o">.</span><span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:leads</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s2">&quot;should have many jobs&quot;</span> <span class="k">do</span>
+    <span class="vi">@company</span><span class="o">.</span><span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:jobs</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s2">&quot;should have many notes&quot;</span> <span class="k">do</span>
+    <span class="vi">@company</span><span class="o">.</span><span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:notes</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s2">&quot;should have many phones ordered by phone type position&quot;</span> <span class="k">do</span>
+    <span class="vi">@company</span><span class="o">.</span><span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:phones</span><span class="p">,</span> <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="ss">:phonable</span><span class="p">,</span>
+      <span class="ss">:include</span> <span class="o">=&gt;</span> <span class="ss">:phone_type</span><span class="p">,</span> <span class="ss">:order</span> <span class="o">=&gt;</span> <span class="s1">&#39;phone_types.position&#39;</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s2">&quot;should have many events&quot;</span> <span class="k">do</span>
+    <span class="vi">@company</span><span class="o">.</span><span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:events</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s2">&quot;should have many interests&quot;</span> <span class="k">do</span>
+    <span class="vi">@company</span><span class="o">.</span><span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:interests</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s2">&quot;should belong_to an exchange&quot;</span> <span class="k">do</span>
+    <span class="vi">@company</span><span class="o">.</span><span class="n">should</span> <span class="n">belong_to</span><span class="p">(</span><span class="ss">:exchange</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s1">&#39;should belong_to a primary_contact&#39;</span> <span class="k">do</span>
+    <span class="vi">@company</span><span class="o">.</span><span class="n">should</span> <span class="n">belong_to</span><span class="p">(</span><span class="ss">:primary_contact</span><span class="p">,</span> <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Job&#39;</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s1">&#39;should have many articles&#39;</span> <span class="k">do</span>
+    <span class="vi">@company</span><span class="o">.</span><span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:articles</span><span class="p">,</span>
+      <span class="ss">:order</span> <span class="o">=&gt;</span> <span class="s1">&#39;articles.date DESC, articles.created_at DESC&#39;</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div><p>These specs check the declared associations on our company model <a href="http://github.com/brandon/rspec-on-rails-matchers">using some custom matchers</a>. They are not very complicated, but are somewhat repetitive. Each example has a description that is basically a duplication of the implementation.</p>
+<h3>Step 1: remove the description</h3>
+<p>For a while now, RSpec has had the ability for matchers to be self describing. If you don&#8217;t pass a block to <code>#it</code>, it uses the description provided by the matcher.</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">it</span> <span class="k">do</span>
+  <span class="vi">@company</span><span class="o">.</span><span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:jobs</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div><p>When that spec is run, it gives the output <em>&#8220;should have a has_many association called :jobs&#8221;</em>. Depending on what you&#8217;re speccing, the built in description isn&#8217;t always clear, but in this case it&#8217;s great.</p>
+<p>See <a href="http://rspec.rubyforge.org/rspec/1.1.11/classes/Spec/Matchers.html#M000441">#simple_matcher</a> if you want to create custom matchers with useful error messages.</p>
+<h3>Step 2: remove the subject</h3>
+<p>So the duplication within each example is gone, but if you look at the full spec above, each example calls <code>@company.should</code>. Accessing an instance variable isn&#8217;t what I would consider &#8220;duplication&#8221;, but thanks to a <a href="http://github.com/dchelimsky/rspec/commit/dc51a976280b7d9638e9b87c3c7b3c13d3d0b207">nifty new feature added to RSpec today</a>, it&#8217;s now unnecessary noise.  We can simply call <code>#should</code> within our example, and it will use a new instance of the described type as the &#8220;subject&#8221;.</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">describe</span> <span class="no">Company</span> <span class="k">do</span>
+  <span class="n">it</span> <span class="k">do</span>
+    <span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:jobs</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div><p>You can customize the subject if you don&#8217;t simply want a new instance.</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">describe</span> <span class="no">Company</span><span class="p">,</span> <span class="s1">&#39;validations&#39;</span> <span class="k">do</span>
+  <span class="n">subject</span> <span class="p">{</span> <span class="no">Company</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">valid_company_attributes</span><span class="p">)</span> <span class="p">}</span>
+
+  <span class="n">it</span> <span class="k">do</span>
+    <span class="n">should</span> <span class="n">be_valid</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div><p><ins>Note: As <a href="#comment-9459">David Chelimsky points out in the comments</a>, this is not released yet and is subject to change.</ins></p>
+<h3>Step 3: One-liner</h3>
+<p>Lastly, we can use the one line block:</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">describe</span> <span class="no">Company</span> <span class="k">do</span>
+  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:classifications</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:events</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:interests</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:jobs</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:leads</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:locations</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:notes</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:articles</span><span class="p">,</span> <span class="ss">:order</span> <span class="o">=&gt;</span> <span class="s1">&#39;articles.date DESC, articles.created_at DESC&#39;</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:industries</span><span class="p">,</span> <span class="ss">:through</span> <span class="o">=&gt;</span> <span class="ss">:classifications</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:phones</span><span class="p">,</span> <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="ss">:phonable</span><span class="p">,</span> <span class="ss">:include</span> <span class="o">=&gt;</span> <span class="ss">:phone_type</span><span class="p">,</span> <span class="ss">:order</span> <span class="o">=&gt;</span> <span class="s1">&#39;phone_types.position&#39;</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">belong_to</span><span class="p">(</span><span class="ss">:exchange</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">belong_to</span><span class="p">(</span><span class="ss">:primary_contact</span><span class="p">,</span> <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Job&#39;</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">end</span>
+</code></pre></div><p>That&#8217;s pretty sexy. I wasn&#8217;t able to do this with all of the specs in my app, but it worked with quite a few of them.</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li>
+          <a href="http://twitter.com/bkeepers">
+            <span class="icon icon-mark-twitter"></span>
+            Follow me on Twitter
+          </a>
+        </li>
+        <li>
+          <a href="http://github.com/bkeepers">
+            <span class="icon icon-mark-github"></span>
+            Follow me on GitHub
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/opensoul">
+            <span class="icon icon-feed"></span>
+            Subscribe to the Feed
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+
+  <footer id="copyright">
+    Copyright © 2006 - 2013 Brandon Keepers
+  </footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bending iTunes to my will with RubyOSA: take 1</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-94e1fc1109c1b76ae4fbab0891861760.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Bending iTunes to my will with RubyOSA: take 1</h1>
+  <p class="meta">
+    <span class="date">June 30, 2007</span>
+    <span class="tags">
+      
+        applescript,
+      
+        id3,
+      
+        itunes,
+      
+        mac,
+      
+        osa,
+      
+        podcast,
+      
+        ruby
+      
+    </span>
+  </p>
+  <div class="body"><p>A couple months ago I <a href="/2007/4/17/moving-podcast-tracks-into-your-itunes-library">expressed my frustration about iTunes not letting me move podcast files into my library</a>.  Several people commented with suggestions, such as converting the ID3 tag to an older version, re-importing the track, and then converting the ID3 tag back to 2.4.  This is definitely better than the solution I had found, but still a pain.</p>
+<p>I tried to find a scriptable solution, but iTunes doesn&#8217;t expose, though AppleScript, the ability to change the ID3 tag version or the mystical ID3 tag attribute that tells iTunes that it&#8217;s a podcast.</p>
+<p>So, I&#8217;ve turned to Ruby.  Though a little introspection and experimentation with <a href="http://ID3lib-ruby.rubyforge.org/">ID3lib-ruby</a>, I&#8217;ve figured out that it is the <a href="http://id3lib.sourceforge.net/id3/id3v2com-00.html#tco"><code>CTO</code></a> (Content Type) ID3v2 tag set to &#8220;Podcast&#8221; that iTunes is using to put the files in the Podcasts folder. Clearing the <code>CTO</code> tag and readding the track in iTunes will move it into the Library.</p>
+<p>So, with <a href="http://rubyosa.rubyforge.org">RubyOSA</a>, I&#8217;ve written a little script that will loop through the selected tracks in iTunes and clear the <code>CTO</code> ID3 tag.</p>
+<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="s1">&#39;rubygems&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;rbosa&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;ID3lib&#39;</span>
+
+<span class="n">itunes</span> <span class="o">=</span> <span class="no">OSA</span><span class="o">.</span><span class="n">app</span><span class="p">(</span><span class="s1">&#39;itunes&#39;</span><span class="p">)</span>
+<span class="n">itunes</span><span class="o">.</span><span class="n">selection</span><span class="o">.</span><span class="n">get</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">track</span><span class="o">|</span>
+  <span class="k">if</span> <span class="n">track</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="no">OSA</span><span class="o">::</span><span class="no">Itunes</span><span class="o">::</span><span class="no">Track</span><span class="p">)</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="no">URI</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="no">URI</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">__data__</span><span class="p">(</span><span class="s1">&#39;furl&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">tag</span> <span class="o">=</span> <span class="no">ID3Lib</span><span class="o">::</span><span class="no">Tag</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+    <span class="n">tag</span><span class="o">.</span><span class="n">content_type</span> <span class="o">=</span> <span class="kp">nil</span>
+    <span class="n">tag</span><span class="o">.</span><span class="n">update!</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div><p>There are a few remaining problems that I would like to tackle:</p>
+<ol>
+	<li>I can&#8217;t figure out how to delete and add the track through RubyOSA.  There is a delete method on the track, but doesn&#8217;t appear to do anything.</li>
+	<li>I want the script to display a dialog confirming the actions about to take place.</li>
+	<li>I want to be able to execute the script from the Scripts menu in iTunes, which appears to involve installing <a href="http://homepage.mac.com/philip_aker/osa/osa.html"><span class="caps">OSA</span> Components</a>.</li>
+</ol>
+<p>Overall, this has been a fun experiment (and a reason to play with RubyOSA).  I&#8217;m looking forward to Leopard when this is all built in!</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li>
+          <a href="http://twitter.com/bkeepers">
+            <span class="icon icon-mark-twitter"></span>
+            Follow me on Twitter
+          </a>
+        </li>
+        <li>
+          <a href="http://github.com/bkeepers">
+            <span class="icon icon-mark-github"></span>
+            Follow me on GitHub
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/opensoul">
+            <span class="icon icon-feed"></span>
+            Subscribe to the Feed
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+
+  <footer id="copyright">
+    Copyright © 2006 - 2013 Brandon Keepers
+  </footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>

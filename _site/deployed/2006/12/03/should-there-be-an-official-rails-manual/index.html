@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Should there be an official Rails manual?</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-94e1fc1109c1b76ae4fbab0891861760.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Should there be an official Rails manual?</h1>
+  <p class="meta">
+    <span class="date">December  3, 2006</span>
+    <span class="tags">
+      
+        rails
+      
+    </span>
+  </p>
+  <div class="body"><p>One of the biggest problems with documentation, especially in active community projects like Rails, is that it becomes outdated so quickly.  Thus, we have tools like RDoc, which allow us to put documentation inline with the code.  This makes a great <span class="caps">API</span> reference, but it isn&#8217;t always that helpful when learning the features of the framework.</p>
+<p>When the fine folks at Caboo.se announced their <a href="http://blog.caboo.se/pages/documentation_drive">drive to raise funds for Rails documentation</a>, I was really hopeful that the result would be an &#8220;official&#8221; Rails manual. I suggested it on their <a href="http://caboose.stikipad.com/documentation/">wiki</a>, and several people commented that it would be a good idea, but there didn&#8217;t seem to be a lot of public conversation about it (at least, not out side of #caboose).  It seems so far that the Caboo.se documentation effort is primarily focused on the Rails RDoc.</p>
+<p>Currently, the best resource for understanding Rails features are individual blogs.  While this is good for bloggers, it is a pain for users.  For example, yesterday I was trying to figure out all the things you can do with generators.  The best resources I found on the subject were mini howtos on random blogs.</p>
+<p>Several of the (Java) frameworks that I have used in the past have had an official manual, and although it was very dry (not the good kind of <acronym title="Don't Repeat Yourself"><span class="caps">DRY</span></acronym>), it was a great resource.  The <a href="http://static.springframework.org/spring/docs/2.0.x/reference/index.html">Spring framework</a> and <a href="http://www.hibernate.org/hib_docs/v3/reference/en/html/">Hibernate</a> both have excellent reference manuals.</p>
+<p>I think that we need an official Rails reference manual: in-depth coverage of all the features of the Rails framework organized into a table of contents with an index.</p>
+<p>One could argue that we don&#8217;t need a manual because of wonderful books like <a href="http://pragmaticprogrammer.com/titles/rails2/index.html">Agile Web Development with Rails</a>, <a href="http://www.manning.com/black/">Ruby for Rails</a>, <a href="http://pragmaticprogrammer.com/titles/fr_rr/index.html">Rails Recipes</a>, etc.  While these books are definitely helpful, they suffer from the problem of quickly becoming outdated (thus the need for a 2nd edition of <span class="caps">AWDWR</span> in just over a year). The community moves too fast to keep RDoc up to date, and the publishing industry, by nature, is simply slow.  And for the most part, the books are a skin-deep overview of the most important features, not a reference manual.</p>
+<p>One could also argue that this would hurt the publishers, but I don&#8217;t think it would. A reference manual is a lot different from a book. A reference manual, while potentially helpful for beginners, would be of more value for intermediate (and maybe even advanced) users. There would still be plenty of room for books targeted at beginners, and could open up a market for more advanced books on specific topics.</p>
+<h3>What should a manual look like?</h3>
+<p>One possibility is to treat it with the same respect as the Rails source code: put it under version control and file bug reports and patches for it. The advantage of this approach is that the documentation is versioned. There can be manuals for each release of the framework without having to duplicate efforts. Fixes can be merged into all versions of the manual.  You could encourage (force) patch submissions for the framework to include documentation updates.  The down side is that documentation would have to be written in something like DocBook (yuck), which would limit it to more tech-savvy authors.</p>
+<p>The next option is a wiki.  This <a href="http://wiki.rubyonrails.org">has been tried</a> and has turned into a jumbled, nearly useless mess.  The wiki would require organization and a hierarchy. A wiki approach would make it easier for anyone to contribute. The down side is that there is only one version of documentation.  It makes it harder to keep it up to date as Rails progresses.</p>
+<p>A third option is to write something that combines the best of the previous two.  A wiki interface to versioned documentation.  This is sort of what Caboo.se is trying to do with RDoc.  The wiki could either tie directly into subversion, or generate patches that could be submitted to a documentation team.</p>
+<h3>Who&#8217;s going to write it?</h3>
+<p>Well, we are. The are open source projects out there that have proven that good documentation is possible.  You just have to be very intentional and disciplined.</p>
+<p>To start with, we could just take existing blog entries, with the author&#8217;s permission, and compile them into a form of a &#8220;manual&#8221;.  Then, proceed to make it more cohesive.  We could also possibly pull in the parts of the Rails RDoc like the intro to <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html">ActiveRecord::Base</a>, since that information is really more reference material than <span class="caps">API</span> documentation.</p>
+<p>After that, the core team needs to be more adamant about requiring documentation with patches, and the community needs to step it up.</p>
+<h3>Thoughts?</h3>
+<p>What do you think?  Is this truly a need of the community, or is it just something I long for?</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li>
+          <a href="http://twitter.com/bkeepers">
+            <span class="icon icon-mark-twitter"></span>
+            Follow me on Twitter
+          </a>
+        </li>
+        <li>
+          <a href="http://github.com/bkeepers">
+            <span class="icon icon-mark-github"></span>
+            Follow me on GitHub
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/opensoul">
+            <span class="icon icon-feed"></span>
+            Subscribe to the Feed
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+
+  <footer id="copyright">
+    Copyright © 2006 - 2013 Brandon Keepers
+  </footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>

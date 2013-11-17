@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Git: the NoSQL database</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-94e1fc1109c1b76ae4fbab0891861760.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Git: the NoSQL database</h1>
+  <p class="meta">
+    <span class="date">September  1, 2011</span>
+    <span class="tags">
+      
+        git,
+      
+        nosql,
+      
+        popular,
+      
+        ruby,
+      
+        talk
+      
+    </span>
+  </p>
+  <div class="body"><p>We all know that Git is pretty amazing. It&#8217;s fast, reliable, flexible, and it keeps our project history safely nuzzled in it&#8217;s cozy object database while we sleep soundly at night. But I&#8217;m curious to see if it can be used for <strong>more than code</strong>. I&#8217;ve had a few apps in the back of my mind for a while now that would be really interesting if the data was stored in Git.</p>
+<p>If only there was an easy way to read and write a Git repo from Ruby…</p>
+<h2>Toystore &amp; adapter-git</h2>
+<p><a href="https://github.com/newtoy/toystore">Toystore</a> is an ActiveModel-based object mapper for key-value data stores. The beauty of Toystore is that it doesn&#8217;t care what the backend is. It uses <a href="https://github.com/newtoy/adapter">Adapter</a> to abstract the connection to any data store that can set, get, and delete keys.</p>
+<p>Well, <strong>Git is a key-value store</strong>; it supports set, get and delete on keys (a.k.a. paths). So I sat down with Scott Chacon&#8217;s <a href="http://peepcode.com/products/git-internals-pdf">Git Internals</a> Peepcode <span class="caps">PDF</span> and put together <a href="https://github.com/bkeepers/adapter-git">adapter-git</a>, built on top of <a href="https://github.com/mojombo/grit">Grit</a>.</p>
+<p>Now I can create pretty models that are stored in Git.</p>
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">Item</span>
+  <span class="kp">include</span> <span class="no">Toy</span><span class="o">::</span><span class="no">Store</span>
+
+  <span class="n">store</span> <span class="ss">:git</span><span class="p">,</span> <span class="no">Gaskit</span><span class="o">.</span><span class="n">repo</span><span class="p">,</span>
+    <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s1">&#39;content&#39;</span><span class="p">,</span>
+    <span class="ss">:path</span>   <span class="o">=&gt;</span> <span class="s1">&#39;items&#39;</span>
+
+  <span class="n">attribute</span> <span class="ss">:title</span><span class="p">,</span>       <span class="nb">String</span>
+  <span class="n">attribute</span> <span class="ss">:description</span><span class="p">,</span> <span class="nb">String</span>
+  <span class="n">attribute</span> <span class="ss">:created_at</span>   <span class="no">Time</span><span class="p">,</span> <span class="ss">:default</span> <span class="o">=&gt;</span> <span class="nb">lambda</span> <span class="p">{</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span> <span class="p">}</span>
+<span class="k">end</span>
+</code></pre></div><p>Toystore uses conventions that will be familiar to anyone that has used Active Record or MongoMapper.</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">item</span> <span class="o">=</span> <span class="no">Item</span><span class="o">.</span><span class="n">create!</span><span class="p">(</span><span class="ss">:title</span> <span class="o">=&gt;</span> <span class="s1">&#39;Git: the NoSQL database&#39;</span><span class="p">)</span>
+<span class="n">item</span><span class="o">.</span><span class="n">update_attributes</span><span class="p">(</span><span class="ss">:description</span> <span class="o">=&gt;</span> <span class="s2">&quot;OMG this is awesome!&quot;</span><span class="p">)</span>
+</code></pre></div><p>The biggest difference is that you can&#8217;t &#8220;find&#8221; records. The data stored in a key-value store is opaque, so all you can do is <strong>get</strong> it by key.</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">item</span> <span class="o">=</span> <span class="no">Item</span><span class="o">.</span><span class="n">get!</span><span class="p">(</span><span class="s1">&#39;3FB053FA-0A3B-4903-9CE0-2A8A964E0F37&#39;</span><span class="p">)</span>
+</code></pre></div><h2>Caveats</h2>
+<p>I have no idea if Git will work as a data backend for an application. I&#8217;m sure GitHub has solved many of the problems with concurrency and scaling a filesystem.</p>
+<p>There is still a lot of room for improvement on adapter-git too.  Here are just a few things I&#8217;d like to add soon:</p>
+<ul>
+	<li><strong>Locking</strong> &#8211; I wouldn&#8217;t want to use adapter-git for anything with a lot of concurrency at the moment. Git commits are atomic; you&#8217;ll never corrupt a repo by a failed commit, but if you have a lot of concurrent access, you might loose commits.</li>
+	<li><strong>Custom commit messages</strong> &#8211; Currently adapter-git just uses the ID of the key being set in the commit message. In the app I&#8217;m experimenting with, I&#8217;ve already had a desire to set custom commit messages.</li>
+	<li><strong>Update working copy</strong> &#8211; adapter-git currently just works against the git repo itself. It doesn&#8217;t update your working copy. So `git status` will currently tell you that you&#8217;ve deleted files from your working copy after you update records with adapter-git.</li>
+	<li><strong>Merge conflicts</strong> &#8211; I&#8217;m looking forward to being able to programmatically resolve merge conflicts. Riak has a cool pattern for resolving conflicts on read, so I&#8217;d love to see if I can build something into adapter-git and toystore to work in a similar fashion.</li>
+</ul>
+<p>Check out <a href="https://github.com/bkeepers/adapter-git">adapter-git</a> on GitHub and try building an app backed by Git!</p>
+<p><ins>Update: Check out the <a href="http://vimeo.com/44458223">video</a> and slides for a talk I gave on this topic.</ins></p>
+<script async class="speakerdeck-embed" data-id="4f926da9cb4cd0001f00a1ff" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li>
+          <a href="http://twitter.com/bkeepers">
+            <span class="icon icon-mark-twitter"></span>
+            Follow me on Twitter
+          </a>
+        </li>
+        <li>
+          <a href="http://github.com/bkeepers">
+            <span class="icon icon-mark-github"></span>
+            Follow me on GitHub
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/opensoul">
+            <span class="icon icon-feed"></span>
+            Subscribe to the Feed
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+
+  <footer id="copyright">
+    Copyright © 2006 - 2013 Brandon Keepers
+  </footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>

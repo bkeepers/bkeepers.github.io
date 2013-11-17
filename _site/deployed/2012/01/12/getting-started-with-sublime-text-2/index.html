@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Getting Started with Sublime Text 2</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-94e1fc1109c1b76ae4fbab0891861760.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Getting Started with Sublime Text 2</h1>
+  <p class="meta">
+    <span class="date">January 12, 2012</span>
+    <span class="tags">
+      
+        editor,
+      
+        popular
+      
+    </span>
+  </p>
+  <div class="body"><p>I recently switched to <a href="http://www.sublimetext.com/">Sublime Text 2</a> from TextMate. I did not love it at first. As it goes with many of the finer things in life, Sublime is an acquired taste. It was not until I paired with <a href="http://twitter.com/jnunemaker">a coworker</a> for a few days that I really started to see its power. I have been using it since and have not looked back.</p>
+<p>Here are a few tips that made it easier for me to get into it. Thanks to <a href="http://twitter.com/garand">Anthony Garand</a> for providing feedback and contributing to some of these tips below.</p>
+<h2>Command palette</h2>
+<p>Think of the command palette as Alfred for your code editor. Quick access to pretty much anything. Pressing ⌘⇧P will bring up the command palette where you can then scroll through a few of the options available to you: snippets, convert case, sort lines, and toggle various interface options.</p>
+<h2>Package Control</h2>
+<p>If you feel like something is missing from Sublime, then there is probably a plugin for it. The most essential plugin is <a href="http://wbond.net/sublime_packages/package_control">Package Control</a>, which allows you to install pretty much anything.</p>
+<p>To use package control, press ⌘⇧P to bring up the command palette, begin to type &#8220;install&#8221;, and select &#8220;<strong>Package Control: Install Package</strong>&#8221;. This will bring up a new palette to search for packages.  Find your packages and hit enter to install it. You can see in the status bar at the bottom that it is installing. Most packages will just work, but occasionally you might have to restart Sublime for the package to work.</p>
+<p><img src="/assets/screen_shot_20120111_at_4.55.08_pm-10a2516de380f5a140d69518160391d5.png"></p>
+<h2>Beat the ugly out of it</h2>
+<p>I cannot figure out a nice way to say this, so I will just say it: out of the box, Sublime is hideous. We are pompous programmers, so we cannot let that stand.</p>
+<p><ins>Update: The <a href="http://www.sublimetext.com/blog/articles/sublime-text-2-build-2165">new default theme</a> is actually <strong>much</strong> better. I still prefer the light Soda theme, but it&#8217;s no longer a necessity.</ins></p>
+<p>Start by installing the <a href="https://github.com/buymeasoda/soda-theme/">Soda UI theme</a> via Package Control. This is not a theme in the syntax highlighting sense, but for the UI widgets in Sublime. Note that when plugins talk about the <code>Packages</code> directory in Sublime, on OS X that is in <code>~/Library/Application Support/Sublime Text 2/Packages</code>.</p>
+<p>Ahh, that is better.  But the icon is ugly too. There are several <a href="http://dribbble.com/search?q=sublime+text&amp;x=0&amp;y=0">replacement options on dribbble</a>. <a href="http://dribbble.com/shots/311515-A-Sublime-Text-2-Icon-that-is-less-horrible">This one is my favorite</a>, although there is still much room for improvement.</p>
+<p>The syntax highlighting theme that comes with Sublime is alright, but everyone has their favorite theme. Mine is <a href="http://madeofcode.com/posts/29-photo-my-new-textmate-theme-8220-made-of-code-8221-mdash-download-9-feb-2010-update-t">Made of Code</a>. You can use any TextMate theme by copying it to the <code>Packages</code> directory and going to &#8220;Preferences » Color Scheme&#8221;.</p>
+<p>Ok, now we can stand to look at it.</p>
+<p><img src="/assets/screen_shot_20120111_at_3.50.09_pm-ec46adbe0539192ae11de6eb8fac5de0.png"></p>
+<h2>Opening a project</h2>
+<p>Sublime has support for project files, but I do not use them. I prefer to just open projects from the command line. Sublime comes with a command line interface, but you need to add it to your path.</p>
+<div class="highlight"><pre><code class="bash">sudo ln -s <span class="s2">&quot;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&quot;</span> /usr/bin/subl
+</code></pre></div><p>Now you can open a file or directory from the command line.</p>
+<div class="highlight"><pre><code class="bash">subl -n ~/blog
+</code></pre></div><p>I almost always edit from the current directory, so I set up a bash alias.</p>
+<div class="highlight"><pre><code class="bash"><span class="nb">alias </span><span class="nv">e</span><span class="o">=</span><span class="s2">&quot;subl -n .&quot;</span>
+</code></pre></div><p>Ok, now we have Sublime looking pretty and our project open.</p>
+<h2>Customizing Settings</h2>
+<p>Sublime is extremely configurable, but the configuration is in a few different <span class="caps">JSON</span> files that you have to edit by hand. But once you get familiar with them, they are not that scary.</p>
+<p>On OS X, go to &#8220;Sublime Text 2 » Preferences&#8221;.</p>
+<p><img src="/assets/screen_shot_20120111_at_2.15.34_pm-30672c661f37e90b3728596b0becf838.png"></p>
+<p>For each type of setting, Sublime has at least two files: defaults and custom user settings. You edit the <strong>User</strong> versions to specify the things you are overriding.</p>
+<ul>
+	<li><strong>File Settings</strong> affect the file that you are currently editing. This includes things like your color scheme, fonts…basically, anything related to editing files.</li>
+	<li><strong>Global Settings</strong> affect how Sublime itself behaves, including the UI theme, files to ignore, and window behavior.</li>
+	<li><strong>Key bindings</strong> are…well, key bindings. 614 lines of glorious shortcut keys.</li>
+</ul>
+<p>Take time to browse through the defaults to see all the levers and dials you can tweak. Check out <a href="https://gist.github.com/1596561">my settings</a>.</p>
+<h2>⌘p is the new ⌘t</h2>
+<p>⌘p (which is also mapped to ⌘t) brings up the Go To File palette. In addition to giving you quick access to your files, it has several features to allow you quickly jump <strong>into</strong> your files. After typing the file name, use <strong>@</strong> in the palette to jump directly to a specific method. You can also use ⌘r to bring up the palette prefaced with <strong>@</strong> to jump to a method in your current file.</p>
+<p><img src="/assets/screen_shot_20120112_at_8.03.54_am-fface2126103dd618c9d94630fa3121b.png"></p>
+<p>You can also use <strong>:</strong> (colon) in the palette to go to a specific line number, and ^g will open the paletted prefaced with colon to jump to a line in the current file.</p>
+<h2>Favorite Plugins</h2>
+<p>Here is a list of some of my favorite plugins. Most of these should be available to install through Package Control. Check them out and don&#8217;t forget to browse around Packgae Control to see what else is available. Here is a <a href="http://wbond.net/sublime_packages/community">complete list of packages available</a>.</p>
+<ul>
+	<li><a href="https://github.com/titoBouzout/SideBarEnhancements">SidebarEnhancements</a></li>
+	<li><a href="https://github.com/kemayo/sublime-text-2-git">Git</a></li>
+	<li><a href="https://github.com/weslly/Nettuts-Fetch">Fetch</a></li>
+	<li><a href="http://wbond.net/sublime_packages/alignment">Alignment</a></li>
+	<li><a href="https://github.com/jnordberg/sublime-colorpick">Color Pick</a></li>
+	<li><a href="https://github.com/condemil/Gist">Gist</a></li>
+	<li><a href="http://sass-lang.com"><span class="caps">SCSS</span></a></li>
+	<li><a href="https://github.com/jashkenas/coffee-script-tmbundle">CoffeeScript</a></li>
+</ul>
+<h2>One more thing</h2>
+<p>I highly recommend you go over and read the <a href="http://net.tutsplus.com/tutorials/tools-and-tips/sublime-text-2-tips-and-tricks/">Sublime article on NetTuts+</a> for many more tips and tricks to integrate into your workflow as you migrate to this new editor.</p>
+<p>I started tweeting tips from <a href="http://twitter.com/sublimetips">@sublimetips</a> on Twitter. Tweet your tips mentioning @sublimetips and I will likely retweet them.</p>
+<p>Happy Coding!</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li>
+          <a href="http://twitter.com/bkeepers">
+            <span class="icon icon-mark-twitter"></span>
+            Follow me on Twitter
+          </a>
+        </li>
+        <li>
+          <a href="http://github.com/bkeepers">
+            <span class="icon icon-mark-github"></span>
+            Follow me on GitHub
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/opensoul">
+            <span class="icon icon-feed"></span>
+            Subscribe to the Feed
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+
+  <footer id="copyright">
+    Copyright © 2006 - 2013 Brandon Keepers
+  </footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>

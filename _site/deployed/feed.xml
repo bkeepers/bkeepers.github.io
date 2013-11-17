@@ -1,0 +1,514 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>opensoul.org by Brandon Keepers</title>
+  <link href="http://opensoul.org"/>
+  <link type="application/atom+xml" rel="self" href="http://opensoul.org/feed.xml"/>
+  <updated>2013-04-30T03:25:00Z</updated>
+  <id>http://opensoul.org</id>
+  <author>
+    <name>Brandon Keepers</name>
+    <email>brandon@opensoul.org</email>
+  </author>
+  
+  <entry>
+    <title>Ruby at GitHub</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2013/04/30/ruby-at-github/"/>
+    <id>/2013/04/30/ruby-at-github</id>
+    <published>2013-04-30T03:25:00Z</published>
+    <category term="github"/><category term="ruby"/><category term="talk"/>
+    <summary type="html">&lt;p&gt;Here&amp;#8217;s the video and slides for my recent talk &amp;#8220;Ruby at GitHub&amp;#8221; at &lt;a href=&quot;http://mtnwestrubyconf.org/&quot;&gt;MountainWest RubyConf&lt;/a&gt;.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;Here&amp;#8217;s the video and slides for my recent talk &amp;#8220;Ruby at GitHub&amp;#8221; at &lt;a href=&quot;http://mtnwestrubyconf.org/&quot;&gt;MountainWest RubyConf&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/5vUD9Zg7gp0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;script async class=&quot;speakerdeck-embed&quot; data-id=&quot;48da9fa080340130c3a512313d241e1b&quot; data-ratio=&quot;1.77777777777778&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+  <entry>
+    <title>Siri, add toilet paper to the shopping list</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2013/01/07/siri-add-toilet-paper-to-the-shopping-list/"/>
+    <id>/2013/01/07/siri-add-toilet-paper-to-the-shopping-list</id>
+    <published>2013-01-07T14:00:00Z</published>
+    <category term="app"/><category term="mac"/>
+    <summary type="html">&lt;p&gt;The Reminders app on iOS and Mac has quickly become one of my favorite apps, mostly due to its integration with Siri and the ability to share lists with my wife.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;The Reminders app on iOS and Mac has quickly become one of my favorite apps, mostly due to its integration with Siri and the ability to share lists with my wife.&lt;/p&gt;
+&lt;p&gt;I almost always have my phone in my hand, so no matter how predisposed I am, I can afford to hold down the home button and say, &amp;#8220;Siri, add toilet paper to the shopping list&amp;#8221;, or &amp;#8220;Remind me to turn off the porch light when I get home.&amp;#8221;&lt;/p&gt;
+&lt;p class=&quot;half&quot;&gt;&lt;img src=&quot;/assets/IMG_0002_2-3d8d39db3d0df6e0c98d60cf79a43c51.jpg&quot;&gt; &lt;img src=&quot;/assets/IMG_0004_2-f5da8ef8610664a7cc4bbef339903762.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;It hasn&amp;#8217;t been added the Reminders iOS app yet, so many people don&amp;#8217;t know it exists, but from the Mac app or &lt;a href=&quot;http://icloud.com&quot;&gt;iCloud.com&lt;/a&gt; you can share a list. The list has to be synced with iCloud for this to work.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/Screen_Shot_2013_01_05_at_11_53_17_PM-a789e9a80a382383f87ee0e3d4b47e10.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Reminders is far from perfect, but it&amp;#8217;s the only list–paper or otherwise–that I&amp;#8217;ve been able to stick with for more than a week. It offers a glimpse of what the future holds for reminder and todo apps—and takes me one step closer to being completely useless without my phone.&lt;/p&gt;</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+  <entry>
+    <title>Convert a GitHub Issue Into a Pull Request</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/11/09/convert-a-github-issue-into-a-pull-request/"/>
+    <id>/2012/11/09/convert-a-github-issue-into-a-pull-request</id>
+    <published>2012-11-09T14:00:00Z</published>
+    <category term="github"/>
+    <summary type="html">&lt;p&gt;A little-known-feature of the GitHub &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; is the ability to attach changes to an issue, converting it into a pull request. The &lt;a href=&quot;http://defunkt.io/hub/&quot;&gt;hub&lt;/a&gt; command, a wrapper around &lt;code&gt;git&lt;/code&gt; that makes it more GitHub aware, allows you to easily do this.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;A little-known-feature of the GitHub &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; is the ability to attach changes to an issue, converting it into a pull request. The &lt;a href=&quot;http://defunkt.io/hub/&quot;&gt;hub&lt;/a&gt; command, a wrapper around &lt;code&gt;git&lt;/code&gt; that makes it more GitHub aware, allows you to easily do this.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;hub pull-request -i 384 -b bkeepers:master -h bkeepers:branch-name
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+	&lt;li&gt;&lt;code&gt;-i&lt;/code&gt; is the GitHub issue number&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;-b&lt;/code&gt; is the base, or where you want to send the pull request, with &lt;code&gt;bkeepers&lt;/code&gt; being the owner of the repository.&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;-h&lt;/code&gt; is the head, or the branch where your changes live.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;ins&gt;Update: in the comments, &lt;a href=&quot;http://ghickman.co.uk/&quot;&gt;George Hickman&lt;/a&gt; suggests: &amp;#8220;as long as you&amp;#8217;ve pushed your changes and your local branch is tracking your remote you can exclude the &lt;code&gt;-b&lt;/code&gt; and &lt;code&gt;-h&lt;/code&gt; options!&amp;#8221;. Note that you can set up tracking when pushing with &lt;code&gt;git push -u origin branch-name&lt;/code&gt;.&lt;/ins&gt;&lt;/p&gt;
+&lt;p&gt;I put together a quick (crappy quality) video showing how this works.&lt;/p&gt;
+&lt;p&gt;&lt;iframe src=&quot;http://player.vimeo.com/video/52962538&quot; width=&quot;580&quot; height=&quot;435&quot; frameborder=&quot;0&quot; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;p&gt;My workflow lately has been something like this:&lt;/p&gt;
+&lt;p&gt;1. Create a milestone in GitHub Issues for the mini-project I am working on&lt;br /&gt;
+2. Create Issues for the features I can foresee and begin discussions&lt;br /&gt;
+3. Work on the code for an issue in a branch&lt;br /&gt;
+4. Push the branch and convert the issue into a pull request with the command above&lt;/p&gt;
+&lt;p&gt;This workflow is also great for handling bugs, where someone likely opened an issue to report it, you create the fix in a branch, attach it to the issue, and then close it by merging the pull request.&lt;/p&gt;
+&lt;p&gt;The biggest caveat with this approach is that it does not work well for experimental code. There is not undo button for converting a pull request back into a plain ol&amp;#8217; issue, nor is there a way to replace the pull request with a different one.  So if you convert an issue into a pull request, and then decided you don&amp;#8217;t like the implementation, you have to close the issue, burying the discussion around it.&lt;/p&gt;</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+  <entry>
+    <title>Add helper methods to your Rails console</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/11/08/add-helper-methods-to-your-rails-console/"/>
+    <id>/2012/11/08/add-helper-methods-to-your-rails-console</id>
+    <published>2012-11-08T14:00:00Z</published>
+    <category term="rails"/><category term="speakerdeck"/>
+    <summary type="html">&lt;p&gt;If you use the console on your production application with any regularity, then having helpers for your application is a must! I use the console on &lt;a href=&quot;https://speakerdeck.com&quot;&gt;Speaker Deck&lt;/a&gt; often to debug issues processing PDFs. I almost always start by finding a user by their username or a talk by its &lt;span class=&quot;caps&quot;&gt;URL&lt;/span&gt;, so I added helpers to make it brainless.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;If you use the console on your production application with any regularity, then having helpers for your application is a must! I use the console on &lt;a href=&quot;https://speakerdeck.com&quot;&gt;Speaker Deck&lt;/a&gt; often to debug issues processing PDFs. I almost always start by finding a user by their username or a talk by its &lt;span class=&quot;caps&quot;&gt;URL&lt;/span&gt;, so I added helpers to make it brainless.&lt;/p&gt;
+&lt;p&gt;Adding helpers to the Rails 3 console is easy. Define your helper methods in a module in your &lt;code&gt;lib&lt;/code&gt; directory.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;SpeakerDeck&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# These methods are included into the Rails console&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Console&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Find a user by username&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;no&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_by_username!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Find a talk by url, e.g. &amp;quot;holman/how-to-be-sexy-like-me&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;slug&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;no&quot;&gt;Talk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_by_username_and_slug!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;slug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then, in your &lt;code&gt;application.rb&lt;/code&gt; file, pass a block to &lt;code&gt;#console&lt;/code&gt; that includes your module into &lt;code&gt;Rails::ConsoleMethods&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;SpeakerDeck&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Application&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Rails&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Application&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# …&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;console&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;speaker_deck/console&amp;#39;&lt;/span&gt;
+      &lt;span class=&quot;no&quot;&gt;Rails&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ConsoleMethods&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:include&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;SpeakerDeck&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Console&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now, when you run &lt;code&gt;rails console&lt;/code&gt;, your methods are available.&lt;/p&gt;
+&lt;pre&gt;
+&amp;gt;&amp;gt; user = u &#39;bkeepers&#39;
+=&amp;gt; #&amp;lt;User id:…&amp;gt;
+&amp;gt;&amp;gt; talk = t &#39;sachag/side-projects&#39;
+=&amp;gt; #&amp;lt;Talk id:…&amp;gt;
+&lt;/pre&gt;</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+  <entry>
+    <title>Abusing Rails I18N to Set Page Titles</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/11/05/abusing-rails-i18n-to-set-page-titles/"/>
+    <id>/2012/11/05/abusing-rails-i18n-to-set-page-titles</id>
+    <published>2012-11-05T14:55:00Z</published>
+    <category term="rails"/><category term="speakerdeck"/>
+    <summary type="html">&lt;p&gt;I got tired of &lt;code&gt;@page_title&lt;/code&gt; variables being sprinkled around in controllers and views on &lt;a href=&quot;https://speakerdeck.com&quot;&gt;Speaker Deck&lt;/a&gt;, so I made good use of &lt;a href=&quot;http://guides.rubyonrails.org/i18n.html&quot;&gt;Rails&amp;#8217; I18n &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;&lt;/a&gt; to define them all in one spot.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;I got tired of &lt;code&gt;@page_title&lt;/code&gt; variables being sprinkled around in controllers and views on &lt;a href=&quot;https://speakerdeck.com&quot;&gt;Speaker Deck&lt;/a&gt;, so I made good use of &lt;a href=&quot;http://guides.rubyonrails.org/i18n.html&quot;&gt;Rails&amp;#8217; I18n &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;&lt;/a&gt; to define them all in one spot.&lt;/p&gt;
+&lt;p&gt;My &lt;code&gt;config/locales/en.yml&lt;/code&gt; now looks something like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;en&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;l-Scalar-Plain&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Speaker&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Deck&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Share&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Presentations&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;without&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Mess&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;l-Scalar-Plain&quot;&gt;account&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Sign&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Up&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;My&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Account&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;l-Scalar-Plain&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;%{category}&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;l-Scalar-Plain&quot;&gt;likes&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Presentations&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Liked&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%{user}&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;l-Scalar-Plain&quot;&gt;passwords&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Password&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Reset&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;l-Scalar-Plain&quot;&gt;talks&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;All&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Presentations&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;edit&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Edit&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%{talk}&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;New&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Presentation&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;%{talk}&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;l-Scalar-Plain&quot;&gt;users&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Talks&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%{user}&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To make this work, add a &lt;code&gt;#page_title&lt;/code&gt; helper method, which looks up the page title translation using the controller and action name.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;TitleHelper&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;page_title&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page_title_translation_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;page_title_context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:default&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:&amp;quot;title.default&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;page_title_translation_key&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;:&amp;quot;title.&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;controller_name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;action_name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;page_title_context&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;controller&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view_assigns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;symbolize_keys&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The helper also passes all of the instance variables assigned in the controller, so you can use any of those variables in your page title. The only caveat is that we have to define &lt;code&gt;#to_s&lt;/code&gt; in order for our model objects to show up properly in the title:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;User&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;to_s&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now in our layout, we can use our new helper:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;erb&quot;&gt;&lt;span class=&quot;x&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;%=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;page_title&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I&amp;#8217;m really happy with how this little hack worked out. This almost seems like something that should be in Rails core. Maybe I&amp;#8217;ll have to submit a pull request…&lt;/p&gt;</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+  <entry>
+    <title>Why Hypermedia APIs Matter</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/10/29/why-hypermedia-apis-matter/"/>
+    <id>/2012/10/29/why-hypermedia-apis-matter</id>
+    <published>2012-10-29T13:00:00Z</published>
+    <category term="api"/>
+    <summary type="html">&lt;p&gt;You have probably heard recent ramblings about &lt;em&gt;Hypermedia APIs&lt;/em&gt;, or &lt;a href=&quot;http://en.wikipedia.org/wiki/HATEOAS&quot;&gt;&lt;span class=&quot;caps&quot;&gt;HATEOAS&lt;/span&gt;&lt;/a&gt;, and you completely ignored it because it doesn&amp;#8217;t seem to matter. Well, I am here to tell you why it matters. &lt;em&gt;Hypermedia APIs&lt;/em&gt; are all about building APIs that allow clients to adapt to changes.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;You have probably heard recent ramblings about &lt;em&gt;Hypermedia APIs&lt;/em&gt;, or &lt;a href=&quot;http://en.wikipedia.org/wiki/HATEOAS&quot;&gt;&lt;span class=&quot;caps&quot;&gt;HATEOAS&lt;/span&gt;&lt;/a&gt;, and you completely ignored it because it doesn&amp;#8217;t seem to matter. Well, I am here to tell you why it matters. &lt;em&gt;Hypermedia APIs&lt;/em&gt; are all about building APIs that allow clients to adapt to changes.&lt;/p&gt;
+&lt;p&gt;Say you build an amazing &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; for your awesome app. People read your &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; docs and start using it because, well, it&amp;#8217;s amazing. Then, your application evolves. You want to change things, but &lt;strong&gt;you can&amp;#8217;t&lt;/strong&gt;, because clients are hard-coded to your &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; docs. You now have 3 options: 1) avoid changing your app, 2) change it and break existing clients, 3) fork your &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; and maintain two versions while you wait for old clients to update to the new version. All three of these options suck.&lt;/p&gt;
+&lt;p&gt;You thought you built a &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; by using &lt;span class=&quot;caps&quot;&gt;HTTP&lt;/span&gt; verbs and real URLs. That&amp;#8217;s not &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt;. Read Roy Fielding&amp;#8217;s rant &lt;a href=&quot;http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven&quot;&gt;&lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; APIs must be hypertext-driven&lt;/a&gt;. Roy knows a thing or two about &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt;; he kinda &lt;a href=&quot;http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm&quot;&gt;invented it&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to build APIs that can adapt along with your application, then you need to learn about Hypermedia APIs. Many people are writing great resources about what this hypermedia stuff is all about. I don&amp;#8217;t need to duplicate their effort. If you want to learn how to build adaptable APIs, then start with Steve Klabnik&amp;#8217;s &lt;a href=&quot;http://blog.steveklabnik.com/posts/2012-02-27-hypermedia-api-reading-list&quot;&gt;Hypermedia &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; reading list&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There is currently a severe lack of example Hypermedia APIs. I am working on the &lt;a href=&quot;https://speakerdeck.com&quot;&gt;Speaker Deck&lt;/a&gt; &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; and hope to have at least one good example soon.&lt;/p&gt;</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+  <entry>
+    <title>Load environment variables with dotenv</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/07/24/dotenv/"/>
+    <id>/2012/07/24/dotenv</id>
+    <published>2012-07-24T04:00:00Z</published>
+    <category term="gem"/>
+    <summary type="html">&lt;p&gt;I released &lt;a href=&quot;https://github.com/bkeepers/dotenv&quot;&gt;dotenv&lt;/a&gt;, a handy Ruby gem that makes loading environment variables 100% less painful in development, guaranteed or your money back.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;I released &lt;a href=&quot;https://github.com/bkeepers/dotenv&quot;&gt;dotenv&lt;/a&gt;, a handy Ruby gem that makes loading environment variables 100% less painful in development, guaranteed or your money back.&lt;/p&gt;
+&lt;h2&gt;Backstory&lt;/h2&gt;
+&lt;p&gt;I love the emerging practice of storing application configuration in environment variables. It makes it ridiculously easy to keep secure data out of your code repository while still making it available at runtime. But it slightly complicates development. It&amp;#8217;s not always practical to set all of those environment variables on your development machine or continuous integration server where you might run multiple projects.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/ddollar/foreman&quot;&gt;Foreman&lt;/a&gt; provides this handy feature of loading variables from &lt;code&gt;.env&lt;/code&gt;, which works great for anything that you want to put in your &lt;code&gt;Procfile&lt;/code&gt;. But it doesn&amp;#8217;t help you when you run your app manually, run a rake task, or open up the console. My co-workers got tired of me saying &lt;em&gt;Works For Me™&lt;/em&gt;, so &lt;a href=&quot;https://github.com/bkeepers/dotenv&quot;&gt;dotenv&lt;/a&gt; solves that problem.&lt;/p&gt;
+&lt;h2&gt;Frontstory&lt;/h2&gt;
+&lt;p&gt;For Rails 3 apps, &lt;a href=&quot;https://github.com/bkeepers/dotenv&quot;&gt;dotenv&lt;/a&gt; will automagically load variables from &lt;code&gt;.env&lt;/code&gt; into &lt;code&gt;ENV&lt;/code&gt; whenever the environment is bootstrapped. For non-Rails apps, it&amp;#8217;s a simple one-liner to load &lt;code&gt;.env&lt;/code&gt;. Check out &lt;a href=&quot;https://github.com/bkeepers/dotenv&quot;&gt;dotenv on GitHub&lt;/a&gt; for all the gory details.&lt;/p&gt;</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+  <entry>
+    <title>What&#39;s it like to work at GitHub?</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/06/05/whats-it-like-to-work-at-github/"/>
+    <id>/2012/06/05/whats-it-like-to-work-at-github</id>
+    <published>2012-06-05T13:00:00Z</published>
+    <category term="github"/><category term="popular"/>
+    <summary type="html">&lt;p&gt;I have been traveling a lot lately, and everywhere I go, I get this question: What&amp;#8217;s it like to work at &lt;a href=&quot;http://github.com/about&quot;&gt;GitHub&lt;/a&gt;? The simple answer: it is &lt;strong&gt;amazing&lt;/strong&gt;!&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;I have been traveling a lot lately, and everywhere I go, I get this question: What&amp;#8217;s it like to work at &lt;a href=&quot;http://github.com/about&quot;&gt;GitHub&lt;/a&gt;? The simple answer: it is &lt;strong&gt;amazing&lt;/strong&gt;!&lt;/p&gt;
+&lt;h2&gt;Is it true that you work on whatever you want?&lt;/h2&gt;
+&lt;p&gt;Yes. On a few occasions, someone may suggest that I check out a project that could use my help, but nobody tells me what to do. Everyone is encouraged to work on something that interests them and also benefits the company.&lt;/p&gt;
+&lt;p&gt;Our &amp;#8220;Director of Engineering&amp;#8221; Ryan Tomayko &lt;a href=&quot;http://tomayko.com/writings/management-style&quot;&gt;writes&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I don&amp;#8217;t scale. If I tell someone what to do and they do it, then what? Do I have to tell them another thing to do? What happens when I have to decide what to do for 20 people?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Actually, you should just just go &lt;a href=&quot;http://tomayko.com/writings/management-style&quot;&gt;read his whole post &lt;em&gt;right now&lt;/em&gt;&lt;/a&gt;. I will wait…&lt;/p&gt;
+&lt;h2&gt;How is that not anarchy?&lt;/h2&gt;
+&lt;p&gt;It is. &lt;a href=&quot;http://en.wikipedia.org/wiki/Anarchy&quot;&gt;Anarchy&lt;/a&gt; is a system of governance &amp;#8220;that goes to lengths to avoid the use of coercion, violence, force and authority, while still producing a productive and desirable society&amp;#8221;.&lt;/p&gt;
+&lt;p&gt;Anarchy works wonderfully in a small group of individuals with a high level of trust. Everyone at GitHub has full access and permission to do whatever they want. Do great things and you earn respect. Abuse that freedom and you violate everyone&amp;#8217;s trust.&lt;/p&gt;
+&lt;h2&gt;How do you decide what to work on?&lt;/h2&gt;
+&lt;p&gt;&lt;ins&gt;Several people have asked in the comments and on twitter about this, so I though it was worth addressing.&lt;/ins&gt;&lt;/p&gt;
+&lt;p&gt;We have the advantage of &lt;a href=&quot;http://zachholman.com/talk/how-github-uses-github-to-build-github&quot;&gt;using GitHub to build GitHub&lt;/a&gt;, so we are intimately aware of the strengths and weaknesses. We use &lt;a href=&quot;https://github.com/blog/831-issues-2-0-the-next-generation&quot;&gt;GitHub Issues&lt;/a&gt; to keep track of bugs and feature requests that we would like to implement. We also have an internal ideas board for grander ideas that don&amp;#8217;t fit into one issue. Anyone can post to it and comment.&lt;/p&gt;
+&lt;p&gt;The founders and other core people certainly help set a vision for where we are going, but we all take responsibility for deciding what to work on.&lt;/p&gt;
+&lt;h2&gt;What if the thing you want to ship does not benefit the company?&lt;/h2&gt;
+&lt;p&gt;Each person at GitHub has the responsibility to sell their ideas to the rest of the company. I quickly learned that if I can&amp;#8217;t get anyone else interested in the project that I want to work on, then either I poorly articulated my vision, or more likely, it does not benefit the company. You can still work on it, but you will likely be working alone.&lt;/p&gt;
+&lt;h2&gt;What if someone is not doing their fair share?&lt;/h2&gt;
+&lt;p&gt;Then they feel insanely guilty because they let everyone down. We are all motivated more by our intrinsic desire to create than by carrots and sticks. The joy of shipping is the greatest motivator. Nobody wants to feel like they are not pulling their own weight.&lt;/p&gt;
+&lt;h2&gt;What are your biggest challenges?&lt;/h2&gt;
+&lt;p&gt;There have been a few.&lt;/p&gt;
+&lt;h3&gt;Overcommitment&lt;/h3&gt;
+&lt;p&gt;The Venn diagram of what interests me and what benefits GitHub looks like two circles getting freaky. There are so many amazing things going on and it is tempting to try to be a part of all of them. I constantly overcommit myself and as a result have not lived up to my own productivity standards for the last several months.&lt;/p&gt;
+&lt;p&gt;Our benevolent leaders recently called on all of us to focus all our time on shipping &lt;em&gt;one&lt;/em&gt; thing. Not allowing myself to commit to something until the current thing I am working on has shipped is teaching me to say &amp;#8220;no&amp;#8221;.&lt;/p&gt;
+&lt;h3&gt;Signal vs. Noise&lt;/h3&gt;
+&lt;p&gt;With almost 80 people, no hierarchy, and so many amazing projects going on, there is a lot of noise. And I mean &lt;strong&gt;a lot&lt;/strong&gt;. For the first few months, I tried to keep up with what all was going on. But I quickly found myself paralyzed. I was spending half my day just keeping up with what my coworkers were thinking and doing.&lt;/p&gt;
+&lt;p&gt;I have learned to ignore it all unless it is directly related to what I am shipping.&lt;/p&gt;
+&lt;h3&gt;Opinion overload&lt;/h3&gt;
+&lt;p&gt;Talented people with a lot of experience have strong opinions. With experience comes baggage, and we all have baggage. We swear off tools or techniques because they failed in one situation, without realizing it simply was not a good fit for that situation. Now imagine &lt;del&gt;55&lt;/del&gt; &lt;del&gt;70&lt;/del&gt; 80 experienced people all trying to build amazing things together. There are a lot of intense discussions about what tools we should or should not use and how features should or should not work. Most of it is productive, but it can become tiring.&lt;/p&gt;
+&lt;p&gt;I have learned that nothing solves an argument like a &lt;a href=&quot;https://github.com/blog/1124-how-we-use-pull-requests-to-build-github&quot;&gt;pull request&lt;/a&gt; with working code. Working code moves the conversation forward, and changes are made from there. If you don&amp;#8217;t like someone&amp;#8217;s pull request, then go create your own and lobby for its acceptance.&lt;/p&gt;
+&lt;p&gt;Compared to what people have to deal with in other work environments, these are all first world problems.&lt;/p&gt;
+&lt;h2&gt;Where will this lead?&lt;/h2&gt;
+&lt;p&gt;My time at GitHub has been the best six months of my career. I absolutely love the service that we are building. But even more than that, I love the company we are building. If GitHub has only one lasting impact on the world, I hope we can inspire other companies to change how they work.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Do you have more questions about GitHub? Feel free to ask in the comments, and I will do my best to answer them.&lt;/em&gt;&lt;/p&gt;</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+  <entry>
+    <title>Releasing multiple gems from one repository</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/05/30/releasing-multiple-gems-from-one-repository/"/>
+    <id>/2012/05/30/releasing-multiple-gems-from-one-repository</id>
+    <published>2012-05-30T15:00:00Z</published>
+    <category term="gem"/><category term="ruby"/>
+    <summary type="html">&lt;p&gt;When I released &lt;a href=&quot;https://github.com/bkeepers/qu&quot;&gt;qu&lt;/a&gt;, I wanted to split the various backends and exception handlers into multiple gems so each gem had the proper dependencies without enforcing all of the dependencies on everyone all the time.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;When I released &lt;a href=&quot;https://github.com/bkeepers/qu&quot;&gt;qu&lt;/a&gt;, I wanted to split the various backends and exception handlers into multiple gems so each gem had the proper dependencies without enforcing all of the dependencies on everyone all the time.&lt;/p&gt;
+&lt;p&gt;I had to decide between maintaining multiple repositories for each plugin, or releasing them all from the same repository.  There are advantages and disadvantages to both, but I decided I would rather start with them in one repository and split them out later if it became a problem.&lt;/p&gt;
+&lt;p&gt;Several people have asked how I did it. Here&amp;#8217;s my secret formula.&lt;/p&gt;
+&lt;h2&gt;Plugin gemspec&lt;/h2&gt;
+&lt;p&gt;For each gem we want to release, we need a gemspec. For example, check out &lt;a href=&quot;https://github.com/bkeepers/qu/blob/master/qu-redis.gemspec&quot;&gt;&lt;code&gt;qu-redis.gemspec&lt;/code&gt;&lt;/a&gt;. Most of the gemspec is standard, but there are a few things I want to draw to your attention.&lt;/p&gt;
+&lt;p&gt;Since we&amp;#8217;ll be releasing multiple gems out of this directory, we need to make sure we get the right files for this gem. You can use whatever criteria makes sense for your project, but for &lt;code&gt;qu-redis&lt;/code&gt; it worked out to just grab any file that has &amp;#8220;redis&amp;#8221; in the name.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`git ls-files -- lib | grep redis`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We need to make sure that this plugin then depends on a compatible version of the main library. For Qu, I lock each plugin to the exact version. When I release a bugfix, I release a new version of each gem, whether it is changed or not.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_dependency&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;qu&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Qu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;VERSION&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Each plugin can and should declare any other dependencies.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_dependency&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;redis-namespace&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_dependency&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;simple_uuid&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now we have a gem for our plugin, with its own files and dependencies.&lt;/p&gt;
+&lt;h2&gt;Main gemspec&lt;/h2&gt;
+&lt;p&gt;The gemspec for our &amp;#8220;core&amp;#8221; library will look a little different. Check out &lt;a href=&quot;https://github.com/bkeepers/qu/blob/master/qu.gemspec&quot;&gt;&lt;code&gt;qu.gemspec&lt;/code&gt;&lt;/a&gt; for the full version. We want to avoid including files from other gems in our project, so first we get a list of those files.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;plugin_files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;qu-*.gemspec&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gemspec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gemspec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flatten&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uniq&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We get a list of the files for the gem, and then exclude files from our other gems.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`git ls-files`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plugin_files&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2&gt;Gemfile&lt;/h2&gt;
+&lt;p&gt;If you&amp;#8217;re using bundler for your development dependencies (which you should be), then you probably want to lock the dependencies from your gemspecs without having to redeclare them. We can easily tell bundler about all of our gemspecs.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:rubygems&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;gemspec&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;qu&amp;#39;&lt;/span&gt;
+
+&lt;span class=&quot;no&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;qu-*.gemspec&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gemspec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;plugin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gemspec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/qu-(.*)\.gemspec/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flatten&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gemspec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;qu-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:development_group&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2&gt;Rakefile&lt;/h2&gt;
+&lt;p&gt;Lastly, we want to automate the build process by adding &lt;code&gt;build&lt;/code&gt; and &lt;code&gt;release&lt;/code&gt; rake tasks.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Build gem into the pkg directory&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:build&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;no&quot;&gt;FileUtils&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rm_rf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;pkg&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;no&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;*.gemspec&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gemspec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;gem build &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gemspec&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;no&quot;&gt;FileUtils&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mkdir_p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;pkg&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;no&quot;&gt;FileUtils&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;*.gem&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;pkg&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Tags version, pushes to remote, and pushes gem&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:release&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:build&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;tag&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;-m&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;changelog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;v&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Qu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;VERSION&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;git push origin master&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;git push origin v&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Qu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;VERSION&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ls pkg/*.gem | xargs -n 1 gem push&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2&gt;Profit&lt;/h2&gt;
+&lt;p&gt;This has worked out really well so far. All the activity for the project is in one repo, and pushing out a new release is really easy. Win, win!&lt;/p&gt;</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+  <entry>
+    <title>What&#39;s wrong with Cucumber</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/05/28/whats-wrong-with-cucumber/"/>
+    <id>/2012/05/28/whats-wrong-with-cucumber</id>
+    <published>2012-05-28T13:00:00Z</published>
+    <category term="cucumber"/><category term="opinion"/>
+    <summary type="html">&lt;p&gt;&lt;em&gt;This post has sat as a draft on my computer for well over a year now. I always intended to finish it, but am beyond caring.  So I&amp;#8217;m just going to publish it in its current form in hopes that it sparks some interesting conversation and avoids beating a dead horse.&lt;/em&gt;&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;&lt;em&gt;This post has sat as a draft on my computer for well over a year now. I always intended to finish it, but am beyond caring.  So I&amp;#8217;m just going to publish it in its current form in hopes that it sparks some interesting conversation and avoids beating a dead horse.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cukes.info&quot;&gt;Cucumber&lt;/a&gt; is a divisive tool. Some people absolutely love it and have an irrational dedication to using it for every single project. Others hate it, either because they haven&amp;#8217;t tried it, or tried it on one project and ended up with a steaming pile of &lt;del&gt;sh&lt;/del&gt;…step definitions.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve been using cucumber since one of the first few releases. While I have been burned by it on projects, I also have a great appreciation for it.&lt;/p&gt;
+&lt;p&gt;What&amp;#8217;s wrong with cucumber? Technically, nothing. It&amp;#8217;s a brilliant tool for creating DSLs to test our applications. &lt;strong&gt;The problem with cucumber is &lt;span class=&quot;caps&quot;&gt;YOU&lt;/span&gt;&lt;/strong&gt;: you don&amp;#8217;t understand &lt;strong&gt;why&lt;/strong&gt; to use it, &lt;strong&gt;when&lt;/strong&gt; to use it or &lt;strong&gt;how&lt;/strong&gt; to use it. Don&amp;#8217;t worry, though, it&amp;#8217;s not entirely your fault. Many people are responsible for encouraging you to use it in asinine ways and advertising it as a magical medical formula that will cure all your woes.&lt;/p&gt;
+&lt;h2&gt;Why: understand the purpose&lt;/h2&gt;
+&lt;p&gt;Cucumber is a tool for creating executable feature specifications, a.k.a acceptance tests. We write these tests to ensure that we have working code that meets our requirements. If the tests don&amp;#8217;t help achieve that, then &lt;strong&gt;don&amp;#8217;t write them&lt;/strong&gt;. For this reason, I rarely write Rails controller tests anymore.&lt;/p&gt;
+&lt;p&gt;Fairly or not, many have this misconception that you should write your acceptance tests in plain text so that your client or stakeholders can read and write them. It is highly likely that your &lt;strong&gt;stakeholders won&amp;#8217;t care about cucumber features&lt;/strong&gt;. They probably won&amp;#8217;t read them, and they almost surely won&amp;#8217;t write them.&lt;/p&gt;
+&lt;p&gt;You should use cucumber because it&amp;#8217;s a great tool for giving you a vocabulary to think and talk about how your application should work. As a programmer and perfectionist, I easily get mired in the implementation details and forget that the software I&amp;#8217;m writing is actually supposed to do something useful. Driving a feature with cucumber helps me first think though how it should actually work and then guides me through implementing it. It keeps me focused on writing the minimal amount of code to make the software work.&lt;/p&gt;
+&lt;p&gt;Use Cucumber if it will directly help translate required features into working code. If the person doing the programming doesn&amp;#8217;t find it helpful, then don&amp;#8217;t use it!&lt;/p&gt;
+&lt;h2&gt;When: you don&amp;#8217;t always need a &lt;span class=&quot;caps&quot;&gt;DSL&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;Cucumber is a &lt;span class=&quot;caps&quot;&gt;DSL&lt;/span&gt; for creating a &lt;span class=&quot;caps&quot;&gt;DSL&lt;/span&gt; for writing acceptance tests. With me so far? In other words, Cucumber helps you create a vocabulary to describe how your application should work.&lt;/p&gt;
+&lt;p&gt;Some apps require a &lt;span class=&quot;caps&quot;&gt;DSL&lt;/span&gt; to describe their behavior, but many don&amp;#8217;t. For a large business application with lots of rules and complicated logic, creating a &lt;span class=&quot;caps&quot;&gt;DSL&lt;/span&gt; is the only maintainable way to test it. Testing a simple web &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; is really a lot quicker and easier with RSpec or Test::Unit.&lt;/p&gt;
+&lt;p&gt;The advantage of using Cucumber over a plain ol&amp;#8217; testing framework is that it forces you to use a limited vocabulary to describe your application. If your application requires an expansive vocabulary to describe its functionality, then don&amp;#8217;t use Cucumber&lt;/p&gt;
+&lt;h2&gt;How: the ivory tower&lt;/h2&gt;
+&lt;p&gt;I don&amp;#8217;t think people understand &lt;strong&gt;why&lt;/strong&gt; and &lt;strong&gt;when&lt;/strong&gt; to use Cucumber. But what prompted me to write this post is the recent debate over the &lt;a href=&quot;http://aslakhellesoy.com/post/11055981222/the-training-wheels-came-off&quot;&gt;removal of web_steps.rb&lt;/a&gt;, and that brings us to &lt;strong&gt;how&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;One of the challenges of a programmer is to find the highest level of abstraction that makes sense. Code with too little abstraction is littered with duplication and is too complex to fit in your head. Code that is abstracted too much is too rigid and cumbersome to use. An abstraction should capture only the details that are relevant for the task at hand.&lt;/p&gt;
+&lt;p&gt;For many apps, the web interface is the right level of abstraction for describing its functionality.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Cliffhanger: this is the state in which I left this article. I&amp;#8217;ve &lt;a href=&quot;https://gist.github.com/2819565&quot;&gt;created a gist for this article&lt;/a&gt;, so if you&amp;#8217;d like to finish making the argument, fork the gist and link to your version in the comments.&lt;/em&gt;&lt;/p&gt;</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+  <entry>
+    <title>My Instapaper Strategy</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/05/27/my-instapaper-strategy/"/>
+    <id>/2012/05/27/my-instapaper-strategy</id>
+    <published>2012-05-27T16:25:00Z</published>
+    <category term="tips"/>
+    <summary type="html">&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;: I have found a strategy that leads to Instapaper bliss: sort articles by oldest-first.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;: I have found a strategy that leads to Instapaper bliss: sort articles by oldest-first.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/IMG_0019-da4bbf17dbf4bae105fa96a2285bf310.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://instapaper.com/&quot;&gt;Instapaper&lt;/a&gt; is wonderful. Besides &lt;a href=&quot;http://tapbots.com/software/tweetbot/&quot;&gt;Tweetbot&lt;/a&gt;, it is the most used app on my iPad. It is a gorgous app that makes reading so enjoyable. Anytime someone sends me a link that I can&amp;#8217;t read in 2 minutes, I save it to Instapaper to save for that glorious Saturday when I just lay in the hammock and read all afternoon. It&amp;#8217;s my very own personal New York Times, Wired, and Sherlock Holmes, all rolled into one.&lt;/p&gt;
+&lt;p&gt;But Instapaper also &lt;strong&gt;causes me quite a bit of strife&lt;/strong&gt;, because that glorious Saturday afternoon rarely comes. I can&amp;#8217;t keep up with the backlog.  Over the last 2 years, I&amp;#8217;ve collected hundreds of long form articles that taunt me every time I open the app. So I typically open it up, read the latest article or two, and then get disgusted by all the amazing things that I don&amp;#8217;t have time to read. A better man might be able to simply ignore that backlog, but it drives me insane.&lt;/p&gt;
+&lt;p&gt;A few months ago, while exploring Instapaper&amp;#8217;s settings to find the ideal font (let&amp;#8217;s be honest, I was overwhelmed by how many unread articles there were, so I was procrastinating), I &lt;strong&gt;switched the default sorting&lt;/strong&gt; from &amp;#8220;newest-first&amp;#8221; to &amp;#8220;oldest-first&amp;#8221;. I don&amp;#8217;t think I expected much to change because of it, but it had an interesting side effect.&lt;/p&gt;
+&lt;p&gt;There are now only about 20 unread articles in my instapaper queue. I haven&amp;#8217;t been reading more lately. I&amp;#8217;ve actually been reading less. But I&amp;#8217;ve been reading smarter.  Here are my theories as to why this simple change had such an impact:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;We&amp;#8217;re all addicted to new. Our brains secret some good endorphines when we&amp;#8217;re riding the wave. But &lt;em&gt;new&lt;/em&gt; does not always equal &lt;em&gt;better&lt;/em&gt;. By showing oldest articles first, the farther I get behind on Instapaper, the less timely the content is. I now spend more time reading &amp;#8220;timeless&amp;#8221; articles, and I simply delete the ones that are no longer relevant.&lt;/li&gt;
+	&lt;li&gt;The disire for &lt;em&gt;new&lt;/em&gt; still exists, and acts as an incentive to keep up to date.&lt;/li&gt;
+	&lt;li&gt;Sometimes I read things I don&amp;#8217;t care about simply because I like the person that recommended it to me. But when I&amp;#8217;m looking at articles on Instapaper that are 6 months old, I don&amp;#8217;t remember who recommended. So I&amp;#8217;m more likely to skip stuff that I don&amp;#8217;t care about.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/IMG_0021-9ecf3a0e01edb1686c0bd9d6dc938fab.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;#8217;s a small thing, but I love small life hacks that streamline my life.&lt;/p&gt;</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+  <entry>
+    <title>Why Our Code Smells</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/05/23/why-our-code-smells/"/>
+    <id>/2012/05/23/why-our-code-smells</id>
+    <published>2012-05-23T15:00:00Z</published>
+    <category term="popular"/><category term="talk"/>
+    <summary type="html">&lt;p&gt;Odors are communication devices. They exist for a reason and are usually trying to tell us something. Our code smells and it is trying to tell us what is wrong.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;Odors are communication devices. They exist for a reason and are usually trying to tell us something. Our code smells and it is trying to tell us what is wrong.&lt;/p&gt;
+&lt;p&gt;I have been on a quest with a few coworkers to uncover why our code smells.  In this talk, I walk through code from projects that I work on every day, looking for smells that indicate problems, understanding why it smells, what the smell is trying to tell us, and how to refactor it.&lt;/p&gt;
+&lt;p&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/JxPKljUkFQw&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;script async class=&quot;speakerdeck-embed&quot; data-id=&quot;4fbce3314ff11c001f021933&quot; data-ratio=&quot;1.3333333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+  <entry>
+    <title>The Plight of Pinocchio: JavaScript&#39;s quest to become a real language</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/05/16/the-plight-of-pinocchio/"/>
+    <id>/2012/05/16/the-plight-of-pinocchio</id>
+    <published>2012-05-16T12:00:00Z</published>
+    <category term="talk"/>
+    <summary type="html">&lt;p&gt;JavaScript is no longer a toy language. Many of our applications can&amp;#8217;t function without it. If we are going to use JavaScript to do real things, we need to treat it like a real language, adopting the same practices we use with real languages.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;JavaScript is no longer a toy language. Many of our applications can&amp;#8217;t function without it. If we are going to use JavaScript to do real things, we need to treat it like a real language, adopting the same practices we use with real languages.&lt;/p&gt;
+&lt;p&gt;This framework agnostic talk takes a serious look at how we develop JavaScript applications. Despite its prototypical nature, good object-oriented programming principles are still relevant. The design patterns that we&amp;#8217;ve grown to know and love work just as well in JavaScript as they do any other language. Test driven development forces us to write modular, decoupled code.&lt;/p&gt;
+&lt;p&gt;&lt;iframe src=&quot;http://player.vimeo.com/video/45709623&quot; width=&quot;580&quot; height=&quot;326&quot; frameborder=&quot;0&quot; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;script async class=&quot;speakerdeck-embed&quot; data-id=&quot;4fa986b3a117fc00220012ed&quot; data-ratio=&quot;1.3333333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+  <entry>
+    <title>Walking</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/02/03/walking/"/>
+    <id>/2012/02/03/walking</id>
+    <published>2012-02-03T15:00:00Z</published>
+    <category term="life"/><category term="observation"/>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;I had to answer the question &amp;#8220;What inspires you?&amp;#8221; for a TEDx application. Every answer to that question sounds cheesy. Here&amp;#8217;s my cheesy answer.&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;I had to answer the question &amp;#8220;What inspires you?&amp;#8221; for a TEDx application. Every answer to that question sounds cheesy. Here&amp;#8217;s my cheesy answer.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I am inspired by walking; steady, continuous forward progress. Fast enough to get where I want to go in time, but not too fast.&lt;/p&gt;
+&lt;p&gt;Maintaining a fast pace while walking requires enormous concentration on the act of walking. It is extremely difficult to focus on anything else and maintain a fast pace. I only walk fast when arriving at my destination is of the utmost of importance.&lt;/p&gt;
+&lt;p&gt;Walking slow is often enjoyable, but neglects the fact that the point of walking is to go somewhere. I walk slow when I have a particularly difficult problem to solve, or I only want a slight change of scenery in hopes of inspiration.&lt;/p&gt;
+&lt;p&gt;Walking naturally requires almost no concentration. It allows me to focus on what is important, adjust my path when necessary, and arrive at my destination in a reasonable time.&lt;/p&gt;
+&lt;p&gt;I am inspired by progress. I love the continuous process of taking something that is awkward, uncomfortable or even painful and making it incrementally better.&lt;/p&gt;</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+  <entry>
+    <title>Getting Started with Sublime Text 2</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/01/12/getting-started-with-sublime-text-2/"/>
+    <id>/2012/01/12/getting-started-with-sublime-text-2</id>
+    <published>2012-01-12T12:00:00Z</published>
+    <category term="editor"/><category term="popular"/>
+    <summary type="html">&lt;p&gt;I recently switched to &lt;a href=&quot;http://www.sublimetext.com/&quot;&gt;Sublime Text 2&lt;/a&gt; from TextMate. I did not love it at first. As it goes with many of the finer things in life, Sublime is an acquired taste. It was not until I paired with &lt;a href=&quot;http://twitter.com/jnunemaker&quot;&gt;a coworker&lt;/a&gt; for a few days that I really started to see its power. I have been using it since and have not looked back.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;I recently switched to &lt;a href=&quot;http://www.sublimetext.com/&quot;&gt;Sublime Text 2&lt;/a&gt; from TextMate. I did not love it at first. As it goes with many of the finer things in life, Sublime is an acquired taste. It was not until I paired with &lt;a href=&quot;http://twitter.com/jnunemaker&quot;&gt;a coworker&lt;/a&gt; for a few days that I really started to see its power. I have been using it since and have not looked back.&lt;/p&gt;
+&lt;p&gt;Here are a few tips that made it easier for me to get into it. Thanks to &lt;a href=&quot;http://twitter.com/garand&quot;&gt;Anthony Garand&lt;/a&gt; for providing feedback and contributing to some of these tips below.&lt;/p&gt;
+&lt;h2&gt;Command palette&lt;/h2&gt;
+&lt;p&gt;Think of the command palette as Alfred for your code editor. Quick access to pretty much anything. Pressing ⌘⇧P will bring up the command palette where you can then scroll through a few of the options available to you: snippets, convert case, sort lines, and toggle various interface options.&lt;/p&gt;
+&lt;h2&gt;Package Control&lt;/h2&gt;
+&lt;p&gt;If you feel like something is missing from Sublime, then there is probably a plugin for it. The most essential plugin is &lt;a href=&quot;http://wbond.net/sublime_packages/package_control&quot;&gt;Package Control&lt;/a&gt;, which allows you to install pretty much anything.&lt;/p&gt;
+&lt;p&gt;To use package control, press ⌘⇧P to bring up the command palette, begin to type &amp;#8220;install&amp;#8221;, and select &amp;#8220;&lt;strong&gt;Package Control: Install Package&lt;/strong&gt;&amp;#8221;. This will bring up a new palette to search for packages.  Find your packages and hit enter to install it. You can see in the status bar at the bottom that it is installing. Most packages will just work, but occasionally you might have to restart Sublime for the package to work.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/screen_shot_20120111_at_4.55.08_pm-10a2516de380f5a140d69518160391d5.png&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;Beat the ugly out of it&lt;/h2&gt;
+&lt;p&gt;I cannot figure out a nice way to say this, so I will just say it: out of the box, Sublime is hideous. We are pompous programmers, so we cannot let that stand.&lt;/p&gt;
+&lt;p&gt;&lt;ins&gt;Update: The &lt;a href=&quot;http://www.sublimetext.com/blog/articles/sublime-text-2-build-2165&quot;&gt;new default theme&lt;/a&gt; is actually &lt;strong&gt;much&lt;/strong&gt; better. I still prefer the light Soda theme, but it&amp;#8217;s no longer a necessity.&lt;/ins&gt;&lt;/p&gt;
+&lt;p&gt;Start by installing the &lt;a href=&quot;https://github.com/buymeasoda/soda-theme/&quot;&gt;Soda UI theme&lt;/a&gt; via Package Control. This is not a theme in the syntax highlighting sense, but for the UI widgets in Sublime. Note that when plugins talk about the &lt;code&gt;Packages&lt;/code&gt; directory in Sublime, on OS X that is in &lt;code&gt;~/Library/Application Support/Sublime Text 2/Packages&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ahh, that is better.  But the icon is ugly too. There are several &lt;a href=&quot;http://dribbble.com/search?q=sublime+text&amp;amp;x=0&amp;amp;y=0&quot;&gt;replacement options on dribbble&lt;/a&gt;. &lt;a href=&quot;http://dribbble.com/shots/311515-A-Sublime-Text-2-Icon-that-is-less-horrible&quot;&gt;This one is my favorite&lt;/a&gt;, although there is still much room for improvement.&lt;/p&gt;
+&lt;p&gt;The syntax highlighting theme that comes with Sublime is alright, but everyone has their favorite theme. Mine is &lt;a href=&quot;http://madeofcode.com/posts/29-photo-my-new-textmate-theme-8220-made-of-code-8221-mdash-download-9-feb-2010-update-t&quot;&gt;Made of Code&lt;/a&gt;. You can use any TextMate theme by copying it to the &lt;code&gt;Packages&lt;/code&gt; directory and going to &amp;#8220;Preferences » Color Scheme&amp;#8221;.&lt;/p&gt;
+&lt;p&gt;Ok, now we can stand to look at it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/screen_shot_20120111_at_3.50.09_pm-ec46adbe0539192ae11de6eb8fac5de0.png&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;Opening a project&lt;/h2&gt;
+&lt;p&gt;Sublime has support for project files, but I do not use them. I prefer to just open projects from the command line. Sublime comes with a command line interface, but you need to add it to your path.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;sudo ln -s &lt;span class=&quot;s2&quot;&gt;&amp;quot;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&amp;quot;&lt;/span&gt; /usr/bin/subl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now you can open a file or directory from the command line.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;subl -n ~/blog
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I almost always edit from the current directory, so I set up a bash alias.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;subl -n .&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ok, now we have Sublime looking pretty and our project open.&lt;/p&gt;
+&lt;h2&gt;Customizing Settings&lt;/h2&gt;
+&lt;p&gt;Sublime is extremely configurable, but the configuration is in a few different &lt;span class=&quot;caps&quot;&gt;JSON&lt;/span&gt; files that you have to edit by hand. But once you get familiar with them, they are not that scary.&lt;/p&gt;
+&lt;p&gt;On OS X, go to &amp;#8220;Sublime Text 2 » Preferences&amp;#8221;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/screen_shot_20120111_at_2.15.34_pm-30672c661f37e90b3728596b0becf838.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;For each type of setting, Sublime has at least two files: defaults and custom user settings. You edit the &lt;strong&gt;User&lt;/strong&gt; versions to specify the things you are overriding.&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;File Settings&lt;/strong&gt; affect the file that you are currently editing. This includes things like your color scheme, fonts…basically, anything related to editing files.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Global Settings&lt;/strong&gt; affect how Sublime itself behaves, including the UI theme, files to ignore, and window behavior.&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Key bindings&lt;/strong&gt; are…well, key bindings. 614 lines of glorious shortcut keys.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Take time to browse through the defaults to see all the levers and dials you can tweak. Check out &lt;a href=&quot;https://gist.github.com/1596561&quot;&gt;my settings&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;⌘p is the new ⌘t&lt;/h2&gt;
+&lt;p&gt;⌘p (which is also mapped to ⌘t) brings up the Go To File palette. In addition to giving you quick access to your files, it has several features to allow you quickly jump &lt;strong&gt;into&lt;/strong&gt; your files. After typing the file name, use &lt;strong&gt;@&lt;/strong&gt; in the palette to jump directly to a specific method. You can also use ⌘r to bring up the palette prefaced with &lt;strong&gt;@&lt;/strong&gt; to jump to a method in your current file.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/screen_shot_20120112_at_8.03.54_am-fface2126103dd618c9d94630fa3121b.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;You can also use &lt;strong&gt;:&lt;/strong&gt; (colon) in the palette to go to a specific line number, and ^g will open the paletted prefaced with colon to jump to a line in the current file.&lt;/p&gt;
+&lt;h2&gt;Favorite Plugins&lt;/h2&gt;
+&lt;p&gt;Here is a list of some of my favorite plugins. Most of these should be available to install through Package Control. Check them out and don&amp;#8217;t forget to browse around Packgae Control to see what else is available. Here is a &lt;a href=&quot;http://wbond.net/sublime_packages/community&quot;&gt;complete list of packages available&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;https://github.com/titoBouzout/SideBarEnhancements&quot;&gt;SidebarEnhancements&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://github.com/kemayo/sublime-text-2-git&quot;&gt;Git&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://github.com/weslly/Nettuts-Fetch&quot;&gt;Fetch&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://wbond.net/sublime_packages/alignment&quot;&gt;Alignment&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://github.com/jnordberg/sublime-colorpick&quot;&gt;Color Pick&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://github.com/condemil/Gist&quot;&gt;Gist&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://sass-lang.com&quot;&gt;&lt;span class=&quot;caps&quot;&gt;SCSS&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://github.com/jashkenas/coffee-script-tmbundle&quot;&gt;CoffeeScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;One more thing&lt;/h2&gt;
+&lt;p&gt;I highly recommend you go over and read the &lt;a href=&quot;http://net.tutsplus.com/tutorials/tools-and-tips/sublime-text-2-tips-and-tricks/&quot;&gt;Sublime article on NetTuts+&lt;/a&gt; for many more tips and tricks to integrate into your workflow as you migrate to this new editor.&lt;/p&gt;
+&lt;p&gt;I started tweeting tips from &lt;a href=&quot;http://twitter.com/sublimetips&quot;&gt;@sublimetips&lt;/a&gt; on Twitter. Tweet your tips mentioning @sublimetips and I will likely retweet them.&lt;/p&gt;
+&lt;p&gt;Happy Coding!&lt;/p&gt;</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+</feed>

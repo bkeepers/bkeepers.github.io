@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Network Time Machine backups to another Mac</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-94e1fc1109c1b76ae4fbab0891861760.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Network Time Machine backups to another Mac</h1>
+  <p class="meta">
+    <span class="date">January 15, 2009</span>
+    <span class="tags">
+      
+        backup,
+      
+        mac,
+      
+        network,
+      
+        popular
+      
+    </span>
+  </p>
+  <div class="body"><p>For a while now I&#8217;ve been wanting to setup Time Machine on my MacBook Air to backup to the external drive plugged into my Mac Mini, but one thing has been stopping me: transferring 80GB over wifi. I&#8217;ve tried it a couple times and even after 24 hours it&#8217;s nowhere near done (Time Machine slowness + wifi slowness = double slowness).</p>
+<p>I also tried getting an initial backup by plugging the drive directly into my MacBook and then moving it back to the Mini once it&#8217;s done. But Time Machine stores network backups differently than it does if the drive is plugged in locally. When backing up over a network, it creates a sparse bundle disk image.</p>
+<p>So last night I finally tried again and got it to work. The trick was to start the backup over the network which sets up the sparse bundle, and cancel it shortly after it started. Then when I plug the drive directly into my laptop, Time Machine is smart enough to see the sparse bundle and use that.</p>
+<p>Here&#8217;s the recipe for getting network backups to an external drive started without doing the initial backup over the network:</p>
+<ol>
+  <li><p><strong>Share the drive</strong>: With the backup drive still plugged into your <em>host</em> Mac (<strong>not</strong> the one that needs backed up), share the drive by going to Sharing in System Preferences. Enable file sharing and add the drive to &#8220;Shared Folders&#8221;.</p>
+</li>
+  <li><p><strong>Start the network backup</strong>: First, you need to enable backing up to &#8220;unsupported&#8221; network volumes (a.k.a. ones you didn&#8217;t shell out extra money to apple for). On the machine you want to back up over the network, open up terminal and run:</p>
+
+<pre>defaults write com.apple.systempreferences TMShowUnsupportedNetworkVolumes 1</pre>
+  <p>Now, go to Time Machine preferences and you should be able to select your shared drive should appear in the list of disks.</p></li>
+  <li><p><strong>Cancel the backup</strong>: After the backup is done preparing and starts copying data, cancel it.</p></li>
+  <li><p><strong>Attach drive directly</strong>: Eject your external drive from the <em>host</em> machine and plug it directly into the machine you want to back up. There should be a file on it titled [machine-name]_[<span class="caps">MAC</span>-address].sparsebundle. Make sure there is <strong><span class="caps">NOT</span></strong> a folder in <code>Backups.backupdb</code> with your machine name. I believe Time Machine will try to use that if it exists instead of using the sparse bundle.</p>
+  <p>Now go to Time Machine preferences and switch your backup drive to the local drive. It should run a full backup now using the sparse bundle.</p></li>
+  <li><p><strong>Switch back to network backup</strong>: Move your drive back to your <em>host</em> machine and switch Time Machine preferences to use the network disk. Sit back and enjoy network backups.</p></li>
+</ol>
+<p>This worked for me. Let me know in the comments how it works for you.</p>
+<p>The network backups have been working great so far. I closed my laptop while a backup was running this morning. When I opened my laptop back up on a new network, it complained that the network connection had been lost to the backup drive, but as soon as I got home this evening, the backup started again immediately.</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li>
+          <a href="http://twitter.com/bkeepers">
+            <span class="icon icon-mark-twitter"></span>
+            Follow me on Twitter
+          </a>
+        </li>
+        <li>
+          <a href="http://github.com/bkeepers">
+            <span class="icon icon-mark-github"></span>
+            Follow me on GitHub
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/opensoul">
+            <span class="icon icon-feed"></span>
+            Subscribe to the Feed
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+
+  <footer id="copyright">
+    Copyright © 2006 - 2013 Brandon Keepers
+  </footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>

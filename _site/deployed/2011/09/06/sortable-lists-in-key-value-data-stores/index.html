@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sortable lists in key-value data stores</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-94e1fc1109c1b76ae4fbab0891861760.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Sortable lists in key-value data stores</h1>
+  <p class="meta">
+    <span class="date">September  6, 2011</span>
+    <span class="tags">
+      
+        database,
+      
+        git,
+      
+        toystore
+      
+    </span>
+  </p>
+  <div class="body"><p class="feedreader">Note: This post contains illustrations that may not appear properly in your feed reader. You may want to view the original post in your browser</p>
+<p>Last week I <a href="http://opensoul.org/blog/archives/2011/09/01/git-the-nosql-database/">blogged about using Git as a key-value database</a> as I experiment with using Git as a database backend for an application.</p>
+<p>One of the first challenges I encountered is not unique to Git, but to key-value stores in general; allowing users to <strong>manually sort</strong> a list of items without the niceties of atomic operations.</p>
+<p>The most common way to allow users to manually sort a list is simply to store a <strong>position</strong> along with each record. When the user reorders the records, then you update the position on each record. This works well as long as the data set is small and there are guards in place to prevent two users from sorting at the same time.</p>
+<p>However, with large amounts of data or a data store that doesn&#8217;t support atomic operations on multiple records, this <strong>doesn&#8217;t scale well</strong>. And specific to Git, updating every single record pretty much guarantees a merge conflict when the Git repos are pushed to a common origin.</p>
+<p>I needed a simple way to create a manually sortable list that avoided merge conflicts. Preferably, a manual reorder would only update the one record whose order changed, and leave the others untouched.</p>
+<h2>Floats between 0 and 1</h2>
+<p>The solution I arrived at is to specify order as a float between 0 and 1. When you move an item, it&#8217;s position becomes a float that is half-way between the item before and the item after it.  Items moved to the top of the list will get closer and closer to 0, and items to the bottom of the list get closer to 1.</p>
+<p>Let me illustrate with some examples. The first item added to the list will get a position of <strong>0.5</strong>, half-way between <strong>0</strong> and <strong>1</strong>.</p>
+<div class="example">
+<ul>
+<li>
+Item A
+<span class="position">position: 0.5</span>
+</li>
+</ul>
+</div>
+<p>The second item added will be half-way between the last item, <strong>0.5</strong>, and <strong>1</strong>.</p>
+<div class="example">
+<ul>
+    <li class="previous">Item A <span class="position">position: 0.5</span></li>
+    <li>Item B <span class="position">position: 0.75</span></li>
+</ul>
+</div>
+<p>The third item added will be half-way between the last item, <strong>0.75</strong>, and <strong>1</strong>.</p>
+<div class="example">
+<ul>
+    <li class="previous">Item A <span class="position">position: 0.5</span></li>
+    <li class="previous">Item B <span class="position">position: 0.75</span></li>
+    <li>Item C <span class="position">position: 0.875</span></li>
+</ul>
+</div>
+<p>Now, if the user wanted to move <strong>Item C</strong> in between <strong>Item A</strong> and <strong>Item B</strong>, then its new position would be half way between the position of the item before and after it.</p>
+<div class="example">
+<ul>
+    <li class="previous">Item A <span class="position">position: 0.5</span></li>
+    <li>Item C <span class="position">position: 0.625</span></li>
+    <li class="previous">Item B <span class="position">position: 0.75</span></li>
+</ul>
+</div>
+<p>If the user wanted to move <strong>Item B</strong> to the top of the list, then its new position would be half way between the first item in the list and 0.</p>
+<div class="example">
+<ul>
+    <li>Item B <span class="position">position: 0.25</span></li>
+    <li class="previous">Item A <span class="position">position: 0.5</span></li>
+    <li class="previous">Item C <span class="position">position: 0.625</span></li>
+</ul>
+</div>
+<p>And so on and so on…</p>
+<p>This solution allows the user to reorder items without updating every record in the data store. As more items get added to the list and moved around, the position just becomes more and more precise. There is a theoretical limit to the number of times items can be moved, but it is very high.</p>
+<style>
+  .feedreader {
+    display:none;
+  }
+  .example {
+    padding: 1.5em;
+  }
+  .example ul {
+    margin:0;
+    list-style:none;
+    top:0;
+  }
+  .example li {
+    margin: 1em;
+    padding: 1em 2em;
+    background: #EEE;
+    background: -webkit-linear-gradient(#EEE, #DDD 80%);
+    -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.3);
+    -webkit-border-radius: 5px;
+   font-weight: bold;
+  }
+  .example li .position {
+    display: inline-block;
+    float: right;
+    font-weight:normal;
+    font-size:0.9em;
+    width: 90px;
+  }
+  .example li.previous {
+    opacity: 0.5;
+  }
+</style></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li>
+          <a href="http://twitter.com/bkeepers">
+            <span class="icon icon-mark-twitter"></span>
+            Follow me on Twitter
+          </a>
+        </li>
+        <li>
+          <a href="http://github.com/bkeepers">
+            <span class="icon icon-mark-github"></span>
+            Follow me on GitHub
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/opensoul">
+            <span class="icon icon-feed"></span>
+            Subscribe to the Feed
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+
+  <footer id="copyright">
+    Copyright © 2006 - 2013 Brandon Keepers
+  </footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>

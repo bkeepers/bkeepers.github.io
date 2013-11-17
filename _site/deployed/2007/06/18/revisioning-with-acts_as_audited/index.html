@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Revisioning with acts_as_audited</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-94e1fc1109c1b76ae4fbab0891861760.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Revisioning with acts_as_audited</h1>
+  <p class="meta">
+    <span class="date">June 18, 2007</span>
+    <span class="tags">
+      
+        acts_as_audited,
+      
+        plugin,
+      
+        rails,
+      
+        ruby
+      
+    </span>
+  </p>
+  <div class="body"><p>When I first created <a href="/2006/7/21/acts_as_audited">acts_as_audited</a> over a year ago, I intended to add versioning/revisioning capabilities, but found I never really had a need.  Well, it just so happened that I finally had a need on an app that we are working on.  So, acts_as_audited now allows you to revert back to previous revisions.</p>
+<p>You can get all the revisions of a model:</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">article</span><span class="o">.</span><span class="n">revisions</span><span class="o">.</span><span class="n">each</span> <span class="o">|</span><span class="n">revision</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="n">revision</span><span class="o">.</span><span class="n">class</span>   <span class="c1">#=&gt; Article</span>
+  <span class="nb">puts</span> <span class="n">revision</span><span class="o">.</span><span class="n">version</span> <span class="c1">#=&gt; 7, 6, 5, 4...</span>
+<span class="k">end</span>
+</code></pre></div><p>or a specific revision:</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">revision</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">revision</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">revision</span><span class="o">.</span><span class="n">title</span>     <span class="c1">#=&gt; &quot;Old Title&quot;</span>
+</code></pre></div><p>or the previous revision.  Reverting is as simple as saving a revision:</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">previous</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">revision</span><span class="p">(</span><span class="ss">:previous</span><span class="p">)</span>
+<span class="n">previous</span><span class="o">.</span><span class="n">save</span>           <span class="c1"># revert to previous revision</span>
+</code></pre></div><p>See the <a href="/2006/7/21/acts_as_audited">original post</a> for more details about installing and using the plugin.</p>
+<h3>How is this different from acts_as_versioned?</h3>
+<p>I&#8217;ve never used acts_as_versioned<sup><a href="#acts_as_versioned">1</a></sup> (because I&#8217;ve never had a need to do versioning), but I do know that it has a few annoying limitations: 1) it requires a separate table (and model) for each model that you want to version, and 2) it saves every attribute, even if it&#8217;s not changed.</p>
+<p>acts_as_audited already stories all the changes (and only the changes) in one table, so adding versioning was rather trivial.  Revisions are created by walking backward through the audits, collecting the changes, and returning an instance of the model.</p>
+<h3>Upgrading</h3>
+<p>To use the versioning support, you must add a version field in the audits table:</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">add_column</span> <span class="ss">:audits</span><span class="p">,</span> <span class="ss">:version</span><span class="p">,</span> <span class="ss">:integer</span><span class="p">,</span> <span class="ss">:default</span> <span class="o">=&gt;</span> <span class="mi">0</span>
+</code></pre></div><p>Note: if you already have audit records, the version field will have to be initialized.</p>
+<h3>Feedback</h3>
+<p>This code is fairly specific to what I needed, so if you&#8217;re using it, I would love to hear how it is working for you. Suggestions and patches welcome.</p>
+<ol class="footnotes">
+  <li id="acts_as_versioned">acts_as_audited was actually one of the first plugins that I wrote, so I looked at the best code I could find as an example for writing a plugin, which happened to be acts_as_versioned.  Kudos to technoweenie.</li>
+</ol></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li>
+          <a href="http://twitter.com/bkeepers">
+            <span class="icon icon-mark-twitter"></span>
+            Follow me on Twitter
+          </a>
+        </li>
+        <li>
+          <a href="http://github.com/bkeepers">
+            <span class="icon icon-mark-github"></span>
+            Follow me on GitHub
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/opensoul">
+            <span class="icon icon-feed"></span>
+            Subscribe to the Feed
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+
+  <footer id="copyright">
+    Copyright © 2006 - 2013 Brandon Keepers
+  </footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>

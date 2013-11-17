@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How to Gemify your Rails Plugins</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-94e1fc1109c1b76ae4fbab0891861760.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">How to Gemify your Rails Plugins</h1>
+  <p class="meta">
+    <span class="date">October  5, 2009</span>
+    <span class="tags">
+      
+    </span>
+  </p>
+  <div class="body"><p>Ever since <a href="http://ryandaigle.com/articles/2008/4/1/what-s-new-in-edge-rails-gem-dependencies">Rails added support for declaring gem dependencies</a>, there is really no (good) reason to use plain ol&#8217; plugins. We&#8217;ve been slowly gemifying <a href="http://github.com/collectiveidea">all of our plugins</a> as we need them. There&#8217;s a few hoops you have to jump through to get Rake tasks and Capistrano recipes working, but it&#8217;s fairly straight forward.</p>
+<p>First, you need something that will help you generate the gemspec and build the gem. You can do this by hand, but there&#8217;s several great plugins out there that make it easy. We recommend <a href="http://github.com/technicalpickles/jeweler">Jeweler</a>. Follow the directions in the Jeweler <span class="caps">README</span> for &#8220;Using in an existing project&#8221;.</p>
+<h3>1. Move <code>init.rb</code> to <code>rails/init.rb</code></h3>
+<p>Rails plugins have the magical <code>init.rb</code> that gets loaded when the plugin is initialized. To make this work in a gem, all you have to do is move it to <code>rails/init.rb</code>. Recent versions of Rails will look there whether you install it as a plugin or a gem, so you can just move it to the new location if you don&#8217;t care about ancient versions of Rails.</p>
+<h3>2. Move rake tasks to <code>lib/</code></h3>
+<p>Rails will load <code>tasks/*.rake</code> defined in any plugins. Unfortunately, these don&#8217;t get loaded from Gems.  To make your rake tasks work from a plugin, you will need to move them into the lib directory, and explicitly require them from your app&#8217;s <code>Rakefile</code>:</p>
+<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="s1">&#39;mygem/tasks&#39;</span>
+</code></pre></div><p>If you want your tasks to still be available when your code is installed as a plugin, you can just explicitly require the task from <code>task/mygem.rake</code>:</p>
+<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">),</span> <span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;lib&#39;</span><span class="p">,</span> <span class="s1">&#39;mygem&#39;</span><span class="p">,</span> <span class="s1">&#39;tasks&#39;</span><span class="p">))</span>
+</code></pre></div><h3>3. Move Capistrano tasks to <code>lib/</code></h3>
+<p>Capistrano recipes defined at <code>recipes/*.rb</code> in your plugin are also automatically loaded by Rails. Unfortunately, they suffer the same fate as Rake tasks and have to be move to the lib directory and be explicitly required from <code>config/deploy.rb</code>.</p>
+<p>When moving the recipes to the lib directory, we have to jump through a hoop to get Capistrano to load it properly.</p>
+<div class="highlight"><pre><code class="ruby"><span class="no">Capistrano</span><span class="o">::</span><span class="no">Configuration</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">load</span> <span class="k">do</span>
+  <span class="c1"># put cap recipes here</span>
+<span class="k">end</span>
+</code></pre></div><p>And in your <code>config/deploy.rb</code>:</p>
+<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="s1">&#39;mygem/recipes&#39;</span>
+</code></pre></div><p>As with Rake tasks, if you want your recipes to still work when installed as a plugin, add the following to a file in the <code>recipes/</code> directory of your plugin:</p>
+<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">),</span> <span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;lib&#39;</span><span class="p">,</span> <span class="s1">&#39;mygem&#39;</span><span class="p">,</span> <span class="s1">&#39;recipes&#39;</span><span class="p">))</span>
+</code></pre></div><h3>4. Generators</h3>
+<p>You don&#8217;t have to do anything, they just work.</p>
+<h3>That&#8217;s it</h3>
+<p>Publish your gem and go buy yourself a drink. Check out <a href="http://github.com/collectiveidea/awesome_nested_set">one</a> of <a href="http://github.com/collectiveidea/delayed_job">our</a> <a href="http://github.com/collectiveidea/deploy_and_deliver">gems</a> if you need <a href="http://github.com/collectiveidea/acts_as_audited">more</a> <a href="http://github.com/collectiveidea/no-peeping-toms">examples</a>.</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li>
+          <a href="http://twitter.com/bkeepers">
+            <span class="icon icon-mark-twitter"></span>
+            Follow me on Twitter
+          </a>
+        </li>
+        <li>
+          <a href="http://github.com/bkeepers">
+            <span class="icon icon-mark-github"></span>
+            Follow me on GitHub
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/opensoul">
+            <span class="icon icon-feed"></span>
+            Subscribe to the Feed
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+
+  <footer id="copyright">
+    Copyright © 2006 - 2013 Brandon Keepers
+  </footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>

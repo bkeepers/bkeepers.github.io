@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>delayed_job 2.0</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-94e1fc1109c1b76ae4fbab0891861760.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">delayed_job 2.0</h1>
+  <p class="meta">
+    <span class="date">April  3, 2010</span>
+    <span class="tags">
+      
+        delayed_job,
+      
+        gem,
+      
+        popular,
+      
+        ruby
+      
+    </span>
+  </p>
+  <div class="body"><p>I&#8217;ve pushed out the <a href="http://rubygems.org/gems/delayed_job">delayed_job 2.0 gem</a> from the <a href="http://github.com/collectiveidea">Collective Idea</a> fork on GitHub. See the <a href="http://wiki.github.com/collectiveidea/delayed_job/changelog">changelog</a> for a summary of changes, or <a href="http://github.com/collectiveidea/delayed_job/compare/v1.8.5...v2.0.0">see the full list changes</a>.</p>
+<h3>Multiple Backends</h3>
+<p>One of the most significant changes was adding support for multiple backends.  You can now use Active Record, MongoMapper, or DataMapper as backends for your job queue. See the <a href="http://github.com/collectiveidea/delayed_job/blob/master/README.textile"><span class="caps">README</span></a> for more info.</p>
+<h3>Benchmarks</h3>
+<p>The Active Record backend in delayed_job 2.0 is much faster (6x in the benchmarks I ran), primarily due to <a href="http://github.com/collectiveidea/delayed_job/commit/c743446a31fe5683544b78e9bf86dec371923b38">reversing the priority column and adding an index</a>. Here are benchmarks for running 10,000 simple jobs on my laptop:</p>
+<pre>
+                      user     system      total        real
+delayed_job 1.8.5 195.670000  14.020000  209.690000 (230.887172)
+delayed_job 2.0    36.200000   0.940000  37.140000  ( 39.959233)
+</pre>
+<p>While we&#8217;re looking at benchmarks, here is how the current backends compare:</p>
+<pre>
+                     user     system      total        real
+active_record      36.200000   0.940000  37.140000 ( 39.959233)
+mongo_mapper       69.270000   3.220000  72.490000 ( 90.783220)
+data_mapper       255.620000   2.880000 258.500000 (275.550383)
+</pre>
+<p>I have not done anything to optimize the mongo_mapper or data_mapper backend, so performance patches would be appreciated.</p>
+<h3>Upgrading</h3>
+<p>To take full advantage of the Active Record performance improvements, you&#8217;ll want to add an index:</p>
+<div class="highlight"><pre><code class="ruby"><span class="n">add_index</span> <span class="ss">:delayed_jobs</span><span class="p">,</span> <span class="o">[</span><span class="ss">:priority</span><span class="p">,</span> <span class="ss">:run_at</span><span class="o">]</span><span class="p">,</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;delayed_jobs_priority&#39;</span>
+</code></pre></div><p>The only other issue that most people will run into is that all of the configuration options have been moved to <code>Delayed::Worker</code>. Here&#8217;s how to change the options now:</p>
+<div class="highlight"><pre><code class="ruby"><span class="no">Delayed</span><span class="o">::</span><span class="no">Worker</span><span class="o">.</span><span class="n">destroy_failed_jobs</span> <span class="o">=</span> <span class="kp">false</span>   <span class="c1"># Delayed::Job.destroy_failed_jobs = false</span>
+<span class="no">Delayed</span><span class="o">::</span><span class="no">Worker</span><span class="o">.</span><span class="n">max_attempts</span> <span class="o">=</span> <span class="mi">3</span>              <span class="c1"># Delayed::Job.const_set(&quot;MAX_ATTEMPTS&quot;, 3)</span>
+<span class="no">Delayed</span><span class="o">::</span><span class="no">Worker</span><span class="o">.</span><span class="n">max_run_time</span> <span class="o">=</span> <span class="mi">5</span><span class="o">.</span><span class="n">minutes</span>      <span class="c1"># Delayed::Job.const_set(&quot;MAX_RUN_TIME&quot;, 5.minutes)</span>
+<span class="no">Delayed</span><span class="o">::</span><span class="no">Worker</span><span class="o">.</span><span class="n">sleep_delay</span> <span class="o">=</span> <span class="mi">60</span>              <span class="c1"># Delayed::Worker.const_set(&quot;SLEEP&quot;, 60)</span>
+</code></pre></div><p>Feel free to post any comments or questions <a href="http://groups.google.com/group/delayed_job">on the mailing list</a>.</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li>
+          <a href="http://twitter.com/bkeepers">
+            <span class="icon icon-mark-twitter"></span>
+            Follow me on Twitter
+          </a>
+        </li>
+        <li>
+          <a href="http://github.com/bkeepers">
+            <span class="icon icon-mark-github"></span>
+            Follow me on GitHub
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/opensoul">
+            <span class="icon icon-feed"></span>
+            Subscribe to the Feed
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+
+  <footer id="copyright">
+    Copyright © 2006 - 2013 Brandon Keepers
+  </footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>

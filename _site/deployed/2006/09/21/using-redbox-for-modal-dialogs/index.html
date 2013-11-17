@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Using RedBox for modal dialogs</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-94e1fc1109c1b76ae4fbab0891861760.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Using RedBox for modal dialogs</h1>
+  <p class="meta">
+    <span class="date">September 21, 2006</span>
+    <span class="tags">
+      
+        ajax,
+      
+        development,
+      
+        rails,
+      
+        redbox
+      
+    </span>
+  </p>
+  <div class="body"><p>When I first saw <a href="http://www.huddletogether.com/projects/lightbox/">Lightbox</a>, my first thought (ok, second thought; my first was &#8220;This is awesome!&#8221;) was: &#8220;This would be a great technique for confirmation pages!&#8221; I never got around to using lightbox due to it&#8217;s emphasis on images, but eventually other solutions started showing up, like <a href="http://orangoo.com/labs/GreyBox/">GreyBox</a> and <a href="http://codylindley.com/Javascript/257/thickbox-one-box-to-rule-them-all">ThickBox</a>, that allowed you to use other content.</p>
+<p>A couple weeks ago, I came across <a href="http://blog.craigambrose.com/">Redbox</a>, a rails plugin based on ThickBox. It is a great little plugin that simply consists of a few Rails helpers and some Javascript.</p>
+<p>As I experimented with it, I decided that I really like the feel of using modal dialog boxes for confirmation messages. It is more consistent with the desktop experience, but not as constrained as popups on the desktop.</p>
+<p><img src="/assets/2006/10/26/redbox_delete1.jpg" alt="Redbox Delete" height="356" width="450" /></p>
+<p>As I was using Redbox, I developed a pattern that works really well.  Instead of limiting <code>:destroy</code> requests to <code>POST</code>, I modified them to return a delete confirmation page when called with a <code>GET</code>, then perform the modification when called with a <code>POST</code>.</p>
+<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">destroy</span>
+  <span class="vi">@payment</span> <span class="o">=</span> <span class="no">Payment</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">get?</span>
+    <span class="n">respond_to</span> <span class="k">do</span> <span class="o">|</span><span class="n">wants</span><span class="o">|</span>
+      <span class="n">wants</span><span class="o">.</span><span class="n">html</span>
+      <span class="n">wants</span><span class="o">.</span><span class="n">js</span> <span class="p">{</span> <span class="n">render</span> <span class="ss">:layout</span> <span class="o">=&gt;</span> <span class="s1">&#39;modal&#39;</span> <span class="p">}</span>
+    <span class="k">end</span>
+  <span class="k">else</span>
+    <span class="vi">@payment</span><span class="o">.</span><span class="n">destroy</span>
+    <span class="n">flash</span><span class="o">[</span><span class="ss">:notice</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;Payment for $</span><span class="si">#{</span><span class="vi">@payment</span><span class="o">.</span><span class="n">amount</span><span class="si">}</span><span class="s2"> has been deleted.&quot;</span>
+    <span class="n">redirect_to</span> <span class="ss">:action</span> <span class="o">=&gt;</span> <span class="s1">&#39;index&#39;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div><p>This creates a little extra code, but it also makes the modal windows degradable. If the client doesn&#8217;t support JavaScript, or it is disabled, then when they click a destroy link, they will be taken to a separate confirmation page.  I&#8217;ve also created a &#8216;modal&#8217; layout that can have some formating, or maybe a close link.</p>
+<p>The code to create the redbox link looks like:</p>
+<div class="highlight"><pre><code class="erb"><span class="cp">&lt;%=</span> <span class="n">link_to_remote_redbox</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span>
+    <span class="p">{</span><span class="ss">:url</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:action</span> <span class="o">=&gt;</span> <span class="s1">&#39;destroy&#39;</span><span class="p">,</span> <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="n">payment</span><span class="p">},</span> <span class="ss">:method</span> <span class="o">=&gt;</span> <span class="ss">:get</span><span class="p">},</span>
+    <span class="ss">:href</span> <span class="o">=&gt;</span> <span class="n">url_for</span><span class="p">(</span><span class="ss">:action</span> <span class="o">=&gt;</span> <span class="s1">&#39;destroy&#39;</span><span class="p">,</span> <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="n">payment</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="x"></span>
+</code></pre></div><p><code>link_to_remote_redbox</code> takes the same parameters as <code>link_to_remote</code>, minus the <code>:update</code> parameter that tells where to put the new content. Note the <code>:method =&amp;gt; :get</code>. By default, Ajax requests use <code>POST</code>, but I don&#8217;t want to <code>POST</code> to the destroy action because that will perform the modification. I&#8217;m also setting <code>:href</code>, which makes this link degradable.</p>
+<p>As I used Redbox more and more for confirmation pages, it occurred to me that this method would also work really well for simple forms. So, with barely any modification&mdash;adding <code>respond_to</code> in the action and replacing <code>link_to</code> with <code>link_to_remote_redbox</code>&mdash;I was able to change these small forms into modal dialogs. Currently, the forms submit a regular request, but I could refactor it a little more and use Ajax to submit the forms and update the page.</p>
+<p><img src="/assets/2006/10/26/redbox_enroll1.jpg" alt="Redbox Enroll" height="356" width="450" /></p>
+<p>Overall, I really like the feel of these modal dialogs. They make the app feel snappier and less daunting. Users don&#8217;t have to jump all over the app for simple modifications. They spend the majority of their time on one page, the most important page.</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li>
+          <a href="http://twitter.com/bkeepers">
+            <span class="icon icon-mark-twitter"></span>
+            Follow me on Twitter
+          </a>
+        </li>
+        <li>
+          <a href="http://github.com/bkeepers">
+            <span class="icon icon-mark-github"></span>
+            Follow me on GitHub
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/opensoul">
+            <span class="icon icon-feed"></span>
+            Subscribe to the Feed
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+
+  <footer id="copyright">
+    Copyright © 2006 - 2013 Brandon Keepers
+  </footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>

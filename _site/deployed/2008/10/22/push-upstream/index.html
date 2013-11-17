@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Push Upstream</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-94e1fc1109c1b76ae4fbab0891861760.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">Push Upstream</h1>
+  <p class="meta">
+    <span class="date">October 22, 2008</span>
+    <span class="tags">
+      
+        community,
+      
+        patch,
+      
+        ruby
+      
+    </span>
+  </p>
+  <div class="body"><p>Scenario 1: You&#8217;re half way through a really productive day on a wicked new feature for an app and everything is going smoothly. Then, from out of nowhere…SMACK! A nasty bug in a library you depend on splatters right in your face. &#8220;Seriously, nobody has come across this before?&#8221; you mumble.</p>
+<p>Scenario 2: You&#8217;re using some fancy library and you think to yourself, &#8220;Geez, wouldn&#8217;t it be sweet if it did <em>&lt;insert fancy feature here&gt;</em> for you?&#8221;</p>
+<p>The temptation, especially with Ruby, is to solve both of these problems in your app&#8217;s code base by modifying your copy of the library. This may seem like the path of least resistance and the quickest way to move forward in the short term, but in the long term all you are doing is delaying the cost of properly solving that problem. You are incurring debt, which over time compounds and will end up costing you more to fix.</p>
+<p>First, when you&#8217;re making the change just for yourself, you&#8217;re less likely to solve the problem properly or do the appropriate testing. You&#8217;ll do some hack job for the problem you have, without considering how it might affect other scenarios.</p>
+<p>Second, if you found a bug or have a desired feature, chances are that someone else has or will run into the same situation. Fixing it locally doesn&#8217;t help everyone else.</p>
+<p>Lastly, fixing the bug or adding a new feature directly in your app makes it nearly impossible to upgrade the library. I spent over 4 hours this week trying to upgrade an open source app to the latest version of Ruby on Rails, and still have over 100 failing tests.  The biggest problem isn&#8217;t Rails itself, but all the plugins that also need upgraded, many of which had been patched in some form.</p>
+<p>At Collective Idea, we use git submodules for as many external libraries as possible. While submodules have their own issues, and probably aren&#8217;t a recommended approach, the positive side-effect is that it strongly discourages us from patching libraries in place. If we do need to make a change, each library is already its own git repository, so we can push our changes and send a pull request to the original maintainer.</p>
+<p>If you need to modify an open source library, don&#8217;t just do it in place. Push your changes upstream. Irresponsible patching hurts us all.</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li>
+          <a href="http://twitter.com/bkeepers">
+            <span class="icon icon-mark-twitter"></span>
+            Follow me on Twitter
+          </a>
+        </li>
+        <li>
+          <a href="http://github.com/bkeepers">
+            <span class="icon icon-mark-github"></span>
+            Follow me on GitHub
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/opensoul">
+            <span class="icon icon-feed"></span>
+            Subscribe to the Feed
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+
+  <footer id="copyright">
+    Copyright © 2006 - 2013 Brandon Keepers
+  </footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>

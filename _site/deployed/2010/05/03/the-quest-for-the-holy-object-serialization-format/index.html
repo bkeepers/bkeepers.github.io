@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The quest for the Holy object serialization format</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-94e1fc1109c1b76ae4fbab0891861760.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">The quest for the Holy object serialization format</h1>
+  <p class="meta">
+    <span class="date">May  3, 2010</span>
+    <span class="tags">
+      
+        delayed_job,
+      
+        ruby,
+      
+        yaml
+      
+    </span>
+  </p>
+  <div class="body"><p>One of my favorite features of <a href="http://github.com/collectiveidea/delayed_job">delayed_job</a> is that you can delay execution of any method on any object.  In order to get this to work, you have to be able to serialize the object into a database field, and then load it in a separate process.</p>
+<p>For certain objects, like ActiveRecord or MongoMapper models, you don&#8217;t actually want to &#8220;serialize&#8221; this object, but instead just reload the record from the database. To accomplish this, delayed_job previously would call <code>#to_yaml</code> on the job, and <a href="http://github.com/collectiveidea/delayed_job/commit/35a28085cb54f82562a7b869c3cdd85fae7b4b44">do a nasty hack</a> to store any objects that were ActiveRecord objects. This has always bothered me, so yesterday I set out to find a proper solution to serializing jobs.</p>
+<h3>Scene 1: enter <span class="caps">YAML</span></h3>
+<p><span class="caps">YAML</span> had 2 major problems in the context of how delayed_job was using it:</p>
+<ol>
+	<li>It would serialize the attributes of the ActiveRecord class and reload them in the same state that they were in when the job was created. In most instances, I want to load the class in its current state from the database.</li>
+	<li>You can&#8217;t call <code>#to_yaml</code> on a class, which delayed_job required to delay execution of class methods</li>
+</ol>
+<div class="highlight"><pre><code class="ruby"><span class="nb">String</span><span class="o">.</span><span class="n">to_yaml</span>
+<span class="c1"># TypeError: can&#39;t dump anonymous class Class</span>
+</code></pre></div><h3>Scene 2: who needs documentation?</h3>
+<p>It turns out that <span class="caps">YAML</span> has an undocumented feature (and <span class="caps">YAML</span> was originally written by _why, so you have to be mad genius to understand the code) where you can define how objects should be serialized and unserialized.</p>
+<p>Here is how it works for ActiveRecord:</p>
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">yaml_as</span> <span class="s2">&quot;tag:ruby.yaml.org,2002:ActiveRecord&quot;</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">yaml_new</span><span class="p">(</span><span class="n">klass</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+    <span class="n">klass</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">val</span><span class="o">[</span><span class="s1">&#39;attributes&#39;</span><span class="o">][</span><span class="s1">&#39;id&#39;</span><span class="o">]</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_yaml_properties</span>
+    <span class="o">[</span><span class="s1">&#39;@attributes&#39;</span><span class="o">]</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div><p><strong>Problem 1: solved.</strong></p>
+<h3>Scene 3: a Class act</h3>
+<p>As luck would have it, someone submitted a <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/178257">patch to <span class="caps">YAML</span> back in 2006 to add <code>#to_yaml</code> to Class and Module</a>. _why was reluctant to accept the patch because &#8220;reloading these objects causes trouble if you haven&#8217;t required the right libraries&#8221;. This doesn&#8217;t worry me with delayed_job because the worker will be running in the same environment.</p>
+<p>Here&#8217;s the monkey patch in all its glory:</p>
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">Module</span>
+  <span class="n">yaml_as</span> <span class="s2">&quot;tag:ruby.yaml.org,2002:module&quot;</span>
+
+  <span class="k">def</span> <span class="nc">Module</span><span class="o">.</span><span class="nf">yaml_new</span><span class="p">(</span> <span class="n">klass</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">val</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="nb">String</span> <span class="o">===</span> <span class="n">val</span>
+      <span class="n">val</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sr">/::/</span><span class="p">)</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="no">Object</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="o">|</span> <span class="n">m</span><span class="o">.</span><span class="n">const_get</span><span class="p">(</span><span class="n">n</span><span class="p">)}</span>
+    <span class="k">else</span>
+      <span class="k">raise</span> <span class="no">YAML</span><span class="o">::</span><span class="no">TypeError</span><span class="p">,</span> <span class="s2">&quot;Invalid Module: &quot;</span> <span class="o">+</span> <span class="n">val</span><span class="o">.</span><span class="n">inspect</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_yaml</span><span class="p">(</span> <span class="n">opts</span> <span class="o">=</span> <span class="p">{}</span> <span class="p">)</span>
+    <span class="no">YAML</span><span class="o">::</span><span class="n">quick_emit</span><span class="p">(</span> <span class="kp">nil</span><span class="p">,</span> <span class="n">opts</span> <span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">out</span><span class="o">|</span>
+      <span class="n">out</span><span class="o">.</span><span class="n">scalar</span><span class="p">(</span> <span class="s2">&quot;tag:ruby.yaml.org,2002:module&quot;</span><span class="p">,</span> <span class="nb">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="ss">:plain</span> <span class="p">)</span>
+    <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Class</span>
+  <span class="n">yaml_as</span> <span class="s2">&quot;tag:ruby.yaml.org,2002:class&quot;</span>
+
+  <span class="k">def</span> <span class="nc">Class</span><span class="o">.</span><span class="nf">yaml_new</span><span class="p">(</span> <span class="n">klass</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">val</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="nb">String</span> <span class="o">===</span> <span class="n">val</span>
+      <span class="n">val</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sr">/::/</span><span class="p">)</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="no">Object</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="o">|</span> <span class="n">m</span><span class="o">.</span><span class="n">const_get</span><span class="p">(</span><span class="n">n</span><span class="p">)}</span>
+    <span class="k">else</span>
+      <span class="k">raise</span> <span class="no">YAML</span><span class="o">::</span><span class="no">TypeError</span><span class="p">,</span> <span class="s2">&quot;Invalid Class: &quot;</span> <span class="o">+</span> <span class="n">val</span><span class="o">.</span><span class="n">inspect</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_yaml</span><span class="p">(</span> <span class="n">opts</span> <span class="o">=</span> <span class="p">{}</span> <span class="p">)</span>
+    <span class="no">YAML</span><span class="o">::</span><span class="n">quick_emit</span><span class="p">(</span> <span class="kp">nil</span><span class="p">,</span> <span class="n">opts</span> <span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">out</span><span class="o">|</span>
+      <span class="n">out</span><span class="o">.</span><span class="n">scalar</span><span class="p">(</span> <span class="s2">&quot;tag:ruby.yaml.org,2002:class&quot;</span><span class="p">,</span> <span class="nb">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="ss">:plain</span> <span class="p">)</span>
+    <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div><p><strong>Problem 2: Solved</strong></p>
+<h3>Scene 4: Finalé</h3>
+<p>This all seem seems to work wonderfully, but I&#8217;m left wondering if there&#8217;s something I&#8217;m missing. Anyone see any problems with using <span class="caps">YAML</span> in this way, or have I found the Holy Grail?</p></div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <ul id="links">
+        <li>
+          <a href="http://twitter.com/bkeepers">
+            <span class="icon icon-mark-twitter"></span>
+            Follow me on Twitter
+          </a>
+        </li>
+        <li>
+          <a href="http://github.com/bkeepers">
+            <span class="icon icon-mark-github"></span>
+            Follow me on GitHub
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/opensoul">
+            <span class="icon icon-feed"></span>
+            Subscribe to the Feed
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/12/getting-started-with-sublime-text-2/">Getting Started with Sublime Text 2</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+    </section>
+
+  </div>
+
+  <footer id="copyright">
+    Copyright © 2006 - 2013 Brandon Keepers
+  </footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>
