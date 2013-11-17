@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+git rm -qfr _site
+jekyll build
+git add _site && git commit -m "Publish `date -u`"
+git push origin `git subtree split --prefix _site`:gh-pages --force

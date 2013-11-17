@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+require 'nokogiri'
+require 'open-uri'
+require 'fileutils'
+
+doc = Nokogiri::XML(open('http://opensoul.org/export'))
+
+doc.css('entry').each do |entry|
+  href = URI.parse(entry.at('link').attr('href'))
+  slug = href.path.gsub('/blog/archives/', '').gsub('/', '-').chomp('-')
+  year = Time.parse(entry.at('published')).year
+  FileUtils.mkdir_p("_posts/#{year}")
+  File.open("_posts/#{year}/#{slug}.textile", "w") do |file|
+    file <<
+      "---\nlayout: post\ntitle: " <<
+      %Q|"#{entry.at('title').inner_html}"\n| <<
+      "id: #{entry.at('id').inner_text}\n" <<
+      "updated: #{entry.at('updated').inner_text}\n" <<
+      "date: #{entry.at('published').inner_text}\n" <<
+      "categories: \n" <<
+      entry.css('category').map {|c| "- #{c.attr('term').to_s}\n" }.join <<
+      %Q|      "---\n\n" <<
+      entry.at('content').text <<
+      "\n"
+  end
+end

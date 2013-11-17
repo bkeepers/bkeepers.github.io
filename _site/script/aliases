@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+Dir['_posts/*/*'].each do |file|
+  contents = File.read(file)
+
+  old = file.sub(%r{_posts/\d+/(\d+)-(\d+)-(\d+)-([^\.]+)\.textile}, '/blog/archives/\1/\2/\3/\4')
+  contents.sub!(/---\n(?<yml>.*)\n---/m, "---\n\\k<yml>\nalias: #{old}\n---")
+
+  File.open(file, 'w') {|f| f << contents }
+end
