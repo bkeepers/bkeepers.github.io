@@ -150,12 +150,19 @@ header {
     margin: 0 1em;
     content: " — "; }
 
-article img {
-  max-width: 100%;
-  display: inline-block; }
-@media only screen and (min-width: 768px) {
-  article .half img {
-    max-width: 49%; } }
+article {
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #f1f1f1; }
+  article img {
+    max-width: 100%;
+    display: inline-block; }
+  @media only screen and (min-width: 768px) {
+    article .half img {
+      max-width: 49%; } }
+
+#be-social .twitter-follow-button {
+  float: right; }
 
 #copyright {
   text-align: center;
@@ -1113,11 +1120,11 @@ pre {
   display: block;
   text-overflow: ellipsis;
   overflow: hidden;
-  margin-right: 150px;
-  float: left; }
+  margin-right: 150px; }
 .archives .date {
-  text-align: right;
-  display: block; }
+  position: absolute;
+  right: 0;
+  top: 0; }
 
 /* === #Buttons === */
 a.button, #years li a,
