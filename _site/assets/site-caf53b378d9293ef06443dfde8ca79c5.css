@@ -160,7 +160,7 @@ article img {
 #copyright {
   text-align: center;
   font-size: 0.85em;
-  color: #607982;
+  color: #b3b3b3;
   margin-bottom: 2em; }
 
 body {
@@ -324,7 +324,7 @@ del {
   margin: 0 auto;
   padding: 0; }
 
-.column, .columns, header, #content, #about {
+.column, .columns, header, #content, #copyright, #about {
   float: left;
   display: inline;
   margin-left: 10px;
@@ -334,59 +334,59 @@ del {
   margin-bottom: 20px; }
 
 /* Nested Column Classes */
-.column.alpha, .columns.alpha, header.alpha, .alpha#content, .alpha#about {
+.column.alpha, .columns.alpha, header.alpha, .alpha#content, .alpha#copyright, .alpha#about {
   margin-left: 0; }
 
-.column.omega, .columns.omega, header.omega, .omega#content, .omega#about {
+.column.omega, .columns.omega, header.omega, .omega#content, .omega#copyright, .omega#about {
   margin-right: 0; }
 
 /* Base Grid */
 .container .one.column {
   width: 40px; }
 
-.container .two.columns, .container header.two, .container .two#content, .container .two#about {
+.container .two.columns, .container header.two, .container .two#content, .container .two#copyright, .container .two#about {
   width: 100px; }
 
-.container .three.columns, .container header.three, .container .three#content, .container .three#about {
+.container .three.columns, .container header.three, .container .three#content, .container .three#copyright, .container .three#about {
   width: 160px; }
 
-.container .four.columns, .container header, .container .four#content, .container header#content, .container #about {
+.container .four.columns, .container header, .container .four#content, .container header#content, .container .four#copyright, .container header#copyright, .container #about {
   width: 220px; }
 
-.container .five.columns, .container header.five, .container .five#content, .container .five#about {
+.container .five.columns, .container header.five, .container .five#content, .container .five#copyright, .container .five#about {
   width: 280px; }
 
-.container .six.columns, .container header.six, .container .six#content, .container .six#about {
+.container .six.columns, .container header.six, .container .six#content, .container .six#copyright, .container .six#about {
   width: 340px; }
 
-.container .seven.columns, .container header.seven, .container .seven#content, .container .seven#about {
+.container .seven.columns, .container header.seven, .container .seven#content, .container .seven#copyright, .container .seven#about {
   width: 400px; }
 
-.container .eight.columns, .container header.eight, .container .eight#content, .container .eight#about {
+.container .eight.columns, .container header.eight, .container .eight#content, .container .eight#copyright, .container .eight#about {
   width: 460px; }
 
-.container .nine.columns, .container header.nine, .container .nine#content, .container .nine#about {
+.container .nine.columns, .container header.nine, .container .nine#content, .container .nine#copyright, .container .nine#about {
   width: 520px; }
 
-.container .ten.columns, .container header.ten, .container #content, .container .ten#about {
+.container .ten.columns, .container header.ten, .container #content, .container #copyright, .container .ten#about {
   width: 580px; }
 
-.container .eleven.columns, .container header.eleven, .container .eleven#content, .container .eleven#about {
+.container .eleven.columns, .container header.eleven, .container .eleven#content, .container .eleven#copyright, .container .eleven#about {
   width: 640px; }
 
-.container .twelve.columns, .container header.twelve, .container .twelve#content, .container .twelve#about {
+.container .twelve.columns, .container header.twelve, .container .twelve#content, .container .twelve#copyright, .container .twelve#about {
   width: 700px; }
 
-.container .thirteen.columns, .container header.thirteen, .container .thirteen#content, .container .thirteen#about {
+.container .thirteen.columns, .container header.thirteen, .container .thirteen#content, .container .thirteen#copyright, .container .thirteen#about {
   width: 760px; }
 
-.container .fourteen.columns, .container header.fourteen, .container .fourteen#content, .container .fourteen#about {
+.container .fourteen.columns, .container header.fourteen, .container .fourteen#content, .container .fourteen#copyright, .container .fourteen#about {
   width: 820px; }
 
-.container .fifteen.columns, .container header.fifteen, .container .fifteen#content, .container .fifteen#about {
+.container .fifteen.columns, .container header.fifteen, .container .fifteen#content, .container .fifteen#copyright, .container .fifteen#about {
   width: 880px; }
 
-.container .sixteen.columns, .container header.sixteen, .container .sixteen#content, .container .sixteen#about {
+.container .sixteen.columns, .container header.sixteen, .container .sixteen#content, .container .sixteen#copyright, .container .sixteen#about {
   width: 940px; }
 
 .container .one-third.column {
@@ -408,7 +408,7 @@ del {
 .container .offset-by-four {
   padding-left: 240px; }
 
-.container .offset-by-five {
+.container .offset-by-five, .container #copyright {
   padding-left: 300px; }
 
 .container .offset-by-six {
@@ -441,7 +441,7 @@ del {
 .container .offset-by-fifteen {
   padding-left: 900px; }
 
-.container .stretched-by-one, .container #content {
+.container .stretched-by-one, .container #content, .container #copyright {
   padding-right: 60px; }
 
 .container .stretched-by-two {
@@ -464,64 +464,65 @@ del {
   .container .columns,
   .container header,
   .container #content,
+  .container #copyright,
   .container #about {
     margin-left: 10px;
     margin-right: 10px; }
 
-  .column.alpha, .columns.alpha, header.alpha, .alpha#content, .alpha#about {
+  .column.alpha, .columns.alpha, header.alpha, .alpha#content, .alpha#copyright, .alpha#about {
     margin-left: 0;
     margin-right: 10px; }
 
-  .column.omega, .columns.omega, header.omega, .omega#content, .omega#about {
+  .column.omega, .columns.omega, header.omega, .omega#content, .omega#copyright, .omega#about {
     margin-right: 0;
     margin-left: 10px; }
 
   .container .one.column {
     width: 28px; }
 
-  .container .two.columns, .container header.two, .container .two#content, .container .two#about {
+  .container .two.columns, .container header.two, .container .two#content, .container .two#copyright, .container .two#about {
     width: 76px; }
 
-  .container .three.columns, .container header.three, .container .three#content, .container .three#about {
+  .container .three.columns, .container header.three, .container .three#content, .container .three#copyright, .container .three#about {
     width: 124px; }
 
-  .container .four.columns, .container header, .container .four#content, .container header#content, .container #about {
+  .container .four.columns, .container header, .container .four#content, .container header#content, .container .four#copyright, .container header#copyright, .container #about {
     width: 172px; }
 
-  .container .five.columns, .container header.five, .container .five#content, .container .five#about {
+  .container .five.columns, .container header.five, .container .five#content, .container .five#copyright, .container .five#about {
     width: 220px; }
 
-  .container .six.columns, .container header.six, .container .six#content, .container .six#about {
+  .container .six.columns, .container header.six, .container .six#content, .container .six#copyright, .container .six#about {
     width: 268px; }
 
-  .container .seven.columns, .container header.seven, .container .seven#content, .container .seven#about {
+  .container .seven.columns, .container header.seven, .container .seven#content, .container .seven#copyright, .container .seven#about {
     width: 316px; }
 
-  .container .eight.columns, .container header.eight, .container .eight#content, .container .eight#about {
+  .container .eight.columns, .container header.eight, .container .eight#content, .container .eight#copyright, .container .eight#about {
     width: 364px; }
 
-  .container .nine.columns, .container header.nine, .container .nine#content, .container .nine#about {
+  .container .nine.columns, .container header.nine, .container .nine#content, .container .nine#copyright, .container .nine#about {
     width: 412px; }
 
-  .container .ten.columns, .container header.ten, .container #content, .container .ten#about {
+  .container .ten.columns, .container header.ten, .container #content, .container #copyright, .container .ten#about {
     width: 460px; }
 
-  .container .eleven.columns, .container header.eleven, .container .eleven#content, .container .eleven#about {
+  .container .eleven.columns, .container header.eleven, .container .eleven#content, .container .eleven#copyright, .container .eleven#about {
     width: 508px; }
 
-  .container .twelve.columns, .container header.twelve, .container .twelve#content, .container .twelve#about {
+  .container .twelve.columns, .container header.twelve, .container .twelve#content, .container .twelve#copyright, .container .twelve#about {
     width: 556px; }
 
-  .container .thirteen.columns, .container header.thirteen, .container .thirteen#content, .container .thirteen#about {
+  .container .thirteen.columns, .container header.thirteen, .container .thirteen#content, .container .thirteen#copyright, .container .thirteen#about {
     width: 604px; }
 
-  .container .fourteen.columns, .container header.fourteen, .container .fourteen#content, .container .fourteen#about {
+  .container .fourteen.columns, .container header.fourteen, .container .fourteen#content, .container .fourteen#copyright, .container .fourteen#about {
     width: 652px; }
 
-  .container .fifteen.columns, .container header.fifteen, .container .fifteen#content, .container .fifteen#about {
+  .container .fifteen.columns, .container header.fifteen, .container .fifteen#content, .container .fifteen#copyright, .container .fifteen#about {
     width: 700px; }
 
-  .container .sixteen.columns, .container header.sixteen, .container .sixteen#content, .container .sixteen#about {
+  .container .sixteen.columns, .container header.sixteen, .container .sixteen#content, .container .sixteen#copyright, .container .sixteen#about {
     width: 748px; }
 
   .container .one-third.column {
@@ -543,7 +544,7 @@ del {
   .container .offset-by-four {
     padding-left: 192px; }
 
-  .container .offset-by-five {
+  .container .offset-by-five, .container #copyright {
     padding-left: 240px; }
 
   .container .offset-by-six {
@@ -576,7 +577,7 @@ del {
   .container .offset-by-fifteen {
     padding-left: 720px; }
 
-  .container .stretched-by-one, .container #content {
+  .container .stretched-by-one, .container #content, .container #copyright {
     padding-right: 48px; }
 
   .container .stretched-by-two {
@@ -594,70 +595,86 @@ del {
   .container {
     width: 300px; }
 
-  .columns, header, #content, #about, .column {
+  .columns, header, #content, #copyright, #about, .column {
     margin: 0; }
 
   .container .one.column,
   .container .two.columns,
   .container header.two,
   .container .two#content,
+  .container .two#copyright,
   .container .two#about,
   .container .three.columns,
   .container header.three,
   .container .three#content,
+  .container .three#copyright,
   .container .three#about,
   .container .four.columns,
   .container header,
   .container .four#content,
   .container header#content,
+  .container .four#copyright,
+  .container header#copyright,
   .container #about,
   .container .five.columns,
   .container header.five,
   .container .five#content,
+  .container .five#copyright,
   .container .five#about,
   .container .six.columns,
   .container header.six,
   .container .six#content,
+  .container .six#copyright,
   .container .six#about,
   .container .seven.columns,
   .container header.seven,
   .container .seven#content,
+  .container .seven#copyright,
   .container .seven#about,
   .container .eight.columns,
   .container header.eight,
   .container .eight#content,
+  .container .eight#copyright,
   .container .eight#about,
   .container .nine.columns,
   .container header.nine,
   .container .nine#content,
+  .container .nine#copyright,
   .container .nine#about,
   .container .ten.columns,
   .container header.ten,
   .container #content,
+  .container #copyright,
   .container .ten#about,
   .container .eleven.columns,
   .container header.eleven,
   .container .eleven#content,
+  .container .eleven#copyright,
   .container .eleven#about,
   .container .twelve.columns,
   .container header.twelve,
   .container .twelve#content,
+  .container .twelve#copyright,
   .container .twelve#about,
   .container .thirteen.columns,
   .container header.thirteen,
   .container .thirteen#content,
+  .container .thirteen#copyright,
   .container .thirteen#about,
   .container .fourteen.columns,
   .container header.fourteen,
   .container .fourteen#content,
+  .container .fourteen#copyright,
   .container .fourteen#about,
   .container .fifteen.columns,
   .container header.fifteen,
   .container .fifteen#content,
+  .container .fifteen#copyright,
   .container .fifteen#about,
   .container .sixteen.columns,
   .container header.sixteen,
   .container .sixteen#content,
+  .container .sixteen#copyright,
   .container .sixteen#about,
   .container .one-third.column,
   .container .two-thirds.column {
@@ -669,6 +686,7 @@ del {
   .container .offset-by-three,
   .container .offset-by-four,
   .container .offset-by-five,
+  .container #copyright,
   .container .offset-by-six,
   .container .offset-by-seven,
   .container .offset-by-eight,
@@ -681,7 +699,7 @@ del {
   .container .offset-by-fifteen {
     padding-left: 0; }
 
-  .container .stretched-by-one, .container #content,
+  .container .stretched-by-one, .container #content, .container #copyright,
   .container .stretched-by-two,
   .container .stretched-by-three,
   .container .stretched-by-four {
@@ -693,70 +711,86 @@ del {
   .container {
     width: 420px; }
 
-  .columns, header, #content, #about, .column {
+  .columns, header, #content, #copyright, #about, .column {
     margin: 0; }
 
   .container .one.column,
   .container .two.columns,
   .container header.two,
   .container .two#content,
+  .container .two#copyright,
   .container .two#about,
   .container .three.columns,
   .container header.three,
   .container .three#content,
+  .container .three#copyright,
   .container .three#about,
   .container .four.columns,
   .container header,
   .container .four#content,
   .container header#content,
+  .container .four#copyright,
+  .container header#copyright,
   .container #about,
   .container .five.columns,
   .container header.five,
   .container .five#content,
+  .container .five#copyright,
   .container .five#about,
   .container .six.columns,
   .container header.six,
   .container .six#content,
+  .container .six#copyright,
   .container .six#about,
   .container .seven.columns,
   .container header.seven,
   .container .seven#content,
+  .container .seven#copyright,
   .container .seven#about,
   .container .eight.columns,
   .container header.eight,
   .container .eight#content,
+  .container .eight#copyright,
   .container .eight#about,
   .container .nine.columns,
   .container header.nine,
   .container .nine#content,
+  .container .nine#copyright,
   .container .nine#about,
   .container .ten.columns,
   .container header.ten,
   .container #content,
+  .container #copyright,
   .container .ten#about,
   .container .eleven.columns,
   .container header.eleven,
   .container .eleven#content,
+  .container .eleven#copyright,
   .container .eleven#about,
   .container .twelve.columns,
   .container header.twelve,
   .container .twelve#content,
+  .container .twelve#copyright,
   .container .twelve#about,
   .container .thirteen.columns,
   .container header.thirteen,
   .container .thirteen#content,
+  .container .thirteen#copyright,
   .container .thirteen#about,
   .container .fourteen.columns,
   .container header.fourteen,
   .container .fourteen#content,
+  .container .fourteen#copyright,
   .container .fourteen#about,
   .container .fifteen.columns,
   .container header.fifteen,
   .container .fifteen#content,
+  .container .fifteen#copyright,
   .container .fifteen#about,
   .container .sixteen.columns,
   .container header.sixteen,
   .container .sixteen#content,
+  .container .sixteen#copyright,
   .container .sixteen#about,
   .container .one-third.column,
   .container .two-thirds.column {
