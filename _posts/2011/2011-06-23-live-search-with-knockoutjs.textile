@@ -14,7 +14,7 @@ alias: /blog/archives/2011/06/23/live-search-with-knockoutjs
 
 My first experimentation with knockout is to implement live search. Here is a demo of searching for beers by name:
 
-<div class="demo"><iframe src="/assets/4e02cba0dabe9d1c29005690/knockout.html"></iframe></div>
+<div class="demo"><iframe src="demo"></iframe></div>
 
 h2. How to build it
 
