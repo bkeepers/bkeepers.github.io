@@ -277,9 +277,9 @@ a {
   outline: 0; }
   a:hover, a:focus {
     color: #00abe2; }
-  a.dimmed, #about li a {
+  a.dimmed, #about li a, #links a {
     color: black; }
-    a.dimmed:hover, #about li a:hover {
+    a.dimmed:hover, #about li a:hover, #links a:hover {
       color: #00abe2; }
 
 p a, p a:visited {
@@ -864,13 +864,9 @@ or wrap each row of columns in a <div class="row"> */
 
 #about {
   text-align: right; }
-  #about .icon {
-    float: right; }
   @media only screen and (max-width: 767px) {
     #about {
-      text-align: left; }
-      #about .icon {
-        float: none; } }
+      text-align: left; } }
 
 @media only screen and (min-width: 960px) {
   header {
@@ -1219,5 +1215,9 @@ input[type="button"].full-width {
   #about h1 {
     font-size: 24px; }
 
-#links a .icon {
-  margin-left: 5px; }
+#links {
+  text-align: center; }
+  #links a {
+    font-size: 21px;
+    line-height: 1;
+    padding: 10px 14px; }
