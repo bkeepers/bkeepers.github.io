@@ -151,6 +151,10 @@ article {
   margin-bottom: 2em;
   padding-bottom: 2em;
   border-bottom: 1px solid #f1f1f1; }
+  article hr {
+    border: 0;
+    border-bottom: 1px dotted #dddddd;
+    margin-bottom: 20px; }
   article img {
     max-width: 100%;
     display: inline-block; }

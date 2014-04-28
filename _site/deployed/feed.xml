@@ -3,12 +3,117 @@
   <title>opensoul.org by Brandon Keepers</title>
   <link href="http://opensoul.org"/>
   <link type="application/atom+xml" rel="self" href="http://opensoul.org/feed.xml"/>
-  <updated>2014-02-26T00:00:00-05:00</updated>
+  <updated>2014-04-28T00:00:00-04:00</updated>
   <id>http://opensoul.org</id>
   <author>
     <name>Brandon Keepers</name>
     <email>brandon@opensoul.org</email>
   </author>
+  
+  <entry>
+    <title>Lessons learned from a cancelled project</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2014/04/28/failure/"/>
+    <id>/2014/04/28/failure</id>
+    <published>2014-04-28T00:00:00-04:00</published>
+    <category term="github"/><category term="talk"/>
+    <summary type="html">&lt;p&gt;This is the manuscript for a talk I gave to the &lt;a href=&quot;http://www.meetup.com/grwebdev/events/42172352/&quot;&gt;GRWebDev&lt;/a&gt;. It is the story of a project we canceled at GitHub and the lessons I learned from it.&lt;/p&gt;
+</summary>
+    <content type="html">&lt;p&gt;This is the manuscript for a talk I gave to the &lt;a href=&quot;http://www.meetup.com/grwebdev/events/42172352/&quot;&gt;GRWebDev&lt;/a&gt;. It is the story of a project we canceled at GitHub and the lessons I learned from it.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;In October 2012, we gathered a team together to work on a product that would be a new market for GitHub, Inc (The Company). The product was an evolution of some internal tools that we had built for recording and sharing presentations at our HQ in San Francisco for our remote employees.&lt;/p&gt;
+
+&lt;p&gt;When our team of 6 people was gathered into a room to kick off the project, we knew two facts:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;We had some tools hacked together internally for recording talks, and&lt;/li&gt;
+&lt;li&gt;We had experience building a website for sharing slide decks (&lt;a href=&quot;http://speakerdeck.com&quot;&gt;speakerdeck.com&lt;/a&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Our mission was to combine those two things into a product that would allow any company like us, a conference or a user group to easily record, stream and share talks.&lt;/p&gt;
+
+&lt;p&gt;11 months later, our team decided to cancel the project.&lt;/p&gt;
+
+&lt;h2&gt;Curate a collective vision&lt;/h2&gt;
+
+&lt;p&gt;This team had never worked together before. We had no shared experience, and no trust. In typical GitHub style, we also did not have managers or a roadmap. None of us knew exactly what the product would look like.&lt;/p&gt;
+
+&lt;p&gt;The best software comes from a team where everyone shares a vision, cares deeply about the result, and are motivated to make it happen. That level of caring and motivation can only come from people that had a role in crafting the vision and own a piece of it.&lt;/p&gt;
+
+&lt;p&gt;We eventually gained each others trust, and our visions started to coalesce, but only after spinning our wheels for 6 months.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Lesson 1: Curate a collective vision for the product.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Define success and failure&lt;/h2&gt;
+
+&lt;p&gt;At a place like GitHub with no managers and no schedules, it is tempting to think that if I just work my hardest on a cool project that excites me, that it will magically be successful. This is a lie. Success is a lot of work. Success comes from intentionally avoiding critical mistakes and a lot of luck.&lt;/p&gt;
+
+&lt;p&gt;There is not a magical formula for achieving success, so I can&amp;#39;t tell you how to achieve it. But I know that it is impossible to evaluate if what you are doing is working without criteria to evaluate against. We worked on our project for 6 months before we even sat down to articulate what success and failure looked like.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Lesson 2: When you figure out what your vision is, define what it means to be successful, and just as importantly, define what failure looks like. Set goals for achieving success, and check in on those goals at regular intervals.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Create meaningful artificial constraints&lt;/h2&gt;
+
+&lt;p&gt;Our project suffered from a severe lack of constraints. Money was not a factor, we had as much time as we needed, and we defined the feature set. Not everyone has the misfortune of this experience. Without constraints, there is no way to determining importance. When nothing is important, everything is important. When everything is important, prioritization and decision making is impossible.&lt;/p&gt;
+
+&lt;p&gt;It is well known that too many options overwhelm our brains. This phenomenon is chronicled in books like &amp;quot;The Paradox of Choice&amp;quot; or &amp;quot;How We Decide&amp;quot;.  Our brains are quite good at comparing a few options. But when presented with too many options, our brains switch from their fast pattern-matching mode to a slow sequential scan to compare all the details.&lt;/p&gt;
+
+&lt;p&gt;The same thing happens on projects. Designing software to meet all of the requirements at once is  paralyzing. Software is built one feature at a time. Choose constraints to help you focus on the details that mater.&lt;/p&gt;
+
+&lt;p&gt;Milestones are one form of constraint (Some people call them &amp;quot;deadlines&amp;quot;, but I prefer to call them milestones). A milestone is an arbitrary date by which you want to meet a goal. Fixed dates should &lt;em&gt;never&lt;/em&gt; include scope. If you work 60 hours per week trying to meet a deadline, then you have missed the point. A constraint should never be used to get someone to work harder. It is a tool to enable you to work smarter.&lt;/p&gt;
+
+&lt;p&gt;Pick an arbitrary milestone, such as &amp;quot;first beta user 2 weeks from today&amp;quot;, or &amp;quot;first sale in 3 months&amp;quot;. Without fixed scope, deadlines essentially become goals. Everyone has intrinsic motivation to meet the goals.&lt;/p&gt;
+
+&lt;p&gt;Don&amp;#39;t change your deadlines in order to cram more features into them. When the deadline comes, ship what you have in its current state. That might sound horrifying, but trust me. Once you do that, you will quickly train yourself to focus on the things that matter and always keep the product in working order.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Lesson 3: Create meaningful constrains that make it easier to avoid failure and be successful.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;People Matter More Than Product&lt;/h2&gt;
+
+&lt;p&gt;For the first 9 months, I cared more about the outcome of the product than the people on the team. I gave feedback on ideas, designs and code with the assumption that the most important thing about that interaction was creating a superior product. I was wrong.&lt;/p&gt;
+
+&lt;p&gt;Everyone on the team suffered from burnout. The constant grind of critical feedback was wearing us all down. Everyone lost motivation to work on the things that excited them because they did not think it would be good enough or the right thing to work on.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Lesson 4: If you care about people, the product will take care of itself. Pour all your energy into making sure your teammates are enjoying what they are doing. Happier people create better products.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;&amp;quot;Failure&amp;quot; is not Failure&lt;/h2&gt;
+
+&lt;p&gt;Canceling a project can be devastating for some people. I had many coworkers that would come ask me &amp;quot;how are you doing?&amp;quot; as if I just lost a loved one. It has taken a lot of practice from past failures, but I have gotten good at dealing with &amp;quot;failure&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;Success is a poor teacher. Since there is not formula for success, and success comes so infrequently, the &amp;quot;survivorship bias&amp;quot; makes is difficult to identify what factors lead to success. It is nearly impossible to decipher if the project was successful because of or in spite of what the team did.&lt;/p&gt;
+
+&lt;p&gt;Canceling a project is a great learning experience. Deciding to cancel it is a conscious analysis that the resources being put into the project could be better used elsewhere. The biggest challenge is to be aware of that fact at the earliest possible moment so you avoid putting resources into something that is not worthy.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Lesson 5: &amp;quot;Failure&amp;quot; is when you learn how to do something better the next time. I like failure.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Why we cancelled it&lt;/h2&gt;
+
+&lt;p&gt;We learned many more lessons in the 11 months that we worked on the product. These are the ones that seemed most significant to me. But none of these failures were the primary reason we cancelled the project.&lt;/p&gt;
+
+&lt;p&gt;Our slogan for GitHub.com (the website) is &amp;quot;Build software better, together.&amp;quot; As we have continued to grow and evolve, we have wrestled with whether or not this adequately describes the vision for GitHub, Inc, (the company). We often talk about our vision as a company is to &amp;quot;make it easier to work together than alone&amp;quot;.  With up to 75% of our employees being remote, working together becomes particularly challenging when you are in different timezones. It is easy for people to become isolated. We run into unique challenges that other companies don&amp;#39;t face.&lt;/p&gt;
+
+&lt;p&gt;GitHub has always resonated with the open source culture in our desire to write software for problems that cause us pain. We feel the pain of working together in general, so we are tempted to scratch that itch. But I think we are finding that we have a much better understanding of how people work together &lt;em&gt;on software&lt;/em&gt;. Building a tool to make it easier to work together in any other realm requires an intimate understanding of the unique challenges.&lt;/p&gt;
+
+&lt;p&gt;Ultimately we decided to cancel the project because it did not fit in with the vision of where GitHub is going. I would like to think that under different circumstances we would taken these lessons and still been able to ship a successful product. Or maybe we would not have learned these lessons without looking through the lens of &amp;quot;failure&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;Either way, I am thankful for the lessons it taught me, I look forward to applying these lessons on my next project.&lt;/p&gt;
+</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>A GIF is worth a thousand screenshots</title>
@@ -438,29 +543,6 @@
 &lt;p&gt;This framework agnostic talk takes a serious look at how we develop JavaScript applications. Despite its prototypical nature, good object-oriented programming principles are still relevant. The design patterns that we&amp;#8217;ve grown to know and love work just as well in JavaScript as they do any other language. Test driven development forces us to write modular, decoupled code.&lt;/p&gt;
 &lt;p&gt;&lt;iframe src=&quot;http://player.vimeo.com/video/45709623&quot; width=&quot;580&quot; height=&quot;326&quot; frameborder=&quot;0&quot; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;&lt;/p&gt;
 &lt;script async class=&quot;speakerdeck-embed&quot; data-id=&quot;4fa986b3a117fc00220012ed&quot; data-ratio=&quot;1.3333333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;</content>
-    <author>
-      <name>Brandon Keepers</name>
-      <uri>http://opensoul.org</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>Walking</title>
-    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/02/03/walking/"/>
-    <id>/2012/02/03/walking</id>
-    <published>2012-02-03T15:00:00Z</published>
-    <category term="life"/><category term="observation"/>
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;I had to answer the question &amp;#8220;What inspires you?&amp;#8221; for a TEDx application. Every answer to that question sounds cheesy. Here&amp;#8217;s my cheesy answer.&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;I had to answer the question &amp;#8220;What inspires you?&amp;#8221; for a TEDx application. Every answer to that question sounds cheesy. Here&amp;#8217;s my cheesy answer.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I am inspired by walking; steady, continuous forward progress. Fast enough to get where I want to go in time, but not too fast.&lt;/p&gt;
-&lt;p&gt;Maintaining a fast pace while walking requires enormous concentration on the act of walking. It is extremely difficult to focus on anything else and maintain a fast pace. I only walk fast when arriving at my destination is of the utmost of importance.&lt;/p&gt;
-&lt;p&gt;Walking slow is often enjoyable, but neglects the fact that the point of walking is to go somewhere. I walk slow when I have a particularly difficult problem to solve, or I only want a slight change of scenery in hopes of inspiration.&lt;/p&gt;
-&lt;p&gt;Walking naturally requires almost no concentration. It allows me to focus on what is important, adjust my path when necessary, and arrive at my destination in a reasonable time.&lt;/p&gt;
-&lt;p&gt;I am inspired by progress. I love the continuous process of taking something that is awkward, uncomfortable or even painful and making it incrementally better.&lt;/p&gt;</content>
     <author>
       <name>Brandon Keepers</name>
       <uri>http://opensoul.org</uri>
