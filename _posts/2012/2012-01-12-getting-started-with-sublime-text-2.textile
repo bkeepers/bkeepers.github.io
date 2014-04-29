@@ -6,7 +6,6 @@ updated: 2013-02-12T11:20:14-05:00
 date: 2012-01-12T07:00:00-05:00
 categories:
 - editor
-- popular
 alias: /blog/archives/2012/01/12/getting-started-with-sublime-text-2
 ---
 
