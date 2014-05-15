@@ -3,12 +3,61 @@
   <title>opensoul.org by Brandon Keepers</title>
   <link href="http://opensoul.org"/>
   <link type="application/atom+xml" rel="self" href="http://opensoul.org/feed.xml"/>
-  <updated>2014-04-28T00:00:00-04:00</updated>
+  <updated>2014-05-15T00:00:00-04:00</updated>
   <id>http://opensoul.org</id>
   <author>
     <name>Brandon Keepers</name>
     <email>brandon@opensoul.org</email>
   </author>
+  
+  <entry>
+    <title>Hide referrer when clicking a link</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2014/05/15/hide-referrer/"/>
+    <id>/2014/05/15/hide-referrer</id>
+    <published>2014-05-15T00:00:00-04:00</published>
+    <category term="javascript"/><category term="web"/>
+    <summary type="html">&lt;p&gt;Sometimes referrers reveal sensitive information. Wouldn&#39;t it be nice if there was a way to hide them when you needed to?&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;Hyperlinks are the foundation of the world wide web. Clicking one instantly teleports you to some new magical land. This teleporter has one interesting feature/defect: It tells everyone at your new destination exactly where you came from, called a &amp;quot;referer&amp;quot; (&lt;a href=&quot;http://en.wikipedia.org/wiki/HTTP_referer&quot;&gt;yes, it was mispelled in the original HTTP spec&lt;/a&gt;). Usually you don&amp;#39;t care, and sometimes referrers are even helpful. But sometimes, as &lt;a href=&quot;https://blog.dropbox.com/2014/05/web-vulnerability-affecting-shared-links/&quot;&gt;Dropbox recently discovered&lt;/a&gt;, referrers reveal sensitive information. Wouldn&amp;#39;t it be nice if there was a way to hide them when you needed to?&lt;/p&gt;
+
+&lt;p&gt;Way back in the day when we were building &lt;a href=&quot;http://get.gaug.es&quot;&gt;gaug.es&lt;/a&gt;, we wanted to be able to click on links in our admin interface that would take us to our users&amp;#39; websites, but we didn&amp;#39;t want the referrer to reveal where we were coming from. After some fiddling, we arrived at this clever JavaScript snippet that does just that: it opens a new blank window and visits the clicked URL as if the user typed the URL in themselves.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;openWithoutReferrer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;site&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;hide_referrer&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;writeln&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;window.location = &amp;quot;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;quot;;&amp;lt;/script&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can use jQuery to attach this to any link with the &lt;code&gt;hide-referrer&lt;/code&gt; class. Note that due to popup blocking techniques, &lt;code&gt;openWithoutReferrer&lt;/code&gt; has to be called in a click handler.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Open links with &amp;quot;hide-referrer&amp;quot; class without sending the referrer&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;a.hide-referrer&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;openWithoutReferrer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;On another project I used the same method, but I didn&amp;#39;t ever want to leak referrer information to any external site.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Open external links without sending the referrer&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getAttribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;href&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hostname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hostname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;openWithoutReferrer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There are a couple caveats to this solution:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;It requires that the user have JavaScript enabled. If they don&amp;#39;t (because traveled here in a time machine from the 90s and are using Netscape 2, or they are trying to be malicious), referrers will still be sent. You could work around this by setting &lt;code&gt;data-href&lt;/code&gt; instead of &lt;code&gt;href&lt;/code&gt; on all &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; tags and update the snippet above accordingly. This will require JavaScript to make any links work.&lt;/li&gt;
+&lt;li&gt;It always opens the link in a new window. To my knowledge, there is not a way to do this without opening a new window.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Despite the caveats, I&amp;#39;ve found this to be effective in the couple scenarios that I needed it.&lt;/p&gt;
+</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>Lessons learned from a cancelled project</title>
@@ -526,23 +575,6 @@
 &lt;p&gt;I have been on a quest with a few coworkers to uncover why our code smells.  In this talk, I walk through code from projects that I work on every day, looking for smells that indicate problems, understanding why it smells, what the smell is trying to tell us, and how to refactor it.&lt;/p&gt;
 &lt;p&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/JxPKljUkFQw&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
 &lt;script async class=&quot;speakerdeck-embed&quot; data-id=&quot;4fbce3314ff11c001f021933&quot; data-ratio=&quot;1.3333333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;</content>
-    <author>
-      <name>Brandon Keepers</name>
-      <uri>http://opensoul.org</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>The Plight of Pinocchio: JavaScript&#39;s quest to become a real language</title>
-    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/05/16/the-plight-of-pinocchio/"/>
-    <id>/2012/05/16/the-plight-of-pinocchio</id>
-    <published>2012-05-16T12:00:00Z</published>
-    <category term="talk"/>
-    <summary type="html">&lt;p&gt;JavaScript is no longer a toy language. Many of our applications can&amp;#8217;t function without it. If we are going to use JavaScript to do real things, we need to treat it like a real language, adopting the same practices we use with real languages.&lt;/p&gt;</summary>
-    <content type="html">&lt;p&gt;JavaScript is no longer a toy language. Many of our applications can&amp;#8217;t function without it. If we are going to use JavaScript to do real things, we need to treat it like a real language, adopting the same practices we use with real languages.&lt;/p&gt;
-&lt;p&gt;This framework agnostic talk takes a serious look at how we develop JavaScript applications. Despite its prototypical nature, good object-oriented programming principles are still relevant. The design patterns that we&amp;#8217;ve grown to know and love work just as well in JavaScript as they do any other language. Test driven development forces us to write modular, decoupled code.&lt;/p&gt;
-&lt;p&gt;&lt;iframe src=&quot;http://player.vimeo.com/video/45709623&quot; width=&quot;580&quot; height=&quot;326&quot; frameborder=&quot;0&quot; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;&lt;/p&gt;
-&lt;script async class=&quot;speakerdeck-embed&quot; data-id=&quot;4fa986b3a117fc00220012ed&quot; data-ratio=&quot;1.3333333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;</content>
     <author>
       <name>Brandon Keepers</name>
       <uri>http://opensoul.org</uri>
