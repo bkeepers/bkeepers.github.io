@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User-generated content and DOM clobbering</title>
+  <meta name="description" content="a blog about code">
+  <meta name="author" content="Brandon Keepers">
+  <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/assets/site-16738bce59663e55a52bdd751450914c.css">
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://bkeepers.myopenid.com/">
+  <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <!-- FIXME:  -->
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1><a href="/">opensoul.org</a></h1>
+  </header>
+
+  <div id="content">
+    <article>
+  <h1 class="small">User-generated content and DOM clobbering</h1>
+  <p class="meta">
+    <span class="date">September  5, 2014</span>
+    <span class="tags">
+      
+        javascript,
+      
+        web
+      
+    </span>
+  </p>
+  <div class="body"><p>The web lives and dies by the <a href="https://developer.mozilla.org/en-US/docs/DOM">DOM</a>. It is both a beautiful and horrible thing. Here is just one example; it&#39;s called <em>&quot;DOM clobbering&quot;</em>.</p>
+
+<p>Say you have a site, like <a href="https://github.com">GitHub.com</a>, that allows users to place <a href="https://help.github.com/articles/github-flavored-markdown">whatever content they want</a> on it. You want to be a hospitable host of that content, so you try to make it as feature-ful as possible. For example, if the content includes an <code>h1</code> tag, you want to add anchors so anyone can link directly to that header.</p>
+
+<p>There are two ways that browsers support deep-linking to content:</p>
+
+<ol>
+<li>An <code>id</code> attribute on any tag.</li>
+<li>an <code>a</code> tag with a <code>name</code> attribute.</li>
+</ol>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;h1</span> <span class="na">id=</span><span class="s">&quot;problem&quot;</span><span class="nt">&gt;</span>The Problem<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;h1&gt;&lt;a</span> <span class="na">name=</span><span class="s">&quot;solution&quot;</span><span class="nt">&gt;</span>The Solution<span class="nt">&lt;/a&gt;&lt;/h1&gt;</span>
+</code></pre></div>
+<p>With either method, users can link to <a href="#problem">#problem</a> and the browser will scroll down to that heading. Ok, we all know how links work, so what&#39;s the big deal?</p>
+
+<h2><a id="problem"></a> The Problem</h2>
+
+<p><code>id</code> is used by both JavaScript and CSS. Allowing users to create content with arbitrary <code>id</code> attributes means that they could intentionally or unintentionally break functional or styles. So our first option for deep-linking is out. Good thing we have a second option.</p>
+
+<p>Unfortunately, there&#39;s this really uncool interaction between HTML and the DOM where elements with a <code>name</code> attribute are assigned to variables on <code>document</code>. Early cave dwellers would use this &quot;feature&quot; to quickly gain access to form elements, but this appendix hasn&#39;t been needed since the advent of <a href="http://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-71555259">HTML 4.01</a> when <code>document.getElementsByName</code> was introduced.</p>
+
+<p>But, what&#39;s the harm in leaving this feature around? Somebody might still find it useful.</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">name=</span><span class="s">&quot;addEventListener&quot;</span><span class="nt">&gt;</span>Oh, you wanted to bind events?<span class="nt">&lt;/a&gt;</span>
+</code></pre></div>
+<p>Consider your DOM clobbered.</p>
+
+<p>Now I know what you&#39;re thinking: &quot;Browsers wouldn&#39;t  override existing properties like <code>document.addEventListener</code>, would they?&quot;. I know, I had the same thought! I don&#39;t want to name names, but certain non-webkit-based browsers may disappoint you.</p>
+
+<p>Neither option allows us to deep-link to content without the possibility of interfering with the rest of the site. </p>
+
+<h2><a id="solution"></a> The Solution</h2>
+
+<p>Prefix every <code>id</code> and <code>name</code> attribute coming from a user with <code>user-content-</code>, and use JavaScript to preserve the browser&#39;s scroll on the <code>hashchange</code> event. So…</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">name=</span><span class="s">&quot;addEventListener&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+</code></pre></div>
+<p>…gets rewritten to…</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">name=</span><span class="s">&quot;user-content-addEventListener&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+</code></pre></div>
+<p>And then we use this CoffeeScript to preserve the browser&#39;s behavior of scrolling to the hash.</p>
+<div class="highlight"><pre><code class="coffeescript language-coffeescript" data-lang="coffeescript"><span class="nx">jQuery</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">on</span> <span class="s">&#39;hashchange&#39;</span><span class="p">,</span> <span class="nf">(event) -&gt;</span>
+  <span class="c1"># We don&#39;t need to do anything if there is no hash.</span>
+  <span class="k">return</span> <span class="k">unless</span> <span class="nx">location</span><span class="p">.</span><span class="nx">hash</span>
+
+  <span class="c1"># We don&#39;t need to do anything if the current target exists</span>
+  <span class="k">return</span> <span class="k">if</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s">&quot;:target&quot;</span><span class="p">)</span>
+
+  <span class="c1"># See if a user-content-* element exists and scroll to it</span>
+  <span class="nv">name = </span><span class="s">&quot;user-content-</span><span class="si">#{</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s">&quot;</span>
+  <span class="nv">target = </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="o">||</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByName</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nx">target</span><span class="p">).</span><span class="nx">scrollTo</span><span class="p">()</span>
+</code></pre></div>
+<p>Using JavaScript to mimic the browser&#39;s native behavior is usually not ideal. If browsers supported a way to deep-link to content that didn&#39;t have a negative impact on other DOM features, then we wouldn&#39;t even have to worry about it. But they don&#39;t. </p>
+
+<p>We&#39;ve been using this method on GitHub.com for a few months now without any noticeable impact.</p>
+</div>
+
+  <div id="be-social">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bkeepers" data-lang="en" data-related="bkeepers">Tweet</a>
+    <a href="https://twitter.com/bkeepers" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @bkeepers</a>
+  </div>
+</article>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+
+  <div id="about">
+    <section>
+      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+
+      <p id="links">
+        <a href="http://twitter.com/bkeepers" class="icon icon-mark-twitter" title="Follow me on Twitter"></a>
+        <a href="http://github.com/bkeepers" class="icon icon-mark-github" title="Follow me on GitHub"></a>
+        <a href="http://feeds.feedburner.com/opensoul" class="icon icon-feed" title="Subscribe to the Feed"></a>
+      </p>
+    </section>
+
+    <section id="popular">
+      <h1>Popular Posts</h1>
+      <ul>
+      
+        <li><a href="/2014/04/28/failure/">Lessons learned from a cancelled project</a></li>
+      
+        <li><a href="/2012/06/05/whats-it-like-to-work-at-github/">What's it like to work at GitHub?</a></li>
+      
+        <li><a href="/2012/05/23/why-our-code-smells/">Why Our Code Smells</a></li>
+      
+        <li><a href="/2012/01/09/the-40-standup-desk/">The $40 Standup Desk</a></li>
+      
+        <li><a href="/2011/11/30/haml-the-unforgivable-sin/">HAML: the unforgivable sin</a></li>
+      
+      </ul>
+
+      <p><a href="/archives">View All Posts</a></p>
+    </section>
+
+  </div>
+
+  <footer id="copyright">
+    Copyright © 2006  - 2014 Brandon Keepers
+  </footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-817617-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script');
+    t.type = 'text/javascript'; t.async = true;
+    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
+    t.src = 'http://gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>
