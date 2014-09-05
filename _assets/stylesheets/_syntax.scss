@@ -3,6 +3,20 @@ pre, code, tt {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
+p code, li code {
+  padding: 0.2em 0;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+
+  &:before,
+  &:after {
+    letter-spacing: -0.2em; // this creates padding
+    content: "\00a0";
+  }
+}
+
 pre {
   @include border-radius(3px);
   padding: 18px;
