@@ -1,0 +1,73 @@
+https://keybase.io/bkeepers
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://opensoul.org
+  * I am bkeepers (https://keybase.io/bkeepers) on keybase.
+  * I have a public key with fingerprint 8AF6 4385 E45B 03AA 72D7  DE72 F524 D391 D545 3EF9
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.7.3"
+        },
+        "key": {
+            "fingerprint": "8af64385e45b03aa72d7de72f524d391d5453ef9",
+            "host": "keybase.io",
+            "key_id": "F524D391D5453EF9",
+            "uid": "3b02b51297105e54927ab6f282b68d00",
+            "username": "bkeepers"
+        },
+        "merkle_root": {
+            "ctime": 1421767096,
+            "hash": "302d37e5efd25b437a428c20690653a70cbe307c557763aecbb7a3ebe5bf34d0e7f207277b7b269f5a2659bc50b28759fd5fde81d02c36359f41da770fc64983",
+            "seqno": 135520
+        },
+        "service": {
+            "hostname": "opensoul.org",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1421767120,
+    "expire_in": 157680000,
+    "prev": "791258caf3b56eb3fa752d9b2f1dc3f6026c1bb00d6c25cd480b5cc1d39a4fc0",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v2
+
+owFVkl1oHUUYhk9OU8VI2lKr1jZKsl4px9PZmZ2Z3UgQse1VNIREWqpwmJ9vc9Zs
+dk92z4mJ8WD9iaGgVUGF0hulAUWJAVtECRYr1kh7EagXATUVK2pLtVr/qkLRmRDR
+ztX8PPN+7zvzPd++plBsOf3c8vvO/ulXW06ek4XBo6OfTToy1RNO96Sj4giSup0l
+YgScbmcYJqTIoRylnUmqofxQ3rnKlJwxyPIoTQyFyrxMnGbJ4vZyGCVDkNWyyGo5
+vgiZR3wKHpWICMGx5ho4Din2NAlcTT1KIAyMZDXN61dUdVY0K5E2uzsNv93w2y2/
+Y6flGysHRCIsqYsD7iIK1AswF5KF2MeS+RohC+aQrUaSwwA1Y936HYFsOIZKlqYr
+oVU9sojrYZczjgJmHIm8aksgrAkHCqHGVHqECw/7CiMWIEaJ4EhJIIgrSjlnRICS
+kgsCEqgMiacR8BAjjjmXXGIWhFRgRgOpKJLY5zQINQ01+K5GWBFGzIbnasE5ChXz
+Ap+YCDmMJqkxRyjFqGnX2VikwPq2z7aaLq1BkqeNuJxmQ+ZSLUvrqUpjc1Kt12vd
+NnR9ombJh0FWZldFKjJKtPm0//+qa9ArH8TFqOTAeC3KoBJZgnLmIzNsHRgzmjxw
+MfWVCImkDCQJBadYBxKHrlYkZAgz5UqJkGYKU6U9H0mqlGvaQHihQv/FpManGDKS
+eTSUiHojA6e5r6WjtdBSLFy1tmjbttB2zYZ/e/nnb67+u/pB+0JR7F9b+utkc8sN
+W+b/wJcPn37wxH0vLh64xfnqyLHG+ce2tl9Owkc6L+COU13ipuKZZzYO1EZm5n6M
+Nz19/fziK2/0zLTu/uTs0oaPZnW/E4/DdW/9svnw58ut3/X2xvnei94PR9sPDDTm
+3ibPssXZW3//dDQ/NvfEukt7ly5+mQ/ccdcXe3Zxtv72bT3nSsPX3vboU73fd3XN
+vHbh3b5DN97TIafeiUtLE/x1tCae/O3b6KVtbX0P3D84vemnS+h4Wd19av1U9GTz
+zEJ/OVDH56qFqXxdc/zQniN/tm39UJ74une+uqA2H2zrv/fXgzcvb/z4/NT0nY/v
+c/oasOOFwffefLnn7D8=
+=/VPJ
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/bkeepers
