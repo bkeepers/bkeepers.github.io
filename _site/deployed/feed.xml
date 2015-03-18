@@ -3,12 +3,37 @@
   <title>opensoul.org by Brandon Keepers</title>
   <link href="http://opensoul.org"/>
   <link type="application/atom+xml" rel="self" href="http://opensoul.org/feed.xml"/>
-  <updated>2014-09-05T00:00:00-04:00</updated>
+  <updated>2015-03-18T00:00:00-04:00</updated>
   <id>http://opensoul.org</id>
   <author>
     <name>Brandon Keepers</name>
     <email>brandon@opensoul.org</email>
   </author>
+  
+  <entry>
+    <title>On the importance of junk drawers</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2015/03/18/junk-drawers/"/>
+    <id>/2015/03/18/junk-drawers</id>
+    <published>2015-03-18T00:00:00-04:00</published>
+    <category term="observation"/>
+    <summary type="html">Create junk drawers; for things, for ideas, for time, for relationships. Make space for things that don&#39;t fit in. Let all the things that don&#39;t belong gather in one place. You may be surprised at what emerges to demand its own place.</summary>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;A place for everything and everything in its place.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Things without places are hard to find. Left to lay in some indeterminate place when we are done using them, they even get designated as &lt;em&gt;misplaced&lt;/em&gt;—implying that they had a place to begin with.&lt;/p&gt;
+
+&lt;p&gt;Places that don&amp;#39;t have things are purposeless voids. They are unused capacity in a resource-constrained world. A place&amp;#39;s thing may be a physical thing—such as a gadget or a gizmo—or it may be an abstract thing—such as an expression of art or emotion or identity—or it may be the absence of a thing—such as an empty space where experiences can be had and ideas exchanged. A place&amp;#39;s thing is its purpose, it&amp;#39;s justification for continued existence.&lt;/p&gt;
+
+&lt;p&gt;A junk drawer is a special place. It keeps misfits from encroaching on something else&amp;#39;s place. It creates a place of shelter for the things that don&amp;#39;t belong but still have value. A junk drawer then realizes its greatest potential when enough similar things are assembled within its confines at it becomes clear that some of these things are similar and warrant their own place.&lt;/p&gt;
+
+&lt;p&gt;Create junk drawers; for things, for ideas, for time, for relationships. Make space for things that don&amp;#39;t fit in. Let all the things that don&amp;#39;t belong gather in one place. You may be surprised at what emerges to demand its own place.&lt;/p&gt;
+</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>User-generated content and DOM clobbering</title>
@@ -284,9 +309,9 @@
     <summary type="html">&lt;p&gt;The Reminders app on iOS and Mac has quickly become one of my favorite apps, mostly due to its integration with Siri and the ability to share lists with my wife.&lt;/p&gt;</summary>
     <content type="html">&lt;p&gt;The Reminders app on iOS and Mac has quickly become one of my favorite apps, mostly due to its integration with Siri and the ability to share lists with my wife.&lt;/p&gt;
 &lt;p&gt;I almost always have my phone in my hand, so no matter how predisposed I am, I can afford to hold down the home button and say, &amp;#8220;Siri, add toilet paper to the shopping list&amp;#8221;, or &amp;#8220;Remind me to turn off the porch light when I get home.&amp;#8221;&lt;/p&gt;
-&lt;p class=&quot;half&quot;&gt;&lt;img src=&quot;/assets/IMG_0002_2-3d8d39db3d0df6e0c98d60cf79a43c51.jpg&quot;&gt; &lt;img src=&quot;/assets/IMG_0004_2-f5da8ef8610664a7cc4bbef339903762.jpg&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;half&quot;&gt;&lt;img src=&quot;/assets/IMG_0002_2-a641c2b3e0641a37623eae900e610d97.jpg&quot;&gt; &lt;img src=&quot;/assets/IMG_0004_2-f5da8ef8610664a7cc4bbef339903762.jpg&quot;&gt;&lt;/p&gt;
 &lt;p&gt;It hasn&amp;#8217;t been added the Reminders iOS app yet, so many people don&amp;#8217;t know it exists, but from the Mac app or &lt;a href=&quot;http://icloud.com&quot;&gt;iCloud.com&lt;/a&gt; you can share a list. The list has to be synced with iCloud for this to work.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/Screen_Shot_2013_01_05_at_11_53_17_PM-a789e9a80a382383f87ee0e3d4b47e10.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/Screen_Shot_2013_01_05_at_11_53_17_PM-9a1ff6fbf7fe6af30999650f9d44951b.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Reminders is far from perfect, but it&amp;#8217;s the only list–paper or otherwise–that I&amp;#8217;ve been able to stick with for more than a week. It offers a glimpse of what the future holds for reminder and todo apps—and takes me one step closer to being completely useless without my phone.&lt;/p&gt;</content>
     <author>
       <name>Brandon Keepers</name>
@@ -603,32 +628,6 @@
 &lt;p&gt;One of the challenges of a programmer is to find the highest level of abstraction that makes sense. Code with too little abstraction is littered with duplication and is too complex to fit in your head. Code that is abstracted too much is too rigid and cumbersome to use. An abstraction should capture only the details that are relevant for the task at hand.&lt;/p&gt;
 &lt;p&gt;For many apps, the web interface is the right level of abstraction for describing its functionality.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Cliffhanger: this is the state in which I left this article. I&amp;#8217;ve &lt;a href=&quot;https://gist.github.com/2819565&quot;&gt;created a gist for this article&lt;/a&gt;, so if you&amp;#8217;d like to finish making the argument, fork the gist and link to your version in the comments.&lt;/em&gt;&lt;/p&gt;</content>
-    <author>
-      <name>Brandon Keepers</name>
-      <uri>http://opensoul.org</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>My Instapaper Strategy</title>
-    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/05/27/my-instapaper-strategy/"/>
-    <id>/2012/05/27/my-instapaper-strategy</id>
-    <published>2012-05-27T16:25:00Z</published>
-    <category term="tips"/>
-    <summary type="html">&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;: I have found a strategy that leads to Instapaper bliss: sort articles by oldest-first.&lt;/p&gt;</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt;: I have found a strategy that leads to Instapaper bliss: sort articles by oldest-first.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/IMG_0019-da4bbf17dbf4bae105fa96a2285bf310.PNG&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://instapaper.com/&quot;&gt;Instapaper&lt;/a&gt; is wonderful. Besides &lt;a href=&quot;http://tapbots.com/software/tweetbot/&quot;&gt;Tweetbot&lt;/a&gt;, it is the most used app on my iPad. It is a gorgous app that makes reading so enjoyable. Anytime someone sends me a link that I can&amp;#8217;t read in 2 minutes, I save it to Instapaper to save for that glorious Saturday when I just lay in the hammock and read all afternoon. It&amp;#8217;s my very own personal New York Times, Wired, and Sherlock Holmes, all rolled into one.&lt;/p&gt;
-&lt;p&gt;But Instapaper also &lt;strong&gt;causes me quite a bit of strife&lt;/strong&gt;, because that glorious Saturday afternoon rarely comes. I can&amp;#8217;t keep up with the backlog.  Over the last 2 years, I&amp;#8217;ve collected hundreds of long form articles that taunt me every time I open the app. So I typically open it up, read the latest article or two, and then get disgusted by all the amazing things that I don&amp;#8217;t have time to read. A better man might be able to simply ignore that backlog, but it drives me insane.&lt;/p&gt;
-&lt;p&gt;A few months ago, while exploring Instapaper&amp;#8217;s settings to find the ideal font (let&amp;#8217;s be honest, I was overwhelmed by how many unread articles there were, so I was procrastinating), I &lt;strong&gt;switched the default sorting&lt;/strong&gt; from &amp;#8220;newest-first&amp;#8221; to &amp;#8220;oldest-first&amp;#8221;. I don&amp;#8217;t think I expected much to change because of it, but it had an interesting side effect.&lt;/p&gt;
-&lt;p&gt;There are now only about 20 unread articles in my instapaper queue. I haven&amp;#8217;t been reading more lately. I&amp;#8217;ve actually been reading less. But I&amp;#8217;ve been reading smarter.  Here are my theories as to why this simple change had such an impact:&lt;/p&gt;
-&lt;ul&gt;
-	&lt;li&gt;We&amp;#8217;re all addicted to new. Our brains secret some good endorphines when we&amp;#8217;re riding the wave. But &lt;em&gt;new&lt;/em&gt; does not always equal &lt;em&gt;better&lt;/em&gt;. By showing oldest articles first, the farther I get behind on Instapaper, the less timely the content is. I now spend more time reading &amp;#8220;timeless&amp;#8221; articles, and I simply delete the ones that are no longer relevant.&lt;/li&gt;
-	&lt;li&gt;The disire for &lt;em&gt;new&lt;/em&gt; still exists, and acts as an incentive to keep up to date.&lt;/li&gt;
-	&lt;li&gt;Sometimes I read things I don&amp;#8217;t care about simply because I like the person that recommended it to me. But when I&amp;#8217;m looking at articles on Instapaper that are 6 months old, I don&amp;#8217;t remember who recommended. So I&amp;#8217;m more likely to skip stuff that I don&amp;#8217;t care about.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/IMG_0021-9ecf3a0e01edb1686c0bd9d6dc938fab.PNG&quot;&gt;&lt;/p&gt;
-&lt;p&gt;It&amp;#8217;s a small thing, but I love small life hacks that streamline my life.&lt;/p&gt;</content>
     <author>
       <name>Brandon Keepers</name>
       <uri>http://opensoul.org</uri>
