@@ -14,12 +14,6 @@ alias:
 - /blog/archives/2005
 ---
 
-<ul id="years">
-  {% for year in site.years %}
-    <li><a href="#{{ year.first.date | date: "%Y" }}">{{ year.first.date | date: "%Y" }}</a></li>
-  {% endfor %}
-</ul>
-
 {% for year in site.years %}
   <h2><a name="{{ year.first.date | date: "%Y" }}"></a>{{ year.first.date | date: "%Y" }}</h2>
   <ul class="archives">
