@@ -898,7 +898,7 @@ article ::-webkit-scrollbar {
   width: 18px;
   height: 18px; }
 article ::-webkit-scrollbar-track, article ::-webkit-scrollbar-thumb {
-  -webkit-border-image: url(/assets/scrollbar-5fac255717be496822f1c38c23cbd648.png) 7/7px stretch repeat; }
+  -webkit-border-image: url(/assets/scrollbar-9c6f820d0e4f44b0349af2507146feb8.png) 7/7px stretch repeat; }
 
 pre, code, tt {
   font: 13px/1.5 Monaco, 'andale mono', 'lucida console', monospace;
@@ -1123,11 +1123,6 @@ pre {
   .highlight .il {
     color: #de935f; }
 
-#years {
-  text-align: center; }
-  #years li {
-    display: inline-block; }
-
 .archives li {
   line-height: 2;
   margin-bottom: 0;
@@ -1145,7 +1140,7 @@ pre {
   top: 0; }
 
 /* === #Buttons === */
-a.button, #years li a,
+a.button,
 button,
 input[type="submit"],
 input[type="reset"],
@@ -1175,7 +1170,7 @@ input[type="button"] {
   line-height: 21px;
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-a.button:hover, #years li a:hover,
+a.button:hover,
 button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
@@ -1192,7 +1187,7 @@ input[type="button"]:hover {
   border-top: 1px solid #aaaaaa;
   border-left: 1px solid #aaaaaa; }
 
-a.button:active, #years li a:active,
+a.button:active,
 button:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
@@ -1206,7 +1201,7 @@ input[type="button"]:active {
   background: #cccccc -ms-linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%);
   background: #cccccc linear-gradient(top, rgba(255, 255, 255, 0.35) 0%, rgba(10, 10, 10, 0.4) 100%); }
 
-.button.full-width, #years li a.full-width,
+.button.full-width,
 button.full-width,
 input[type="submit"].full-width,
 input[type="reset"].full-width,
