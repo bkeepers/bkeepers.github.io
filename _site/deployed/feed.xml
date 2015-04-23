@@ -3,7 +3,7 @@
   <title>opensoul.org by Brandon Keepers</title>
   <link href="http://opensoul.org"/>
   <link type="application/atom+xml" rel="self" href="http://opensoul.org/feed.xml"/>
-  <updated>2015-03-18T00:00:00-04:00</updated>
+  <updated>2015-04-23T00:00:00-04:00</updated>
   <id>http://opensoul.org</id>
   <author>
     <name>Brandon Keepers</name>
@@ -11,12 +11,37 @@
   </author>
   
   <entry>
+    <title>Be careful what you tell yourself</title>
+    <link type="text/html" rel="alternate" href="http://opensoul.org/2015/04/23/what-you-tell-yourself/"/>
+    <id>/2015/04/23/what-you-tell-yourself</id>
+    <published>2015-04-23T00:00:00-04:00</published>
+    <category term="observation"/>
+    <summary type="html">&lt;p&gt;Be careful what you tell yourself, because you will believe the lies, and so will everyone else.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;For many years I&amp;#39;ve told myself that I&amp;#39;m undisciplined, that I&amp;#39;m a slow reader, that I&amp;#39;m a bad writer, and that I&amp;#39;m not funny. I considered these permanent traits that I could do nothing to improve. I was just bad at them, and that&amp;#39;s how it was.&lt;/p&gt;
+
+&lt;p&gt;The problem with the things you tell yourself is that you also tend to tell them to other people. And before those people have a chance to make their own judgements of you, they take your judgements. They think you&amp;#39;re undisciplined, or not funny, or a bad writer.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ve realized that most of these things I tell myself aren&amp;#39;t even true. Maybe they were true once, or in a certain situation. But most of them are not permanent. They are things that I can work on and get better at.&lt;/p&gt;
+
+&lt;p&gt;It turns out that I just have a really high standard for discipline. I don&amp;#39;t often live up to it, but neither does anybody else. So most people that get to know me well consider me one of the most disciplined people they have ever met.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m not an amazing writer or the fastest reader, but those are both things I can improve on with practice. Dispelling the myth that I am permanently bad at these things has freed me to seek out ways to get better at them.&lt;/p&gt;
+
+&lt;p&gt;Be careful what you tell yourself, because you will believe the lies, and so will everyone else.&lt;/p&gt;
+</content>
+    <author>
+      <name>Brandon Keepers</name>
+      <uri>http://opensoul.org</uri>
+    </author>
+  </entry>
+  
+  <entry>
     <title>On the importance of junk drawers</title>
     <link type="text/html" rel="alternate" href="http://opensoul.org/2015/03/18/junk-drawers/"/>
     <id>/2015/03/18/junk-drawers</id>
     <published>2015-03-18T00:00:00-04:00</published>
     <category term="observation"/>
-    <summary type="html">Create junk drawers; for things, for ideas, for time, for relationships. Make space for things that don&#39;t fit in. Let all the things that don&#39;t belong gather in one place. You may be surprised at what emerges to demand its own place.</summary>
+    <summary type="html">&lt;p&gt;Create junk drawers; for things, for ideas, for time, for relationships. Make space for things that don&#39;t fit in. Let all the things that don&#39;t belong gather in one place. You may be surprised at what emerges to demand its own place.&lt;/p&gt;</summary>
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;A place for everything and everything in its place.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -597,37 +622,6 @@
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2&gt;Profit&lt;/h2&gt;
 &lt;p&gt;This has worked out really well so far. All the activity for the project is in one repo, and pushing out a new release is really easy. Win, win!&lt;/p&gt;</content>
-    <author>
-      <name>Brandon Keepers</name>
-      <uri>http://opensoul.org</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>What&#39;s wrong with Cucumber</title>
-    <link type="text/html" rel="alternate" href="http://opensoul.org/2012/05/28/whats-wrong-with-cucumber/"/>
-    <id>/2012/05/28/whats-wrong-with-cucumber</id>
-    <published>2012-05-28T13:00:00Z</published>
-    <category term="cucumber"/><category term="opinion"/>
-    <summary type="html">&lt;p&gt;&lt;em&gt;This post has sat as a draft on my computer for well over a year now. I always intended to finish it, but am beyond caring.  So I&amp;#8217;m just going to publish it in its current form in hopes that it sparks some interesting conversation and avoids beating a dead horse.&lt;/em&gt;&lt;/p&gt;</summary>
-    <content type="html">&lt;p&gt;&lt;em&gt;This post has sat as a draft on my computer for well over a year now. I always intended to finish it, but am beyond caring.  So I&amp;#8217;m just going to publish it in its current form in hopes that it sparks some interesting conversation and avoids beating a dead horse.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://cukes.info&quot;&gt;Cucumber&lt;/a&gt; is a divisive tool. Some people absolutely love it and have an irrational dedication to using it for every single project. Others hate it, either because they haven&amp;#8217;t tried it, or tried it on one project and ended up with a steaming pile of &lt;del&gt;sh&lt;/del&gt;…step definitions.&lt;/p&gt;
-&lt;p&gt;I&amp;#8217;ve been using cucumber since one of the first few releases. While I have been burned by it on projects, I also have a great appreciation for it.&lt;/p&gt;
-&lt;p&gt;What&amp;#8217;s wrong with cucumber? Technically, nothing. It&amp;#8217;s a brilliant tool for creating DSLs to test our applications. &lt;strong&gt;The problem with cucumber is &lt;span class=&quot;caps&quot;&gt;YOU&lt;/span&gt;&lt;/strong&gt;: you don&amp;#8217;t understand &lt;strong&gt;why&lt;/strong&gt; to use it, &lt;strong&gt;when&lt;/strong&gt; to use it or &lt;strong&gt;how&lt;/strong&gt; to use it. Don&amp;#8217;t worry, though, it&amp;#8217;s not entirely your fault. Many people are responsible for encouraging you to use it in asinine ways and advertising it as a magical medical formula that will cure all your woes.&lt;/p&gt;
-&lt;h2&gt;Why: understand the purpose&lt;/h2&gt;
-&lt;p&gt;Cucumber is a tool for creating executable feature specifications, a.k.a acceptance tests. We write these tests to ensure that we have working code that meets our requirements. If the tests don&amp;#8217;t help achieve that, then &lt;strong&gt;don&amp;#8217;t write them&lt;/strong&gt;. For this reason, I rarely write Rails controller tests anymore.&lt;/p&gt;
-&lt;p&gt;Fairly or not, many have this misconception that you should write your acceptance tests in plain text so that your client or stakeholders can read and write them. It is highly likely that your &lt;strong&gt;stakeholders won&amp;#8217;t care about cucumber features&lt;/strong&gt;. They probably won&amp;#8217;t read them, and they almost surely won&amp;#8217;t write them.&lt;/p&gt;
-&lt;p&gt;You should use cucumber because it&amp;#8217;s a great tool for giving you a vocabulary to think and talk about how your application should work. As a programmer and perfectionist, I easily get mired in the implementation details and forget that the software I&amp;#8217;m writing is actually supposed to do something useful. Driving a feature with cucumber helps me first think though how it should actually work and then guides me through implementing it. It keeps me focused on writing the minimal amount of code to make the software work.&lt;/p&gt;
-&lt;p&gt;Use Cucumber if it will directly help translate required features into working code. If the person doing the programming doesn&amp;#8217;t find it helpful, then don&amp;#8217;t use it!&lt;/p&gt;
-&lt;h2&gt;When: you don&amp;#8217;t always need a &lt;span class=&quot;caps&quot;&gt;DSL&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;Cucumber is a &lt;span class=&quot;caps&quot;&gt;DSL&lt;/span&gt; for creating a &lt;span class=&quot;caps&quot;&gt;DSL&lt;/span&gt; for writing acceptance tests. With me so far? In other words, Cucumber helps you create a vocabulary to describe how your application should work.&lt;/p&gt;
-&lt;p&gt;Some apps require a &lt;span class=&quot;caps&quot;&gt;DSL&lt;/span&gt; to describe their behavior, but many don&amp;#8217;t. For a large business application with lots of rules and complicated logic, creating a &lt;span class=&quot;caps&quot;&gt;DSL&lt;/span&gt; is the only maintainable way to test it. Testing a simple web &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; is really a lot quicker and easier with RSpec or Test::Unit.&lt;/p&gt;
-&lt;p&gt;The advantage of using Cucumber over a plain ol&amp;#8217; testing framework is that it forces you to use a limited vocabulary to describe your application. If your application requires an expansive vocabulary to describe its functionality, then don&amp;#8217;t use Cucumber&lt;/p&gt;
-&lt;h2&gt;How: the ivory tower&lt;/h2&gt;
-&lt;p&gt;I don&amp;#8217;t think people understand &lt;strong&gt;why&lt;/strong&gt; and &lt;strong&gt;when&lt;/strong&gt; to use Cucumber. But what prompted me to write this post is the recent debate over the &lt;a href=&quot;http://aslakhellesoy.com/post/11055981222/the-training-wheels-came-off&quot;&gt;removal of web_steps.rb&lt;/a&gt;, and that brings us to &lt;strong&gt;how&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;One of the challenges of a programmer is to find the highest level of abstraction that makes sense. Code with too little abstraction is littered with duplication and is too complex to fit in your head. Code that is abstracted too much is too rigid and cumbersome to use. An abstraction should capture only the details that are relevant for the task at hand.&lt;/p&gt;
-&lt;p&gt;For many apps, the web interface is the right level of abstraction for describing its functionality.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Cliffhanger: this is the state in which I left this article. I&amp;#8217;ve &lt;a href=&quot;https://gist.github.com/2819565&quot;&gt;created a gist for this article&lt;/a&gt;, so if you&amp;#8217;d like to finish making the argument, fork the gist and link to your version in the comments.&lt;/em&gt;&lt;/p&gt;</content>
     <author>
       <name>Brandon Keepers</name>
       <uri>http://opensoul.org</uri>
