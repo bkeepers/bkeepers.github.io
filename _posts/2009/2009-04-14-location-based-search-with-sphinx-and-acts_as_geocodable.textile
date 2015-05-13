@@ -11,7 +11,7 @@ categories:
 - ruby
 - search
 - sphinx
-alias: /blog/archives/2009/04/14/location-based-search-with-sphinx-and-acts_as_geocodable
+redirect_from: /blog/archives/2009/04/14/location-based-search-with-sphinx-and-acts_as_geocodable/
 ---
 
 "Sphinx":http://www.sphinxsearch.com/, everybody's favorite search engine, has support for location-based search, giving you geo-aware, full-text searching. So now you can find all of the garage sales on Saturday within 20 miles that have LPs and a reel mower.

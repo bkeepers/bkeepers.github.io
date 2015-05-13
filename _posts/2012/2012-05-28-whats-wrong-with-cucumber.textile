@@ -7,7 +7,7 @@ date: 2012-05-28T09:00:00-04:00
 categories:
 - cucumber
 - opinion
-alias: /blog/archives/2012/05/28/whats-wrong-with-cucumber
+redirect_from: /blog/archives/2012/05/28/whats-wrong-with-cucumber/
 ---
 
 _This post has sat as a draft on my computer for well over a year now. I always intended to finish it, but am beyond caring.  So I'm just going to publish it in its current form in hopes that it sparks some interesting conversation and avoids beating a dead horse._

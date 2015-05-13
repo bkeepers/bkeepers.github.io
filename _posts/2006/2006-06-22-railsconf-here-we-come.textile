@@ -6,7 +6,7 @@ updated: 2010-11-30T21:44:19-05:00
 date: 2006-06-22T05:30:00-04:00
 categories:
 - rails
-alias: /blog/archives/2006/06/22/railsconf-here-we-come
+redirect_from: /blog/archives/2006/06/22/railsconf-here-we-come/
 ---
 
 I am REALLY excited about RailsConf!  Looking at the <a href="http://railsconf.org/pages/schedule">schedule</a> and reading blogs, I've decided that everyone that's cool is going to be there (if you're not going, I'm sorry, you're just not cool). Dave Thomas, Martin Fowler, Mike Clark, Chad Fowler, Paul Gram, Why the Lucky Stiff, Justin Gehtland, David Heinemeier Hansson, James Duncan Davidson....the list goes on and on. Wow!

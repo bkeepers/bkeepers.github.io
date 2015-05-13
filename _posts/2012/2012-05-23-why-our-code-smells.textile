@@ -7,7 +7,7 @@ date: 2012-05-23T11:00:00-04:00
 categories:
 - popular
 - talk
-alias: /blog/archives/2012/05/23/why-our-code-smells
+redirect_from: /blog/archives/2012/05/23/why-our-code-smells/
 ---
 
 Odors are communication devices. They exist for a reason and are usually trying to tell us something. Our code smells and it is trying to tell us what is wrong.

@@ -8,7 +8,7 @@ categories:
 - community
 - patch
 - ruby
-alias: /blog/archives/2008/10/22/push-upstream
+redirect_from: /blog/archives/2008/10/22/push-upstream/
 ---
 
 Scenario 1: You're half way through a really productive day on a wicked new feature for an app and everything is going smoothly. Then, from out of nowhere…SMACK! A nasty bug in a library you depend on splatters right in your face. "Seriously, nobody has come across this before?" you mumble.

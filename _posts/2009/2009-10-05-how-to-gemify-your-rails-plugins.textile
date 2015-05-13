@@ -5,7 +5,7 @@ id: 4cf5b653dabe9d2c61000057
 updated: 2010-12-01T02:06:48-05:00
 date: 2009-10-05T13:33:00-04:00
 categories:
-alias: /blog/archives/2009/10/05/how-to-gemify-your-rails-plugins
+redirect_from: /blog/archives/2009/10/05/how-to-gemify-your-rails-plugins/
 ---
 
 Ever since "Rails added support for declaring gem dependencies":http://ryandaigle.com/articles/2008/4/1/what-s-new-in-edge-rails-gem-dependencies, there is really no (good) reason to use plain ol' plugins. We've been slowly gemifying "all of our plugins":http://github.com/collectiveidea as we need them. There's a few hoops you have to jump through to get Rake tasks and Capistrano recipes working, but it's fairly straight forward.

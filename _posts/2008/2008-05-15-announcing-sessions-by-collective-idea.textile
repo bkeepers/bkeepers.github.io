@@ -7,7 +7,7 @@ date: 2008-05-15T14:17:00-04:00
 categories:
 - collectiveidea
 - training
-alias: /blog/archives/2008/05/15/announcing-sessions-by-collective-idea
+redirect_from: /blog/archives/2008/05/15/announcing-sessions-by-collective-idea/
 ---
 
 +*Update*: Daniel has a "great post that explains the idea behind the training":http://daniel.collectiveidea.com/blog/2008/5/15/sessions-by-collective-idea.+

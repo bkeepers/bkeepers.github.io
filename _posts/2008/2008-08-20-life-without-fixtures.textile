@@ -11,7 +11,7 @@ categories:
 - ruby
 - stubbing
 - testing
-alias: /blog/archives/2008/08/20/life-without-fixtures
+redirect_from: /blog/archives/2008/08/20/life-without-fixtures/
 ---
 
 All the cool kids tell me that fixtures just aren't the "in" thing anymore. Speaking of which, when did fanny-packs stop being cool? I wish someone would have said something…

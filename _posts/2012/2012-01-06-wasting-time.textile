@@ -6,7 +6,7 @@ updated: 2012-01-06T17:30:19-05:00
 date: 2012-01-06T17:00:00-05:00
 categories:
 - rant
-alias: /blog/archives/2012/01/06/wasting-time
+redirect_from: /blog/archives/2012/01/06/wasting-time/
 ---
 
 I remember the day I bought "TextMate":http://macromates.com/. Like everyone, I loved TextMate. I loved it so much that I procrastinated learning anything else while I waited for TextMate Forever to be released. The new release that fixed everything was going to be out any day, so why should I waste time learning something new?

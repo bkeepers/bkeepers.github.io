@@ -8,7 +8,7 @@ categories:
 - popular
 - rails
 - validations
-alias: /blog/archives/2011/04/27/validation-anti-pattern
+redirect_from: /blog/archives/2011/04/27/validation-anti-pattern/
 ---
 
 Validations in ActiveRecord and other mapping frameworks are used to ensure that the data being saved to the database meets the requirements of the app. More importantly, validations are used to communicate to the end user what they need to change about the data they entered.

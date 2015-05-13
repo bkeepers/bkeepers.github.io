@@ -6,7 +6,7 @@ updated: 2010-11-30T21:44:16-05:00
 date: 2006-09-16T04:32:00-04:00
 categories:
 - rails
-alias: /blog/archives/2006/09/16/my-first-rails-core-contribution
+redirect_from: /blog/archives/2006/09/16/my-first-rails-core-contribution/
 ---
 
 <p>After spending the better part of the day trying to figure out why my .rpdf template handler was generating blank PDFs yesterday, only to realize that it was trying to render them inside the default HTML layout, I submitted a <a href="http://dev.rubyonrails.org/ticket/6219">small patch to the Rails Trac</a> to allow other file extensions&mdash;in addition to .rjs&mdash;to be exempt from being rendered in the layout.  Having submitted other patches in the past, I fully expected this patch to be ignored for a few months, or indefinitely.</p>

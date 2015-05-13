@@ -10,7 +10,7 @@ categories:
 - database
 - migration
 - rails
-alias: /blog/archives/2007/02/09/automatically-backing-up-your-remote-database-on-deploy
+redirect_from: /blog/archives/2007/02/09/automatically-backing-up-your-remote-database-on-deploy/
 ---
 
 Ever had a migration fail when you're deploying a sparkling new release of your snazzy web app, leaving your database in an inconsistent state? I have. Fortunately, a faulty migration has never completely hosed my production database, but I have had to ssh in, comment some lines out of a migration, and re-run it.

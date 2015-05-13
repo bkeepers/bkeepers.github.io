@@ -9,7 +9,7 @@ categories:
 - authlogic
 - collectiveidea
 - plugin
-alias: /blog/archives/2009/10/29/acts_as_audited-and-authlogic
+redirect_from: /blog/archives/2009/10/29/acts_as_audited-and-authlogic/
 ---
 
 For those using authlogic that have had issues with auditing your User model, version 1.0.2 of "acts_as_audited":github.com/collectiveidea/acts_as_audited should cure your woes.

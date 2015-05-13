@@ -9,7 +9,7 @@ categories:
 - development
 - rails
 - redbox
-alias: /blog/archives/2006/09/21/using-redbox-for-modal-dialogs
+redirect_from: /blog/archives/2006/09/21/using-redbox-for-modal-dialogs/
 ---
 
 <p>When I first saw <a href="http://www.huddletogether.com/projects/lightbox/">Lightbox</a>, my first thought (ok, second thought; my first was "This is awesome!") was: "This would be a great technique for confirmation pages!" I never got around to using lightbox due to it's emphasis on images, but eventually other solutions started showing up, like <a href="http://orangoo.com/labs/GreyBox/">GreyBox</a> and <a href="http://codylindley.com/Javascript/257/thickbox-one-box-to-rule-them-all">ThickBox</a>, that allowed you to use other content.</p>

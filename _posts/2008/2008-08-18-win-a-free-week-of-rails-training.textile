@@ -11,7 +11,7 @@ categories:
 - sessions
 - survey
 - training
-alias: /blog/archives/2008/08/18/win-a-free-week-of-rails-training
+redirect_from: /blog/archives/2008/08/18/win-a-free-week-of-rails-training/
 ---
 
 Want to learn Rails but can't scrounge up the cash for training? You can win a free spot at either our "Rails session starting next Monday, August 25":http://sessions.collectiveidea.com/ruby-on-rails, or to an advanced Rails session whenever it's announced.

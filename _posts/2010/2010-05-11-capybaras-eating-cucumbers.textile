@@ -8,7 +8,7 @@ categories:
 - cucumber
 - selenium
 - testing
-alias: /blog/archives/2010/05/11/capybaras-eating-cucumbers
+redirect_from: /blog/archives/2010/05/11/capybaras-eating-cucumbers/
 ---
 
 h3. (or, testing static sites with Cucumber and Capybara)

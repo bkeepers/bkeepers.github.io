@@ -9,7 +9,7 @@ categories:
 - facebook
 - rails
 - testing
-alias: /blog/archives/2009/03/05/testing-facebook-with-cucumber
+redirect_from: /blog/archives/2009/03/05/testing-facebook-with-cucumber/
 ---
 
 For those that haven't heard: "Cucumber":http://cukes.info is pretty much the greatest thing since sliced bread. It dramatically improved the quality and stability of our applications, and the "outside-in":http://dannorth.net/whats-in-a-story approach that it encourages forces you to stay focused on what's important.

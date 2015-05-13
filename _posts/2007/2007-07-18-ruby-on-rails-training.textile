@@ -9,7 +9,7 @@ categories:
 - rails
 - ruby
 - training
-alias: /blog/archives/2007/07/18/ruby-on-rails-training
+redirect_from: /blog/archives/2007/07/18/ruby-on-rails-training/
 ---
 
 I will be leading a 4 day "Ruby on Rails training course":http://marakana.com/training/ruby/ruby_on_rails.html?a=collectiveidea in San Francisco on September 4-8 through Marakana.

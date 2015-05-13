@@ -7,7 +7,7 @@ date: 2010-12-10T00:54:00-05:00
 categories:
 - rails
 - sinatra
-alias: /blog/archives/2010/12/10/sinatra-serenades-rails-2
+redirect_from: /blog/archives/2010/12/10/sinatra-serenades-rails-2/
 ---
 
 It turns out it's really easy to mount a Sinatra application into your Rails 2 app (yes, there are still a few Rails 2 apps out there).  Here's how.

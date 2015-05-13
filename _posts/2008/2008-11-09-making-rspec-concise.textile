@@ -7,7 +7,7 @@ date: 2008-11-09T22:07:00-05:00
 categories:
 - rspec
 - ruby
-alias: /blog/archives/2008/11/09/making-rspec-concise
+redirect_from: /blog/archives/2008/11/09/making-rspec-concise/
 ---
 
 A common criticism of "RSpec":http://rspec.info is that it is very verbose. I don't necessarily agree (or care), but I thought it would be fun to see how concise I could make my specs.

@@ -7,7 +7,7 @@ date: 2011-06-23T10:26:00-04:00
 categories:
 - framework
 - javascript
-alias: /blog/archives/2011/06/23/live-search-with-knockoutjs
+redirect_from: /blog/archives/2011/06/23/live-search-with-knockoutjs/
 ---
 
 "Knockout.js":http://knockoutjs.com/ is an interesting take on building rich web applications. While I was initially turned off by the <acronym title="Model-View-View-Model">MVVM</acronym> approach of embedding bindings in the view, it has grown on me after playing around with it for a few days. I look forward to experimenting with it on a larger application.

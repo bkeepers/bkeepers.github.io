@@ -8,7 +8,7 @@ categories:
 - facebook
 - rails
 - routing
-alias: /blog/archives/2009/02/21/force-absolute-urls
+redirect_from: /blog/archives/2009/02/21/force-absolute-urls/
 ---
 
 Need to force all URLs in a controller or action to be absolute URLs, but don't want to use the @*_url@ named routes or, even worse, @:only_path => false@ everywhere?

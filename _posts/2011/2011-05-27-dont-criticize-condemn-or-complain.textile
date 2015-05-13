@@ -7,7 +7,7 @@ date: 2011-05-27T00:41:00-04:00
 categories:
 - book
 - hwfip
-alias: /blog/archives/2011/05/27/dont-criticize-condemn-or-complain
+redirect_from: /blog/archives/2011/05/27/dont-criticize-condemn-or-complain/
 ---
 
 p(note). This post is part of "my weekly study of _How To Win Friends and Influence People_":/blog/archives/2011/05/27/how-to-win-friends/.

@@ -7,7 +7,7 @@ date: 2008-07-03T11:07:00-04:00
 categories:
 - collectiveidea
 - training
-alias: /blog/archives/2008/07/03/ruby-on-rails-training-session-august-25-28
+redirect_from: /blog/archives/2008/07/03/ruby-on-rails-training-session-august-25-28/
 ---
 
 "Collective Idea":http://collectiveidea.com is hosting another "Ruby on Rails training":http://training.collectiveidea.com on August 25-28, 2008. Our training is a new take on training: it makes it actually enjoyable! If you're new to the Ruby world, or just want to get deeper into Rails, "check it out":http://training.collectiveidea.com.

@@ -12,7 +12,7 @@ categories:
 - ruby
 - slides
 - testing
-alias: /blog/archives/2008/10/14/behavior-driven-development-with-cucumber
+redirect_from: /blog/archives/2008/10/14/behavior-driven-development-with-cucumber/
 ---
 
 The "Great Lakes Ruby Bash":http://greatlakesrubybash.org was a good time. There were several quality presentations, including Jim Weirich's talk "Playing it Safe - How to write library friendly code in Ruby", Larry Karnowski's talk "Usability on Rails", and Brandon Dimcheff's "Metawhat? A look into the mysterious metaclass".

@@ -10,7 +10,7 @@ categories:
 - geocoding
 - graticule
 - ruby
-alias: /blog/archives/2007/03/27/graticule-update-site-and-mailing-list
+redirect_from: /blog/archives/2007/03/27/graticule-update-site-and-mailing-list/
 ---
 
 Three "Graticule":http://graticule.rubyforge.org related updates:

@@ -7,7 +7,7 @@ date: 2006-07-06T14:26:00-04:00
 categories:
 - gpg
 - security
-alias: /blog/archives/2006/07/06/secure-backups-with-gpg
+redirect_from: /blog/archives/2006/07/06/secure-backups-with-gpg/
 ---
 
 Recently I had a client who wanted to store server backups on their hosting provider's FTP server. The only problem is that those backups contained confidential customer data. So I came up with the idea of using a public GPG key to encrypt backups before copying them to the FTP server.

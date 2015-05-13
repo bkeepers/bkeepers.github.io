@@ -1,7 +1,6 @@
 name: opensoul.org
 url: http://opensoul.org
 markdown: redcarpet
-pygments: true
 copyright: 2006
 permalink: /:year/:month/:day/:title/
 assets:
@@ -11,4 +10,6 @@ exclude:
 - Gemfile
 - Gemfile.lock
 - scratch.md
-destination: _site/local
+gems:
+- jekyll-redirect-from
+- jekyll-sitemap

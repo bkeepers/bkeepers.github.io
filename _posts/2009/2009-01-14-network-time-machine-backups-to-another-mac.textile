@@ -9,7 +9,7 @@ categories:
 - mac
 - network
 - popular
-alias: /blog/archives/2009/01/14/network-time-machine-backups-to-another-mac
+redirect_from: /blog/archives/2009/01/14/network-time-machine-backups-to-another-mac/
 ---
 
 For a while now I've been wanting to setup Time Machine on my MacBook Air to backup to the external drive plugged into my Mac Mini, but one thing has been stopping me: transferring 80GB over wifi. I've tried it a couple times and even after 24 hours it's nowhere near done (Time Machine slowness + wifi slowness = double slowness).

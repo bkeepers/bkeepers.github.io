@@ -8,7 +8,7 @@ categories:
 - acts_as_audited
 - plugin
 - rails
-alias: /blog/archives/2007/12/13/acts_as_audited-and-activescaffold
+redirect_from: /blog/archives/2007/12/13/acts_as_audited-and-activescaffold/
 ---
 
 Several people have reported that acts_as_audited does not work with ActiveScaffold.  I don't use ActiveScaffold, so I had no motivation to fix it.  But thanks to a tip from "Aaron":/2006/7/21/acts_as_audited#comment-4569, this has now been fixed.

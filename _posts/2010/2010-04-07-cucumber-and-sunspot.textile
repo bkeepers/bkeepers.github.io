@@ -7,7 +7,7 @@ date: 2010-04-07T09:53:00-04:00
 categories:
 - cucumber
 - sunspot
-alias: /blog/archives/2010/04/07/cucumber-and-sunspot
+redirect_from: /blog/archives/2010/04/07/cucumber-and-sunspot/
 ---
 
 If you haven't checked out "Sunspot":http://outoftime.github.com yet, you should. I have tried every solution for doing real full-text searching in a Rails app. Sunspot, backed by solr, is the only one that I haven't had issues with in production. Hopefully I'll get around to posting more about my experience with it.

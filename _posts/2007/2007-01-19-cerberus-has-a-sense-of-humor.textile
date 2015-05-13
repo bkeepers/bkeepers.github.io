@@ -9,7 +9,7 @@ categories:
 - humor
 - ruby
 - testing
-alias: /blog/archives/2007/01/19/cerberus-has-a-sense-of-humor
+redirect_from: /blog/archives/2007/01/19/cerberus-has-a-sense-of-humor/
 ---
 
 bq. Build still broken and getting worse

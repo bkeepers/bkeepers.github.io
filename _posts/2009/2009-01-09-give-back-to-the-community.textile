@@ -8,7 +8,7 @@ categories:
 - collectiveidea
 - community
 - open source
-alias: /blog/archives/2009/01/09/give-back-to-the-community
+redirect_from: /blog/archives/2009/01/09/give-back-to-the-community/
 ---
 
 In our latest client project, we make use of at least 20 open source projects, from our beloved "Rails":http://rubyonrails, to great testing frameworks like "RSpec":http://rspec.info, to plugins like "Paperclip":http://www.thoughtbot.com/projects/paperclip, to server-side software like "Passenger":http://www.modrails.com/, and many more. While we are appreciative of the hard work that goes into creating those projects for the first 2 seconds after we find them, we often take these libraries for granted.

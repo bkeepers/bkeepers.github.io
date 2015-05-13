@@ -12,7 +12,7 @@ categories:
 - ruby
 - search
 - sinatra
-alias: /blog/archives/2008/11/08/it-s-a-search-party
+redirect_from: /blog/archives/2008/11/08/it-s-a-search-party/
 ---
 
 While chatting with Dr. "John Nunemaker":http://railstips.org at "RubyConf":http://rubyconf.org, I realized that I have several problems. Ignoring the many character flaws that are beyond the scope of this post, my problems are:

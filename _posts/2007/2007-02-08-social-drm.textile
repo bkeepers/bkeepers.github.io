@@ -9,7 +9,7 @@ categories:
 - drm
 - pdf
 - pragprogs
-alias: /blog/archives/2007/02/08/social-drm
+redirect_from: /blog/archives/2007/02/08/social-drm/
 ---
 
 bq. "Bill McCoy":http://blogs.adobe.com/billmccoy/2007/02/steve_jobs_elim.html: For eBooks, I really like the "social DRM" approach of "The Pragmatic Programmers":http://www.pragmaticprogrammer.com/, who "stamp" PDF eBooks with a "For the Exclusive Use of ..." and the name of the purchaser.

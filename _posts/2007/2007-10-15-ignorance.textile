@@ -9,7 +9,7 @@ categories:
 - ignorance
 - media
 - politics
-alias: /blog/archives/2007/10/15/ignorance
+redirect_from: /blog/archives/2007/10/15/ignorance/
 ---
 
 <dl>

@@ -8,7 +8,7 @@ categories:
 - geocoding
 - graticule
 - ruby
-alias: /blog/archives/2006/10/31/announcing-graticule-geocoding-api
+redirect_from: /blog/archives/2006/10/31/announcing-graticule-geocoding-api/
 ---
 
 *update*: Graticule is now "hosted on Rubyforge":http://graticule.rubyforge.org/.

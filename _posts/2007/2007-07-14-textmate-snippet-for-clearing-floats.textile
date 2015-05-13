@@ -9,7 +9,7 @@ categories:
 - css
 - float
 - textmate
-alias: /blog/archives/2007/07/14/textmate-snippet-for-clearing-floats
+redirect_from: /blog/archives/2007/07/14/textmate-snippet-for-clearing-floats/
 ---
 
 I often use positioniseverything.net's CSS method for  "clearing floats without structural markup":http://www.positioniseverything.net/easyclearing.html. The code for this technique is not something that I've committed to memory yet, so I'm referencing the article all the time (I could just copy it from another project, but it's just so much quicker to type "css clear float" into google).

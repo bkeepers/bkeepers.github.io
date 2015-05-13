@@ -9,7 +9,7 @@ categories:
 - rspec
 - ruby
 - testing
-alias: /blog/archives/2007/06/20/rspec-is-getting-too-intimate-with-my-code
+redirect_from: /blog/archives/2007/06/20/rspec-is-getting-too-intimate-with-my-code/
 ---
 
 The theory is that tests are supposed to be agnostic of the implementation. This leads to less brittle tests and actually tests the outcome (or behavior).

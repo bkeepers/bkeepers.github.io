@@ -7,7 +7,7 @@ date: 2011-02-01T15:18:00-05:00
 categories:
 - html
 - presentation
-alias: /blog/archives/2011/02/01/an-introduction-to-html5
+redirect_from: /blog/archives/2011/02/01/an-introduction-to-html5/
 ---
 
 Last night I gave a brief, 10 minute introduction to HTML5 at the "Grand Rapids Web Development Group":http://www.meetup.com/grwebdev/events/15961856/. Here are the slides from my presentation:
