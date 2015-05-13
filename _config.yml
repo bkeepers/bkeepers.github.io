@@ -1,7 +1,7 @@
 name: opensoul.org
 url: http://opensoul.org
 markdown: redcarpet
-pygments: true
+highlighter: true
 copyright: 2006
 permalink: /:year/:month/:day/:title/
 assets:
