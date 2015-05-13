@@ -11,4 +11,6 @@ exclude:
 - Gemfile
 - Gemfile.lock
 - scratch.md
-destination: _site/local
+gems:
+- jekyll-redirect-from
+- jekyll-sitemap
