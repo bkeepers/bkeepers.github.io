@@ -1,9 +1,0 @@
-#!/bin/sh
-
-set -e
-
-git rm -qfr _site/deployed
-bundle exec jekyll build --config _config.yml,script/deploy.yml
-git add -f _site/deployed
-git diff --cached --exit-code _site/deployed > /dev/null || git commit -m "Publish `date -u`" _site/deployed
-git push --force origin `git subtree split --prefix _site/deployed`:master
