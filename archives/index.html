@@ -14,14 +14,11 @@ redirect_from:
 - /blog/archives/2005/
 ---
 
-{% for year in site.years %}
-  <h2><a name="{{ year.first.date | date: "%Y" }}"></a>{{ year.first.date | date: "%Y" }}</h2>
-  <ul class="archives">
-    {% for post in year %}
-      <li>
-       <a href="{{ post.url }}">{{ post.title }}</a>
-        <span class="date">{{ post.date | date: '%B %e' }}</span>
-      </li>
-    {% endfor %}
-  </ul>
-{% endfor %}
+<ul class="archives">
+  {% for post in site.posts %}
+    <li>
+     <a href="{{ post.url }}">{{ post.title }}</a>
+      <span class="date">{{ post.date | date: '%B %e, %Y' }}</span>
+    </li>
+  {% endfor %}
+</ul>
