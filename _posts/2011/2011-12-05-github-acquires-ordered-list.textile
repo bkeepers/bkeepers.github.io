@@ -6,7 +6,7 @@ updated: 2011-12-05T13:02:46-05:00
 date: 2011-12-05T13:00:00-05:00
 categories:
 - work
-alias: /blog/archives/2011/12/05/github-acquires-ordered-list
+redirect_from: /blog/archives/2011/12/05/github-acquires-ordered-list/
 ---
 
 I am thrilled to announce that I am now a GitHubber. Check out the official announcements on both the "GitHub":https://github.com/blog/993-ordered-list-is-a-githubber and "Ordered List":http://orderedlist.com/blog/articles/ordered-list-acquired-by-github/ blogs.
@@ -15,5 +15,5 @@ When I joined Ordered List, we had grand plans of building a great company on th
 
 Personally, I look forward to bringing the "products":http://speakerdeck.com "we":http://get.gaug.es "built":http://get.harmonyapp.com and the experiences we gained building them to make GitHub even better. GitHub has an "amazing team":https://github.com/about and I cannot wait to inspire and be inspired by them.
 
-{% image olctocat.png %}
+<img src="/images/olctocat.png">
 

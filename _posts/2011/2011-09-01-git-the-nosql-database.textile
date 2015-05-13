@@ -10,7 +10,7 @@ categories:
 - popular
 - ruby
 - talk
-alias: /blog/archives/2011/09/01/git-the-nosql-database
+redirect_from: /blog/archives/2011/09/01/git-the-nosql-database/
 ---
 
 We all know that Git is pretty amazing. It's fast, reliable, flexible, and it keeps our project history safely nuzzled in it's cozy object database while we sleep soundly at night. But I'm curious to see if it can be used for *more than code*. I've had a few apps in the back of my mind for a while now that would be really interesting if the data was stored in Git.

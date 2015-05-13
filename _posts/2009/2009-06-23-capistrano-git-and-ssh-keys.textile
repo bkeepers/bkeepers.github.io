@@ -10,7 +10,7 @@ categories:
 - git
 - rails
 - ssh
-alias: /blog/archives/2009/06/23/capistrano-git-and-ssh-keys
+redirect_from: /blog/archives/2009/06/23/capistrano-git-and-ssh-keys/
 ---
 
 This trick has been around for a while, but I've talked with several people that didn't know about it.

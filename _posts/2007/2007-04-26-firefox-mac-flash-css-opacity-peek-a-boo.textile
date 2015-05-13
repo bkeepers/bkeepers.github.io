@@ -11,7 +11,7 @@ categories:
 - firefox
 - flash
 - mac
-alias: /blog/archives/2007/04/26/firefox-mac-flash-css-opacity-peek-a-boo
+redirect_from: /blog/archives/2007/04/26/firefox-mac-flash-css-opacity-peek-a-boo/
 ---
 
 I came across a fun browser bug this morning that I thought I would share. You can't have a semi-transparent element cover a Flash animation Firefox on the mac.

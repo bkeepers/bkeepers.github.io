@@ -7,7 +7,7 @@ date: 2006-11-13T14:11:00-05:00
 categories:
 - plugin
 - rails
-alias: /blog/archives/2006/11/13/acts_as_money
+redirect_from: /blog/archives/2006/11/13/acts_as_money/
 ---
 
 At "Collective Idea":http://collectiveidea.com, we often try to take pieces of code that we use often and extract them into plugins.  We're trying to get better about making them available, so, here we go:

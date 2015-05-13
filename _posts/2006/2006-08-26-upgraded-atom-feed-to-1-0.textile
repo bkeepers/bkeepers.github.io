@@ -6,7 +6,7 @@ updated: 2010-11-30T21:44:16-05:00
 date: 2006-08-26T12:02:00-04:00
 categories:
 - atom
-alias: /blog/archives/2006/08/26/upgraded-atom-feed-to-1-0
+redirect_from: /blog/archives/2006/08/26/upgraded-atom-feed-to-1-0/
 ---
 
 <p>Thanks to <a title="Enabling Atom 1.0 on Wordpress" href="http://www.snellspace.com/wp/?p=404">James Snell</a>, I have updated this blog to use Atom 1.0. </p>

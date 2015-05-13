@@ -7,7 +7,7 @@ date: 2007-07-08T10:29:00-04:00
 categories:
 - collectiveidea
 - jobs
-alias: /blog/archives/2007/07/08/how-to-eliminate-the-best-candidates
+redirect_from: /blog/archives/2007/07/08/how-to-eliminate-the-best-candidates/
 ---
 
 From a "recent, very poorly written job posting":http://rubyrockstars.com/jobs/show/525:

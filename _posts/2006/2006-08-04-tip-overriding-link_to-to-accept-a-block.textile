@@ -7,7 +7,7 @@ date: 2006-08-04T12:10:00-04:00
 categories:
 - rails
 - ruby
-alias: /blog/archives/2006/08/04/tip-overriding-link_to-to-accept-a-block
+redirect_from: /blog/archives/2006/08/04/tip-overriding-link_to-to-accept-a-block/
 ---
 
 <p>You'd think I would get tired of saying this: Ruby is amazing! On numerous occasions in recent weeks, I've needed some complex logic or multiple lines worth of code to determine the title for my <code>link_to</code> calls. For example:

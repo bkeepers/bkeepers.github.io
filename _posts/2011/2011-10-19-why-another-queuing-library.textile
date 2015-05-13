@@ -7,7 +7,7 @@ date: 2011-10-19T21:41:00-04:00
 categories:
 - qu
 - ruby
-alias: /blog/archives/2011/10/19/why-another-queuing-library
+redirect_from: /blog/archives/2011/10/19/why-another-queuing-library/
 ---
 
 Along with the release of "Speaker Deck":http://speakerdeck.com, we released "Qu":https://github.com/bkeepers/qu, a Ruby library for queuing and processing background jobs. Why another queuing library? I briefly explain why I wrote Qu in the "README":https://github.com/bkeepers/qu#readme, so read that first. But I wanted to give a little more of the backstory.

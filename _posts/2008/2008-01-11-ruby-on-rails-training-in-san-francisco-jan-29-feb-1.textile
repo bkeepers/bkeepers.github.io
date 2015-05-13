@@ -9,7 +9,7 @@ categories:
 - rails
 - ruby
 - training
-alias: /blog/archives/2008/01/11/ruby-on-rails-training-in-san-francisco-jan-29-feb-1
+redirect_from: /blog/archives/2008/01/11/ruby-on-rails-training-in-san-francisco-jan-29-feb-1/
 ---
 
 Maybe you've heard of it, but there's this fancy web framework called "Ruby on Rails":http://rubyonrails.org. Apparently it's all the rage these days. It's only 2.0 right now, so the big kids say it still belongs on the playground, but there's rumors of people using it to do real work. The word on the street is that it makes you more productive and makes programming fun again.  If that sounds like something you'd like to learn, you can get more information and signup on "Marakana's website":http://marakana.com/training/ruby/ruby_on_rails.html?a=collectiveidea.

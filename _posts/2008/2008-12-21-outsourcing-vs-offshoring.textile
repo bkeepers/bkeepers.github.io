@@ -8,7 +8,7 @@ categories:
 - offshoring
 - outsourcing
 - rails
-alias: /blog/archives/2008/12/21/outsourcing-vs-offshoring
+redirect_from: /blog/archives/2008/12/21/outsourcing-vs-offshoring/
 ---
 
 My experience is that most people think of "outsourcing" and "offshoring" as synonyms.  We talk about the general category of outsourcing with slight repugnance, acknowledging that it is occasionally useful for more mundane and unskilled tasks, but it simply won't work for the more creative tasks that require an American to do it well. (Maybe nobody blatantly says it requires an American, but we know what you're implying.)

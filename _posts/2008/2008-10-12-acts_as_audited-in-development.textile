@@ -7,7 +7,7 @@ date: 2008-10-12T22:10:00-04:00
 categories:
 - acts_as_audited
 - plugin
-alias: /blog/archives/2008/10/12/acts_as_audited-in-development
+redirect_from: /blog/archives/2008/10/12/acts_as_audited-in-development/
 ---
 
 Thanks to "metatribe":http://github.com/metatribe, a huge annoyance in "acts_as_audited":http://github.com/collectiveidea/acts_as_audited is now fixed: it works in development mode.  Due to it's dependance on Rails' cache sweepers, which are only enabled when caching is, acts_as_audited didn't work in development mode.

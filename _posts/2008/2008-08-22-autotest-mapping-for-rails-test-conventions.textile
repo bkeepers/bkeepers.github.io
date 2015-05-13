@@ -9,7 +9,7 @@ categories:
 - gem
 - ruby
 - testing
-alias: /blog/archives/2008/08/22/autotest-mapping-for-rails-test-conventions
+redirect_from: /blog/archives/2008/08/22/autotest-mapping-for-rails-test-conventions/
 ---
 
 A while ago I posted a configuration for getting "autotest to work with @Test::Unit@ outside of Rails":http://opensoul.org/2007/12/6/autotest-without-rails. Ryan Davis, author of "autotest":http://www.zenspider.com/ZSS/Products/ZenTest/, commented on that post saying that it should "Just Work(TM)" without any custom configuration. I was perplexed because I've never been able to get it to work on my gems and Rails plugins.

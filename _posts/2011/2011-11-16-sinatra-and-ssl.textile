@@ -7,7 +7,7 @@ date: 2011-11-16T22:00:00-05:00
 categories:
 - sinatra
 - ssl
-alias: /blog/archives/2011/11/16/sinatra-and-ssl
+redirect_from: /blog/archives/2011/11/16/sinatra-and-ssl/
 ---
 
 I recently rolled out SSL support on "Gaug.es":http://get.gaug.es/. Gaug.es is a fairly simple Sinatra application. Most of the app requires authentication, but there are a few public URLs that are unauthenticated.

@@ -7,7 +7,7 @@ date: 2007-04-25T15:35:00-04:00
 categories:
 - ruby
 - testing
-alias: /blog/archives/2007/04/25/how-to-test-dependencies-on-external-services
+redirect_from: /blog/archives/2007/04/25/how-to-test-dependencies-on-external-services/
 ---
 
 I've been writing a lot of code lately that depends on external services, and I've really been struggling with how to test it well.

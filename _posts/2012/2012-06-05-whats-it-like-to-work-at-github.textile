@@ -7,7 +7,7 @@ date: 2012-06-05T09:00:00-04:00
 categories:
 - github
 - popular
-alias: /blog/archives/2012/06/05/whats-it-like-to-work-at-github
+redirect_from: /blog/archives/2012/06/05/whats-it-like-to-work-at-github/
 ---
 
 I have been traveling a lot lately, and everywhere I go, I get this question: What's it like to work at "GitHub":http://github.com/about? The simple answer: it is *amazing*!

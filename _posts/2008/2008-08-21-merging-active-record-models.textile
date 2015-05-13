@@ -10,7 +10,7 @@ categories:
 - merge
 - plugin
 - rails
-alias: /blog/archives/2008/08/21/merging-active-record-models
+redirect_from: /blog/archives/2008/08/21/merging-active-record-models/
 ---
 
 <div class="banner">

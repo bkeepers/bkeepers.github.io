@@ -9,7 +9,7 @@ categories:
 - discount
 - sessions
 - training
-alias: /blog/archives/2008/05/28/last-call-for-early-bird-price-on-rails-training
+redirect_from: /blog/archives/2008/05/28/last-call-for-early-bird-price-on-rails-training/
 ---
 
 Just a quick note to remind you that May 31 is the last day of early-bird pricing for the "Ruby on Rails training":http://sessions.collectiveidea.com. After Saturday, the price will go up from $1195 to $1495. (Who couldn't use an extra $300?)

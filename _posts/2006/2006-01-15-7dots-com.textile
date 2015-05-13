@@ -5,7 +5,7 @@ id: 4cf5b684dabe9d2c6100072c
 updated: 2010-12-06T18:39:25-05:00
 date: 2006-01-15T22:26:00-05:00
 categories:
-alias: /blog/archives/2006/01/15/7dots-com
+redirect_from: /blog/archives/2006/01/15/7dots-com/
 ---
 
 In December, <a href="http://theparagon.com">Aaron</a> and <a href="http://ifstatement.blogspot.com">Dan</a> asked me to help with <a href="http://www.7dots.com">7dots.com</a>. It will be a web-based password manager. Specifically, they want me to help with security and administration. I jumped at the offer for several reasons.

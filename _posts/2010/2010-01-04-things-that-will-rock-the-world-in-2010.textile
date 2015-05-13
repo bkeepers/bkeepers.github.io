@@ -10,7 +10,7 @@ categories:
 - rails
 - sammyjs
 - sunspot
-alias: /blog/archives/2010/01/04/things-that-will-rock-the-world-in-2010
+redirect_from: /blog/archives/2010/01/04/things-that-will-rock-the-world-in-2010/
 ---
 
 Here are a few things that I'm really looking forward to using and abusing this year:

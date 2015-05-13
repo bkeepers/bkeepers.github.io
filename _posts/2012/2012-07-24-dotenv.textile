@@ -6,7 +6,7 @@ updated: 2012-07-24T00:31:37-04:00
 date: 2012-07-24T00:00:00-04:00
 categories:
 - gem
-alias: /blog/archives/2012/07/24/dotenv
+redirect_from: /blog/archives/2012/07/24/dotenv/
 ---
 
 I released "dotenv":https://github.com/bkeepers/dotenv, a handy Ruby gem that makes loading environment variables 100% less painful in development, guaranteed or your money back.

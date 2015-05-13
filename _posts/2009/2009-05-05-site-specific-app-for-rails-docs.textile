@@ -9,7 +9,7 @@ categories:
 - docs
 - mac
 - rails
-alias: /blog/archives/2009/05/05/site-specific-app-for-rails-docs
+redirect_from: /blog/archives/2009/05/05/site-specific-app-for-rails-docs/
 ---
 
 Unless you're a Rails genius, you probably need to frequently reference the Rails API docs. And if you haven't discovered it yet, "railsapi.com":http://railsapi.com is awesome.

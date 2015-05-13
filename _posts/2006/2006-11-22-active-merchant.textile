@@ -8,7 +8,7 @@ categories:
 - active_merchant
 - rails
 - ruby
-alias: /blog/archives/2006/11/22/active-merchant
+redirect_from: /blog/archives/2006/11/22/active-merchant/
 ---
 
 "Jaded Pixel's":http://jadedpixel.com/ "Active Merchant":http://home.leetsoft.com/am now has a "Google Group":http://groups.google.com/group/activemerchant. Those interested in ecommerce and Ruby should head on over and "join it":http://groups.google.com/group/activemerchant.  Let's work on making Active Merchant even better!

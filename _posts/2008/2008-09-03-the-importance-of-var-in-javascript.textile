@@ -6,7 +6,7 @@ updated: 2010-11-30T21:43:40-05:00
 date: 2008-09-03T20:37:00-04:00
 categories:
 - javascript
-alias: /blog/archives/2008/09/03/the-importance-of-var-in-javascript
+redirect_from: /blog/archives/2008/09/03/the-importance-of-var-in-javascript/
 ---
 
 I would consider myself proficient at JavaScript. Not a rockstar, but I can hold my own. But I didn't learn it out of a book; I picked it up slowly over several years. So occasionally I come across something that I probably would have learned in the first couple chapters of a decent JavaScript book.

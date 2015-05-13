@@ -12,7 +12,7 @@ categories:
 - plugin
 - rails
 - ruby
-alias: /blog/archives/2007/02/13/geocoding-as-easy-as-1-2
+redirect_from: /blog/archives/2007/02/13/geocoding-as-easy-as-1-2/
 ---
 
 3?, nope there is no 3.  Geocoding as easy as 1-2!

@@ -8,7 +8,7 @@ categories:
 - rails
 - search
 - sphinx
-alias: /blog/archives/2009/04/29/keepin-sphinx-indexes-fresh-2
+redirect_from: /blog/archives/2009/04/29/keepin-sphinx-indexes-fresh-2/
 ---
 
 &lt;infomercial-voice&gt;Stale indexes got you down? Embarrassed that your users' searches are coming up empty? Act now and you can avoid stale indexes with NEW and IMPROVED delayed delta indexing!!&lt;/infomercial-voice&gt;

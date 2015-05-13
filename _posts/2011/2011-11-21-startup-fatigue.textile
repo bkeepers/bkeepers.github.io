@@ -7,7 +7,7 @@ date: 2011-11-21T13:00:00-05:00
 categories:
 - michigan
 - startups
-alias: /blog/archives/2011/11/21/startup-fatigue
+redirect_from: /blog/archives/2011/11/21/startup-fatigue/
 ---
 
 People in West Michigan are doing startups completely wrong. I'm sure this is relevant elsewhere, but I can only speak for the context in which I live.

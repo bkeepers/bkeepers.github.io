@@ -6,7 +6,7 @@ updated: 2010-11-30T21:44:20-05:00
 date: 2006-02-03T07:00:00-05:00
 categories:
 - linux
-alias: /blog/archives/2006/02/03/my-experience-with-the-nokia-770
+redirect_from: /blog/archives/2006/02/03/my-experience-with-the-nokia-770/
 ---
 
 <img style="padding: 1em; float: left" alt="Nokia 770 Internet Tablet" title="Nokia 770 Internet Tablet" src="http://www.nokiausa.com/images/phn/126x126/ph_770_lrg.gif" />From the moment I first heard about the <a href="http://www.nokia.com/770">Nokia 770 Internet Tablet</a>, I wanted one.  I don't remember the last time I was this excited about a gadget. Well, at Christmas I was fortunate enough to get one (thank you mom and wife!).

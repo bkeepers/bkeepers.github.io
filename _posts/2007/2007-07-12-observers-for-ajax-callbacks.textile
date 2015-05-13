@@ -9,7 +9,7 @@ categories:
 - events
 - javascript
 - prototype
-alias: /blog/archives/2007/07/12/observers-for-ajax-callbacks
+redirect_from: /blog/archives/2007/07/12/observers-for-ajax-callbacks/
 ---
 
 In my Javascript-fu adventures over the past week or so, I've consistently run into the same problem.  I want to do slight variations of an Ajax request on an individual basis. Here is a common method from my code: (Note: these examples use @Event.addBehavior@ from "Dan Webb's excellent lowpro library":http://www.danwebb.net/2006/9/3/low-pro-unobtrusive-scripting-for-prototype for registering events.)

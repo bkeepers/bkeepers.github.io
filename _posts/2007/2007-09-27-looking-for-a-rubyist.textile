@@ -8,7 +8,7 @@ categories:
 - collectiveidea
 - job
 - rails
-alias: /blog/archives/2007/09/27/looking-for-a-rubyist
+redirect_from: /blog/archives/2007/09/27/looking-for-a-rubyist/
 ---
 
 "ecounseling.com":http://ecounseling.com, a project that we worked on at "Collective Idea":http://collectiveidea.com, is looking for a Rails programmer to implement some new features and continue to expand their site.

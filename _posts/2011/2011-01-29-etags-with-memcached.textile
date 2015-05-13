@@ -9,7 +9,7 @@ categories:
 - performance
 - ruby
 - sinatra
-alias: /blog/archives/2011/01/29/etags-with-memcached
+redirect_from: /blog/archives/2011/01/29/etags-with-memcached/
 ---
 
 I love ETags, but there's something that annoys me: most implementations revolve around pulling a record out of a data store and only "rendering" the response if it hasn't been modified.

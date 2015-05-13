@@ -11,7 +11,7 @@ categories:
 - database
 - migration
 - rails
-alias: /blog/archives/2008/04/27/awesomeness-database-backups
+redirect_from: /blog/archives/2008/04/27/awesomeness-database-backups/
 ---
 
 At "Collective Idea":http://collectiveidea.com, we have a plugin called "awesomeness":http://github.com/collectiveidea/awesomeness that is…well, awesome. It's a collection of things that we use in almost every project that aren't generic enough to go into individual plugins (although some things may have evolved enough to be worthy of plugin status).

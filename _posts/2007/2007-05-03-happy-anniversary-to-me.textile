@@ -6,7 +6,7 @@ updated: 2010-11-30T21:44:01-05:00
 date: 2007-05-03T01:16:00-04:00
 categories:
 - collectiveidea
-alias: /blog/archives/2007/05/03/happy-anniversary-to-me
+redirect_from: /blog/archives/2007/05/03/happy-anniversary-to-me/
 ---
 
 With all the chaos lately (trying to close on a house and traveling for a funeral), I forgot that Monday was an important milestone.  It has been one year since I joined "Collective Idea":http://collectiveidea.com.

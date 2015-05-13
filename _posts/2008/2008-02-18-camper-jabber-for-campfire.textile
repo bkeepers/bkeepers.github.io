@@ -10,7 +10,7 @@ categories:
 - ruby
 - tinder
 - xmpp
-alias: /blog/archives/2008/02/18/camper-jabber-for-campfire
+redirect_from: /blog/archives/2008/02/18/camper-jabber-for-campfire/
 ---
 
 Jared Kuolt has put together a cool little app that "lets you use Jabber with campfire":http://superjared.com/entry/new-projects/#campfire_to_jabber.  The app simply uses "Tinder":http://tinder.rubyforge.org to listen in on a campfire room, forwarding messages on to a Jabber account, and posting any messages it receives from Jabber.  Very cool.

@@ -6,7 +6,7 @@ updated: 2010-11-30T21:43:59-05:00
 date: 2007-06-19T05:52:00-04:00
 categories:
 - collectiveidea
-alias: /blog/archives/2007/06/19/working-in-israel
+redirect_from: /blog/archives/2007/06/19/working-in-israel/
 ---
 
 I think the biggest perk of working in this industry (and working for yourself) is that we can work from almost anywhere, as long as there's a connection to the tubes.

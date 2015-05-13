@@ -9,7 +9,7 @@ categories:
 - bug
 - code
 - rails
-alias: /blog/archives/2008/08/02/fix-for-acts_as_audited-and-attr_accessible
+redirect_from: /blog/archives/2008/08/02/fix-for-acts_as_audited-and-attr_accessible/
 ---
 
 The biggest complaint I get about acts_as_audited is finally fixed: if you want to use acts_as_audited on a model that uses @attr_accessible@, you can set the @:protect@ option to @false@:
