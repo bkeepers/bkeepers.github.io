@@ -29,4 +29,4 @@ Linux-based operating systems powers a good portion of the internet. There are m
 
 [LibreOffice](https://www.libreoffice.org/), a fork of [Open Office](https://www.libreoffice.org/), is an open source office productivity suite that offers an alternative to Microsoft Office.
 
-[pr]: https://github.com/bkeepers/bkeepers.github.io/pull/xxxx
+[pr]: https://github.com/bkeepers/bkeepers.github.io/pull/8
