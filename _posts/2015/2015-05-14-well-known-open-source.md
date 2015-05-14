@@ -5,7 +5,7 @@ categories:
 - opensource
 ---
 
-Someone asked me this week: "What are some examples of open source software that most people have heard of?" I had a few answers off the top of my head, but not nearly enough. Anyone that uses a computer likely interacts with hundreds of open source components every day.
+Someone asked me this week: "What are some examples of open source software that most non-technical people have heard of?" I had a few answers off the top of my head, but not nearly enough. Anyone that uses a computer likely interacts with hundreds of open source components every day.
 
 What other open source projects are popular among common folks? [Add your suggestion][pr].
 
