@@ -19,7 +19,11 @@ What other open source projects are popular among common folks? [Add your sugges
 
 ## [Linux](https://www.kernel.org/)
 
-Linux-based operating systems powers a good portion of the internet. There are many different distributors of Linux-based operating systems, such as [Ubuntu](http://www.ubuntu.com/), and they are all comprised of the [Linux Kernel](https://www.kernel.org/) and a host of other open source utilities that make up an entire operating system. The Linux Kernel, originally released in 1991, is largely credited with being an early example of the effectiveness of open source.
+If you've used the internet, then you've interacted with a computer running Linux. Linux-based operating systems come in many different flavors, such as [Ubuntu](http://www.ubuntu.com/), and are all comprised of the [Linux Kernel](https://www.kernel.org/) and a host of other open source utilities. The Linux Kernel, originally released in 1991, was an early example of the effectiveness of open source and remains one of the most successful open source projects to date.
+
+## [Android](http://en.wikipedia.org/wiki/Android_(operating_system))
+
+[Android](https://www.android.com/intl/en_us/) is a special flavor of Linux-based operating system that runs on mobile phones. Phone makers like Samsung use the open source operating system as the core of most of their modern devices.
 
 ## [WordPress](http://en.wikipedia.org/wiki/WordPress)
 
