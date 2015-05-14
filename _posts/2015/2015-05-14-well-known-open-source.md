@@ -27,7 +27,7 @@ If you've used the internet, then you've interacted with a computer running Linu
 
 ## [WordPress](http://en.wikipedia.org/wiki/WordPress)
 
-[Wordpress](https://wordpress.org/) is an extremely popular content management system and blogging platform. It is completely open source, and is also built on top of many other open source components.
+[WordPress](https://wordpress.org/) is an extremely popular content management system and blogging platform. It is completely open source, and is also built on top of many other open source components.
 
 ## [LibreOffice](http://en.wikipedia.org/wiki/LibreOffice) / [Open Office](http://en.wikipedia.org/wiki/Apache_OpenOffice)
 
