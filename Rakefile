@@ -4,7 +4,14 @@ desc 'Runs the html-proofer test'
 task :proofer do
   require 'html/proofer'
 
-  HTML::Proofer.new('./_site',
+  # Ignore really old content for now
+  ignores = %w(
+    _site/blog/**/*.html
+    _site/20{05,06,07,08,09,10,11,12}/**/*.html
+  ).map {|p| Dir.glob(p) }.flatten
+
+  HTML::Proofer.new('_site',
+    :file_ignore => ignores,
     :check_html => true
   ).run
 end
