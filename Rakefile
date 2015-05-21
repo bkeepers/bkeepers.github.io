@@ -5,9 +5,7 @@ task :proofer do
   require 'html/proofer'
 
   HTML::Proofer.new('./_site',
-    :check_html => true,
-    :check_favicon => true,
-    :verbose => true
+    :check_html => true
   ).run
 end
 
