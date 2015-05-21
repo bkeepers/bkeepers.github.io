@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+script/bootstrap
+bundle exec rake test
