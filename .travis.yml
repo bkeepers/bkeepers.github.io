@@ -3,3 +3,6 @@ rvm:
   - "2.2"
 notifications:
   disabled: true
+env:
+  global:
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
