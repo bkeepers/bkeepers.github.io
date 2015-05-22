@@ -4,7 +4,7 @@ title: "acts_as_money"
 id: 4cf5b67edabe9d2c61000563
 updated: 2010-11-30T21:44:14-05:00
 date: 2006-11-13T14:11:00-05:00
-categories:
+tags:
 - plugin
 - rails
 redirect_from: /blog/archives/2006/11/13/acts_as_money/

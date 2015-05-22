@@ -4,7 +4,7 @@ title: "Why I Hate Microformats"
 id: 4cf5b682dabe9d2c610006ea
 updated: 2012-06-05T10:33:40-04:00
 date: 2006-07-12T18:30:00-04:00
-categories:
+tags:
 - microformats
 - xhtml
 redirect_from: /blog/archives/2006/07/12/why-i-hate-microformats/

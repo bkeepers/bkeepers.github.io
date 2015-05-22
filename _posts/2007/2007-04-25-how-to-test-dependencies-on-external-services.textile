@@ -4,7 +4,7 @@ title: "How to test dependencies on external services?"
 id: 4cf5b672dabe9d2c610003cd
 updated: 2010-11-30T21:44:02-05:00
 date: 2007-04-25T15:35:00-04:00
-categories:
+tags:
 - ruby
 - testing
 redirect_from: /blog/archives/2007/04/25/how-to-test-dependencies-on-external-services/

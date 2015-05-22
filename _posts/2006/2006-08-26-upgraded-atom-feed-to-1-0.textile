@@ -4,7 +4,7 @@ title: "Upgraded Atom feed to 1.0"
 id: 4cf5b680dabe9d2c610005da
 updated: 2010-11-30T21:44:16-05:00
 date: 2006-08-26T12:02:00-04:00
-categories:
+tags:
 - atom
 redirect_from: /blog/archives/2006/08/26/upgraded-atom-feed-to-1-0/
 ---

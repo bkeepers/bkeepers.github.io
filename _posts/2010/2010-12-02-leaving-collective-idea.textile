@@ -4,7 +4,7 @@ title: "Leaving Collective Idea"
 id: 4cf8194cdabe9d4d49000014
 updated: 2010-12-03T13:37:35-05:00
 date: 2010-12-02T17:10:00-05:00
-categories:
+tags:
 - announcement
 - collectiveidea
 redirect_from: /blog/archives/2010/12/02/leaving-collective-idea/

@@ -13,3 +13,8 @@ exclude:
 gems:
 - jekyll-redirect-from
 - jekyll-sitemap
+- jekyll-feed
+author:
+  name: Brandon Keepers
+  email: brandon@opensoul.org
+  uri: http://opensoul.org

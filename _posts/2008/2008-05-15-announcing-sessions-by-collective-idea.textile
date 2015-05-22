@@ -4,7 +4,7 @@ title: "Announcing: Training by Collective Idea"
 id: 4cf5b661dabe9d2c610001af
 updated: 2010-11-30T21:43:45-05:00
 date: 2008-05-15T14:17:00-04:00
-categories:
+tags:
 - collectiveidea
 - training
 redirect_from: /blog/archives/2008/05/15/announcing-sessions-by-collective-idea/

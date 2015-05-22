@@ -1,7 +1,7 @@
 ---
 title: Open Source Basics
 layout: post
-categories:
+tags:
 - opensource
 ---
 

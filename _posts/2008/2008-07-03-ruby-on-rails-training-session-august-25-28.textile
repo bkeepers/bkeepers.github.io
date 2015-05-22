@@ -4,7 +4,7 @@ title: "Ruby on Rails Training: August 25-28"
 id: 4cf5b660dabe9d2c6100018c
 updated: 2010-11-30T21:43:44-05:00
 date: 2008-07-03T11:07:00-04:00
-categories:
+tags:
 - collectiveidea
 - training
 redirect_from: /blog/archives/2008/07/03/ruby-on-rails-training-session-august-25-28/

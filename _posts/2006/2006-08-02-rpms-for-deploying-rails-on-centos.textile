@@ -4,7 +4,7 @@ title: "RPMs for Deploying Rails on CentOS"
 id: 4cf5b681dabe9d2c61000605
 updated: 2010-11-30T21:44:17-05:00
 date: 2006-08-02T19:43:00-04:00
-categories:
+tags:
 - linux
 - rails
 - rpm

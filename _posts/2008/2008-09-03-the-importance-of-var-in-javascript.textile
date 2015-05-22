@@ -4,7 +4,7 @@ title: "The importance of var in JavaScript"
 id: 4cf5b65cdabe9d2c6100014e
 updated: 2010-11-30T21:43:40-05:00
 date: 2008-09-03T20:37:00-04:00
-categories:
+tags:
 - javascript
 redirect_from: /blog/archives/2008/09/03/the-importance-of-var-in-javascript/
 ---

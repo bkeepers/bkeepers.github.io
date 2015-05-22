@@ -2,7 +2,7 @@
 title: Be careful what you tell yourself
 layout: post
 excerpt: "<p>Be careful what you tell yourself, because you will believe the lies, and so will everyone else.</p>"
-categories:
+tags:
 - observation
 ---
 

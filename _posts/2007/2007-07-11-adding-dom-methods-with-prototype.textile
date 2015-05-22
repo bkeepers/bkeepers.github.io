@@ -4,7 +4,7 @@ title: "Adding DOM methods with Prototype"
 id: 4cf5b66edabe9d2c6100032c
 updated: 2010-11-30T21:43:58-05:00
 date: 2007-07-11T16:24:00-04:00
-categories:
+tags:
 - javascript
 - prototype
 redirect_from: /blog/archives/2007/07/11/adding-dom-methods-with-prototype/
