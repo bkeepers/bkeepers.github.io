@@ -1,7 +1,7 @@
 ---
 title: User-generated content and DOM clobbering
 layout: post
-categories:
+tags:
 - javascript
 - web
 ---

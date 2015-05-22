@@ -4,7 +4,7 @@ title: "Rails 3.1 Hackfest"
 id: 4e279778dabe9d6a5b004804
 updated: 2011-07-23T10:55:09-04:00
 date: 2011-07-20T23:05:00-04:00
-categories:
+tags:
 - rails
 redirect_from: /blog/archives/2011/07/20/rails-31-hackfest/
 ---

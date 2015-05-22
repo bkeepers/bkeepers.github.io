@@ -4,7 +4,7 @@ title: "How many HTML elements can you name in 5 minutes?"
 id: 4cf5b667dabe9d2c61000262
 updated: 2010-11-30T21:43:51-05:00
 date: 2007-11-23T09:26:00-05:00
-categories:
+tags:
 - challange
 - html
 redirect_from: /blog/archives/2007/11/23/how-many-html-elements-can-you-name-in-5-minutes/

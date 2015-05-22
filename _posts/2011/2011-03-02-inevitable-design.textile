@@ -4,7 +4,7 @@ title: "Inevitable Design"
 id: 4d6e5715dabe9d617600011c
 updated: 2011-03-02T15:59:33-05:00
 date: 2011-03-02T13:11:00-05:00
-categories:
+tags:
 - design
 - observation
 redirect_from: /blog/archives/2011/03/02/inevitable-design/

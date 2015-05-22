@@ -4,7 +4,7 @@ title: "Desktop Linux As It Should Be"
 id: 4cf5b684dabe9d2c61000731
 updated: 2010-11-30T21:44:20-05:00
 date: 2005-12-20T20:45:00-05:00
-categories:
+tags:
 - linux
 redirect_from: /blog/archives/2005/12/20/desktop-linux-as-it-should-be/
 ---

@@ -4,7 +4,7 @@ title: "MidWest.rb camaraderie"
 id: 4cf5b670dabe9d2c6100039f
 updated: 2010-11-30T21:44:00-05:00
 date: 2007-05-18T16:55:00-04:00
-categories:
+tags:
 - midwest
 - ruby
 - rug

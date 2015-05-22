@@ -4,7 +4,7 @@ title: "Varying validations"
 id: 4cf5b671dabe9d2c610003aa
 updated: 2010-11-30T21:44:01-05:00
 date: 2007-05-10T00:03:00-04:00
-categories:
+tags:
 - rails
 - validations
 redirect_from: /blog/archives/2007/05/10/varying-validations/

@@ -4,7 +4,7 @@ title: "Lessons from RailsConf"
 id: 4cf5b683dabe9d2c6100070c
 updated: 2010-11-30T21:44:19-05:00
 date: 2006-06-26T06:37:00-04:00
-categories:
+tags:
 - rails
 redirect_from: /blog/archives/2006/06/26/lessons-from-railsconf/
 ---

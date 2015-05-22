@@ -4,7 +4,7 @@ title: "Revisioning with acts_as_audited"
 id: 4cf5b66fdabe9d2c61000395
 updated: 2010-11-30T21:43:59-05:00
 date: 2007-06-18T14:21:00-04:00
-categories:
+tags:
 - acts_as_audited
 - plugin
 - rails
