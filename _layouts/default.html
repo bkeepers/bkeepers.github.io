@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
-  <meta name="description" content="a blog about code">
-  <meta name="author" content="Brandon Keepers">
+  <meta name="author" content="{{ site.author.name }}">
   <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
@@ -56,7 +55,7 @@
   </div>
 
   <footer id="copyright">
-    Copyright © {{ site.copyright }}  - {{ site.time | date: '%Y' }} Brandon Keepers
+    Copyright © {{ site.copyright }}  - {{ site.time | date: '%Y' }} {{ site.author.name }}
   </footer>
 </div>
 
