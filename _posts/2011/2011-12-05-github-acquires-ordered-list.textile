@@ -15,5 +15,4 @@ When I joined Ordered List, we had grand plans of building a great company on th
 
 Personally, I look forward to bringing the "products":http://speakerdeck.com "we":http://get.gaug.es "built":http://get.harmonyapp.com and the experiences we gained building them to make GitHub even better. GitHub has an "amazing team":https://github.com/about and I cannot wait to inspire and be inspired by them.
 
-<img src="/images/olctocat.png">
-
+<img src="/images/olctocat.png" alt="Ordered List Octocat">

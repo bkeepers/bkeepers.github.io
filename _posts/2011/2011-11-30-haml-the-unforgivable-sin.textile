@@ -14,7 +14,7 @@ redirect_from: /blog/archives/2011/11/30/haml-the-unforgivable-sin/
 
 "I posted this on twitter":http://twitter.com/#!/bkeepers/status/139360663851106305: "there are many mistakes I'm willing to forgive, but using haml is not one of them". Many people replied asking me to explain why I don't like it, so here it goes…
 
-I used "HAML":http://haml-lang.com/ on several client projects and I hated it every time. There are certainly some things that are nice about it, but overall it is a net loss.
+I used "HAML":http://haml.info/ on several client projects and I hated it every time. There are certainly some things that are nice about it, but overall it is a net loss.
 
 h2. For abstraction's sake
 
@@ -37,4 +37,3 @@ I agree that HAML is easier to write than HTML, simply because it involves less 
 If HAML provided some value other than saving a few keystrokes, I would likely become a believer. But it doesn't.
 
 Typing is not my bottleneck in coding. Thinking is. And forcing my brain to parse HAML when it is occupied by more important things is not conducive to productivity.
-

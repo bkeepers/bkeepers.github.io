@@ -12,6 +12,7 @@ task :proofer do
 
   HTML::Proofer.new('_site',
     :file_ignore => ignores,
+    :verbose => !!ENV["VERBOSE"],
     :check_html => true
   ).run
 end
