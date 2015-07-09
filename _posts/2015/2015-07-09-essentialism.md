@@ -1,6 +1,5 @@
 ---
 title: "Essentialism: The Disciplined Pursuit of Less"
-author: Greg Mckeown
 layout: book
 tags:
 - book
