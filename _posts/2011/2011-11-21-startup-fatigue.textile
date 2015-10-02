@@ -4,7 +4,7 @@ title: "Startup Fatigue"
 id: 4ec49650dabe9d20f60013a9
 updated: 2011-11-21T21:50:29-05:00
 date: 2011-11-21T13:00:00-05:00
-categories:
+tags:
 - michigan
 - startups
 redirect_from: /blog/archives/2011/11/21/startup-fatigue/

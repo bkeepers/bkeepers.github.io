@@ -4,7 +4,7 @@ title: "Don't should on yourself"
 id: 4d0ba344dabe9d34200002e6
 updated: 2011-03-02T09:13:28-05:00
 date: 2010-12-17T12:52:00-05:00
-categories:
+tags:
 - popular
 - rant
 redirect_from: /blog/archives/2010/12/17/dont-should-on-yourself/

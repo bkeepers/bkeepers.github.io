@@ -4,7 +4,7 @@ title: "acts_as_audited in development"
 id: 4cf5b65bdabe9d2c61000145
 updated: 2010-11-30T21:43:39-05:00
 date: 2008-10-12T22:10:00-04:00
-categories:
+tags:
 - acts_as_audited
 - plugin
 redirect_from: /blog/archives/2008/10/12/acts_as_audited-in-development/

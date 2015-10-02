@@ -4,7 +4,7 @@ title: "Moving Podcast tracks into your iTunes library"
 id: 4cf5b673dabe9d2c6100040d
 updated: 2010-12-01T02:31:25-05:00
 date: 2007-04-17T09:33:00-04:00
-categories:
+tags:
 - indie
 - itunes
 - music

@@ -4,7 +4,7 @@ title: "Outsourcing vs. Offshoring"
 id: 4cf5b658dabe9d2c610000e9
 updated: 2010-11-30T21:43:36-05:00
 date: 2008-12-21T14:32:00-05:00
-categories:
+tags:
 - offshoring
 - outsourcing
 - rails

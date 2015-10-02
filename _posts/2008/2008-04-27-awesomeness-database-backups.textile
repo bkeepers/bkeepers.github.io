@@ -4,7 +4,7 @@ title: "Awesomeness: database backups"
 id: 4cf5b661dabe9d2c610001e0
 updated: 2010-11-30T21:43:45-05:00
 date: 2008-04-27T18:09:00-04:00
-categories:
+tags:
 - backup
 - capistrano
 - collectiveidea

@@ -4,7 +4,7 @@ title: "acts_as_audited and authlogic"
 id: 4cf5b653dabe9d2c61000049
 updated: 2010-12-01T01:59:20-05:00
 date: 2009-10-29T11:52:00-04:00
-categories:
+tags:
 - acts_as_audited
 - authlogic
 - collectiveidea

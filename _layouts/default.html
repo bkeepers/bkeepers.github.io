@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
-  <meta name="description" content="a blog about code">
-  <meta name="author" content="Brandon Keepers">
+  <meta name="author" content="{{ site.author.name }}">
   <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
@@ -31,7 +30,7 @@
 
   <div id="about">
     <section>
-      <p>I am <strong>Brandon Keepers</strong>. I build Internet things, usually with Ruby or JavaScript. I work at <a href="http://github.com">GitHub</a> and live in Holland, MI.</p>
+      <p>I am <strong>Brandon Keepers</strong>.<br>I build Internet things,<br> and work at <a href="http://github.com">GitHub</a>.</p>
 
       <p id="links">
         <a href="https://twitter.com/bkeepers" class="icon icon-mark-twitter" title="Follow me on Twitter"></a>
@@ -43,7 +42,7 @@
     <section id="popular">
       <h1>Popular Posts</h1>
       <ul>
-      {% for post in site.categories.popular limit: 5 %}
+      {% for post in site.tags.popular limit: 5 %}
         <li><a href="{{ post.url }}">{{ post.title }}</a></li>
       {% endfor %}
       </ul>
@@ -54,7 +53,11 @@
   </div>
 
   <footer id="copyright">
-    Copyright © {{ site.copyright }}  - {{ site.time | date: '%Y' }} Brandon Keepers
+    <p>
+      Copyright © {{ site.copyright }} - {{ site.time | date: '%Y' }} {{ site.author.name }}<br>
+      Content licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br>
+      Unless otherwise stated, code samples licensed under an <a href="/LICENSE">MIT license</a>.
+    </p>
   </footer>
 </div>
 

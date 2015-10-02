@@ -4,7 +4,7 @@ title: "Sinatra serenades Rails 2"
 id: 4d01ad2fdabe9d3295000001
 updated: 2010-12-10T01:00:05-05:00
 date: 2010-12-10T00:54:00-05:00
-categories:
+tags:
 - rails
 - sinatra
 redirect_from: /blog/archives/2010/12/10/sinatra-serenades-rails-2/

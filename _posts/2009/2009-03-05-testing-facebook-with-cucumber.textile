@@ -4,7 +4,7 @@ title: "Testing Facebook with Cucumber"
 id: 4cf5b656dabe9d2c610000ab
 updated: 2010-11-30T21:43:34-05:00
 date: 2009-03-05T21:57:00-05:00
-categories:
+tags:
 - cucumber
 - facebook
 - rails

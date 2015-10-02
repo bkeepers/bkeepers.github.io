@@ -1,7 +1,7 @@
 ---
 title: Hide referrer when clicking a link
 layout: post
-categories:
+tags:
 - javascript
 - web
 excerpt: <p>Sometimes referrers reveal sensitive information. Wouldn't it be nice if there was a way to hide them when you needed to?</p>

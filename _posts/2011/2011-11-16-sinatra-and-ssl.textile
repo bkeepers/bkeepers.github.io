@@ -4,7 +4,7 @@ title: "Sinatra and SSL"
 id: 4ea72077dabe9d3cb8003e0b
 updated: 2011-11-17T16:23:27-05:00
 date: 2011-11-16T22:00:00-05:00
-categories:
+tags:
 - sinatra
 - ssl
 redirect_from: /blog/archives/2011/11/16/sinatra-and-ssl/

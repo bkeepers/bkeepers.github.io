@@ -4,7 +4,7 @@ title: "Abusing Rails I18N to Set Page Titles"
 id: 5097d37adabe9d269e0183c7
 updated: 2012-11-05T10:22:18-05:00
 date: 2012-11-05T09:55:00-05:00
-categories:
+tags:
 - rails
 - speakerdeck
 redirect_from: /blog/archives/2012/11/05/abusing-rails-i18n-to-set-page-titles/
@@ -21,7 +21,7 @@ en:
     account:
       new: "Sign Up"
       show: "My Account"
-    categories:
+    tags:
       show: "%{category}"
     likes:
       index: "Presentations Liked by %{user}"

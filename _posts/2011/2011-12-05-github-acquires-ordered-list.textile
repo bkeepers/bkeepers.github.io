@@ -4,7 +4,7 @@ title: "GitHub Acquires Ordered List"
 id: 4edc3d06dabe9d211500f3ae
 updated: 2011-12-05T13:02:46-05:00
 date: 2011-12-05T13:00:00-05:00
-categories:
+tags:
 - work
 redirect_from: /blog/archives/2011/12/05/github-acquires-ordered-list/
 ---

@@ -4,7 +4,7 @@ title: "The Plight of Pinocchio: JavaScript's quest to become a real language"
 id: 4fb397b5dabe9d642800d76a
 updated: 2012-07-25T13:02:31-04:00
 date: 2012-05-16T08:00:00-04:00
-categories:
+tags:
 - talk
 redirect_from: /blog/archives/2012/05/16/the-plight-of-pinocchio/
 ---
