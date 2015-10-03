@@ -1,22 +1,6 @@
 {
   "name": "opensoul.org",
   "version": "1.0.0",
-  "main": "script/cibuild",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "script/cibuild"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bkeepers/bkeepers.github.io.git"
-  },
-  "author": "Brandon Keepers",
-  "bugs": {
-    "url": "https://github.com/bkeepers/bkeepers.github.io/issues"
-  },
-  "homepage": "opensoul.org",
   "dependencies": {
     "write-good": "0.9.1"
   },
