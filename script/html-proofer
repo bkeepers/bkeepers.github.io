@@ -2,6 +2,7 @@
 
 `bundle exec jekyll build`
 
+require 'bundler/setup'
 require 'html/proofer'
 
 # Ignore really old content for now
