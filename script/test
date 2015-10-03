@@ -1,3 +1,4 @@
 #!/bin/sh
 
+script/bootstrap
 script/html-proofer
