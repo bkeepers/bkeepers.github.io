@@ -14,7 +14,7 @@ Along with the release of "Speaker Deck":http://speakerdeck.com, we released "Qu
 
 h2. Reason #1: Resque issues on Heroku
 
-Speaker Deck makes heavy use of background processing to turn PDFs of slides into the gorgeous player that you see on the site. Speaker Deck was using Resque, but unfortunately there a few issues with Resque on Heroku ("#368":https://github.com/defunkt/resque/issues/368, "#319":https://github.com/defunkt/resque/issues/319). The mishandling of signals described in #368 was especially an issue for us,  because any time we deploy or scale the workers up or down, we would lose jobs; they wouldn't show up as failed, they would just completely vanish.
+Speaker Deck makes heavy use of background processing to turn PDFs of slides into the gorgeous player that you see on the site. Speaker Deck was using Resque, but unfortunately there a few issues with Resque on Heroku ("#368":https://github.com/resque/resque/issues/368, "#319":https://github.com/resque/resque/issues/319). The mishandling of signals described in #368 was especially an issue for us,  because any time we deploy or scale the workers up or down, we would lose jobs; they wouldn't show up as failed, they would just completely vanish.
 
 So the logical approach would be to just fork resque, reverse the signals, and use that version, right? If that was my only issue with resque, then yes, but…
 

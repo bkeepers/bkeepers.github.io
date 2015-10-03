@@ -9,7 +9,7 @@ tags:
 redirect_from: /blog/archives/2011/12/05/github-acquires-ordered-list/
 ---
 
-I am thrilled to announce that I am now a GitHubber. Check out the official announcements on both the "GitHub":https://github.com/blog/993-ordered-list-is-a-githubber and "Ordered List":http://orderedlist.com/blog/articles/ordered-list-acquired-by-github/ blogs.
+I am thrilled to announce that I am now a GitHubber. Check out the official announcements on both the "GitHub":https://github.com/blog/993-ordered-list-is-a-githubber and ~~Ordered List~~ blogs.
 
 When I joined Ordered List, we had grand plans of building a great company on the back of some amazing products. GitHub is already doing that, so when the opportunity came to join forces with them, I had almost no hesitation.
 
