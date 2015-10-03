@@ -11,7 +11,7 @@ redirect_from: /blog/archives/2012/05/27/my-instapaper-strategy/
 
 *tl;dr*: I have found a strategy that leads to Instapaper bliss: sort articles by oldest-first.
 
-<img src="/images/IMG_0019.PNG">
+<img src="/images/IMG_0019.PNG" alt="Screenshot of Instapaper article">
 
 "Instapaper":http://instapaper.com/ is wonderful. Besides "Tweetbot":http://tapbots.com/software/tweetbot/, it is the most used app on my iPad. It is a gorgous app that makes reading so enjoyable. Anytime someone sends me a link that I can't read in 2 minutes, I save it to Instapaper to save for that glorious Saturday when I just lay in the hammock and read all afternoon. It's my very own personal New York Times, Wired, and Sherlock Holmes, all rolled into one.
 
@@ -25,6 +25,6 @@ There are now only about 20 unread articles in my instapaper queue. I haven't be
 * The disire for _new_ still exists, and acts as an incentive to keep up to date.
 * Sometimes I read things I don't care about simply because I like the person that recommended it to me. But when I'm looking at articles on Instapaper that are 6 months old, I don't remember who recommended. So I'm more likely to skip stuff that I don't care about.
 
-<img src="/images/IMG_0021.PNG">
+<img src="/images/IMG_0021.PNG" alt="Screenshot of Instapaper settings">
 
 It's a small thing, but I love small life hacks that streamline my life.

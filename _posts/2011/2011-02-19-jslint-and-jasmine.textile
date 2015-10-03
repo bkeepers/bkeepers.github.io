@@ -16,4 +16,4 @@ I've been looking for a way to integrate "JSLint":http://www.jslint.com/ (or "JS
 
 I've been using "Jasmine":https://github.com/pivotal/jasmine a lot lately, and it was rather trivial to add a "spec that runs all my src and spec files through JSHint":https://github.com/bkeepers/lucid/blob/master/spec/javascripts/z_jshint_spec.js. Now I can immediately see where I have poor syntax:
 
-<img src="/images/jshint.png">
+<img alt="Screenshot of jshint output" src="/images/jshint.png">

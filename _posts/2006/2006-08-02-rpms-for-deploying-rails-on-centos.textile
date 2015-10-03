@@ -47,6 +47,6 @@ gem install -y rails mongrel mongrel_cluster
 
 <h3>Configure Apache and Mongrel</h3>
 
-<p>Lastly, follow <a href="http://mongrel.rubyforge.org/docs/mongrel_cluster.html">one</a> <a href="http://blog.innerewut.de/articles/2006/04/21/scaling-rails-with-apache-2-2-mod_proxy_balancer-and-mongrel">of</a> <a href="http://blog.innerewut.de/articles/2006/06/21/mongrel-and-rails-behind-apache-2-2-and-ssl">the</a> <a href="http://fluxura.com/articles/2006/05/19/apache-for-static-and-mongrel-for-rails-with-mod_deflate-and-capistrano-support">guides</a> for configuring Apache and mongrel.</p>
+<p>Lastly, follow <a href="http://mongrel.rubyforge.org/docs/mongrel_cluster.html">one</a> <a href="https://web.archive.org/web/20060812140230/http://blog.innerewut.de/articles/2006/04/21/scaling-rails-with-apache-2-2-mod_proxy_balancer-and-mongrel">of</a> <a href="http://blog.innerewut.de/articles/2006/06/21/mongrel-and-rails-behind-apache-2-2-and-ssl">the</a> <a href="http://fluxura.com/articles/2006/05/19/apache-for-static-and-mongrel-for-rails-with-mod_deflate-and-capistrano-support">guides</a> for configuring Apache and mongrel.</p>
 
 <p>Let me know if you have any problems with these packages.</p>

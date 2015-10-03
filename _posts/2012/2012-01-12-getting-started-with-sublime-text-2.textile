@@ -23,7 +23,7 @@ If you feel like something is missing from Sublime, then there is probably a plu
 
 To use package control, press ⌘⇧P to bring up the command palette, begin to type "install", and select "*Package Control: Install Package*". This will bring up a new palette to search for packages.  Find your packages and hit enter to install it. You can see in the status bar at the bottom that it is installing. Most packages will just work, but occasionally you might have to restart Sublime for the package to work.
 
-<img src="/images/screen_shot_20120111_at_4.55.08_pm.png">
+<img src="/images/screen_shot_20120111_at_4.55.08_pm.png" alt="Screenshot of ⌘⇧P">
 
 h2. Beat the ugly out of it
 
@@ -35,11 +35,11 @@ Start by installing the "Soda UI theme":https://github.com/buymeasoda/soda-theme
 
 Ahh, that is better.  But the icon is ugly too. There are several "replacement options on dribbble":http://dribbble.com/search?q=sublime+text&x=0&y=0. "This one is my favorite":http://dribbble.com/shots/311515-A-Sublime-Text-2-Icon-that-is-less-horrible, although there is still much room for improvement.
 
-The syntax highlighting theme that comes with Sublime is alright, but everyone has their favorite theme. Mine is "Made of Code":http://madeofcode.com/posts/29-photo-my-new-textmate-theme-8220-made-of-code-8221-mdash-download-9-feb-2010-update-t. You can use any TextMate theme by copying it to the @Packages@ directory and going to "Preferences » Color Scheme".
+The syntax highlighting theme that comes with Sublime is alright, but everyone has their favorite theme. Mine is "Made of Code":https://web.archive.org/web/20150214190717/http://madeofcode.com/posts/29-photo-my-new-textmate-theme-8220-made-of-code-8221-mdash-download-9-feb-2010-update-t. You can use any TextMate theme by copying it to the @Packages@ directory and going to "Preferences » Color Scheme".
 
 Ok, now we can stand to look at it.
 
-<img src="/images/screen_shot_20120111_at_3.50.09_pm.png">
+<img src="/images/screen_shot_20120111_at_3.50.09_pm.png" alt="Screenshot of Sublime Text with Soda theme">
 
 h2. Opening a project
 
@@ -69,7 +69,7 @@ Sublime is extremely configurable, but the configuration is in a few different J
 
 On OS X, go to "Sublime Text 2 » Preferences".
 
-<img src="/images/screen_shot_20120111_at_2.15.34_pm.png">
+<img src="/images/screen_shot_20120111_at_2.15.34_pm.png" alt="Screenshot of preferences menu">
 
 For each type of setting, Sublime has at least two files: defaults and custom user settings. You edit the *User* versions to specify the things you are overriding.
 
@@ -83,7 +83,7 @@ h2. ⌘p is the new ⌘t
 
 ⌘p (which is also mapped to ⌘t) brings up the Go To File palette. In addition to giving you quick access to your files, it has several features to allow you quickly jump *into* your files. After typing the file name, use *@* in the palette to jump directly to a specific method. You can also use ⌘r to bring up the palette prefaced with *@* to jump to a method in your current file.
 
-<img src="/images/screen_shot_20120112_at_8.03.54_am.png">
+<img src="/images/screen_shot_20120112_at_8.03.54_am.png" alt="screenshot of ⌘p">
 
 You can also use *:* (colon) in the palette to go to a specific line number, and ^g will open the paletted prefaced with colon to jump to a line in the current file.
 

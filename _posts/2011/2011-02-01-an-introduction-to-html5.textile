@@ -14,4 +14,4 @@ Last night I gave a brief, 10 minute introduction to HTML5 at the "Grand Rapids 
 
 <script src="http://speakerdeck.com/embed/4d473cd65753087d54000003.js?size=preview"></script>
 
-Many people mentioned that they enjoyed hearing the history. For those that want to read more, check out "Mark Pilgrim's _Dive Into HTML5_":http://diveintohtml5.org/past.html.
+Many people mentioned that they enjoyed hearing the history. For those that want to read more, check out "Mark Pilgrim's _Dive Into HTML5_":http://diveintohtml5.info/past.html.

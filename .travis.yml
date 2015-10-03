@@ -1,0 +1,9 @@
+sudo: false
+language: ruby
+rvm:
+  - "2.2"
+notifications:
+  disabled: true
+env:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+script: script/test
