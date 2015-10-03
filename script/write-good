@@ -1,0 +1,13 @@
+#!/bin/sh
+
+script/bootstrap
+
+for post in $(git diff --name-only --diff-filter=ACMRTUXB origin/master | grep .md)
+do
+  node_modules/.bin/write-good "$post" \
+    --passive \
+    --illusion \
+    --so \
+    --thereIs \
+    --cliches
+done
