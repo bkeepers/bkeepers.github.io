@@ -1,61 +1,72 @@
+
+$font-family: Georgia, serif
+
+// http://www.gridlover.net/app/
+
+$base-font-size: 1.125rem
+$base-line-height: 1.5625rem
+$measure: 760px
+
+$h1-font-size: 3.625rem
+$h1-lines: 3
+$h1-line-height: $base-line-height * $h1-lines
+$h1-margin-top: 2 * $base-line-height
+$h1-margin-bottom: 1 * $base-line-height
+
+$h2-font-size: 2rem
+$h2-lines: 2
+$h2-line-height: $base-line-height * $h2-lines
+$h2-margin-top: 1 * $base-line-height
+$h2-margin-bottom: 1 * $base-line-height
+
+$h3-font-size: 1.125rem
+$h3-lines: 1
+$h3-line-height: $base-line-height * $h3-lines
+$h3-margin-top: 1 * $base-line-height
+$h3-margin-bottom: 1 * $base-line-height
+
 body
-  font: 14px/21px Helvetica, Arial, sans-serif
+  font-size: $base-font-size
+  line-height: $base-line-height
+  font-family: $font-family
   -webkit-font-smoothing: antialiased
   -webkit-text-size-adjust: 100%
   color: $text-color
 
 h1, h2, h3, h4, h5, h6
-  font-family: "Apple Garamond", Georgia, serif
   font-weight: normal
   color: $heading-color
+  font-family: "Apple Garamond", $font-family
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
   font-weight: inherit
   color: inherit
 
-h1
-  font-size: 40px
-  line-height: 50px
-  margin-bottom: 14px
-
-h1.small
-  font-size: 36px
-  line-height: 46px
-  margin-bottom: 12px
+h1, h1.small
+  font-size: $h1-font-size
+  line-height: $h1-line-height
+  margin-top: $h1-margin-top
+  margin-bottom: $h1-margin-bottom
 
 h2
-  font-size: 30px
-  line-height: 40px
-  margin-bottom: 10px
+  font-size: $h2-font-size
+  line-height: $h2-line-height
+  margin-top: $h2-margin-top
+  margin-bottom: $h2-margin-bottom
 
-h3
-  font-size: 24px
-  line-height: 34px
-  margin-bottom: 8px
+h3, h4, h5, h6
+  font-size: $h3-font-size
+  line-height: $h3-line-height
+  margin-top: $h3-margin-top
+  margin-bottom: $h3-margin-bottom
 
-h4
-  font-size: 20px
-  line-height: 30px
-  margin-bottom: 4px
-
-h5
-  font-size: 16px
-  line-height: 24px
-
-h6
-  font-size: 14px
-  line-height: 21px
+p, ul, ol, pre, table, blockquote
+  margin-top: $base-line-height
+  margin-bottom: $base-line-height
 
 p
-  margin: 0 0 20px 0
-
   img
     margin: 0
-
-  &.lead
-    font-size: 21px
-    line-height: 27px
-    color: #777
 
 em
   font-style: italic
@@ -73,9 +84,8 @@ blockquote, blockquote p
   font-style: italic
 
 blockquote
-  margin: 9px 0 9px
-  padding: 0 20px 0 19px
-  border-left: 1px solid #ddd
+  padding: 0 20px 0 18px
+  border-left: 2px solid #ddd
 
 blockquote cite
   display: block
@@ -87,6 +97,27 @@ blockquote cite:before
 
 blockquote cite a, blockquote cite a:visited, blockquote cite a:visited
   color: #555
+
+/* === Sanitation === */
+
+hr
+  border: 1px solid
+  margin: -1px 0
+
+ul ul, ol ol, ul ol, ol ul
+  margin-top: 0
+  margin-bottom: 0
+
+b, strong, em, small, code
+  line-height: 1
+
+sup, sub
+  vertical-align: baseline
+  position: relative
+  top: -0.4em
+
+sub
+  top: 0.4em
 
 /* === #Links === */
 a
