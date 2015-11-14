@@ -18,10 +18,9 @@ header
       padding: 0 1rem
 
 .meta
-  font-size: 10px
+  font-size: 0.8rem
   text-transform: uppercase
-  margin-top: -1.5em
-  opacity: 0.8
+  opacity: 0.7
 
   .tags:before
     display: inline-block
@@ -32,6 +31,10 @@ article
   margin-bottom: 2em
   padding-bottom: 2em
   border-bottom: 1px solid #f1f1f1
+
+  h1 + .meta
+    margin-top: -1.5 * $base-line-height
+    margin-bottom: 1.5 * $base-line-height
 
   hr
     border: 0

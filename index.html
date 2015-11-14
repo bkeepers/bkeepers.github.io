@@ -6,9 +6,6 @@ title: opensoul.org
 {% for post in site.posts limit:5 %}
   <article class="summary">
     <h1 class="small"><a href="{{ post.url }}">{{ post.title }}</a></h1>
-    <div class="excerpt">
-      {{ post.excerpt }}
-    </div>
     <div class="meta">
       <span class="date">{{ post.date | date: '%B %e, %Y' }}</span>
       <span class="tags">
@@ -16,6 +13,9 @@ title: opensoul.org
           {{ category }}{% unless forloop.last %},{% endunless %}
         {% endfor %}
       </span>
+    </div>
+    <div class="excerpt">
+      {{ post.excerpt }}
     </div>
   </article>
 {% endfor %}
