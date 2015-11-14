@@ -9,7 +9,7 @@ tags:
 redirect_from: /blog/archives/2012/06/05/whats-it-like-to-work-at-github/
 ---
 
-*Update: A lot has changed at GitHub over the past couple years, so most of this post is no longer accurate. Many things are better, some things are worse, and some things are just different. It's still the best job I've ever had. Some day I'll write more about it.*
+_Update: A lot has changed at GitHub over the past couple years, so most of this post is no longer accurate. Many things are better, some things are worse, and some things are just different. It's still the best job I've ever had. Some day I'll write more about it._
 
 I have been traveling a lot lately, and everywhere I go, I get this question: What's it like to work at "GitHub":http://github.com/about? The simple answer: it is *amazing*!
 
