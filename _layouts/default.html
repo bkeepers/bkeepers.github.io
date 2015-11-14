@@ -19,11 +19,18 @@
   <!-- FIXME: {{ item.data.head }} -->
 </head>
 <body>
-<div class="container">
-  <header>
-    <h1><a href="/">{{ site.name }}</a></h1>
-  </header>
+<header>
+  <div class="container">
+    <h1 class="small"><a href="/">Brandon Keepers</a></h1>
+    <p id="links">
+      <a href="https://twitter.com/bkeepers" class="icon icon-mark-twitter" title="Follow me on Twitter"></a>
+      <a href="https://github.com/bkeepers" class="icon icon-mark-github" title="Follow me on GitHub"></a>
+      <a href="https://feeds.feedburner.com/opensoul" class="icon icon-feed" title="Subscribe to the Feed"></a>
+    </p>
+  </div>
+</header>
 
+<div class="container">
   <div id="content">
     {{ content }}
   </div>
@@ -34,12 +41,6 @@
       <p class="small">
         <img class="avatar" src="https://github.com/bkeepers.png">
         <em>I am Brandon Keepers, and I work at <a href="https://github.com">GitHub</a> on making Open Source more approachable, effective, and ubiquitous. I tend to think like an engineer, work like an artist, dream like an astronaut, love like a human, and sleep like a baby.</em>
-      </p>
-
-      <p id="links">
-        <a href="https://twitter.com/bkeepers" class="icon icon-mark-twitter" title="Follow me on Twitter"></a>
-        <a href="https://github.com/bkeepers" class="icon icon-mark-github" title="Follow me on GitHub"></a>
-        <a href="https://feeds.feedburner.com/opensoul" class="icon icon-feed" title="Subscribe to the Feed"></a>
       </p>
     </section>
 
