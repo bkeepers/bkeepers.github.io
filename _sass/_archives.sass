@@ -1,18 +1,17 @@
 .archives
   li
-    line-height: 2
-    margin-bottom: 0
+    line-height: 2 * $base-line-height
     position: relative
     border-bottom: 1px #eee dotted
+    overflow: hidden
 
   a
+    float: left
     white-space: nowrap
     display: block
     text-overflow: ellipsis
     overflow: hidden
-    margin-right: 150px
+    max-width: 75%
 
   .date
-    position: absolute
-    right: 0
-    top: 0
+    float: right
