@@ -1,4 +1,8 @@
 #!/bin/sh
 
+set -e
+
 script/bootstrap
+bundle exec jekyll build
+bundle exec rake
 script/html-proofer

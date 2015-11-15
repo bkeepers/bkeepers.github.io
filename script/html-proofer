@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-`bundle exec jekyll build`
-
 require 'bundler/setup'
 require 'html/proofer'
 
