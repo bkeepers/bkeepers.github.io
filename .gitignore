@@ -3,3 +3,5 @@
 _site
 _drafts
 .sass-cache
+vendor/gems
+.bundle
