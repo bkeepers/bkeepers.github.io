@@ -11,6 +11,8 @@ exclude:
 - Gemfile.lock
 - scratch.md
 - vendor
+- test
+- Rakefile
 gems:
 - jekyll-redirect-from
 - jekyll-sitemap
