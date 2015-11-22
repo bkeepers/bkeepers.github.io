@@ -1,11 +1,20 @@
 ---
-title: Carbon, Autombiles, Bebop, and Fashion
+title: Carbon, Automobiles, Bebop, and Fashion
 layout: post
 tags:
 - opensource
 ---
 
-Early commercially available computers often came with the source code of the software that ran on them. You could modify it to fix bugs or integrate it into your environment. Academics, researchers and corporations often participated in open collaboration to write software that made computers useful. In the 60s and 70s, as software became more advanced and the cost of producing it increased, vendors began using intellectual property laws to impose copying restrictions and would often withhold the source code to prevent competitors from copying it. Secrecy was seen as a competitive advantage, disempowering developers and turning customers into pure consumers.
+Entire industries become transformed when a critical mass adopts openness. Software is past this tipping point.
+
+> Open source has grown far beyond the mainstream. It has become the bedrock over which the mainstream flows. Today it is hard to find a Fortune 500 company with an IT infrastructure that does not depend, in some fundamental way, on open source software.
+> <cite>Kim Polese - [Open Sources 2.0](http://amzn.to/1MvfeVN)</cite>
+
+As every company is becoming a software company, what happens when the bedrock of every industry is open source?
+
+---
+
+Early commercially available computers often came with the source code of their software. You could modify it to fix bugs or integrate it into your environment. Academics, researchers and corporations often participated in open collaboration to write software that made computers useful. In the 60s and 70s, as software became more advanced and the cost of producing it increased, vendors began using intellectual property laws to impose copying restrictions and would often withhold the source code to prevent competitors from copying it. Secrecy was seen as a competitive advantage, disempowering developers and turning customers into pure consumers.
 
 This lack of freedom drove Richard Stallman to start the Free Software Movement in the 80s with the goal of creating an operating system that any user could–if they had the resources–run, study, share, and improve without needing permission or fearing retribution; this is how Stallman conceptualized freedom for software users.
 
@@ -16,9 +25,7 @@ By the late 90s, it was clear that there were many practical advantages to free 
 > Open source is probably one of the most energizing projects our team has been working on.
 > <cite>[Immo Landwerth – Microsoft](http://blogs.msdn.com/b/dotnet/archive/2015/01/28/net-core-open-source-update.aspx)</cite>
 
-So, what happens next?
-
-The open sharing of information predates the computer and Internet. Let's look at four things that can help us understand where we’ve been and where we are going.
+So, what happens next? Fortunately, the open sharing of information predates computers and Internet.
 
 ## Carbon
 
@@ -115,17 +122,15 @@ What happens when every successful endeavor is predicated on open platforms? Wha
 
 In fashion, not only is copying allowed, it is the norm. Courts (in the US, at least) have ruled that apparel is too utilitarian for copyright and patent protection. They didn’t want a handful of designers owning the fundamental building blocks of our clothing. Anyone can copy any garment and sell it as their own design.
 
-In her [incredible TED talk](https://www.youtube.com/watch?v=zL2FOrx41N0), Johanna Blakley argues that a culture of copying in the fashion industry has created an open ecology of creativity where anyone can use the best ideas. Fashion designers have pleasure of sampling from the entire history of fashion design without talking to a lawyer. And the result is a vibrant and innovative fashion industry.
-
-In her talk, she presents the gross sales in industries with low and high intellectual property protection.
+In her [incredible TED talk](https://www.youtube.com/watch?v=zL2FOrx41N0), Johanna Blakley argues that a culture of copying in the fashion industry has created an open ecology of creativity where anyone can use the best ideas. Fashion designers have pleasure of sampling from the entire history of fashion design without talking to a lawyer. And the result is a vibrant and innovative fashion industry. Gross sales in industries with low and high intellectual property protection are one window into this phenomenon.
 
 ![Gross sales of goods in low and high IP industries](/images/osos/osos.040.jpeg)
 
-Instead of being a race to the bottom, these low IP industries are a race to the top. Those that want to lead in the Fashion industry are the ones who are innovative or able to popularize the ideas lost to history. Meanwhile, the “fast fashion” industry makes a good living copying the leaders, and those knockoffs elevate the leaders to icons.
+Instead of being a race to the bottom, industries that can't opt out of openness are a race to the top. Those that want to lead in the fashion industry are the ones who are innovative or able to popularize the ideas lost to history. Meanwhile, the “fast fashion” industry makes a good living copying the leaders, and those knockoffs elevate the leaders to icons.
 
-> “Software is eating the world.” –Marc Andreessen
+---
 
-Every company is becoming a software company, and that software is built on the open platform of open source. What happens when every industry builds on this open, innovative and fast moving platform? What happens when they can’t opt out?
+So I ask again: As every company is becoming a software company, what happens when the bedrock of every industry is open source? What happens when you can't opt out of openness? Carbon, automobiles, bebop and fashion give us a glimpse into that future.
 
 ---
 
