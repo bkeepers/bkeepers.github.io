@@ -38,8 +38,15 @@ article
 
   hr
     border: 0
-    border-bottom: 1px dotted #ddd
-    margin-bottom: 20px
+
+    &:before
+      content: "···"
+      letter-spacing: 1rem
+      font-size: 3rem
+      text-align: center
+      opacity: 0.2
+      display: block
+      line-height: $base-line-height
 
   img
     max-width: 100%
