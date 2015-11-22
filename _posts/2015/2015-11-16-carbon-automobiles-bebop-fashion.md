@@ -10,7 +10,7 @@ Entire industries become transformed when a critical mass adopts openness. Softw
 > Open source has grown far beyond the mainstream. It has become the bedrock over which the mainstream flows. Today it is hard to find a Fortune 500 company with an IT infrastructure that does not depend, in some fundamental way, on open source software.
 > <cite>Kim Polese - [Open Sources 2.0](http://amzn.to/1MvfeVN)</cite>
 
-As every company is becoming a software company, what happens when the bedrock of every industry is open source?
+As every company is becoming a software company, what happens when every industry flows over the bedrock of open source?
 
 ---
 
@@ -53,7 +53,7 @@ What happens when we chose to make these platforms open?
 
 ## Automobiles
 
-In the early 1900s, the most cutting edge startups in the country were trying to popularize a technology called “the automobile”, which had been an idea that existing for nearly 100 years.
+In the early 1900s, the most cutting edge startups in the country were trying to popularize a technology called “the automobile”.
 
 <img alt="Notice: Users, Agents, Importers, Dealers and Manufacturers of Gasoline Automobiles" src="/images/osos/selden-notice.jpg" class="pull-right">
 
