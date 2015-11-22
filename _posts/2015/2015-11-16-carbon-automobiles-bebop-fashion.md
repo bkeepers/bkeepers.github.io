@@ -48,9 +48,9 @@ What happens when we chose to make these platforms open?
 
 In the early 1900s, the most cutting edge startups in the country were trying to popularize a technology called “the automobile”, which had been an idea that existing for nearly 100 years.
 
-As many startups were making progress towards an affordable automobile for the mass market, a series of notices started appearing in mailboxes and trade journals.
-
 <img alt="Notice: Users, Agents, Importers, Dealers and Manufacturers of Gasoline Automobiles" src="/images/osos/selden-notice.jpg" class="pull-right">
+
+As many startups were making progress towards an affordable automobile for the mass market, a series of notices started appearing in mailboxes and trade journals.
 
 > Notice: Users, Agents, Importers, Dealers and Manufacturers of Gasoline Automobiles
 
@@ -64,7 +64,7 @@ George B. Selden was awarded a patent in 1885 for the “Road Vehicle”, which 
 
 In 1902, a young entrepreneur named Henry Ford attempted to secure a license from the Association of License Automotive Manufacturers, but was denied because of "past business failings”. Getting denied may have had more to do with the influence of an established competitor in Detroit named Fredrick Olds being on the board of the association.
 
-Ford kept making cars anyway and eventually the Association filed a lawsuit against him. After a long and public battle, Ford won a challenge and the patent was overturned in 1911.
+Ford proceeded to make cars and the Association eventually filed a lawsuit against him. After a long and public battle, Ford won a challenge and the patent was overturned in 1911.
 
 > “It is perfectly safe to say that George Selden has never advanced the automobile industry in a single particular...and it would perhaps be further advanced than it is now if he had never been born.”
 > <cite>Henry Ford</cite>
@@ -73,7 +73,7 @@ _Aside: I didn't realize Hacker News was a thing in 1911._
 
 Shortly after, Ford helped establish what eventually became know as the Motor Vehicle Manufacturers Association, which established a cross-licensing agreement among all US auto manufacturers. Patents were shared openly and without the exchange of money among all the manufacturers. Anyone could join the Association and gain access to the existing patents on the condition that they contributed all of their patents to the pool.
 
-Despite World War I and Black Friday, the automobile industry experienced explosive growth over the next 30 years. Here are the number of automobiles produced in the US by Ford and other auto manufacturers. See if you can guess when the patent was overturned.
+Despite World War I and Black Friday, the automobile industry experienced explosive growth over the next 30 years.
 
 ![U.S. Automobile production figures - 1901-1930](/images/osos/osos.025.jpeg)
 
@@ -95,19 +95,19 @@ Carbon and automobiles show what can happen when we create open platforms. What 
 
 ## Bebop
 
-Bebop is a form of Jazz that started to make an appearance in the 1940s, fifty years into the evolution of jazz.
+Bebop is a form of Jazz that appeared in the 1940s, fifty years into the evolution of jazz.
 
-Jazz is also a stacked platform, built on African rhythms, European harmonic accompaniment, the blue notes of racial tension, and a surplus of post-civil-war military instruments. Jazz is known for being incredibly competitive. In Jam sessions musicians take turns improvising, trying to one-up each other and then mimicking the sound they just heard.
+Jazz is also a stacked platform, built on African rhythms, European harmonic accompaniment, the blue notes of racial tension, and a surplus of post-civil-war military instruments. Jazz is known for being incredibly competitive. Musicians take turns improvising in jam sessions, trying to one-up each other and then mimicking the sound they just heard.
 
-The evolution of Jazz is marked by the repeated pattern of someone playing in a slightly different style, and then everyone else imitating it. If you were a trumpet player, and you heard Louis Armstrong, then you wanted to play like him, because that's the greatest trumpet you've ever heard.
+The evolution of Jazz is marked by the repeated pattern of someone playing in a slightly different style and everyone else imitating it. A trumpet player tried to play like Louis Armstrong because that's the greatest trumpet they'd ever heard.
 
 Charlie Parker was instrumental in the creation of the style of Jazz called Bebop. There’s an anecdote that the reason he played in this style that was because he didn’t think white musicians could copy him. Today, Bebop is what most of us think of when we think Jazz.
 
 <img alt="Charlie Parker" src="/images/osos/charlie-parker.jpg" class="pull-right">
 
-Charlie built on the open platform of Jazz. When you build on open platforms, you are standing on the shoulders of giants. Charlie didn’t have to popularize Jazz or blues scales or invent the saxophone. His innovation was combining things that already exist in interesting ways. Bebop may or may not have happened without Charlie Parker, but once it existed, it wasn’t terribly difficult for other musicians with similar backgrounds to incorporate his innovation.
+Charlie built on the open platform of Jazz. Charlie didn’t have to popularize Jazz or blues scales or invent the saxophone. His innovation was combining things that already existed in new and interesting ways. Bebop may or may not have happened without Charlie Parker, but once it existed, it wasn’t terribly difficult for other musicians with similar backgrounds to incorporate his innovation.
 
-History repeats itself in software. Even the most innovative and proprietary companies, like Apple, are at most a few years of ahead of the industry. The success of their innovation depends open source and open standards, which they have greatly contributed to, and any competitor is free to also build upon these stacked platforms.
+History repeats itself in software. Even the most innovative and proprietary companies–like Apple–are at most a few years of ahead of the industry. The success of their innovation depends open source and open standards, which they have greatly contributed to, and any competitor is free to also build upon these stacked platforms.
 
 What happens when every successful endeavor is predicated on open platforms? What happens when openness prevails?
 
