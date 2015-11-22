@@ -45,6 +45,22 @@ article
     max-width: 100%
     display: inline-block
 
+    @media only screen and (min-width: $measure)
+      &.pull-left, &.pull-right
+        position: relative
+        max-width: 50%
+        margin: 0 $base-line-height
+
+      &.pull-left
+        float: left
+        @media only screen and (min-width: $measure + 200)
+          margin-left: -100px
+
+      &.pull-right
+        float: right
+        @media only screen and (min-width: $measure + 200)
+          margin-right: -100px
+
   .framed
     padding: 2px
     background: #fff
