@@ -2,6 +2,7 @@
 layout: post
 title: Trickle-Down Open Source
 tags:
+- opensource
 ---
 
 Paul Rubens on [how tech giants spread open source programming love](http://www.infoworld.com/article/3020442/open-source-tools/how-tech-giants-spread-open-source-programming-love.html#tk.rss_opensourcetools):
