@@ -3,6 +3,7 @@ title: Carbon, Automobiles, Bebop, and Fashion
 layout: post
 tags:
 - opensource
+- talk
 ---
 
 Entire industries become transformed when a critical mass adopts openness. Software is past this tipping point.
