@@ -5,12 +5,9 @@ title: Fine Print
 
 # License
 
-All original content on opensoul.org is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> attributable to [Brandon Keepers](http://opensoul.org).
-
-Unless otherwise stated, code samples licensed under an MIT license.
+All original content on opensoul.org is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> attributable to [Brandon Keepers](http://opensoul.org). Unless otherwise stated, code samples licensed under an MIT license.
 
 ```
-
 The MIT License (MIT)
 
 Copyright © Brandon Keepers
