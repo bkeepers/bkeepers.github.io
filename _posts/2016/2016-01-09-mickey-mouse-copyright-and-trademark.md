@@ -25,5 +25,5 @@ Personally, this feels like an acceptable tradeoff. If the identity of a corpora
 
 With copyright on Mickey set to expire in 7 short years, it's interesting to note that Disney's spending on lobying is trailing off over the last few years. Maybe it will pick back up with 2016 being an election year, or maybe Disney knows they're eventually going to have to find another means to protect Mickey.
 
-> ![](http://pix-media.s3.amazonaws.com/blog/1105/ScreenShot2016-01-07at1.49.19PM.png)
+> ![Dollars Disney spent on lobbying efforts since 1997](http://pix-media.s3.amazonaws.com/blog/1105/ScreenShot2016-01-07at1.49.19PM.png)
 > Zachary Crockett, Priceonomics; data via [Open Secrets](http://www.opensecrets.org/lobby/clientsum.php?id=d000000128); figures adjusted for inflation
