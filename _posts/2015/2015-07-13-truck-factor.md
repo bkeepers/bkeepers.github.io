@@ -3,7 +3,7 @@ title: Truck Factor
 layout: post
 tags:
 - opensource
-- news
+- commentary
 link: http://mtov.github.io/Truck-Factor/
 ---
 

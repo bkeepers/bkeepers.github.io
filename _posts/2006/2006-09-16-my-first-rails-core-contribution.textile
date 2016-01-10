@@ -5,7 +5,7 @@ id: 4cf5b680dabe9d2c610005c8
 updated: 2010-11-30T21:44:16-05:00
 date: 2006-09-16T04:32:00-04:00
 tags:
-- code
+- life
 redirect_from: /blog/archives/2006/09/16/my-first-rails-core-contribution/
 ---
 

@@ -7,6 +7,7 @@ date: 2011-11-30T08:00:00-05:00
 tags:
 - code
 - popular
+- commentary
 redirect_from: /blog/archives/2011/11/30/haml-the-unforgivable-sin/
 ---
 

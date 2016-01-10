@@ -6,7 +6,7 @@ updated: 2010-11-30T21:44:13-05:00
 date: 2006-11-30T13:38:00-05:00
 tags:
 - opensource
-- news
+- commentary
 redirect_from: /blog/archives/2006/11/30/number-of-patches-relative-security/
 ---
 

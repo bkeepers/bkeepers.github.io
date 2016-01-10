@@ -1,4 +1,4 @@
 ---
 layout: archive
-tag: news
+tag: commentary
 ---
