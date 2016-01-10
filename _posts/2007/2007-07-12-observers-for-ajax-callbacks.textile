@@ -5,10 +5,7 @@ id: 4cf5b66ddabe9d2c61000326
 updated: 2010-11-30T21:43:57-05:00
 date: 2007-07-12T17:21:00-04:00
 tags:
-- ajax
-- events
-- javascript
-- prototype
+- code
 redirect_from: /blog/archives/2007/07/12/observers-for-ajax-callbacks/
 ---
 
@@ -106,5 +103,3 @@ And as soon as I get that problem solved, I'm going to have another one: one ins
 I could move the event registration methods to the anchor instead of on the @request@ method, but that has problems of it's own. Namely, each element already has an @observe@ method for the browser's events, and I can't come up with a better name than @observe@.  Besides, I think the methods belong on the request object; they are specific to the Ajax request.
 
 So, does anyone have any good ideas?  Is this a lame/unnecessary feature?
-
-

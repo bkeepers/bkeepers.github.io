@@ -5,7 +5,7 @@ id: 500e21bedabe9d5ec2008e95
 updated: 2012-07-24T00:31:37-04:00
 date: 2012-07-24T00:00:00-04:00
 tags:
-- gem
+- code
 redirect_from: /blog/archives/2012/07/24/dotenv/
 ---
 

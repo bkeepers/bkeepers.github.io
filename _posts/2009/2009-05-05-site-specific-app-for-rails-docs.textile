@@ -5,10 +5,7 @@ id: 4cf5b654dabe9d2c6100007f
 updated: 2010-11-30T21:43:32-05:00
 date: 2009-05-05T22:57:00-04:00
 tags:
-- api
-- docs
-- mac
-- rails
+- code
 redirect_from: /blog/archives/2009/05/05/site-specific-app-for-rails-docs/
 ---
 

@@ -5,7 +5,7 @@ id: 4f04b311dabe9d6b760016a2
 updated: 2012-03-02T17:35:31-05:00
 date: 2012-01-09T10:00:00-05:00
 tags:
-- dyi
+- life
 - popular
 redirect_from: /blog/archives/2012/01/09/the-40-standup-desk/
 ---

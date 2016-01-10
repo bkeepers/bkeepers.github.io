@@ -5,11 +5,8 @@ id: 4cf5b673dabe9d2c61000425
 updated: 2010-12-01T02:35:08-05:00
 date: 2007-04-08T22:16:00-04:00
 tags:
-- mac
-- osx
 - popular
-- security
-- zip
+- life
 redirect_from: /blog/archives/2007/04/08/creating-encrypted-zip-archives-with-os-x/
 ---
 

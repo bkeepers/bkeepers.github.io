@@ -93,3 +93,20 @@ blockquote
   width: $base-line-height * 3
   height: $base-line-height * 3
   border-radius: $base-line-height * 3
+
+#tags
+  text-align: center
+
+  li
+    display: inline-block
+    margin: 0 0.1em
+
+  a
+    display: inline-block
+    background: transparentize($link-color, 0.8)
+    padding: 0 0.75em
+    border-radius: 2px
+
+    &:hover, &.selected
+      background: $link-color
+      color: #fff

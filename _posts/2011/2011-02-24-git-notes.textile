@@ -5,8 +5,7 @@ id: 4cfafe44dabe9d4d57000007
 updated: 2011-02-24T12:47:21-05:00
 date: 2011-02-24T12:46:00-05:00
 tags:
-- git
-- tidbit
+- code
 redirect_from: /blog/archives/2011/02/24/git-notes/
 ---
 

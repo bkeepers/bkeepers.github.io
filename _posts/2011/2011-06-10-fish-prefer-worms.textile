@@ -6,7 +6,6 @@ updated: 2011-06-10T13:46:28-04:00
 date: 2011-06-10T13:22:00-04:00
 tags:
 - book
-- hwfip
 redirect_from: /blog/archives/2011/06/10/fish-prefer-worms/
 ---
 
@@ -29,4 +28,3 @@ p(source). Henry Ford
 bq. Looking at the other person's point of view and arousing in him an eager want for something is not to be construed as manipulating that person so that he will do something that is only for your benefit and his detriment. Each party should gain from the negotiation.
 
 My biggest epiphany this week while being mindful of fish's preferences is this: seeing the world from someone else's point of view is not only about understanding it, but accepting it.
-

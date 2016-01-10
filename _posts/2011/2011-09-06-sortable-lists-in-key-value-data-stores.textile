@@ -5,9 +5,7 @@ id: 4e66386edabe9d3ad000017b
 updated: 2011-09-06T12:43:45-04:00
 date: 2011-09-06T11:13:00-04:00
 tags:
-- database
-- git
-- toystore
+- code
 redirect_from: /blog/archives/2011/09/06/sortable-lists-in-key-value-data-stores/
 ---
 
@@ -115,4 +113,3 @@ This solution allows the user to reorder items without updating every record in 
   }
 </style>
 </notextile>
-

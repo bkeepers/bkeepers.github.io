@@ -5,9 +5,7 @@ id: 4cf5b67ddabe9d2c61000532
 updated: 2010-11-30T21:44:13-05:00
 date: 2006-11-22T23:48:00-05:00
 tags:
-- active_merchant
-- rails
-- ruby
+- code
 redirect_from: /blog/archives/2006/11/22/active-merchant/
 ---
 

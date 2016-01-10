@@ -5,7 +5,7 @@ id: 4cf5b685dabe9d2c61000737
 updated: 2010-11-30T21:44:21-05:00
 date: 2005-10-22T20:56:00-04:00
 tags:
-- bookreview
+- book
 redirect_from: /blog/archives/2005/10/22/the-best-software-writing-i/
 ---
 
@@ -22,4 +22,3 @@ Rating: <code>****</code>
 While I don't know that I would consider some of them <em>"the best"</em>, most of the articles were quite enjoyable and the rest were at least tollerable.  This is the first book that I have actually read cover-to-cover for a while, so that itself says something.  There are articles to entertain anyone that is slightly interested in software development; suits or techies.
 
 Overall, this book was a little disappointing after the first few articles.  The hard part about a book like this is that it is difficult to provide a climax and a resolution.  The articles are good from the onset and don't really get any better.  But I do look forward to the second installment.  It is important to keep a finger on what is going on in the industry, and this book provides a great insight into the minds of some of those in the trenches.
-

@@ -5,9 +5,7 @@ id: 4cf5b655dabe9d2c61000089
 updated: 2010-11-30T21:43:33-05:00
 date: 2009-04-29T21:33:00-04:00
 tags:
-- rails
-- search
-- sphinx
+- code
 redirect_from: /blog/archives/2009/04/29/keepin-sphinx-indexes-fresh-2/
 ---
 
@@ -58,4 +56,3 @@ $ rake thinking_sphinx:delayed_delta
 </pre>
 
 Now whenever changes are made to your models, the index will be updated moments later. And that's how you keep it fresh!
-

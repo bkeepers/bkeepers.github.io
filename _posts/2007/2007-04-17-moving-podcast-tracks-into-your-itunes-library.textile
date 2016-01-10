@@ -5,10 +5,7 @@ id: 4cf5b673dabe9d2c6100040d
 updated: 2010-12-01T02:31:25-05:00
 date: 2007-04-17T09:33:00-04:00
 tags:
-- indie
-- itunes
-- music
-- podcast
+- life
 - popular
 redirect_from: /blog/archives/2007/04/17/moving-podcast-tracks-into-your-itunes-library/
 ---

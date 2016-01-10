@@ -5,12 +5,7 @@ id: 4cf5b66adabe9d2c610002d1
 updated: 2010-12-04T21:58:53-05:00
 date: 2007-08-09T00:21:00-04:00
 tags:
-- backup
-- delicious
-- flickr
-- israel
-- observation
-- sharing
+- life
 redirect_from: /blog/archives/2007/08/09/sharing-is-backing-up/
 ---
 

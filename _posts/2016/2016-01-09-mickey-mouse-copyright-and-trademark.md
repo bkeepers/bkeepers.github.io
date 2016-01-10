@@ -2,9 +2,7 @@
 layout: post
 title: How Mickey Mouse Evades the Public Domain
 tags:
-- copyright
-- publicdomain
-- trademark
+- commentary
 ---
 
 This is a great piece by Zachary Crockett from [Priceonomics](http://priceonomics.com/how-mickey-mouse-evades-the-public-domain/) on copyright and trademarks:

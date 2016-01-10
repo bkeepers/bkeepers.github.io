@@ -5,9 +5,7 @@ id: 4cf5b669dabe9d2c61000295
 updated: 2010-11-30T21:43:53-05:00
 date: 2007-09-12T20:38:00-04:00
 tags:
-- acts_as_geocodable
-- geocoding
-- graticule
+- code
 redirect_from: /blog/archives/2007/09/12/graticule-can-failover/
 ---
 

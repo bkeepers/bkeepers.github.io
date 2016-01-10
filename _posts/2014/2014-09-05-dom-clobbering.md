@@ -2,8 +2,7 @@
 title: User-generated content and DOM clobbering
 layout: post
 tags:
-- javascript
-- web
+- code
 ---
 
 The web lives and dies by the [DOM](https://developer.mozilla.org/en-US/docs/DOM). It is both a beautiful and horrible thing. Here is just one example; it's called _"DOM clobbering"_.
@@ -39,7 +38,7 @@ Consider your DOM clobbered.
 
 Now I know what you're thinking: "Browsers wouldn't  override existing properties like `document.addEventListener`, would they?". I know, I had the same thought! I don't want to name names, but certain non-webkit-based browsers may disappoint you.
 
-Neither option allows us to deep-link to content without the possibility of interfering with the rest of the site. 
+Neither option allows us to deep-link to content without the possibility of interfering with the rest of the site.
 
 ## <a id="solution"></a> The Solution
 
@@ -72,6 +71,6 @@ jQuery(window).on 'hashchange', (event) ->
   $(target).scrollTo()
 ```
 
-Using JavaScript to mimic the browser's native behavior is usually not ideal. If browsers supported a way to deep-link to content that didn't have a negative impact on other DOM features, then we wouldn't even have to worry about it. But they don't. 
+Using JavaScript to mimic the browser's native behavior is usually not ideal. If browsers supported a way to deep-link to content that didn't have a negative impact on other DOM features, then we wouldn't even have to worry about it. But they don't.
 
 We've been using this method on GitHub.com for a few months now without any noticeable impact.

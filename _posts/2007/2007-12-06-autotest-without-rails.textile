@@ -5,10 +5,7 @@ id: 4cf5b667dabe9d2c61000257
 updated: 2010-11-30T21:43:51-05:00
 date: 2007-12-06T09:28:00-05:00
 tags:
-- autotest
-- gem
-- ruby
-- testing
+- code
 redirect_from: /blog/archives/2007/12/06/autotest-without-rails/
 ---
 

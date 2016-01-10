@@ -5,11 +5,7 @@ id: 4cf5b654dabe9d2c61000074
 updated: 2010-11-30T21:43:32-05:00
 date: 2009-06-01T09:18:00-04:00
 tags:
-- bdd
-- cucumber
-- rails
-- search
-- sphinx
+- code
 redirect_from: /blog/archives/2009/06/01/cucumber-scenarios-that-depend-on-sphinx/
 ---
 

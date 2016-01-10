@@ -5,10 +5,7 @@ id: 4cf5b66bdabe9d2c610002e2
 updated: 2010-11-30T21:43:55-05:00
 date: 2007-08-02T08:24:00-04:00
 tags:
-- acts_as_geocodable
-- geocoding
-- google
-- graticule
+- code
 redirect_from: /blog/archives/2007/08/02/google-adds-more-countries-to-geocoder/
 ---
 

@@ -6,8 +6,7 @@ updated: 2010-12-01T02:36:40-05:00
 date: 2008-01-08T23:25:00-05:00
 tags:
 - popular
-- rspec
-- ruby
+- code
 redirect_from: /blog/archives/2008/01/08/ruby-s-require-doesn-t-expand-paths/
 ---
 

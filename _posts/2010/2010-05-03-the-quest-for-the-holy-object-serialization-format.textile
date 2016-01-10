@@ -5,9 +5,7 @@ id: 4cf5b652dabe9d2c61000010
 updated: 2010-12-01T01:22:06-05:00
 date: 2010-05-03T18:13:00-04:00
 tags:
-- delayed_job
-- ruby
-- yaml
+- code
 redirect_from: /blog/archives/2010/05/03/the-quest-for-the-holy-object-serialization-format/
 ---
 
