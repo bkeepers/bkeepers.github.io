@@ -1,21 +1,11 @@
 ---
-layout: default
+layout: archive
 tag: talk
+redirect_from:
+- /archives/talk/
 ---
-
-<h1>Talks</h1>
 
 <p>
   Want me to talk at your event? <a href="mailto:bkeepers@github.com">Get in touch</a>. Have a suggestion?
   <a href="https://github.com/bkeepers/talks/issues/new?title=Talk%20Suggestion%3A%20">I'd love to hear it</a>.
-
 </p>
-
-<ul class="archives">
-  {% for post in site.tags[page.tag] %}
-    <li>
-     <a href="{{ post.url }}">{{ post.title }}</a>
-      <span class="date">{{ post.date | date: '%B %e, %Y' }}</span>
-    </li>
-  {% endfor %}
-</ul>
