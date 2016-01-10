@@ -5,12 +5,7 @@ id: 4cf5b655dabe9d2c61000091
 updated: 2010-11-30T21:43:33-05:00
 date: 2009-04-14T20:48:00-04:00
 tags:
-- acts_as_geocodable
-- graticule
-- rails
-- ruby
-- search
-- sphinx
+- code
 redirect_from: /blog/archives/2009/04/14/location-based-search-with-sphinx-and-acts_as_geocodable/
 ---
 

@@ -5,11 +5,7 @@ id: 4cf5b662dabe9d2c61000208
 updated: 2010-11-30T21:43:46-05:00
 date: 2008-03-20T01:21:00-04:00
 tags:
-- collectiveidea
-- freelancers
-- hygiene
-- productivity
-- tips
+- life
 redirect_from: /blog/archives/2008/03/20/tips-for-freelancers-take-a-shower/
 ---
 

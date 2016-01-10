@@ -5,10 +5,7 @@ id: 4cf5b66fdabe9d2c61000371
 updated: 2010-11-30T21:43:59-05:00
 date: 2007-06-20T03:56:00-04:00
 tags:
-- rails
-- rspec
-- ruby
-- testing
+- code
 redirect_from: /blog/archives/2007/06/20/rspec-is-getting-too-intimate-with-my-code/
 ---
 

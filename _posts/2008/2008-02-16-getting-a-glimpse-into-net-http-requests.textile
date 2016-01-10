@@ -5,10 +5,7 @@ id: 4cf5b663dabe9d2c61000228
 updated: 2010-11-30T21:43:48-05:00
 date: 2008-02-16T11:20:00-05:00
 tags:
-- core_ext
-- http
-- ruby
-- stdlib
+- code
 redirect_from: /blog/archives/2008/02/16/getting-a-glimpse-into-net-http-requests/
 ---
 

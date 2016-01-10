@@ -5,11 +5,7 @@ id: 4cf5b66cdabe9d2c610002e7
 updated: 2010-11-30T21:43:56-05:00
 date: 2007-07-18T17:40:00-04:00
 tags:
-- movies
-- music
-- personalization
-- ratings
-- recommendations
+- life
 redirect_from: /blog/archives/2007/07/18/that-cd-is-the-best-says-people-that-like-that-kind-of-music/
 ---
 

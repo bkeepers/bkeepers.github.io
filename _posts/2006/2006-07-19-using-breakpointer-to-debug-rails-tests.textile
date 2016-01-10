@@ -5,8 +5,7 @@ id: 4cf5b682dabe9d2c610006c2
 updated: 2010-11-30T21:44:18-05:00
 date: 2006-07-19T04:50:00-04:00
 tags:
-- rails
-- testing
+- code
 redirect_from: /blog/archives/2006/07/19/using-breakpointer-to-debug-rails-tests/
 ---
 

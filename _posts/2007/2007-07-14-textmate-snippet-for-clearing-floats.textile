@@ -5,10 +5,7 @@ id: 4cf5b66ddabe9d2c6100031a
 updated: 2010-11-30T21:43:57-05:00
 date: 2007-07-14T18:51:00-04:00
 tags:
-- CSS
-- css
-- float
-- textmate
+- code
 redirect_from: /blog/archives/2007/07/14/textmate-snippet-for-clearing-floats/
 ---
 

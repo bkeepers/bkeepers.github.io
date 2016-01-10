@@ -6,9 +6,6 @@ updated: 2010-11-30T21:43:46-05:00
 date: 2008-04-18T03:14:00-04:00
 tags:
 - code
-- nil
-- ruby
-- wtf
 redirect_from: /blog/archives/2008/04/18/daily-wtf-nilclass-method_missing/
 ---
 

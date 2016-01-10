@@ -5,10 +5,7 @@ id: 4cf5b664dabe9d2c6100022f
 updated: 2010-11-30T21:43:48-05:00
 date: 2008-01-25T00:28:00-05:00
 tags:
-- campfire
-- gem
-- ruby
-- tinder
+- code
 redirect_from: /blog/archives/2008/01/25/tinder-fixed-after-campfire-update/
 ---
 

@@ -5,12 +5,7 @@ id: 4cf5b65cdabe9d2c6100016c
 updated: 2010-11-30T21:43:40-05:00
 date: 2008-08-20T22:12:00-04:00
 tags:
-- fixtures
-- mocking
-- rspec
-- ruby
-- stubbing
-- testing
+- code
 redirect_from: /blog/archives/2008/08/20/life-without-fixtures/
 ---
 

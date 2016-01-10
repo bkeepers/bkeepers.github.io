@@ -5,9 +5,7 @@ id: 4cf5b673dabe9d2c61000414
 updated: 2010-11-30T21:44:03-05:00
 date: 2007-04-16T08:24:00-04:00
 tags:
-- collectiveidea
-- css
-- design
+- life
 redirect_from: /blog/archives/2007/04/16/collective-idea-gets-a-face-lift/
 ---
 

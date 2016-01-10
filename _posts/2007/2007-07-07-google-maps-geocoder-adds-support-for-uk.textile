@@ -5,10 +5,8 @@ id: 4cf5b66edabe9d2c61000347
 updated: 2010-11-30T21:43:58-05:00
 date: 2007-07-07T12:02:00-04:00
 tags:
-- api
-- geocoding
-- google
-- graticule
+- code
+- news
 redirect_from: /blog/archives/2007/07/07/google-maps-geocoder-adds-support-for-uk/
 ---
 

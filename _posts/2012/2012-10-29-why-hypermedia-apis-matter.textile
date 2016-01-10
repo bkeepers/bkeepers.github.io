@@ -5,7 +5,7 @@ id: 508de1c0dabe9d04a500fc56
 updated: 2012-10-29T09:36:16-04:00
 date: 2012-10-29T09:00:00-04:00
 tags:
-- api
+- code
 redirect_from: /blog/archives/2012/10/29/why-hypermedia-apis-matter/
 ---
 

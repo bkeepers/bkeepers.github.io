@@ -5,10 +5,7 @@ id: 4cf5b658dabe9d2c610000f1
 updated: 2010-11-30T21:43:36-05:00
 date: 2008-12-13T11:15:00-05:00
 tags:
-- gem
-- graticule
-- mapquest
-- ruby
+- code
 redirect_from: /blog/archives/2008/12/13/graticule-and-mapquest/
 ---
 

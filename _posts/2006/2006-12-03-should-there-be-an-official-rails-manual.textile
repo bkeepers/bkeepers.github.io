@@ -5,7 +5,7 @@ id: 4cf5b67ddabe9d2c61000525
 updated: 2010-11-30T21:44:13-05:00
 date: 2006-12-03T00:44:00-05:00
 tags:
-- rails
+- code
 redirect_from: /blog/archives/2006/12/03/should-there-be-an-official-rails-manual/
 ---
 

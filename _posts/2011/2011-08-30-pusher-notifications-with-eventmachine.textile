@@ -5,10 +5,7 @@ id: 4e258a01dabe9d7285017e6b
 updated: 2011-08-30T19:31:24-04:00
 date: 2011-08-30T18:55:00-04:00
 tags:
-- em
-- gauges
-- pusher
-- redis
+- code
 redirect_from: /blog/archives/2011/08/30/pusher-notifications-with-eventmachine/
 ---
 
@@ -68,4 +65,3 @@ end
 It uses em-hiredis to connect to Redis and run a blocking left pop, which will wait until there is an item on the list and then send the notification to Pusher with @trigger_async@. It then re-schedules itself to run on the next tick, causing it to continuously loop.
 
 This has been working really well for us in production for a couple months now. The biggest disadvantage currently is if the process ever dies and notifications start to build up, Pusher will get inundated with requests form us because it will send them as fast as Redis can pop them off the list. We will eventually look into adding some rate-limiting.
-

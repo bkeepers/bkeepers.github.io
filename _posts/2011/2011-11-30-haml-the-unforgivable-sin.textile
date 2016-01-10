@@ -5,9 +5,7 @@ id: 4ecf14a9dabe9d0f2a02a1ec
 updated: 2013-06-28T10:05:27-04:00
 date: 2011-11-30T08:00:00-05:00
 tags:
-- haml
-- html
-- opinion
+- code
 - popular
 redirect_from: /blog/archives/2011/11/30/haml-the-unforgivable-sin/
 ---

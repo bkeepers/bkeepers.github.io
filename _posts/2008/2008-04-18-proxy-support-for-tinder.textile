@@ -5,10 +5,7 @@ id: 4cf5b661dabe9d2c610001e6
 updated: 2010-11-30T21:43:45-05:00
 date: 2008-04-18T04:30:00-04:00
 tags:
-- campfire
-- proxy
-- ruby
-- tinder
+- code
 redirect_from: /blog/archives/2008/04/18/proxy-support-for-tinder/
 ---
 

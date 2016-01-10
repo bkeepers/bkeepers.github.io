@@ -5,9 +5,7 @@ id: 4cf5b66cdabe9d2c610002f5
 updated: 2010-11-30T21:43:56-05:00
 date: 2007-07-18T11:37:00-04:00
 tags:
-- core_ext
-- float
-- ruby
+- code
 redirect_from: /blog/archives/2007/07/18/round-floats-to-the-nearest-x/
 ---
 

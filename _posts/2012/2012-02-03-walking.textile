@@ -6,7 +6,6 @@ updated: 2012-02-03T10:51:17-05:00
 date: 2012-02-03T10:00:00-05:00
 tags:
 - life
-- observation
 redirect_from: /blog/archives/2012/02/03/walking/
 ---
 
@@ -21,4 +20,3 @@ Walking slow is often enjoyable, but neglects the fact that the point of walking
 Walking naturally requires almost no concentration. It allows me to focus on what is important, adjust my path when necessary, and arrive at my destination in a reasonable time.
 
 I am inspired by progress. I love the continuous process of taking something that is awkward, uncomfortable or even painful and making it incrementally better.
-

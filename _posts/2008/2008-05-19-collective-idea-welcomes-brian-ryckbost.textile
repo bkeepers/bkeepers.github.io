@@ -4,8 +4,6 @@ title: "Collective Idea welcomes Brian Ryckbost"
 id: 4cf5b661dabe9d2c610001ab
 updated: 2010-11-30T21:43:45-05:00
 date: 2008-05-19T17:09:00-04:00
-tags:
-- collectiveidea
 redirect_from: /blog/archives/2008/05/19/collective-idea-welcomes-brian-ryckbost/
 ---
 

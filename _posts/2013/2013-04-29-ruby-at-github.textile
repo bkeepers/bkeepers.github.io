@@ -5,8 +5,7 @@ id: 517f38f57a50725a5e001604
 updated: 2013-04-29T23:26:00-04:00
 date: 2013-04-29T23:25:00-04:00
 tags:
-- github
-- ruby
+- code
 - talk
 redirect_from: /blog/archives/2013/04/29/ruby-at-github/
 ---

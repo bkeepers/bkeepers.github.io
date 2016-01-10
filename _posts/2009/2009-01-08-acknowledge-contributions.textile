@@ -5,8 +5,7 @@ id: 4cf5b658dabe9d2c610000e5
 updated: 2010-11-30T21:43:36-05:00
 date: 2009-01-08T08:38:00-05:00
 tags:
-- community
-- open source
+- opensource
 redirect_from: /blog/archives/2009/01/08/acknowledge-contributions/
 ---
 

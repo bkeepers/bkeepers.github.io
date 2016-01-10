@@ -3,7 +3,7 @@ layout: post
 title: A Chronicle of the Nebulous HTML5
 tags:
 - talk
-- web
+- code
 ---
 
 Why is EVERYTHING called HTML5, how did we get here, and what's in it for me?

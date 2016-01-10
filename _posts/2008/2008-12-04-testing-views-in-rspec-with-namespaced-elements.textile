@@ -5,9 +5,7 @@ id: 4cf5b659dabe9d2c610000f7
 updated: 2010-11-30T21:43:37-05:00
 date: 2008-12-04T18:33:00-05:00
 tags:
-- facebook
-- rails
-- rspec
+- code
 redirect_from: /blog/archives/2008/12/04/testing-views-in-rspec-with-namespaced-elements/
 ---
 
@@ -43,4 +41,3 @@ describe "things/edit.fbml.erb" do
   end
 end
 {% endhighlight %}
-

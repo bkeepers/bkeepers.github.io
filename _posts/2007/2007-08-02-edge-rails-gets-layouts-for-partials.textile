@@ -5,10 +5,7 @@ id: 4cf5b66bdabe9d2c610002db
 updated: 2010-11-30T21:43:55-05:00
 date: 2007-08-02T22:21:00-04:00
 tags:
-- edge
-- layouts
-- partials
-- rails
+- code
 redirect_from: /blog/archives/2007/08/02/edge-rails-gets-layouts-for-partials/
 ---
 

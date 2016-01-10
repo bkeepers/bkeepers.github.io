@@ -5,10 +5,7 @@ id: 4cf5b66edabe9d2c61000335
 updated: 2010-11-30T21:43:58-05:00
 date: 2007-07-11T04:21:00-04:00
 tags:
-- collectiveidea
-- cookies
-- javascript
-- prototype
+- code
 redirect_from: /blog/archives/2007/07/11/making-cookies-with-javascript/
 ---
 

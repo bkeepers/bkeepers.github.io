@@ -4,10 +4,6 @@ title: "Rails Training: January 20&#x2013;23 in San Antonio, TX"
 id: 4cf5b659dabe9d2c6100010c
 updated: 2010-11-30T21:43:37-05:00
 date: 2008-11-12T12:32:00-05:00
-tags:
-- collectiveidea
-- rails
-- training
 redirect_from: /blog/archives/2008/11/12/rails-training-january-20-23-san-antonio-tx/
 ---
 

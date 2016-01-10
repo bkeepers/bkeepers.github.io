@@ -5,9 +5,7 @@ id: 4cf5b676dabe9d2c6100045f
 updated: 2010-11-30T21:44:06-05:00
 date: 2007-03-04T00:51:00-05:00
 tags:
-- rails
-- ruby
-- subversion
+- code
 redirect_from: /blog/archives/2007/03/04/renaming-rhtml-to-erb-using-ruby/
 ---
 

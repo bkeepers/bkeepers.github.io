@@ -5,8 +5,7 @@ id: 4ed7f94ddabe9d0fdc02074f
 updated: 2011-12-01T17:17:29-05:00
 date: 2011-12-01T17:00:00-05:00
 tags:
-- ssh
-- tidbit
+- code
 redirect_from: /blog/archives/2011/12/01/tunneling-to-production/
 ---
 
@@ -29,5 +28,3 @@ gateway.open('127.0.0.1', 27017, 27018)
 db = Mongo::Connection.new('127.0.0.1', 27018).db('myapp_production')
 # …
 {% endhighlight %}
-
-

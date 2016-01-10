@@ -5,8 +5,7 @@ id: 4e8930c4dabe9d4b0a00af5e
 updated: 2011-10-19T22:06:26-04:00
 date: 2011-10-19T21:41:00-04:00
 tags:
-- qu
-- ruby
+- code
 redirect_from: /blog/archives/2011/10/19/why-another-queuing-library/
 ---
 

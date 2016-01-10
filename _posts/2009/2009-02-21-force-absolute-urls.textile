@@ -5,9 +5,7 @@ id: 4cf5b657dabe9d2c610000bf
 updated: 2010-11-30T21:43:35-05:00
 date: 2009-02-21T00:03:00-05:00
 tags:
-- facebook
-- rails
-- routing
+- code
 redirect_from: /blog/archives/2009/02/21/force-absolute-urls/
 ---
 
