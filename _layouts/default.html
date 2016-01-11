@@ -12,6 +12,7 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
+  <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/site.css">
 
   <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
@@ -21,12 +22,14 @@
 <body>
 <header>
   <div class="container">
-    <h1 class="small"><a href="/">Brandon Keepers</a></h1>
-    <p id="links">
+    <h1><a class="name" href="/">{{ site.name }}</a></h1>
+    <div id="links">
+      <a href="/archives/">Posts</a>
+      <a href="/talks/">Talks</a>
       <a href="https://twitter.com/bkeepers" class="icon icon-mark-twitter" title="Follow me on Twitter"></a>
       <a href="https://github.com/bkeepers" class="icon icon-mark-github" title="Follow me on GitHub"></a>
       <a href="https://feeds.feedburner.com/opensoul" class="icon icon-feed" title="Subscribe to the Feed"></a>
-    </p>
+    </div>
   </div>
 </header>
 
@@ -44,12 +47,8 @@
     </section>
   </div>
 
-  <footer class="small" id="copyright">
-    <p>
-      Copyright © {{ site.copyright }} - {{ site.time | date: '%Y' }} {{ site.author.name }}<br>
-      Content licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br>
-      Unless otherwise stated, code samples licensed under an <a href="/LICENSE">MIT license</a>.
-    </p>
+  <footer>
+    <a href="/LICENSE/">Fine Print</a>
   </footer>
 </div>
 

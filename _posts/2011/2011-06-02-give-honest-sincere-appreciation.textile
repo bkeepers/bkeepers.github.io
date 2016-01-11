@@ -6,7 +6,6 @@ updated: 2011-06-10T13:48:45-04:00
 date: 2011-06-02T23:01:00-04:00
 tags:
 - book
-- hwfip
 redirect_from: /blog/archives/2011/06/02/give-honest-sincere-appreciation/
 ---
 

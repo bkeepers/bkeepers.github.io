@@ -5,8 +5,7 @@ id: 4cfafe21dabe9d3fcb000274
 updated: 2010-12-12T23:51:13-05:00
 date: 2010-12-12T21:45:00-05:00
 tags:
-- ruby
-- tidbit
+- code
 redirect_from: /blog/archives/2010/12/12/the-ruby-infinite-hash/
 ---
 

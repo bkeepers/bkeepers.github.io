@@ -3,7 +3,7 @@ title: Be careful what you tell yourself
 layout: post
 excerpt: "<p>Be careful what you tell yourself, because you will believe the lies, and so will everyone else.</p>"
 tags:
-- observation
+- life
 ---
 
 For many years I've told myself that I'm undisciplined, that I'm a slow reader, that I'm a bad writer, and that I'm not funny. I considered these permanent traits that I could do nothing to improve. I was just bad at them, and that's how it was.

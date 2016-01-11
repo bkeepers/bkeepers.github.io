@@ -5,10 +5,7 @@ id: 4cf5b65edabe9d2c6100017b
 updated: 2010-11-30T21:43:42-05:00
 date: 2008-08-02T20:16:00-04:00
 tags:
-- acts_as_audited
-- bug
 - code
-- rails
 redirect_from: /blog/archives/2008/08/02/fix-for-acts_as_audited-and-attr_accessible/
 ---
 

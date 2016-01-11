@@ -5,13 +5,7 @@ id: 4cf5b65adabe9d2c6100011f
 updated: 2010-11-30T21:43:38-05:00
 date: 2008-11-08T15:03:00-05:00
 tags:
-- javascript
-- jquery
-- json
-- merb
-- ruby
-- search
-- sinatra
+- code
 redirect_from: /blog/archives/2008/11/08/it-s-a-search-party/
 ---
 

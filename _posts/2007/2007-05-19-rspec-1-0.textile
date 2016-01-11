@@ -5,8 +5,7 @@ id: 4cf5b670dabe9d2c61000399
 updated: 2010-11-30T21:44:00-05:00
 date: 2007-05-19T02:09:00-04:00
 tags:
-- rspec
-- ruby
+- code
 redirect_from: /blog/archives/2007/05/19/rspec-1-0/
 ---
 

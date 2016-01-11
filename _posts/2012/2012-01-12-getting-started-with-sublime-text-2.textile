@@ -5,7 +5,7 @@ id: 4f076418dabe9d11e6003b67
 updated: 2013-02-12T11:20:14-05:00
 date: 2012-01-12T07:00:00-05:00
 tags:
-- editor
+- code
 redirect_from: /blog/archives/2012/01/12/getting-started-with-sublime-text-2/
 ---
 

@@ -5,11 +5,8 @@ id: 4cf5b681dabe9d2c610006b3
 updated: 2012-06-05T10:31:20-04:00
 date: 2006-07-21T04:00:00-04:00
 tags:
-- acts_as_audited
-- plugin
 - popular
-- rails
-- ruby
+- code
 redirect_from: /blog/archives/2006/07/21/acts_as_audited/
 ---
 

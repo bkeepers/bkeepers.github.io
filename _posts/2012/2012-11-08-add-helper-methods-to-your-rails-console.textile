@@ -5,8 +5,7 @@ id: 509bbfffdabe9d0829004369
 updated: 2012-11-09T09:27:04-05:00
 date: 2012-11-08T09:00:00-05:00
 tags:
-- rails
-- speakerdeck
+- code
 redirect_from: /blog/archives/2012/11/08/add-helper-methods-to-your-rails-console/
 ---
 
@@ -55,4 +54,3 @@ Now, when you run @rails console@, your methods are available.
 >> talk = t 'sachag/side-projects'
 => #<Talk id:…>
 </pre>
-

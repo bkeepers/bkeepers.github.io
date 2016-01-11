@@ -5,11 +5,7 @@ id: 4cf5b680dabe9d2c610005d4
 updated: 2010-11-30T21:44:16-05:00
 date: 2006-09-07T17:11:00-04:00
 tags:
-- acts_as_audited
-- plugin
-- rails
-- ruby
-- security
+- code
 redirect_from: /blog/archives/2006/09/07/acts_as_audited-security-update/
 ---
 

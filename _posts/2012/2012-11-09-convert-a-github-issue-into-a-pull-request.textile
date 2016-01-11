@@ -5,7 +5,7 @@ id: 509b2d59dabe9d6553001dd8
 updated: 2012-11-09T11:26:36-05:00
 date: 2012-11-09T09:00:00-05:00
 tags:
-- github
+- code
 redirect_from: /blog/archives/2012/11/09/convert-a-github-issue-into-a-pull-request/
 ---
 
@@ -35,4 +35,3 @@ My workflow lately has been something like this:
 This workflow is also great for handling bugs, where someone likely opened an issue to report it, you create the fix in a branch, attach it to the issue, and then close it by merging the pull request.
 
 The biggest caveat with this approach is that it does not work well for experimental code. There is not undo button for converting a pull request back into a plain ol' issue, nor is there a way to replace the pull request with a different one.  So if you convert an issue into a pull request, and then decided you don't like the implementation, you have to close the issue, burying the discussion around it.
-

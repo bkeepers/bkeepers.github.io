@@ -4,8 +4,6 @@ title: "Adobe Photoshop CS2 hosed my partition"
 id: 4cf5b683dabe9d2c61000703
 updated: 2010-11-30T21:44:19-05:00
 date: 2006-06-29T12:14:00-04:00
-tags:
-- mac
 redirect_from: /blog/archives/2006/06/29/adobe-photoshop-cs2-hosed-my-partition/
 ---
 

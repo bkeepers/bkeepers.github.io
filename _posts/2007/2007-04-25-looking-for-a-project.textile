@@ -4,10 +4,6 @@ title: "Looking for a project"
 id: 4cf5b672dabe9d2c610003d1
 updated: 2010-11-30T21:44:02-05:00
 date: 2007-04-25T14:34:00-04:00
-tags:
-- collectiveidea
-- hire
-- rails
 redirect_from: /blog/archives/2007/04/25/looking-for-a-project/
 ---
 

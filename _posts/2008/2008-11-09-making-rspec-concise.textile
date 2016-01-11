@@ -5,8 +5,7 @@ id: 4cf5b65adabe9d2c61000119
 updated: 2010-11-30T21:43:38-05:00
 date: 2008-11-09T22:07:00-05:00
 tags:
-- rspec
-- ruby
+- code
 redirect_from: /blog/archives/2008/11/09/making-rspec-concise/
 ---
 

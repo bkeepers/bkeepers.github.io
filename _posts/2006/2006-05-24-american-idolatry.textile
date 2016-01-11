@@ -5,7 +5,8 @@ id: 4cf5b684dabe9d2c6100071c
 updated: 2010-11-30T21:44:20-05:00
 date: 2006-05-24T19:40:00-04:00
 tags:
-- ethics
+- life
+- commentary
 redirect_from: /blog/archives/2006/05/24/american-idolatry/
 ---
 

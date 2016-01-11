@@ -5,9 +5,7 @@ id: 4cf5b653dabe9d2c6100002a
 updated: 2010-12-01T01:47:49-05:00
 date: 2010-02-17T13:40:00-05:00
 tags:
-- conference
-- local
-- ruby
+- code
 redirect_from: /blog/archives/2010/02/17/great-lakes-ruby-bash/
 ---
 

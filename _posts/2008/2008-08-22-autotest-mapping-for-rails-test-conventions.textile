@@ -5,10 +5,7 @@ id: 4cf5b65cdabe9d2c61000154
 updated: 2010-11-30T21:43:40-05:00
 date: 2008-08-22T07:00:00-04:00
 tags:
-- autotest
-- gem
-- ruby
-- testing
+- code
 redirect_from: /blog/archives/2008/08/22/autotest-mapping-for-rails-test-conventions/
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: archive
 title: Archives
 redirect_from:
 - /blog/archives/
@@ -13,12 +13,3 @@ redirect_from:
 - /blog/archives/2006/
 - /blog/archives/2005/
 ---
-
-<ul class="archives">
-  {% for post in site.posts %}
-    <li>
-     <a href="{{ post.url }}">{{ post.title }}</a>
-      <span class="date">{{ post.date | date: '%B %e, %Y' }}</span>
-    </li>
-  {% endfor %}
-</ul>

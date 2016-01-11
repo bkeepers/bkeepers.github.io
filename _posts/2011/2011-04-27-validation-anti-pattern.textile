@@ -6,8 +6,7 @@ updated: 2011-12-09T10:28:10-05:00
 date: 2011-04-27T23:00:00-04:00
 tags:
 - popular
-- rails
-- validations
+- code
 redirect_from: /blog/archives/2011/04/27/validation-anti-pattern/
 ---
 

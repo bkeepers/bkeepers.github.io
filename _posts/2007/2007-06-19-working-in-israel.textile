@@ -5,7 +5,7 @@ id: 4cf5b66fdabe9d2c61000378
 updated: 2010-11-30T21:43:59-05:00
 date: 2007-06-19T05:52:00-04:00
 tags:
-- collectiveidea
+- life
 redirect_from: /blog/archives/2007/06/19/working-in-israel/
 ---
 
