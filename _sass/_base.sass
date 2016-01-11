@@ -1,26 +1,43 @@
-.mark
-  font-family: github-octicons
-
 header
-  border-bottom: 1px solid #eee
+  border-bottom: 1px solid #f5f5f5
+  margin-bottom: -1px
   overflow: hidden
+  padding: ($base-line-height * 0.5) 0
 
-  h1.small, p
-    margin: 0
+  h1
     float: left
-    line-height: 3 * $base-line-height
+    font-size: inherit
+    line-height: inherit
+    margin: 0
+
+  .name
+    color: inherit
+    font-weight: 600
 
   #links
     float: right
+    @extend .condensed
 
     a
-      font-size: $base-font-size * 1.2
-      padding: 0 1rem
+      margin-left: $base-line-height
+
+#content
+  padding-top: $base-line-height
+
+.summary
+  h2
+    margin-bottom: 0
+
+  p
+    margin: 0
 
 .meta
-  font-size: 0.8rem
-  text-transform: uppercase
-  opacity: 0.7
+  @extend .condensed
+  margin-top: 0
+  margin-bottom: $base-line-height / 0.7
+  font-weight: 100
+
+  opacity: 0.5
 
   .tags:before
     display: inline-block
@@ -28,13 +45,10 @@ header
     content: " — "
 
 article
-  margin-bottom: 2em
-  padding-bottom: 2em
+  margin-top: $base-line-height
+  margin-bottom: $base-line-height
   border-bottom: 1px solid #f1f1f1
-
-  h1 + .meta
-    margin-top: -1.5 * $base-line-height
-    margin-bottom: 1.5 * $base-line-height
+  padding-bottom: $base-line-height
 
   hr
     border: 0
@@ -96,6 +110,7 @@ blockquote
 
 #tags
   text-align: center
+  @extend .condensed
 
   li
     display: inline-block
@@ -104,7 +119,7 @@ blockquote
   a
     display: inline-block
     background: transparentize($link-color, 0.8)
-    padding: 0 0.75em
+    padding: 0 ($base-line-height / 2)
     border-radius: 2px
 
     &:hover, &.selected
