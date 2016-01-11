@@ -52,14 +52,25 @@ article
   border-bottom: 1px solid #f1f1f1
   padding-bottom: $base-line-height
 
-  hr
-    border: 0
-    border-bottom: 1px dotted #ddd
-    margin-bottom: 20px
-
   img
     max-width: 100%
     display: inline-block
+
+    @media only screen and (min-width: $measure)
+      &.pull-left, &.pull-right
+        position: relative
+        max-width: 50%
+        margin: 0 $base-line-height
+
+      &.pull-left
+        float: left
+        @media only screen and (min-width: $measure + 200)
+          margin-left: -100px
+
+      &.pull-right
+        float: right
+        @media only screen and (min-width: $measure + 200)
+          margin-right: -100px
 
   .framed
     padding: 2px

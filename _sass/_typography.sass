@@ -35,7 +35,7 @@ h3, h4, h5, h6
   margin-top: 1.6111111111111112em
   margin-bottom: 0em
 
-p, ul, ol, pre, table, blockquote
+p, ul, ol, pre, table, blockquote, blockquote cite, hr
   margin-top: $base-line-height
   margin-bottom: $base-line-height
 
@@ -64,29 +64,36 @@ small, .small
 
 /*  Blockquotes  */
 blockquote, blockquote p
-  color: #777
+  color: #666768
   font-style: italic
 
 blockquote
   padding: 0 0 0 $base-line-height
-  border-left: 2px solid #ddd
+  border-left: 2px solid #eeefef
 
 blockquote cite
   display: block
-  font-size: 0.8em
-  color: #555
+  font-style: normal
+  font-size: 0.9em
+  line-height: $base-line-height / 0.9
 
-blockquote cite:before
-  content: "\2014 \0020"
-
-blockquote cite a, blockquote cite a:visited, blockquote cite a:visited
-  color: #555
+  &:before
+    content: "\2014 \0020"
 
 /* === Sanitation === */
 
 hr
-  border: 1px solid
-  margin: -1px 0
+  border: 0
+
+  &:before
+    content: "···"
+    letter-spacing: 0.5em
+    font-size: 3em
+    line-height: $base-line-height / 3
+    margin: ($base-line-height / 3) 0
+    text-align: center
+    opacity: 0.2
+    display: block
 
 ul ul, ol ol, ul ol, ol ul
   margin-top: 0
