@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<ul id="tags" class="meta">
+<ul id="tags">
   <li><a{% unless page.tag %} class="selected"{% endunless %} href="/archives/">All</a></li>
 {% for tag in site.data.tags %}
   <li><a{% if page.tag == tag %} class="selected"{% endif %} href="/archives/{{ tag }}/">{{ tag }}</a></li>
