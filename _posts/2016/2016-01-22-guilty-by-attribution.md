@@ -14,6 +14,6 @@ From [Daniel Stenberg](http://daniel.haxx.se/blog/2016/01/19/subject-urgent-warn
 
 > Here’s the Instagram screenshot she sent me…
 >
-> <img alt="screenshot of instagram's open source attribution page" src="http://daniel.haxx.se/blog/wp-content/uploads/2016/01/IMG_2156.jpg" style="max-width: 667px">
+> <img alt="screenshot of instagram's open source attribution page" src="http://daniel.haxx.se/blog/wp-content/uploads/2016/01/IMG_2156.jpg" style="max-width: 375px">
 
 I'm curious how often this happens.
