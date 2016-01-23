@@ -10,7 +10,7 @@ published: true
 [@kunalspathak](https://github.com/kunalspathak) opened a pull request to [enable Node.js to run with Microsoft's ChakraCore engine](https://github.com/nodejs/node/pull/4765).
 
 
-> 4,786 files changed, 14,554 insertions(+), 3 deletion(-)
+> `4,786 files changed, 14,554 insertions(+), 3 deletion(-)`
 
 …
 
