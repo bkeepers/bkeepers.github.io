@@ -1,17 +1,48 @@
 .archives
   li
-    line-height: 2 * $base-line-height
+    padding: $base-line-height/2 0
     position: relative
     border-bottom: 1px #eee dotted
     overflow: hidden
 
   a
-    float: left
     white-space: nowrap
     display: block
     text-overflow: ellipsis
     overflow: hidden
-    max-width: 75%
 
   .date
-    float: right
+    @extend .condensed
+    opacity: 0.5
+    font-weight: 100
+
+
+  @media screen and (min-width: 600px)
+    a
+      float: left
+      max-width: 75%
+      outline-right: 1px solid red
+
+    .date
+      float: right
+
+#tags
+  text-align: center
+  @extend .condensed
+
+  @media screen and (min-width: 600px)
+    li
+      display: inline-block
+
+  li
+    margin: ($base-line-height / 2) 0.1em
+
+  a
+    display: block
+    background: transparentize($link-color, 0.85)
+    padding: 0 ($base-line-height / 2)
+    border-radius: 2px
+
+    &:hover, &.selected
+      background: $link-hover-color
+      color: #fff

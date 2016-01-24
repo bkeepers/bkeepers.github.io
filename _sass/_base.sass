@@ -4,8 +4,14 @@ header
   overflow: hidden
   padding: ($base-line-height * 0.5) 0
 
+  @media screen and (min-width: 400px)
+    h1
+      float: left
+
+    #links
+      float: right
+
   h1
-    float: left
     font-size: inherit
     line-height: inherit
     margin: 0
@@ -15,11 +21,14 @@ header
     font-weight: 600
 
   #links
-    float: right
     @extend .condensed
 
     a
-      margin-left: $base-line-height
+      margin: 0 $base-line-height / 2
+      &:first-child
+        margin-left: 0
+      &:last-child
+        margin-right: 0
 
 #hero
   position: relative
@@ -28,16 +37,16 @@ header
   padding: 30% 1.5em $base-line-height
   margin: 0 -1.5em
   overflow: hidden
+  text-align: center
 
-  section
-    float: left
-    background-color: transparentize($link-color, 0.2)
-    padding: $base-line-height / 2
-    border-radius: 3px
+  mark
+    background-color: rgba(#fff, 0.9)
+    display: inline-block
+    padding: 0 10px
+    line-height: 1.2
 
   h1, p
     margin: 0
-    color: rgba(255,255,255,0.9)
 
   p
     font-family: $narrow-font-family
@@ -141,24 +150,6 @@ blockquote
   width: $base-line-height * 3
   height: $base-line-height * 3
   border-radius: $base-line-height * 3
-
-#tags
-  text-align: center
-  @extend .condensed
-
-  li
-    display: inline-block
-    margin: 0 0.1em
-
-  a
-    display: inline-block
-    background: transparentize($link-color, 0.85)
-    padding: 0 ($base-line-height / 2)
-    border-radius: 2px
-
-    &:hover, &.selected
-      background: $link-hover-color
-      color: #fff
 
 .improve-it
   float: right
