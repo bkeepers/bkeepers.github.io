@@ -1,10 +1,9 @@
 ---
 layout: post
 title: "Microsoft's ChakraCore engine in Node.js"
-tags: 
+tags:
   - commentary
   - opensource
-published: true
 ---
 
 [@kunalspathak](https://github.com/kunalspathak) opened a pull request to [enable Node.js to run with Microsoft's ChakraCore engine](https://github.com/nodejs/node/pull/4765).

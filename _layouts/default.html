@@ -32,7 +32,16 @@
     </div>
   </div>
 </header>
-
+{% if page.hero %}
+<div id="hero">
+  <div class="container">
+    <section>
+      <h1>Brandon Keepers</h1>
+      <p>Open Source Advocate, Speaker, Developer</p>
+    </section>
+  </div>
+</div>
+{% endif %}
 <div class="container">
   <div id="content">
     {{ content }}
