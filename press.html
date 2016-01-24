@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<h1>Press</h1>
+
+<p><em>I often flap my jaw about things. Sometimes people listen. Occasionally, they think it is interesting. Once in a while, they put it on the internet.</em></p>
+
+<ul>
+  {% for item in site.data.press %}
+    <li>
+      <p>
+        <a href="{{ item.url }}">{{ item.title }}</a><br>
+        <span class="meta">{{ item.source }} – {{ item.date | date: '%B %e, %Y' }}</span>
+      </p>
+    </li>
+  {% endfor %}
+</ul>
