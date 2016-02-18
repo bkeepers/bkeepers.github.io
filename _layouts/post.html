@@ -11,6 +11,10 @@ layout: default
         <a href="/archives/{{ category }}/">{{ category }}</a> {% unless forloop.last %},{% endunless %}
       {% endfor %}
     </span>
+
+    <span>
+      {{ content | number_of_words | divided_by:180.0 | ceil }} min read
+    </span>
   </p>
   <div class="body">{{ content }}</div>
 

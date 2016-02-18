@@ -71,10 +71,13 @@ header
   a
     color: inherit
 
-  .tags:before
+  & > *:after
     display: inline-block
     margin: 0 1em
     content: " — "
+
+  & > *:last-child:after
+    content: ""
 
 article
   margin-top: $base-line-height
