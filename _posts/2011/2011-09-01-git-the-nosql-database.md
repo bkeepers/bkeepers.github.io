@@ -20,7 +20,7 @@ Toystore & adapter-git
 
 [Toystore](https://github.com/jnunemaker/toystore) is an ActiveModel-based object mapper for key-value data stores. The beauty of Toystore is that it doesn't care what the backend is. It uses [Adapter](https://github.com/jnunemaker/adapter) to abstract the connection to any data store that can set, get, and delete keys.
 
-Well, **Git is a key-value store**; it supports set, get and delete on keys (a.k.a. paths). So I sat down with Scott Chacon's [Git Internals](http://peepcode.com/products/git-internals-pdf) Peepcode PDF and put together [adapter-git](https://github.com/bkeepers/adapter-git), built on top of [Grit](https://github.com/mojombo/grit).
+Well, **Git is a key-value store**; it supports set, get and delete on keys (a.k.a. paths). So I sat down with Scott Chacon's [Git Internals](https://github.com/pluralsight/git-internals-pdf) Peepcode PDF and put together [adapter-git](https://github.com/bkeepers/adapter-git), built on top of [Grit](https://github.com/mojombo/grit).
 
 Now I can create pretty models that are stored in Git.
 

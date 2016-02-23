@@ -10,7 +10,7 @@ tags:
 redirect_from: /blog/archives/2012/01/09/the-40-standup-desk/
 ---
 
-\_Update: I moved to a new house a few years ago and recently renovated my home office, including building a standing desk from pallets. Check out my [Home Office 2.1](/2015/11/13/home-office-2-1/._)
+\_Update: I moved to a new house a few years ago and recently renovated my home office, including building a standing desk from pallets. Check out my [Home Office 2.1](/2015/11/13/home-office-2-1/)
 
 <img src="/images/img_5073.jpg" alt="The desk top">
 

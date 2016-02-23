@@ -93,4 +93,4 @@ viewModel.query.subscribe(viewModel.search);
 
 Our search function begins by removing all the beers from the array observed by knockout, then loops through our list of beers and does a simple search, adding each beer back to the knockout array if it matches, which in turn updates it in the view.
 
-View the [source on the demo](demo) to see all of the code in context.
+View the [source on the demo](/assets/knockout-demo.html) to see all of the code in context.
