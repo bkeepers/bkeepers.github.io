@@ -11,7 +11,7 @@ redirect_from: /blog/archives/2007/12/12/hack-for-partial-matches-in-ferret/
 
 I love [ferret](http://ferret.davebalmain.com/trac/) (the ruby port of Lucene, not the fuzzy little creatures, you sicko). But something I fight on every project is that ferret turns into a bear when you try to get it to do partial matches, like `"ferr"` matching `"ferret"` and `"ferrari"`.
 
-Ferret allows you to append an asterisk to your search query (`"ferr*"`), which works great, but we can't expect our users to do that because damn Google <sup>[1](#google^)\\ has\\ set\\ the\\ expectation\\ that\\ search\\ just\\ works;\\ I\\ don't\\ need\\ to\\ use\\ any\\ funky\\ syntax\\ to\\ find\\ my\\ pogs,\\ Harry\\ Potter\\ gossip\\ or\\ BRATZ</sup>[2](#normalusers^).
+Ferret allows you to append an asterisk to your search query (`"ferr*"`), which works great, but we can't expect our users to do that because damn Google <sup>[1](#google)</sup> has set the expectation that search just works; I don't need to use any funky syntax to find my pogs, Harry Potter gossip or BRATZ <sup>[2](#normalusers)</sup>.
 
 So, we can do this manually in code by appending an asterisk to anything users enter and problem solved, right? Not quite.
 
