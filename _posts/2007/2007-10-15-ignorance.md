@@ -21,7 +21,7 @@ lack of knowledge or information
 </dl>
 After spending 6 weeks in Israel this past summer, one thing was very apparent: we are an ignorant people! We know very little about what is happening in the world and have no interest in understanding the complex and delicate histories of the people who's lives we interfere with.
 
-In an attempt to overcome ignorance, I believe I have found a cure: **Avoid mainstream media**. Not because they're liberal or conservative, but because their primary motive is to make money. They have a legal obligation to their share holders to put the bottom line before the truth and the public's interest. As long as that is the case, news will not be delivered based on worthiness<sup>[1](#truth</sup>) but on its entertainment value.
+In an attempt to overcome ignorance, I believe I have found a cure: **Avoid mainstream media**. Not because they're liberal or conservative, but because their primary motive is to make money. They have a legal obligation to their share holders to put the bottom line before the truth and the public's interest. As long as that is the case, news will not be delivered based on worthiness<sup>[1](#truth)</sup> but on its entertainment value.
 
 Instead, here a few of the news sources I have found extremely insightful:
 
@@ -43,6 +43,7 @@ How do you fight off ignorance?
 
 <ol class="footnotes">
 <li id="truth">
-"The truth is never sexy, so it’s not an easy sell" [Derek Webb](http://derekwebb.musiccitynetworks.com/index.htm?id=7013&inc=7&album_id=735#6101</li>)
+"The truth is never sexy, so it’s not an easy sell" <a href="http://derekwebb.musiccitynetworks.com/index.htm?id=7013&inc=7&album_id=735#6101">Derek Webb</a>
 
+</li>
 </ol>
