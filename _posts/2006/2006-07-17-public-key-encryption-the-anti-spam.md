@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Public Key Encryption: the anti-spam"
 id: 4cf5b682dabe9d2c610006cd
 updated: 2010-11-30T21:44:18-05:00

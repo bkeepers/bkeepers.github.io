@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Don't should on yourself"
 id: 4d0ba344dabe9d34200002e6
 updated: 2011-03-02T09:13:28-05:00

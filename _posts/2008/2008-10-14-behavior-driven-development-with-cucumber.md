@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Behavior Driven Development with Cucumber"
 id: 4cf5b65bdabe9d2c6100013e
 updated: 2010-11-30T21:43:39-05:00

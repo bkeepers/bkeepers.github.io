@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "How to Win Friends&#x2026;"
 id: 4dd71c65dabe9d554d0023dd
 updated: 2011-06-10T13:47:56-04:00

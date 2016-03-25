@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "What's it like to work at GitHub?"
 id: 4fc54b62dabe9d31620094cb
 updated: 2012-06-06T07:11:23-04:00

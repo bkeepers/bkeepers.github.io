@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Great Lakes Ruby Bash"
 id: 4cf5b653dabe9d2c6100002a
 updated: 2010-12-01T01:47:49-05:00

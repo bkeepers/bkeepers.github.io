@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "The $40 Standup Desk"
 id: 4f04b311dabe9d6b760016a2
 updated: 2012-03-02T17:35:31-05:00

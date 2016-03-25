@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Live search with knockout.js"
 id: 4e02c2fcdabe9d25ea000643
 updated: 2011-06-23T10:44:28-04:00

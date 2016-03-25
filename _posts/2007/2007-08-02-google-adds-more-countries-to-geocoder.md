@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Google adds more countries to geocoder"
 id: 4cf5b66bdabe9d2c610002e2
 updated: 2010-11-30T21:43:55-05:00

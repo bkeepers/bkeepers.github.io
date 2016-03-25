@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "acts_as_audited and authlogic"
 id: 4cf5b653dabe9d2c61000049
 updated: 2010-12-01T01:59:20-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Derek Webb releases MP3 downloads before CD"
 id: 4cf5b673dabe9d2c6100041a
 updated: 2010-11-30T21:44:03-05:00

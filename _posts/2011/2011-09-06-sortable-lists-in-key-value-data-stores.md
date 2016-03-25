@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Sortable lists in key-value data stores"
 id: 4e66386edabe9d3ad000017b
 updated: 2011-09-06T12:43:45-04:00

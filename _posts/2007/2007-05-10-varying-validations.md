@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Varying validations"
 id: 4cf5b671dabe9d2c610003aa
 updated: 2010-11-30T21:44:01-05:00

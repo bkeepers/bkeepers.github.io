@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "How many HTML elements can you name in 5 minutes?"
 id: 4cf5b667dabe9d2c61000262
 updated: 2010-11-30T21:43:51-05:00

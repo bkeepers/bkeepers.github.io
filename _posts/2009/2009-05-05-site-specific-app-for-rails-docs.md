@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Site-specific app for Rails docs"
 id: 4cf5b654dabe9d2c6100007f
 updated: 2010-11-30T21:43:32-05:00

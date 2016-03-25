@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "The Ruby Infinite Hash"
 id: 4cfafe21dabe9d3fcb000274
 updated: 2010-12-12T23:51:13-05:00

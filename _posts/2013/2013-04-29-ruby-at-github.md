@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Ruby at GitHub"
 id: 517f38f57a50725a5e001604
 updated: 2013-04-29T23:26:00-04:00

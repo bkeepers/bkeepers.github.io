@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Tinder fixed after Campfire update"
 id: 4cf5b664dabe9d2c6100022f
 updated: 2010-11-30T21:43:48-05:00

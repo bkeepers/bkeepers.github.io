@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Fish prefer worms"
 id: 4df1b852dabe9d51d4000617
 updated: 2011-06-10T13:46:28-04:00

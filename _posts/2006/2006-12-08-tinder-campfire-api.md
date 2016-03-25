@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Tinder: Campfire API"
 id: 4cf5b67cdabe9d2c6100051b
 updated: 2010-12-01T02:34:31-05:00

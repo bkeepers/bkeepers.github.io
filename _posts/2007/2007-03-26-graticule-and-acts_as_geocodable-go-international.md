@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Graticule and acts_as_geocodable go international"
 id: 4cf5b675dabe9d2c6100043e
 updated: 2010-11-30T21:44:05-05:00

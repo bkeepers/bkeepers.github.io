@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Bending iTunes to my will with RubyOSA: take 1"
 id: 4cf5b66edabe9d2c61000353
 updated: 2010-11-30T21:43:59-05:00

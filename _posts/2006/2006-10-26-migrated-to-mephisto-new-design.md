@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Migrated to mephisto - new design"
 id: 4cf5b67fdabe9d2c6100056f
 updated: 2010-11-30T21:44:15-05:00

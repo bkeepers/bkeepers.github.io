@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Siri, add toilet paper to the shopping list"
 id: 50e8fd7edabe9d5bc2005194
 updated: 2013-01-07T09:13:37-05:00

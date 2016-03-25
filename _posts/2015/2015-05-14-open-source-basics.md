@@ -1,6 +1,6 @@
 ---
 title: Open Source Basics
-layout: post
+
 tags:
 - opensource
 ---

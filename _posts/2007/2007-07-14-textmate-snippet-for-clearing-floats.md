@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "TextMate snippet for clearing floats"
 id: 4cf5b66ddabe9d2c6100031a
 updated: 2010-11-30T21:43:57-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Don't criticize, condemn or complain"
 id: 4dd71d46dabe9d580300052a
 updated: 2011-06-10T13:48:52-04:00

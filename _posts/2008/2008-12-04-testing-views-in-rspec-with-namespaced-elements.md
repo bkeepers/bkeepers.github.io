@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Testing views in RSpec with namespaced elements"
 id: 4cf5b659dabe9d2c610000f7
 updated: 2010-11-30T21:43:37-05:00

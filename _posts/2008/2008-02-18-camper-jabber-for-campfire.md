@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Camper: Jabber for Campfire"
 id: 4cf5b663dabe9d2c61000221
 updated: 2010-11-30T21:43:47-05:00

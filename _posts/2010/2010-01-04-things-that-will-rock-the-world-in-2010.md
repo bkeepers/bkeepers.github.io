@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Things that will rock the (my) world in 2010"
 id: 4cf5b653dabe9d2c61000044
 updated: 2010-12-01T02:25:41-05:00

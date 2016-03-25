@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Ruby on Rails Training: August 25-28"
 id: 4cf5b660dabe9d2c6100018c
 updated: 2010-11-30T21:43:44-05:00

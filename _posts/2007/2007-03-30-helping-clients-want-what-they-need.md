@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Helping clients want what they need"
 id: 4cf5b674dabe9d2c61000432
 updated: 2010-11-30T21:44:04-05:00

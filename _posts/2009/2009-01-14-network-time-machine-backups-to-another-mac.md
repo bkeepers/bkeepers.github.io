@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Network Time Machine backups to another Mac"
 id: 4cf5b657dabe9d2c610000ce
 updated: 2010-12-01T02:26:18-05:00

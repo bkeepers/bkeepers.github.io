@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Announcing Graticule geocoding API"
 id: 4cf5b67fdabe9d2c61000568
 updated: 2010-11-30T21:44:15-05:00

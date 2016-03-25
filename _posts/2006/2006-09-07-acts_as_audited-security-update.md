@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "acts_as_audited security update"
 id: 4cf5b680dabe9d2c610005d4
 updated: 2010-11-30T21:44:16-05:00

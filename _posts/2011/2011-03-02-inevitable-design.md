@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Inevitable Design"
 id: 4d6e5715dabe9d617600011c
 updated: 2011-03-02T15:59:33-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Add helper methods to your Rails console"
 id: 509bbfffdabe9d0829004369
 updated: 2012-11-09T09:27:04-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Getting a glimpse into Net::HTTP requests"
 id: 4cf5b663dabe9d2c61000228
 updated: 2010-11-30T21:43:48-05:00

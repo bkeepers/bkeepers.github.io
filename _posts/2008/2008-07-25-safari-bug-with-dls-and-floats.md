@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Safari bug with DLs and floats"
 id: 4cf5b65fdabe9d2c61000183
 updated: 2010-11-30T21:43:43-05:00

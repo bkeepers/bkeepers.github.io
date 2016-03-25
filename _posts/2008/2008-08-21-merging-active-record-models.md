@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Merging Active Record models"
 id: 4cf5b65cdabe9d2c6100015a
 updated: 2010-11-30T21:43:40-05:00

@@ -23,3 +23,11 @@ author:
   uri: http://opensoul.org
 amazon_associate_id: opensoulorg0d-20
 branch: master
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post

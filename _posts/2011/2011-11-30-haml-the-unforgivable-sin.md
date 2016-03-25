@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "HAML: the unforgivable sin"
 id: 4ecf14a9dabe9d0f2a02a1ec
 updated: 2013-06-28T10:05:27-04:00

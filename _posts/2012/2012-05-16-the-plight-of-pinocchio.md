@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "The Plight of Pinocchio: JavaScript's quest to become a real language"
 id: 4fb397b5dabe9d642800d76a
 updated: 2012-07-25T13:02:31-04:00

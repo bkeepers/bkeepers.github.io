@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Creating encrypted Zip archives with OS X"
 id: 4cf5b673dabe9d2c61000425
 updated: 2010-12-01T02:35:08-05:00

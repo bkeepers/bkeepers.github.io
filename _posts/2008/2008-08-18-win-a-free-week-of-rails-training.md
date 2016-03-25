@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Win a free week of Rails training"
 id: 4cf5b65ddabe9d2c61000174
 updated: 2010-11-30T21:43:41-05:00

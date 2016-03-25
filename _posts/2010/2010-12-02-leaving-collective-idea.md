@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Leaving Collective Idea"
 id: 4cf8194cdabe9d4d49000014
 updated: 2010-12-03T13:37:35-05:00

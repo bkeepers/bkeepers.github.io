@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Money with precision"
 id: 4cf5b65adabe9d2c61000137
 updated: 2010-11-30T21:43:39-05:00

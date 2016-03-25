@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Why does #step return itself?"
 id: 4cf5b67cdabe9d2c61000510
 updated: 2010-11-30T21:44:12-05:00

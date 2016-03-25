@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Obscure RubyGems Error"
 id: 4cf5b660dabe9d2c61000190
 updated: 2010-11-30T21:43:44-05:00

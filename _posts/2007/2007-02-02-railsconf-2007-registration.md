@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "RailsConf 2007 registration"
 id: 4cf5b67bdabe9d2c610004e6
 updated: 2010-11-30T21:44:11-05:00

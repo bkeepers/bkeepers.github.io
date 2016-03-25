@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Passenger and browser testing in virtual machines"
 id: 4cf5b653dabe9d2c61000038
 updated: 2010-12-01T01:54:21-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Validations on empty (not nil) attributes"
 id: 4cf5b679dabe9d2c610004c8
 updated: 2010-11-30T21:44:09-05:00

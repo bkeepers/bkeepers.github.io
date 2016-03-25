@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Last call for early-bird price on Rails Training"
 id: 4cf5b660dabe9d2c610001a4
 updated: 2010-11-30T21:43:44-05:00

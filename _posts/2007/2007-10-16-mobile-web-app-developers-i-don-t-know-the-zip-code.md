@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Mobile web app developers: I don't know the zip code"
 id: 4cf5b667dabe9d2c6100026c
 updated: 2010-11-30T21:43:51-05:00

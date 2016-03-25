@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Proxy support for Tinder"
 id: 4cf5b661dabe9d2c610001e6
 updated: 2010-11-30T21:43:45-05:00

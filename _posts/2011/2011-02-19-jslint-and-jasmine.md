@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "JSLint and Jasmine"
 id: 4d6093f4dabe9d1aac00006f
 updated: 2011-09-14T10:19:10-04:00

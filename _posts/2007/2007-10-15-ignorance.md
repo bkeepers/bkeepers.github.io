@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Ignorance"
 id: 4cf5b668dabe9d2c61000279
 updated: 2010-11-30T21:43:52-05:00

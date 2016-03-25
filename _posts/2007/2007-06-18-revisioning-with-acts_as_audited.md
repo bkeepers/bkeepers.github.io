@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Revisioning with acts_as_audited"
 id: 4cf5b66fdabe9d2c61000395
 updated: 2010-11-30T21:43:59-05:00

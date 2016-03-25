@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "American Idolatry"
 id: 4cf5b684dabe9d2c6100071c
 updated: 2010-11-30T21:44:20-05:00

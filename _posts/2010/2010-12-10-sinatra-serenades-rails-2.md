@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Sinatra serenades Rails 2"
 id: 4d01ad2fdabe9d3295000001
 updated: 2010-12-10T01:00:05-05:00

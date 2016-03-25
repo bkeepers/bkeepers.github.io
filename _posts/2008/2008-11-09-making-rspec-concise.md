@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Making RSpec concise"
 id: 4cf5b65adabe9d2c61000119
 updated: 2010-11-30T21:43:38-05:00

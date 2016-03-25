@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Web app idea of the day: estimate and manage home-improvement projects"
 id: 4cf5b668dabe9d2c61000284
 updated: 2010-11-30T21:43:52-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Why Hypermedia APIs Matter"
 id: 508de1c0dabe9d04a500fc56
 updated: 2012-10-29T09:36:16-04:00

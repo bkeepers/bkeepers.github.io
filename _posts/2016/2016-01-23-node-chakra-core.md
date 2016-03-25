@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Microsoft's ChakraCore engine in Node.js"
 tags:
   - commentary

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Guilty by attribution
 tags:
 - commentary

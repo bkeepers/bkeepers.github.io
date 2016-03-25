@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "MidWest.rb camaraderie"
 id: 4cf5b670dabe9d2c6100039f
 updated: 2010-11-30T21:44:00-05:00

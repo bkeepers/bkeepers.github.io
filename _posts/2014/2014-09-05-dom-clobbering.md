@@ -1,6 +1,6 @@
 ---
 title: User-generated content and DOM clobbering
-layout: post
+
 tags:
 - code
 ---

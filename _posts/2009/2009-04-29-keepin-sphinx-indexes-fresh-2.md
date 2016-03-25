@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Keepin' Sphinx Indexes Fresh"
 id: 4cf5b655dabe9d2c61000089
 updated: 2010-11-30T21:43:33-05:00

@@ -1,6 +1,6 @@
 ---
 title: On the importance of junk drawers
-layout: post
+
 excerpt: "<p>Create junk drawers; for things, for ideas, for time, for relationships. Make space for things that don't fit in. Let all the things that don't belong gather in one place. You may be surprised at what emerges to demand its own place.</p>"
 tags:
 - life

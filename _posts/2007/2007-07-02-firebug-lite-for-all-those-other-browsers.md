@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Firebug lite for all those other browsers"
 id: 4cf5b66edabe9d2c6100034b
 updated: 2010-11-30T21:43:58-05:00

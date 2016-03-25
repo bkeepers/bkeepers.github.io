@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "acts_as_money"
 id: 4cf5b67edabe9d2c61000563
 updated: 2010-11-30T21:44:14-05:00

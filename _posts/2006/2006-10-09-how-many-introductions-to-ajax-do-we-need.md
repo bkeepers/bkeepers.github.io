@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "How many introductions to Ajax do we need?"
 id: 4cf5b67fdabe9d2c61000574
 updated: 2010-11-30T21:44:15-05:00

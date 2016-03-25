@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Hack for partial matches in Ferret"
 id: 4cf5b667dabe9d2c6100024d
 updated: 2010-11-30T21:43:51-05:00

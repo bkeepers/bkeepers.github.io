@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "My First Rails Core Contribution"
 id: 4cf5b680dabe9d2c610005c8
 updated: 2010-11-30T21:44:16-05:00

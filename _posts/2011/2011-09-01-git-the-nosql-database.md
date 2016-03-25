@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Git: the NoSQL database"
 id: 4e5d7350dabe9d09d0003809
 updated: 2012-06-23T06:33:56-04:00

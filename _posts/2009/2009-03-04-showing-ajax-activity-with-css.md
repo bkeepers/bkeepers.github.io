@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Showing Ajax activity with CSS"
 id: 4cf5b656dabe9d2c610000b1
 updated: 2010-11-30T21:43:34-05:00

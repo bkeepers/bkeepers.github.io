@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Automatically backing up your remote database on deploy"
 id: 4cf5b678dabe9d2c610004a4
 updated: 2010-11-30T21:44:08-05:00

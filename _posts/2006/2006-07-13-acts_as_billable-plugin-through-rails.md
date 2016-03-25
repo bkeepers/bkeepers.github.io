@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "acts_as_billable :plugin, :through = :rails"
 id: 4cf5b682dabe9d2c610006e1
 updated: 2010-11-30T21:44:18-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Collective Idea gets a face lift"
 id: 4cf5b673dabe9d2c61000414
 updated: 2010-11-30T21:44:03-05:00

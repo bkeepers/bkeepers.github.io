@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Give back to the community"
 id: 4cf5b658dabe9d2c610000dd
 updated: 2010-11-30T21:43:36-05:00

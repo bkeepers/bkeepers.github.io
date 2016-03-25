@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "An extra GB makes all the difference"
 id: 4cf5b676dabe9d2c61000465
 updated: 2010-11-30T21:44:06-05:00

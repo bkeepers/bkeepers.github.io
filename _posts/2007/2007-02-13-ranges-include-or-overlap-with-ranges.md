@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Ranges include? or overlap? with Ranges"
 id: 4cf5b677dabe9d2c61000480
 updated: 2010-11-30T21:44:07-05:00

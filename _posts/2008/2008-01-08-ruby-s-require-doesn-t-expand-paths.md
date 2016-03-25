@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Ruby's require doesn't expand paths"
 id: 4cf5b666dabe9d2c6100023f
 updated: 2010-12-01T02:36:40-05:00

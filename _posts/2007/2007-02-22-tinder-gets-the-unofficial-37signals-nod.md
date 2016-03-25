@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Tinder gets the unofficial 37Signals nod"
 id: 4cf5b677dabe9d2c6100046c
 updated: 2010-11-30T21:44:07-05:00

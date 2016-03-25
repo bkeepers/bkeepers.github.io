@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Looking for a Rubyist"
 id: 4cf5b669dabe9d2c6100028b
 updated: 2010-11-30T21:43:53-05:00

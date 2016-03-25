@@ -1,6 +1,6 @@
 ---
 title: Truck Factor
-layout: post
+
 tags:
 - opensource
 - commentary

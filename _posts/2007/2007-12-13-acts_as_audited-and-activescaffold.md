@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "acts_as_audited and ActiveScaffold"
 id: 4cf5b666dabe9d2c61000243
 updated: 2010-11-30T21:43:50-05:00

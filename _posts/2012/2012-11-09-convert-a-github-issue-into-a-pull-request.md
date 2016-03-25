@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Convert a GitHub Issue Into a Pull Request"
 id: 509b2d59dabe9d6553001dd8
 updated: 2012-11-09T11:26:36-05:00

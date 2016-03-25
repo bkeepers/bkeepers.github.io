@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Capistrano 2.5 and older versions of git"
 id: 4cf5b659dabe9d2c61000105
 updated: 2010-11-30T21:43:37-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Rails 3.1 Hackfest"
 id: 4e279778dabe9d6a5b004804
 updated: 2011-07-23T10:55:09-04:00

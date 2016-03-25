@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "How Rails has made me a better programmer"
 id: 4cf5b67adabe9d2c610004de
 updated: 2010-11-30T21:44:10-05:00
