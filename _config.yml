@@ -30,7 +30,7 @@ repository: bkeepers/bkeepers.github.io
 # SEO
 google_site_verification: h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI
 title: Brandon Keepers
-description: Open soruce advocate, speaker, developer
+description: Open source advocate, speaker, developer
 
 defaults:
   -
