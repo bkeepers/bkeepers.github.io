@@ -17,12 +17,20 @@ gems:
 - jekyll-redirect-from
 - jekyll-sitemap
 - jekyll-feed
+- jekyll-seo-tag
 author:
   name: Brandon Keepers
   email: brandon@opensoul.org
   uri: http://opensoul.org
+  twitter: bkeepers
 amazon_associate_id: opensoulorg0d-20
 branch: master
+repository: bkeepers/bkeepers.github.io
+
+# SEO
+google_site_verification: h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI
+title: Brandon Keepers
+description: Open soruce advocate, speaker, developer
 
 defaults:
   -
