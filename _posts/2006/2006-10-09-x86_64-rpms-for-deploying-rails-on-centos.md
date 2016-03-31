@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "x86_64 RPMs for deploying Rails on Centos"
 id: 4cf5b67fdabe9d2c61000578
 updated: 2010-11-30T21:44:15-05:00

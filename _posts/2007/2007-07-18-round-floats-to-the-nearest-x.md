@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Round floats to the nearest X"
 id: 4cf5b66cdabe9d2c610002f5
 updated: 2010-11-30T21:43:56-05:00

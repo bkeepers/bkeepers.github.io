@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Plugging Rack into Rails"
 id: 4cf5b657dabe9d2c610000b9
 updated: 2010-11-30T21:43:35-05:00

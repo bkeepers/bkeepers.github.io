@@ -1,6 +1,6 @@
 ---
 title: Well-known open source projects
-layout: post
+
 categories:
 - opensource
 ---

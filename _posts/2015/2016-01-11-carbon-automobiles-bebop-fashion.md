@@ -1,6 +1,6 @@
 ---
 title: Carbon, Automobiles, Bebop, and Fashion
-layout: post
+
 tags:
 - opensource
 - talk

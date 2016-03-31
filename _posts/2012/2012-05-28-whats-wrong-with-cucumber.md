@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "What's wrong with Cucumber"
 id: 4eaffa7bdabe9d2be6010f76
 updated: 2012-05-28T11:17:09-04:00

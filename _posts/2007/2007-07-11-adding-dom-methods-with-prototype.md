@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Adding DOM methods with Prototype"
 id: 4cf5b66edabe9d2c6100032c
 updated: 2010-11-30T21:43:58-05:00

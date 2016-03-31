@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: The Loyal Renegade
 tags:
 - talk

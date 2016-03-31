@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Observers for Ajax callbacks"
 id: 4cf5b66ddabe9d2c61000326
 updated: 2010-11-30T21:43:57-05:00

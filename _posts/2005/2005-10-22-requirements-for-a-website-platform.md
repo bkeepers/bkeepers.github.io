@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Requirements For a Website Platform"
 id: 4cf5b685dabe9d2c6100073e
 updated: 2010-11-30T21:44:21-05:00

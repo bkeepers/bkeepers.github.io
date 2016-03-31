@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Why another queuing library?"
 id: 4e8930c4dabe9d4b0a00af5e
 updated: 2011-10-19T22:06:26-04:00

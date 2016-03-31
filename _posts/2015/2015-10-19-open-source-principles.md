@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Open Source Principles for Internal Engineering Teams
 tags:
 - talk

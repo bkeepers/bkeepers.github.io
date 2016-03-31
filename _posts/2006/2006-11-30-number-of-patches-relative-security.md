@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Number of patches != relative security"
 id: 4cf5b67ddabe9d2c6100052d
 updated: 2010-11-30T21:44:13-05:00

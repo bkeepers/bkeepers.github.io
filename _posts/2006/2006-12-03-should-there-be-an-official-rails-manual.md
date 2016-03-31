@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Should there be an official Rails manual?"
 id: 4cf5b67ddabe9d2c61000525
 updated: 2010-11-30T21:44:13-05:00

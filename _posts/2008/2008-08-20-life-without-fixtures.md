@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Life without fixtures"
 id: 4cf5b65cdabe9d2c6100016c
 updated: 2010-11-30T21:43:40-05:00

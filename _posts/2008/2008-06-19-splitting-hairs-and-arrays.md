@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Splitting Hairs and Arrays"
 id: 4cf5b660dabe9d2c6100019e
 updated: 2010-11-30T21:43:44-05:00

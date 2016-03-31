@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Capybaras eating cucumbers"
 id: 4cf5b652dabe9d2c61000008
 updated: 2010-12-01T01:19:42-05:00

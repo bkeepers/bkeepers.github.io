@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Handling forms with multiple buttons"
 id: 4cf5b66cdabe9d2c6100030f
 updated: 2010-11-30T21:43:56-05:00

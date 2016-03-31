@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "How to eliminate the best candidates"
 id: 4cf5b66edabe9d2c6100033d
 updated: 2010-11-30T21:43:58-05:00

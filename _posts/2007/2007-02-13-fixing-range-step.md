@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Fixing Range#step"
 id: 4cf5b677dabe9d2c61000472
 updated: 2010-11-30T21:44:07-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Capistrano cowboy deploys"
 id: 4cfafc1bdabe9d3fcb000265
 updated: 2010-12-04T21:44:52-05:00

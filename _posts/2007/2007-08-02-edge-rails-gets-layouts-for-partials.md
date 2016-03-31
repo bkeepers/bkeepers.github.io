@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Edge Rails gets layouts for partials"
 id: 4cf5b66bdabe9d2c610002db
 updated: 2010-11-30T21:43:55-05:00

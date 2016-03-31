@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
-  <meta name="author" content="{{ site.author.name }}">
   <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="google-site-verification" content="h4QNmQOrsvnIEsMH5GS3s4_jV3ZAZgrEoZdL4RsbOMI" />
 
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -16,6 +13,8 @@
   <link rel="stylesheet" href="/css/site.css">
 
   <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  {% seo %}
 
   <!-- FIXME: {{ item.data.head }} -->
 </head>
@@ -36,8 +35,8 @@
 <div id="hero">
   <div class="container">
     <section>
-      <h1><mark class="condensed">Brandon Keepers</mark></h1>
-      <p><mark class="condensed">Open Source Advocate, Speaker, Developer</mark></p>
+      <h1><mark class="condensed">{{ site.title }}</mark></h1>
+      <p><mark class="condensed">{{ site.description }}</mark></p>
     </section>
   </div>
 </div>

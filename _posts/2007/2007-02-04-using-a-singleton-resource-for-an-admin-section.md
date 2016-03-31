@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Using a singleton resource for an admin section"
 id: 4cf5b67adabe9d2c610004d9
 updated: 2010-11-30T21:44:10-05:00

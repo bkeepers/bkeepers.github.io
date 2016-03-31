@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Using GPG on OS X"
 id: 4cf5b682dabe9d2c610006c7
 updated: 2010-11-30T21:44:18-05:00

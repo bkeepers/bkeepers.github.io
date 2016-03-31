@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "My Experience with the Nokia 770"
 id: 4cf5b684dabe9d2c61000727
 updated: 2010-11-30T21:44:20-05:00

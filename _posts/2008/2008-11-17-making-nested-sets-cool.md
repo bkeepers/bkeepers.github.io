@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "awesome_nested_set: making nested sets cool"
 id: 4cf5b659dabe9d2c610000ff
 updated: 2010-12-01T02:38:06-05:00

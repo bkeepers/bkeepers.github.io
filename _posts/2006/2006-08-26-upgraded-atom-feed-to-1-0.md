@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Upgraded Atom feed to 1.0"
 id: 4cf5b680dabe9d2c610005da
 updated: 2010-11-30T21:44:16-05:00

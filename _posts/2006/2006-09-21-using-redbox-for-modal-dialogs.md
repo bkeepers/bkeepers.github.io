@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Using RedBox for modal dialogs"
 id: 4cf5b67fdabe9d2c6100058f
 updated: 2010-11-30T21:44:15-05:00

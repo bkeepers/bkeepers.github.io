@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Moving Podcast tracks into your iTunes library"
 id: 4cf5b673dabe9d2c6100040d
 updated: 2010-12-01T02:31:25-05:00

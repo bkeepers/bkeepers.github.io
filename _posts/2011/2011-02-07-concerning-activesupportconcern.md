@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Concerning ActiveSupport::Concern"
 id: 4d49ddccdabe9d238e00060a
 updated: 2011-03-02T09:12:53-05:00

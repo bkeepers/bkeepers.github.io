@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Plagiarism Friday"
 id: 4cf5b67bdabe9d2c61000505
 updated: 2010-11-30T21:44:11-05:00

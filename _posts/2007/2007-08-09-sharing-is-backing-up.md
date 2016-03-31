@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Sharing is backing up"
 id: 4cf5b66adabe9d2c610002d1
 updated: 2010-12-04T21:58:53-05:00

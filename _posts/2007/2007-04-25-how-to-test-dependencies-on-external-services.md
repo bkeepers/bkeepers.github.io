@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "How to test dependencies on external services?"
 id: 4cf5b672dabe9d2c610003cd
 updated: 2010-11-30T21:44:02-05:00

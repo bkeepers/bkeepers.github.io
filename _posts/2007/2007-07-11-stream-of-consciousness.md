@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Stream of consciousness"
 id: 4cf5b66edabe9d2c61000331
 updated: 2010-11-30T21:43:58-05:00

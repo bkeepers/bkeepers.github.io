@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Getting Started with Sublime Text 2"
 id: 4f076418dabe9d11e6003b67
 updated: 2013-02-12T11:20:14-05:00

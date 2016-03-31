@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "An Introduction to HTML5"
 id: 4d486a8ddabe9d478e000001
 updated: 2011-02-01T16:44:20-05:00

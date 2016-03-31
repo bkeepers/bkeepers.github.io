@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Fixed in edge rails: table name quoting"
 id: 4cf5b667dabe9d2c61000273
 updated: 2010-11-30T21:43:51-05:00

@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'github-pages'
-gem 'jekyll-feed'
+gem 'github-pages', :group => :jekyll_plugins
 gem 'rake'
 
 group :test do

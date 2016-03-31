@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Tinder: Chatting in private"
 id: 4cf5b677dabe9d2c61000497
 updated: 2010-11-30T21:44:07-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Active Resource in practice"
 id: 4cf5b653dabe9d2c61000034
 updated: 2010-12-01T01:50:46-05:00

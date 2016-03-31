@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "The Best Software Writing I"
 id: 4cf5b685dabe9d2c61000737
 updated: 2010-11-30T21:44:21-05:00

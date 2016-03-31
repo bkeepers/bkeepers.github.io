@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Daily WTF: NilClass#method_missing"
 id: 4cf5b662dabe9d2c610001f5
 updated: 2010-11-30T21:43:46-05:00

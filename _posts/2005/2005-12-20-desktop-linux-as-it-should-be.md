@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Desktop Linux As It Should Be"
 id: 4cf5b684dabe9d2c61000731
 updated: 2010-11-30T21:44:20-05:00

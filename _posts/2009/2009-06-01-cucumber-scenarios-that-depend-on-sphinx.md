@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Cucumber scenarios that depend on Sphinx"
 id: 4cf5b654dabe9d2c61000074
 updated: 2010-11-30T21:43:32-05:00

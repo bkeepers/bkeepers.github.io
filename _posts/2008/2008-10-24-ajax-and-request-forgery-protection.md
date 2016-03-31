@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Ajax and Request Forgery Protection"
 id: 4cf5b65adabe9d2c61000129
 updated: 2010-11-30T21:43:38-05:00

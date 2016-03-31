@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "The quest for the Holy object serialization format"
 id: 4cf5b652dabe9d2c61000010
 updated: 2010-12-01T01:22:06-05:00

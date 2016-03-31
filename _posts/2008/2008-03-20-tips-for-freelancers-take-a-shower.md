@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Tips for freelancers: take a shower"
 id: 4cf5b662dabe9d2c61000208
 updated: 2010-11-30T21:43:46-05:00

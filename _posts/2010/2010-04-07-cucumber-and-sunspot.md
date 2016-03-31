@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Cucumber and Sunspot"
 id: 4cf5b652dabe9d2c61000017
 updated: 2010-12-01T01:22:42-05:00

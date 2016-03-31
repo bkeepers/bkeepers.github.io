@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Why I Hate Microformats"
 id: 4cf5b682dabe9d2c610006ea
 updated: 2012-06-05T10:33:40-04:00

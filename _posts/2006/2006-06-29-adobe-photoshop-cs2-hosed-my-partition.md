@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Adobe Photoshop CS2 hosed my partition"
 id: 4cf5b683dabe9d2c61000703
 updated: 2010-11-30T21:44:19-05:00

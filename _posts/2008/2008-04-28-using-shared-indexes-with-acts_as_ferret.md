@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Using shared indexes with acts_as_ferret"
 id: 4cf5b661dabe9d2c610001d8
 updated: 2010-11-30T21:43:45-05:00

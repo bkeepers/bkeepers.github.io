@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "ETags with memcached"
 id: 4d254397dabe9d797900002e
 updated: 2011-01-29T23:58:46-05:00

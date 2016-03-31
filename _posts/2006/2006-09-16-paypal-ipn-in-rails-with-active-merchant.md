@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Paypal IPN in Rails with Active Merchant"
 id: 4cf5b680dabe9d2c610005c1
 updated: 2010-12-01T02:33:26-05:00

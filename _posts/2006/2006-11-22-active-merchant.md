@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Active Merchant on Google Groups"
 id: 4cf5b67ddabe9d2c61000532
 updated: 2010-11-30T21:44:13-05:00

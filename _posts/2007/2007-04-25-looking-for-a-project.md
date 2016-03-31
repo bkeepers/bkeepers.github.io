@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Looking for a project"
 id: 4cf5b672dabe9d2c610003d1
 updated: 2010-11-30T21:44:02-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Announcing: Training by Collective Idea"
 id: 4cf5b661dabe9d2c610001af
 updated: 2010-11-30T21:43:45-05:00

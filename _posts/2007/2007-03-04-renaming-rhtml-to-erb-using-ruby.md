@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Renaming .rhtml to .erb using Ruby"
 id: 4cf5b676dabe9d2c6100045f
 updated: 2010-11-30T21:44:06-05:00

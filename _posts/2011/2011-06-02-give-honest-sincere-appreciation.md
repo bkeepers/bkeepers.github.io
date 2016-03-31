@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Give honest, sincere appreciation"
 id: 4ddf2cc2dabe9d1313003863
 updated: 2011-06-10T13:48:45-04:00

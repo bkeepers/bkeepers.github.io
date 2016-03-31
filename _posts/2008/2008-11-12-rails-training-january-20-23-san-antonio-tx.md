@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Rails Training: January 20&#x2013;23 in San Antonio, TX"
 id: 4cf5b659dabe9d2c6100010c
 updated: 2010-11-30T21:43:37-05:00

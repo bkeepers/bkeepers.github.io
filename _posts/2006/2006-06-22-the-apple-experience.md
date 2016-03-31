@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "The Apple Experience"
 id: 4cf5b683dabe9d2c61000715
 updated: 2010-11-30T21:44:19-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Location-based search with Sphinx and acts_as_geocodable"
 id: 4cf5b655dabe9d2c61000091
 updated: 2010-11-30T21:43:33-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Raise the roof, yo!"
 id: 4cfafdacdabe9d4a1d0000b7
 updated: 2010-12-05T23:05:09-05:00

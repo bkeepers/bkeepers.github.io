@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "My Instapaper Strategy"
 id: 4fc227f2dabe9d2701026d97
 updated: 2012-05-27T12:33:36-04:00

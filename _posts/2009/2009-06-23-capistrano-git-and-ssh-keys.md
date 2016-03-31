@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Capistrano, Git and SSH keys"
 id: 4cf5b654dabe9d2c6100005e
 updated: 2010-11-30T21:43:32-05:00

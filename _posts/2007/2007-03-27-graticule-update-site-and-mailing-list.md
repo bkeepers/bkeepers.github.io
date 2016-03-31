@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Graticule update, site, and mailing list"
 id: 4cf5b675dabe9d2c61000439
 updated: 2010-11-30T21:44:05-05:00

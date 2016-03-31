@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Releasing multiple gems from one repository"
 id: 4fc642b0dabe9d295c000e1c
 updated: 2012-05-30T14:41:13-04:00

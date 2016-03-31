@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Graticule can failover"
 id: 4cf5b669dabe9d2c61000295
 updated: 2010-11-30T21:43:53-05:00

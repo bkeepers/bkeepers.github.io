@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "The importance of var in JavaScript"
 id: 4cf5b65cdabe9d2c6100014e
 updated: 2010-11-30T21:43:40-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Secure Backups with GPG"
 id: 4cf5b683dabe9d2c610006f7
 updated: 2010-11-30T21:44:19-05:00

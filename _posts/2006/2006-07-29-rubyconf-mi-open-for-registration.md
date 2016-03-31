@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "RubyConf*MI open for registration"
 id: 4cf5b681dabe9d2c61000609
 updated: 2010-11-30T21:44:17-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Abusing Rails I18N to Set Page Titles"
 id: 5097d37adabe9d269e0183c7
 updated: 2012-11-05T10:22:18-05:00

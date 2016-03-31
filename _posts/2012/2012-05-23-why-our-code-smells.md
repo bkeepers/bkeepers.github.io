@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Why Our Code Smells"
 id: 4fbce59edabe9d47c10059f6
 updated: 2012-07-12T09:42:49-04:00

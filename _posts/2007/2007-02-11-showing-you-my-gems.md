@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Showing you my gems"
 id: 4cf5b678dabe9d2c6100049c
 updated: 2010-11-30T21:44:08-05:00

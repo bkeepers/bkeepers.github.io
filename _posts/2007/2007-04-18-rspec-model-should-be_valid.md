@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "rspec: model.should be_valid"
 id: 4cf5b672dabe9d2c610003dd
 updated: 2010-11-30T21:44:02-05:00

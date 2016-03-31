@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "RPMs for Deploying Rails on CentOS"
 id: 4cf5b681dabe9d2c61000605
 updated: 2010-11-30T21:44:17-05:00

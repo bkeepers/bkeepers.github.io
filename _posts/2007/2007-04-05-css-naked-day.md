@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "CSS Naked Day"
 id: 4cf5b674dabe9d2c6100042d
 updated: 2010-11-30T21:44:04-05:00

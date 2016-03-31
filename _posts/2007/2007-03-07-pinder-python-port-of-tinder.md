@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Pinder: python port of Tinder"
 id: 4cf5b675dabe9d2c6100044e
 updated: 2010-11-30T21:44:05-05:00

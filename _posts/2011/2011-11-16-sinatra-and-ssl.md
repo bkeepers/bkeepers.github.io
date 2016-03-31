@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Sinatra and SSL"
 id: 4ea72077dabe9d3cb8003e0b
 updated: 2011-11-17T16:23:27-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "If the food industry was like the software industry"
 id: 4cf5b680dabe9d2c610005e2
 updated: 2010-11-30T21:44:17-05:00

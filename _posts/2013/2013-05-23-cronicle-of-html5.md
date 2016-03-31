@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: A Chronicle of the Nebulous HTML5
 tags:
 - talk

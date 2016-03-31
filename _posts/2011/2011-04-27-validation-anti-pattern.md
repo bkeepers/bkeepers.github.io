@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Validation Anti-Pattern"
 id: 4db8db0fdabe9d3eee000001
 updated: 2011-12-09T10:28:10-05:00

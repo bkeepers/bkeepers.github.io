@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: InnerSource Summit
 tags:
 - opensource

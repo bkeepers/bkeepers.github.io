@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Blogging from TextMate"
 id: 4cf5b683dabe9d2c61000718
 updated: 2010-11-30T21:44:19-05:00

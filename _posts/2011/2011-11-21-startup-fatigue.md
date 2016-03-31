@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Startup Fatigue"
 id: 4ec49650dabe9d20f60013a9
 updated: 2011-11-21T21:50:29-05:00

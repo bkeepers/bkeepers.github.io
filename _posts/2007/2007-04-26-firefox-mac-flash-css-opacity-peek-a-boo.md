@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Firefox + Mac + Flash + CSS opacity = peek-a-boo"
 id: 4cf5b671dabe9d2c610003c2
 updated: 2010-11-30T21:44:01-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "User auditing with acts_as_audited"
 id: 4cf5b67ddabe9d2c6100053b
 updated: 2010-11-30T21:44:13-05:00

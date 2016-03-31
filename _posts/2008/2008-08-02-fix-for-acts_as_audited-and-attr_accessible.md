@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Fix for acts_as_audited and attr_accessible"
 id: 4cf5b65edabe9d2c6100017b
 updated: 2010-11-30T21:43:42-05:00

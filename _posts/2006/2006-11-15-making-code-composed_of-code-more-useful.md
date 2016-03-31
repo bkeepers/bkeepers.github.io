@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Making #composed_of more useful"
 id: 4cf5b67edabe9d2c61000548
 updated: 2010-11-30T21:44:14-05:00

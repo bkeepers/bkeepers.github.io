@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "bundle exec fatigue"
 id: 4e70ea4fdabe9d70ab0013b9
 updated: 2011-09-15T10:15:07-04:00

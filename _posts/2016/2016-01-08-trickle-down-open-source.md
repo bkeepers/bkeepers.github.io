@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Trickle-Down Open Source
 tags:
 - opensource

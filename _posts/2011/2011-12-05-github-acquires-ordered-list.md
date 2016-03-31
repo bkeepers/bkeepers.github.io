@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "GitHub Acquires Ordered List"
 id: 4edc3d06dabe9d211500f3ae
 updated: 2011-12-05T13:02:46-05:00

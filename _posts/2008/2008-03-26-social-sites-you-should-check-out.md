@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Social Sites you should check out"
 id: 4cf5b662dabe9d2c610001fa
 updated: 2010-11-30T21:43:46-05:00

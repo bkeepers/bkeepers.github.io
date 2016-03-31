@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: d’Oh My Zsh
 tags:
 - commentary

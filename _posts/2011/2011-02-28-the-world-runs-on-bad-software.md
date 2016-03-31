@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "The world runs on bad software"
 id: 4d6c279ddabe9d336a0000e7
 updated: 2012-05-31T14:31:58-04:00

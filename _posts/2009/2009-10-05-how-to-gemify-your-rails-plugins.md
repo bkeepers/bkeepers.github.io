@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "How to Gemify your Rails Plugins"
 id: 4cf5b653dabe9d2c61000057
 updated: 2010-12-01T02:06:48-05:00

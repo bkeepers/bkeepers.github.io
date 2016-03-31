@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Tinder: reading Campfire transcripts"
 id: 4cf5b675dabe9d2c61000454
 updated: 2010-11-30T21:44:05-05:00

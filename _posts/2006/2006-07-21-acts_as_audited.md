@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "acts_as_audited"
 id: 4cf5b681dabe9d2c610006b3
 updated: 2012-06-05T10:31:20-04:00

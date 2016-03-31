@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Pusher notifications with EventMachine"
 id: 4e258a01dabe9d7285017e6b
 updated: 2011-08-30T19:31:24-04:00

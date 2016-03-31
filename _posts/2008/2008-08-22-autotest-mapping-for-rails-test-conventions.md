@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Autotest mapping for Rails test conventions"
 id: 4cf5b65cdabe9d2c61000154
 updated: 2010-11-30T21:43:40-05:00

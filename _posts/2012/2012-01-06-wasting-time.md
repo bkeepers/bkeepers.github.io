@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Wasting Time"
 id: 4f0771aadabe9d371200338f
 updated: 2012-01-06T17:30:19-05:00

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: How Mickey Mouse Evades the Public Domain
 tags:
 - commentary

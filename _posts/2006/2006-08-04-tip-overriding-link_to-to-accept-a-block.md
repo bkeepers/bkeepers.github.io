@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Tip: Overriding link_to to accept a block"
 id: 4cf5b681dabe9d2c610005ed
 updated: 2010-11-30T21:44:17-05:00

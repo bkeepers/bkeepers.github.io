@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "acts_as_ferret will_paginate"
 id: 4cf5b669dabe9d2c610002cb
 updated: 2010-11-30T21:43:53-05:00

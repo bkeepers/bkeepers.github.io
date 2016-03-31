@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Tending Your Open Source Garden
 tags:
 - opensource

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Ruby on Rails Training in San Francisco, Jan 29&#x2013;Feb 1"
 id: 4cf5b665dabe9d2c61000234
 updated: 2010-11-30T21:43:49-05:00

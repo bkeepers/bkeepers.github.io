@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "That CD is the best, says people that like that kind of music"
 id: 4cf5b66cdabe9d2c610002e7
 updated: 2010-11-30T21:43:56-05:00
