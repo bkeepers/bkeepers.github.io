@@ -16,7 +16,7 @@ Robert Hof writes for Forbes on [Facebook's Open Source Machine](http://www.forb
 >
 > A: We don’t consider that much of our technology to be a competitive advantage. We have realized over the years that the more we share, the better. It allows us to innovate faster, it allows us to recruit and retain talented engineers who want to work on these kinds of problems, and it helps accelerate the industry as a whole. We don’t have a monopoly on smart ideas or ways to solve these problems. If other companies or people see these problems and maybe bring some solutions, then clearly we’re going to benefit.
 
-This is the hardest concept for the industry to grasp about open source: they need to become a technology company to survive, but the technology is not their competitive advantage. Like the internet, phones, and the power grid, you need software to survive, but it's not the core value that you provide.
+This is the hardest concept for the industry to grasp about open source: they need to become a technology company to survive, but the technology is not their competitive advantage. Like the internet, phones, and the power grid, open source software is critical to every day operations, but it's not the core value that you provide.
 
 …
 
