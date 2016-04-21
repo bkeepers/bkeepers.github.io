@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'bundler/setup'
-require 'html/proofer'
+require 'html-proofer'
 
 # Ignore really old content for now
 ignores = %w(
@@ -10,8 +10,10 @@ ignores = %w(
   _site/assets/*.html
 ).map {|p| Dir.glob(p) }.flatten
 
-HTML::Proofer.new('_site',
+HTMLProofer::Runner.new(['_site'],
+  :type => :directory,
   :file_ignore => ignores,
   :verbose => !!ENV["VERBOSE"],
-  :check_html => true
+  :check_html => true,
+  :url_swap => {%r{^http://opensoul.org} => ""}
 ).run

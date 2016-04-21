@@ -4,10 +4,10 @@ title: Truck Factor
 tags:
 - opensource
 - commentary
-link: http://mtov.github.io/Truck-Factor/
+link: http://web.archive.org/web/20160319215639/http://mtov.github.io/Truck-Factor/
 ---
 
-[@mtov](https://github.com/mtov) posts on the "[Truck Factor](http://mtov.github.io/Truck-Factor/)"—the minimal number of developers that have to be hit by a truck before a project is incapacitated—of open source projects on GitHub.
+[@mtov](https://github.com/mtov) posts on the "[Truck Factor](http://web.archive.org/web/20160319215639/http://mtov.github.io/Truck-Factor/)"—the minimal number of developers that have to be hit by a truck before a project is incapacitated—of open source projects on GitHub.
 
 > To calculate the truck factor, we use a greedy heuristic: we consecutively remove the author with more authored files in a system, until more than 50% of the system's files are orphans (i.e., without author). We are considering that a system is in trouble if more than 50% of its files are orphans.
 

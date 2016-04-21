@@ -6,7 +6,7 @@ tags:
 excerpt: Companies today already understand that Open Source is necessary. Less is understood about how to effectively use Open Source principles on internal development. This is the challenge that InnerSource seeks to addresses.
 ---
 
-We just wrapped up the first [InnerSource Summit](http://paypal.github.io/InnerSourceCommons/summit2015.html), hosted by PayPal. From the website:
+We just wrapped up the first [InnerSource Summit](http://paypal.github.io/InnerSourceCommons/), hosted by PayPal. From the website:
 
 > Companies today already understand that Open Source is necessary.
 >
