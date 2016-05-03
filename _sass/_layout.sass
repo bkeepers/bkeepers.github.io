@@ -9,10 +9,15 @@ body
 // <div class="embed"><!-- embed code --></div>
 .embed
   position: relative
-  padding-bottom: 56.25%
   height: 0
   overflow: hidden
   max-width: 100%
+
+  &, &.ratio-16-9
+    padding-bottom: 56.25%
+
+  &.ratio-4-3
+    padding-bottom: 75%
 
   iframe, object, embed
     position: absolute
