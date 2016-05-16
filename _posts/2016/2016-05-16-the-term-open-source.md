@@ -1,9 +1,10 @@
 ---
 layout: post
-title: 'The term "open source"'
-tags:
-- commentary
-- opensource
+title: "The term \"open source\""
+tags: 
+  - commentary
+  - opensource
+published: true
 ---
 
 [Nadia Eghbal](https://twitter.com/nayafia) writes [I hate the term “open source”
@@ -17,7 +18,7 @@ tags:
 
 > Officially, open source is defined by a list of ten criteria, which you can read about [here](https://opensource.org/osd)…Were you aware there was an official definition? I didn’t think so.
 
-Compared to other popular concepts like "agile", "lean", and "organic", the meaning of "open source" remains incredibly intact 20 years later. The integrity of the word "open source" is owed mostly to this definition. I don't think it's necessary that everyone who uses open source can recite the definition, let alone know it exists. Our lives are ruled by laws, bills, codes, directives, orders, and documents that most of us don't know exist. The important part is that those building infrastructure know they exist and create sensible defaults.
+Compared to other popular concepts like "agile", "lean", and "organic", the meaning of "open source" remains incredibly intact 20 years later. This is owed mostly to this definition. Everyone who uses open source shouldn't have to be able to recite the definition of open source, let alone know it exists. Our lives are ruled by laws, bills, codes, directives, orders, and documents that most of us don't know exist. The important part is that those building infrastructure know they exist and create sensible defaults.
 
 > Licenses are not a useful way to define modern open source anymore. They matter in as much as it matters that most startups are set up as Delaware C Corps; you want to check the compliance boxes, but the fine print is best left up to legal nerds and lawyers.
 
