@@ -10,6 +10,6 @@ tags:
 
 This talk examines how our internal engineering teams can learn open source principles from the communication structure of open source communities.
 
-<div class="embed"><iframe src="https://www.youtube.com/embed/IEwtBi7P9cQ" frameborder="0" allowfullscreen></iframe></div>
+<p class="embed"><iframe src="https://www.youtube.com/embed/IEwtBi7P9cQ" frameborder="0" allowfullscreen></iframe></p>
 
 <script async class="speakerdeck-embed" data-id="310d4771c0f34602a3a688022e2346e3" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
