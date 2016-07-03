@@ -14,7 +14,7 @@ This is a great project and is receiving adoption in some circles, but given how
 
 1. At 16 syllables, "Core Infrastructure Initiative Best Practices Badge Program" is a mouthful! It needs a shorter and catchier name so I can tell more people about it.
 
-2. Checking the status of a project is a lot of work! I spent ~15 minutes adding GitHub's Atom Editor and only got to 55%. Here's the badge, so feel free to help finish filling it out: [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/232/badge)](https://bestpractices.coreinfrastructure.org/projects/232)). The project could benefit from more automation and autodetection.
+2. Checking the status of a project is a lot of work! I spent ~15 minutes adding GitHub's [Atom Editor](https://atom.io) and only got to 55%. Here's the badge, so feel free to help finish filling it out: [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/232/badge)](https://bestpractices.coreinfrastructure.org/projects/232)). The project could benefit from more automation and autodetection.
 
 Either way, check it out:
 
