@@ -17,7 +17,7 @@ tags:
 > Contributing is a form of short-term participation. You make a one-off or twice-off contribution, and then your involvement is over.
 >
 >Maintaining is taking long-term ownership over a particular aspect of a project. In this equation I’ve produced, maintaining is greater than contributing both in level of reward, but also effort, commitment, and emotional involvement.
-> 
+>
 > Let’s take a walk through the emotional journey of becoming a maintainer.
 
 …
@@ -26,4 +26,4 @@ tags:
 >
 > When you decide to take the leap, I look forward to saying to you…
 >
-> ![](https://runcommand.io/wp-content/uploads/2016/06/201606presentation-wceu.019-1024x576.png)
+> ![my condolences](https://runcommand.io/wp-content/uploads/2016/06/201606presentation-wceu.019-1024x576.png)
