@@ -8,6 +8,7 @@ ignores = %w(
   _site/blog/**/*.html
   _site/20{05,06,07,08,09,10}/**/*.html
   _site/assets/*.html
+  _site/2011/11/21/startup-fatigue/index.html
 ).map {|p| Dir.glob(p) }.flatten
 
 HTMLProofer::Runner.new(['_site'],
