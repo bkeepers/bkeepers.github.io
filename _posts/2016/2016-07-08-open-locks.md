@@ -24,4 +24,4 @@ The Shuttleworth foundation blogged about [Open Locks: legal commitments that lo
 
 > The legal effect of an Open Lock is that no one who acts for a company has the legal authority to lock knowledge down.
 
-And, of coarse, the [agreement templates are available in a GitHub repository](https://github.com/ShuttleworthFoundation/agreement_templates).
+And, of course, the [agreement templates are available in a GitHub repository](https://github.com/ShuttleworthFoundation/agreement_templates).
