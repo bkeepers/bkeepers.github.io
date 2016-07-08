@@ -13,6 +13,7 @@ The Shuttleworth foundation blogged about [Open Locks: legal commitments that lo
 > Contributors to your open project invest their time and energy because they trust you with their gift to the world. So the challenge is this: How can you keep their trust? Can you seal it in for the long term?
 >
 > There are many successful projects that have managed this, notably in open-source software…
+
 …
 
 > ## How Open Locks work
