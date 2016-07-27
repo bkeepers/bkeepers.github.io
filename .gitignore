@@ -5,3 +5,4 @@ _site
 vendor/gems
 .bundle
 tmp
+.jekyll-metadata
