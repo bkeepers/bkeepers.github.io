@@ -6,7 +6,7 @@ tags:
 - code
 ---
 
-[DHH](https://m.signalvnoise.com/software-has-bugs-this-is-normal-f64761a262ca#.lklacefzn) with another elequently written observation: [Software has bugs. This is normal.](https://m.signalvnoise.com/software-has-bugs-this-is-normal-f64761a262ca)
+[DHH](https://m.signalvnoise.com/software-has-bugs-this-is-normal-f64761a262ca#.lklacefzn) with another elequently written observation: [Software has bugs. This is normal.](https://signalvnoise.com/svn3/software-has-bugs-this-is-normal/)
 
 > Disappointment occurs when expectations don’t match reality. And our expectations for software quality are profoundly unrealistic. Thus, lots of people are continuously disappointed — even enraged — by software bugs. They shouldn’t be.
 
