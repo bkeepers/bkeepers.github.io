@@ -1,85 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="verify-v1" content="UwU5mecrHiDTPVlphLl729aaRCmyz93jrs+ER3RP4Pw=">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
   <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/site.css">
-
   <link href="http://feeds.feedburner.com/opensoul" rel="alternate" title="opensoul.org" type="application/atom+xml">
+
+  <script defer data-domain="opensoul.org" src="https://plausible.io/js/script.js"></script>
 
   {% seo %}
 
   <!-- FIXME: {{ item.data.head }} -->
 </head>
+
 <body>
-<header>
-  <div class="container">
-    <h1><a class="name" href="/">{{ site.name }}</a></h1>
-    <div id="links">
-      <a href="/archives/">Posts</a>
-      <a href="/talks/">Talks</a>
-      <a href="/press/">Press</a>
-      <a href="https://twitter.com/bkeepers" class="icon icon-mark-twitter" title="Follow me on Twitter"></a>
-      <a href="https://feeds.feedburner.com/opensoul" class="icon icon-feed" title="Subscribe to the Feed"></a>
+  <header>
+    <div class="container">
+      <h1><a class="name" href="/">{{ site.name }}</a></h1>
+      <div id="links">
+        <a href="/archives/">Posts</a>
+        <a href="/talks/">Talks</a>
+        <a href="/press/">Press</a>
+        <a href="https://twitter.com/bkeepers" class="icon icon-mark-twitter" title="Follow me on Twitter"></a>
+        <a href="https://feeds.feedburner.com/opensoul" class="icon icon-feed" title="Subscribe to the Feed"></a>
+      </div>
+    </div>
+  </header>
+  {% if page.hero %}
+  <div id="hero">
+    <div class="container">
+      <section>
+        <h1><mark class="condensed">{{ site.title }}</mark></h1>
+        <p><mark class="condensed">{{ site.description }}</mark></p>
+      </section>
     </div>
   </div>
-</header>
-{% if page.hero %}
-<div id="hero">
+  {% endif %}
   <div class="container">
-    <section>
-      <h1><mark class="condensed">{{ site.title }}</mark></h1>
-      <p><mark class="condensed">{{ site.description }}</mark></p>
-    </section>
+    <div id="content">
+      {{ content }}
+    </div>
+
+    <div id="about">
+      <section>
+        <p class="small">
+          <img class="avatar" src="https://github.com/bkeepers.png" alt="avatar of Brandon Keepers">
+          <em>I am Brandon Keepers, and I work at <a href="https://github.com">GitHub</a> on making Open Source more
+            approachable, effective, and ubiquitous. I tend to think like an engineer, work like an artist, dream like
+            an astronaut, love like a human, and sleep like a baby.</em>
+        </p>
+      </section>
+    </div>
+
+    <footer>
+      <a href="/LICENSE/">Fine Print</a>
+    </footer>
   </div>
-</div>
-{% endif %}
-<div class="container">
-  <div id="content">
-    {{ content }}
-  </div>
-
-  <div id="about">
-    <section>
-      <p class="small">
-        <img class="avatar" src="https://github.com/bkeepers.png" alt="avatar of Brandon Keepers">
-        <em>I am Brandon Keepers, and I work at <a href="https://github.com">GitHub</a> on making Open Source more approachable, effective, and ubiquitous. I tend to think like an engineer, work like an artist, dream like an astronaut, love like a human, and sleep like a baby.</em>
-      </p>
-    </section>
-  </div>
-
-  <footer>
-    <a href="/LICENSE/">Fine Print</a>
-  </footer>
-</div>
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-817617-1");
-pageTracker._trackPageview();
-} catch(err) {}
-</script>
-
-<script type="text/javascript">
-  (function() {
-    var t = document.createElement('script');
-    t.type = 'text/javascript'; t.async = true;
-    t.id = 'gauges-tracker'; t.setAttribute('data-site-id', '4d5c434255da1271e4000002');
-    t.src = 'http://gaug.es/track.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(t, s);
-  })();
-</script>
 </body>
+
 </html>
